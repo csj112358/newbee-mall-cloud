@@ -1,0 +1,64 @@
+{
+  "batchIndex": 12,
+  "files": [
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/NewBeeMallCloudUserServiceApplication.java",
+      "language": "java",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/RedisConfig.java",
+      "language": "java",
+      "sizeLines": 74,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/application.properties",
+      "language": "properties",
+      "sizeLines": 62,
+      "fileCategory": "config"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/logback.xml",
+      "language": "xml",
+      "sizeLines": 35,
+      "fileCategory": "config"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/mapper/AdminUserMapper.xml",
+      "language": "xml",
+      "sizeLines": 104,
+      "fileCategory": "config"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/mapper/MallUserMapper.xml",
+      "language": "xml",
+      "sizeLines": 180,
+      "fileCategory": "config"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/pom.xml",
+      "language": "xml",
+      "sizeLines": 37,
+      "fileCategory": "config"
+    },
+    {
+      "path": "pom.xml",
+      "language": "xml",
+      "sizeLines": 132,
+      "fileCategory": "config"
+    }
+  ],
+  "batchImportData": {
+    "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/NewBeeMallCloudUserServiceApplication.java": [],
+    "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/RedisConfig.java": [],
+    "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/application.properties": [],
+    "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/logback.xml": [],
+    "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/mapper/AdminUserMapper.xml": [],
+    "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/mapper/MallUserMapper.xml": [],
+    "newbee-mall-cloud-user-service/pom.xml": [],
+    "pom.xml": []
+  },
+  "neighborMap": {}
+}

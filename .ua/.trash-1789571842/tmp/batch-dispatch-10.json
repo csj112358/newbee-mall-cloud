@@ -1,0 +1,183 @@
+{
+  "batchIndex": 10,
+  "files": [
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "sizeLines": 157,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "newbee-mall-cloud-common/pom.xml",
+      "language": "xml",
+      "sizeLines": 51,
+      "fileCategory": "config"
+    },
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/NewBeeMallUtils.java",
+      "language": "java",
+      "sizeLines": 56,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-gateway-admin/pom.xml",
+      "language": "xml",
+      "sizeLines": 68,
+      "fileCategory": "config"
+    },
+    {
+      "path": "newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/NewBeeMallCloudAdminGatewayApplication.java",
+      "language": "java",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/config/PolymerizeSwaggerProvider.java",
+      "language": "java",
+      "sizeLines": 67,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/config/RedisConfig.java",
+      "language": "java",
+      "sizeLines": 74,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-gateway-admin/src/main/resources/application.properties",
+      "language": "properties",
+      "sizeLines": 95,
+      "fileCategory": "config"
+    },
+    {
+      "path": "newbee-mall-cloud-gateway-mall/pom.xml",
+      "language": "xml",
+      "sizeLines": 70,
+      "fileCategory": "config"
+    },
+    {
+      "path": "newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/NewBeeMallCloudMallGatewayApplication.java",
+      "language": "java",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/config/PolymerizeSwaggerProvider.java",
+      "language": "java",
+      "sizeLines": 60,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/config/RedisConfig.java",
+      "language": "java",
+      "sizeLines": 74,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-gateway-mall/src/main/resources/application.properties",
+      "language": "properties",
+      "sizeLines": 109,
+      "fileCategory": "config"
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/pom.xml",
+      "language": "xml",
+      "sizeLines": 44,
+      "fileCategory": "config"
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/pom.xml",
+      "language": "xml",
+      "sizeLines": 120,
+      "fileCategory": "config"
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/OpenFeignConfiguration.java",
+      "language": "java",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/SeataProxyConfiguration.java",
+      "language": "java",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/application.properties",
+      "language": "properties",
+      "sizeLines": 78,
+      "fileCategory": "config"
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/logback.xml",
+      "language": "xml",
+      "sizeLines": 39,
+      "fileCategory": "config"
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/mapper/GoodsCategoryMapper.xml",
+      "language": "xml",
+      "sizeLines": 219,
+      "fileCategory": "config"
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/mapper/NewBeeMallGoodsMapper.xml",
+      "language": "xml",
+      "sizeLines": 392,
+      "fileCategory": "config"
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/pom.xml",
+      "language": "xml",
+      "sizeLines": 38,
+      "fileCategory": "config"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-api/pom.xml",
+      "language": "xml",
+      "sizeLines": 44,
+      "fileCategory": "config"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/pom.xml",
+      "language": "xml",
+      "sizeLines": 137,
+      "fileCategory": "config"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OpenFeignConfiguration.java",
+      "language": "java",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "README.md": [],
+    "newbee-mall-cloud-common/pom.xml": [],
+    "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/NewBeeMallUtils.java": [],
+    "newbee-mall-cloud-gateway-admin/pom.xml": [],
+    "newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/NewBeeMallCloudAdminGatewayApplication.java": [],
+    "newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/config/PolymerizeSwaggerProvider.java": [],
+    "newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/config/RedisConfig.java": [],
+    "newbee-mall-cloud-gateway-admin/src/main/resources/application.properties": [],
+    "newbee-mall-cloud-gateway-mall/pom.xml": [],
+    "newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/NewBeeMallCloudMallGatewayApplication.java": [],
+    "newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/config/PolymerizeSwaggerProvider.java": [],
+    "newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/config/RedisConfig.java": [],
+    "newbee-mall-cloud-gateway-mall/src/main/resources/application.properties": [],
+    "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/pom.xml": [],
+    "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/pom.xml": [],
+    "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/OpenFeignConfiguration.java": [],
+    "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/SeataProxyConfiguration.java": [],
+    "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/application.properties": [],
+    "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/logback.xml": [],
+    "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/mapper/GoodsCategoryMapper.xml": [],
+    "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/mapper/NewBeeMallGoodsMapper.xml": [],
+    "newbee-mall-cloud-goods-service/pom.xml": [],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-api/pom.xml": [],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/pom.xml": [],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OpenFeignConfiguration.java": []
+  },
+  "neighborMap": {}
+}

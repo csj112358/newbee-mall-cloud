@@ -1,0 +1,210 @@
+{
+  "projectRoot": "E:/Github/newbee-mall-cloud",
+  "batchFiles": [
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/ResultGenerator.java",
+      "language": "java",
+      "sizeLines": 58,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/AdminUserToken.java",
+      "language": "java",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/MallUserToken.java",
+      "language": "java",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/MD5Util.java",
+      "language": "java",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/NumberUtil.java",
+      "language": "java",
+      "sizeLines": 59,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/SystemUtil.java",
+      "language": "java",
+      "sizeLines": 42,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/filter/ValidTokenGlobalFilter.java",
+      "language": "java",
+      "sizeLines": 90,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/filter/ValidMallUserTokenGlobalFilter.java",
+      "language": "java",
+      "sizeLines": 103,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OrderServiceSwagger3Config.java",
+      "language": "java",
+      "sizeLines": 65,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/LoginAdminUser.java",
+      "language": "java",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/ShopCartServiceSwagger3Config.java",
+      "language": "java",
+      "sizeLines": 64,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/UserServiceWebMvcConfigurer.java",
+      "language": "java",
+      "sizeLines": 68,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/UserSwagger3Config.java",
+      "language": "java",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "language": "java",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "language": "java",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "language": "java",
+      "sizeLines": 58,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "language": "java",
+      "sizeLines": 91,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudAdminUserController.java",
+      "language": "java",
+      "sizeLines": 113,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudPersonalController.java",
+      "language": "java",
+      "sizeLines": 134,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/AdminLoginParam.java",
+      "language": "java",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/MallUserLoginParam.java",
+      "language": "java",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/MallUserRegisterParam.java",
+      "language": "java",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/MallUserUpdateParam.java",
+      "language": "java",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/UpdateAdminNameParam.java",
+      "language": "java",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/UpdateAdminPasswordParam.java",
+      "language": "java",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/vo/NewBeeMallUserVO.java",
+      "language": "java",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/dao/AdminUserMapper.java",
+      "language": "java",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/dao/MallUserMapper.java",
+      "language": "java",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/entity/AdminUser.java",
+      "language": "java",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/entity/MallUser.java",
+      "language": "java",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/AdminUserService.java",
+      "language": "java",
+      "sizeLines": 67,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/NewBeeMallUserService.java",
+      "language": "java",
+      "sizeLines": 77,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/AdminUserServiceImpl.java",
+      "language": "java",
+      "sizeLines": 118,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/NewBeeMallUserServiceImpl.java",
+      "language": "java",
+      "sizeLines": 146,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {}
+}

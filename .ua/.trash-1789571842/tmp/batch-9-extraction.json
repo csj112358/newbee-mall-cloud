@@ -1,0 +1,262 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 5,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 5,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 5
+    }
+  },
+  "results": [
+    {
+      "path": "static-files/newbee_mall_cloud_cart_db.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 33,
+      "nonEmptyLines": 28,
+      "definitions": [
+        {
+          "name": "tb_newbee_mall_shopping_cart_item",
+          "kind": "table",
+          "fields": [],
+          "startLine": 9,
+          "endLine": 14
+        },
+        {
+          "name": "undo_log",
+          "kind": "table",
+          "fields": [],
+          "startLine": 21,
+          "endLine": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 2
+      }
+    },
+    {
+      "path": "static-files/newbee_mall_cloud_goods_db.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 928,
+      "nonEmptyLines": 917,
+      "definitions": [
+        {
+          "name": "tb_newbee_mall_goods_category",
+          "kind": "table",
+          "fields": [
+            "category_id",
+            "category_level",
+            "parent_id",
+            "category_name",
+            "category_rank",
+            "is_deleted",
+            "create_time",
+            "create_user",
+            "update_time",
+            "update_user"
+          ],
+          "startLine": 10,
+          "endLine": 137
+        },
+        {
+          "name": "tb_newbee_mall_goods_info",
+          "kind": "table",
+          "fields": [
+            "goods_id",
+            "goods_name",
+            "goods_intro",
+            "goods_category_id",
+            "goods_cover_img",
+            "goods_carousel",
+            "goods_detail_content",
+            "original_price",
+            "selling_price",
+            "stock_num",
+            "tag",
+            "goods_sell_status",
+            "create_user",
+            "create_time",
+            "update_user",
+            "update_time"
+          ],
+          "startLine": 143,
+          "endLine": 913
+        },
+        {
+          "name": "undo_log",
+          "kind": "table",
+          "fields": [],
+          "startLine": 916,
+          "endLine": 921
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 3
+      }
+    },
+    {
+      "path": "static-files/newbee_mall_cloud_order_db.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 88,
+      "nonEmptyLines": 76,
+      "definitions": [
+        {
+          "name": "tb_newbee_mall_order",
+          "kind": "table",
+          "fields": [],
+          "startLine": 8,
+          "endLine": 13
+        },
+        {
+          "name": "tb_newbee_mall_order_address",
+          "kind": "table",
+          "fields": [],
+          "startLine": 29,
+          "endLine": 34
+        },
+        {
+          "name": "tb_newbee_mall_order_item",
+          "kind": "table",
+          "fields": [],
+          "startLine": 45,
+          "endLine": 50
+        },
+        {
+          "name": "tb_newbee_mall_user_address",
+          "kind": "table",
+          "fields": [],
+          "startLine": 59,
+          "endLine": 64
+        },
+        {
+          "name": "undo_log",
+          "kind": "table",
+          "fields": [],
+          "startLine": 76,
+          "endLine": 81
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 5
+      }
+    },
+    {
+      "path": "static-files/newbee_mall_cloud_recommend_db.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 78,
+      "nonEmptyLines": 67,
+      "definitions": [
+        {
+          "name": "tb_newbee_mall_index_config",
+          "kind": "table",
+          "fields": [
+            "config_id",
+            "config_name",
+            "config_type",
+            "goods_id",
+            "redirect_url",
+            "config_rank",
+            "is_deleted",
+            "create_time",
+            "create_user",
+            "update_time",
+            "update_user"
+          ],
+          "startLine": 10,
+          "endLine": 50
+        },
+        {
+          "name": "tb_newbee_mall_carousel",
+          "kind": "table",
+          "fields": [
+            "carousel_id",
+            "carousel_url",
+            "redirect_url",
+            "carousel_rank",
+            "is_deleted",
+            "create_time",
+            "create_user",
+            "update_time",
+            "update_user"
+          ],
+          "startLine": 56,
+          "endLine": 78
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 2
+      }
+    },
+    {
+      "path": "static-files/newbee_mall_cloud_user_db.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 48,
+      "nonEmptyLines": 37,
+      "definitions": [
+        {
+          "name": "tb_newbee_mall_admin_user",
+          "kind": "table",
+          "fields": [
+            "admin_user_id",
+            "login_user_name",
+            "login_password",
+            "nick_name",
+            "locked"
+          ],
+          "startLine": 10,
+          "endLine": 25
+        },
+        {
+          "name": "tb_newbee_mall_user",
+          "kind": "table",
+          "fields": [
+            "user_id",
+            "nick_name",
+            "login_name",
+            "password_md5",
+            "introduce_sign",
+            "is_deleted",
+            "locked_flag",
+            "create_time"
+          ],
+          "startLine": 31,
+          "endLine": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 2
+      }
+    }
+  ]
+}

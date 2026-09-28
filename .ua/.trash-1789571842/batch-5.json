@@ -1,0 +1,1060 @@
+{
+  "batchIndex": 5,
+  "projectName": "newbee-mall-cloud",
+  "nodes": [
+    {
+      "id": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "type": "file",
+      "name": "Result.java",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "language": "java",
+      "summary": "统一API响应包装类，使用泛型T封装业务码(resultCode)、提示信息(message)和数据(data)，实现Serializable序列化接口，是整个微服务架构中最基础的响应数据结构。",
+      "tags": ["dto", "response", "泛型", "序列化", "common"],
+      "lines": 66
+    },
+    {
+      "id": "class::ltd.common.cloud.newbee.dto.Result",
+      "type": "class",
+      "name": "Result",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "language": "java",
+      "summary": "泛型响应包装类，包含resultCode(返回码)、message(返回信息)、data(泛型数据)三个核心字段，提供无参和带参构造器及getter/setter方法，通过Swagger注解标注API文档。",
+      "tags": ["dto", "泛型", "响应封装", "Serializable"],
+      "members": ["resultCode", "message", "data"],
+      "methods": ["Result()", "Result(int,String)", "getResultCode", "setResultCode", "getMessage", "setMessage", "getData", "setData", "toString"],
+      "lines": {"start": 13, "end": 66}
+    },
+    {
+      "id": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "type": "file",
+      "name": "ServiceResultEnum.java",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "language": "java",
+      "summary": "全局业务结果枚举类，定义了涵盖用户登录、商品、订单、购物车、权限等各模块的错误码和提示信息常量，是异常处理和业务校验的核心消息来源。",
+      "tags": ["enum", "错误码", "业务枚举", "常量定义", "common"],
+      "lines": 105
+    },
+    {
+      "id": "class::ltd.common.cloud.newbee.enums.ServiceResultEnum",
+      "type": "class",
+      "name": "ServiceResultEnum",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "language": "java",
+      "summary": "业务结果枚举，定义了40+个枚举常量，覆盖登录验证、商品管理、订单处理、购物车、权限控制等全部业务场景的结果消息，每个枚举值携带一个中文或英文结果描述字符串。",
+      "tags": ["enum", "错误码", "业务消息", "全局常量"],
+      "members": ["result"],
+      "methods": ["ServiceResultEnum(String)", "getResult", "setResult"],
+      "lines": {"start": 11, "end": 105}
+    },
+    {
+      "id": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/exception/NewBeeMallException.java",
+      "type": "file",
+      "name": "NewBeeMallException.java",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/exception/NewBeeMallException.java",
+      "language": "java",
+      "summary": "自定义运行时异常类，继承RuntimeException，提供静态工厂方法fail()用于快速抛出业务异常，是整个商城系统统一异常处理的核心异常类型。",
+      "tags": ["exception", "运行时异常", "异常工厂", "common"],
+      "lines": 29
+    },
+    {
+      "id": "class::ltd.common.cloud.newbee.exception.NewBeeMallException",
+      "type": "class",
+      "name": "NewBeeMallException",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/exception/NewBeeMallException.java",
+      "language": "java",
+      "summary": "自定义业务异常类，继承RuntimeException，提供无参和带消息构造器，以及静态fail()方法用于在业务逻辑中直接抛出异常。被全局异常处理器捕获后返回特定错误码。",
+      "tags": ["exception", "RuntimeException", "异常抛出"],
+      "members": [],
+      "methods": ["NewBeeMallException()", "NewBeeMallException(String)", "fail(String)"],
+      "lines": {"start": 11, "end": 29}
+    },
+    {
+      "id": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/NewBeeMallCloudGoodsServiceApplication.java",
+      "type": "file",
+      "name": "NewBeeMallCloudGoodsServiceApplication.java",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/NewBeeMallCloudGoodsServiceApplication.java",
+      "language": "java",
+      "summary": "商品服务微服务启动类，通过@EnableFeignClients启用对用户服务的Feign远程调用，@MapperScan扫描MyBatis DAO层，@EnableDiscoveryClient注册到Nacos服务中心。",
+      "tags": ["启动类", "SpringBoot", "商品服务", "微服务", "Feign"],
+      "lines": 35
+    },
+    {
+      "id": "class::ltd.goods.cloud.newbee.NewBeeMallCloudGoodsServiceApplication",
+      "type": "class",
+      "name": "NewBeeMallCloudGoodsServiceApplication",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/NewBeeMallCloudGoodsServiceApplication.java",
+      "language": "java",
+      "summary": "商品服务启动入口，配置Spring Cloud组件(服务发现、Feign客户端)和MyBatis映射扫描，关闭Nacos日志配置后启动Spring应用。",
+      "tags": ["@SpringBootApplication", "@EnableDiscoveryClient", "@EnableFeignClients"],
+      "members": [],
+      "methods": ["main(String[])"],
+      "lines": {"start": 24, "end": 35}
+    },
+    {
+      "id": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/GoodsServiceExceptionHandler.java",
+      "type": "file",
+      "name": "GoodsServiceExceptionHandler.java",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/GoodsServiceExceptionHandler.java",
+      "language": "java",
+      "summary": "商品服务全局异常处理器，使用@RestControllerAdvice捕获BindException、MethodArgumentNotValidException和通用Exception，针对自定义NewBeeMallException区分登录/认证等不同错误码返回。",
+      "tags": ["异常处理", "全局拦截", "商品服务", "Spring"],
+      "lines": 74
+    },
+    {
+      "id": "class::ltd.goods.cloud.newbee.config.GoodsServiceExceptionHandler",
+      "type": "class",
+      "name": "GoodsServiceExceptionHandler",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/GoodsServiceExceptionHandler.java",
+      "language": "java",
+      "summary": "商品服务全局异常处理器，通过@RestControllerAdvice统一处理三种异常：BindException(参数绑定)、MethodArgumentNotValidException(参数校验)返回510，通用Exception根据异常类型区分419(管理员未登录)、416(用户未登录)和500(未知异常)。",
+      "tags": ["@RestControllerAdvice", "@ExceptionHandler", "统一异常处理"],
+      "members": ["log"],
+      "methods": ["bindException(BindException)", "bindException(MethodArgumentNotValidException)", "handleException(Exception,HttpServletRequest)"],
+      "lines": {"start": 28, "end": 74}
+    },
+    {
+      "id": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/GoodsServiceWebMvcConfigurer.java",
+      "type": "file",
+      "name": "GoodsServiceWebMvcConfigurer.java",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/GoodsServiceWebMvcConfigurer.java",
+      "language": "java",
+      "summary": "商品服务Web MVC配置类，注册管理员和商城用户的Token解析参数解析器，配置Swagger静态资源路径，集成Seata分布式事务拦截器和Sentinel流量控制拦截器。",
+      "tags": ["MVC配置", "拦截器", "参数解析", "Seata", "Sentinel", "商品服务"],
+      "lines": 73
+    },
+    {
+      "id": "class::ltd.goods.cloud.newbee.config.GoodsServiceWebMvcConfigurer",
+      "type": "class",
+      "name": "GoodsServiceWebMvcConfigurer",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/GoodsServiceWebMvcConfigurer.java",
+      "language": "java",
+      "summary": "商品服务MVC配置类，继承WebMvcConfigurationSupport，注册TokenToAdminUser和TokenToMallUser两个参数解析器(@Lazy延迟注入避免循环依赖)，配置Swagger资源映射，添加Seata全局事务拦截器和Sentinel限流拦截器。",
+      "tags": ["@Configuration", "WebMvcConfigurationSupport", "参数解析器注册"],
+      "members": ["log", "sentinelProperties", "sentinelWebInterceptorOptional", "tokenToAdminUserMethodArgumentResolver", "tokenToMallUserMethodArgumentResolver"],
+      "methods": ["addArgumentResolvers", "addResourceHandlers", "addInterceptors"],
+      "lines": {"start": 30, "end": 74}
+    },
+    {
+      "id": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "type": "file",
+      "name": "TokenToAdminUserMethodArgumentResolver.java (goods)",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "language": "java",
+      "summary": "商品服务管理员Token参数解析器，实现HandlerMethodArgumentResolver接口，从请求头提取token并调用用户服务Feign接口验证管理员身份，将返回数据封装为LoginAdminUser对象注入Controller方法参数。",
+      "tags": ["参数解析器", "Token认证", "管理员", "商品服务", "Feign调用"],
+      "lines": 70
+    },
+    {
+      "id": "class::ltd.goods.cloud.newbee.config.handler.TokenToAdminUserMethodArgumentResolver",
+      "type": "class",
+      "name": "TokenToAdminUserMethodArgumentResolver (goods)",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "language": "java",
+      "summary": "管理员Token解析器(商品服务)，实现HandlerMethodArgumentResolver。supportsParameter检查@TokenToAdminUser注解，resolveArgument从header获取32位token后通过NewBeeCloudUserServiceFeign远程验证，成功则从LinkedHashMap构造LoginAdminUser对象返回，失败抛出管理员未登录异常。",
+      "tags": ["HandlerMethodArgumentResolver", "@Component", "Token验证"],
+      "members": ["newBeeCloudUserService"],
+      "methods": ["TokenToAdminUserMethodArgumentResolver()", "supportsParameter(MethodParameter)", "resolveArgument(...)"],
+      "lines": {"start": 27, "end": 70}
+    },
+    {
+      "id": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "type": "file",
+      "name": "TokenToMallUserMethodArgumentResolver.java (goods)",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "language": "java",
+      "summary": "商品服务商城用户Token参数解析器，实现HandlerMethodArgumentResolver接口，从请求头提取token后调用用户服务Feign接口验证普通用户身份，构造MallUserToken对象(含token和userId)注入Controller方法参数。",
+      "tags": ["参数解析器", "Token认证", "商城用户", "商品服务", "Feign调用"],
+      "lines": 61
+    },
+    {
+      "id": "class::ltd.goods.cloud.newbee.config.handler.TokenToMallUserMethodArgumentResolver",
+      "type": "class",
+      "name": "TokenToMallUserMethodArgumentResolver (goods)",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "language": "java",
+      "summary": "商城用户Token解析器(商品服务)，实现HandlerMethodArgumentResolver。检查@TokenToMallUser注解后从header获取token，通过Feign远程调用获取MallUserDTO，构造MallUserToken(token+userId)返回。验证失败抛出登录过期或未登录异常。",
+      "tags": ["HandlerMethodArgumentResolver", "@Component", "Token验证"],
+      "members": ["newBeeCloudUserService"],
+      "methods": ["TokenToMallUserMethodArgumentResolver()", "supportsParameter(MethodParameter)", "resolveArgument(...)"],
+      "lines": {"start": 26, "end": 61}
+    },
+    {
+      "id": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeMallGoodsCategoryController.java",
+      "type": "file",
+      "name": "NewBeeMallGoodsCategoryController.java",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeMallGoodsCategoryController.java",
+      "language": "java",
+      "summary": "商城分类页面控制器，提供分类数据查询接口(/categories/mall/listAll)，调用分类服务获取所有分类数据供前端分类页面展示，无数据时抛出异常。",
+      "tags": ["Controller", "分类", "商品服务", "REST API"],
+      "lines": 44
+    },
+    {
+      "id": "class::ltd.goods.cloud.newbee.controller.NewBeeMallGoodsCategoryController",
+      "type": "class",
+      "name": "NewBeeMallGoodsCategoryController",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeMallGoodsCategoryController.java",
+      "language": "java",
+      "summary": "商城分类页面控制器，映射路径/categories/mall，提供GET /listAll接口获取分类列表。调用NewBeeMallCategoryService.getCategoriesForIndex()获取分类VO列表，若为空则抛出DATA_NOT_EXIST异常，否则通过ResultGenerator返回成功结果。",
+      "tags": ["@RestController", "@Api", "分类查询"],
+      "members": ["newBeeMallCategoryService"],
+      "methods": ["getCategories()"],
+      "lines": {"start": 27, "end": 44}
+    },
+    {
+      "id": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OrderServiceExceptionHandler.java",
+      "type": "file",
+      "name": "OrderServiceExceptionHandler.java",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OrderServiceExceptionHandler.java",
+      "language": "java",
+      "summary": "订单服务全局异常处理器，使用@RestControllerAdvice捕获BindException、MethodArgumentNotValidException和通用Exception，区分管理员登录过期(419)、用户登录过期(416)等自定义异常返回不同错误码。",
+      "tags": ["异常处理", "全局拦截", "订单服务", "Spring"],
+      "lines": 74
+    },
+    {
+      "id": "class::ltd.order.cloud.newbee.config.OrderServiceExceptionHandler",
+      "type": "class",
+      "name": "OrderServiceExceptionHandler",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OrderServiceExceptionHandler.java",
+      "language": "java",
+      "summary": "订单服务全局异常处理器，处理参数绑定异常(510)和通用异常，对NewBeeMallException区分管理员未登录(419)、用户未登录(416)和未知异常(500)三种情况返回对应的错误码和消息。",
+      "tags": ["@RestControllerAdvice", "@ExceptionHandler", "统一异常处理"],
+      "members": ["log"],
+      "methods": ["bindException(BindException)", "bindException(MethodArgumentNotValidException)", "handleException(Exception,HttpServletRequest)"],
+      "lines": {"start": 28, "end": 74}
+    },
+    {
+      "id": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OrderServiceWebMvcConfigurer.java",
+      "type": "file",
+      "name": "OrderServiceWebMvcConfigurer.java",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OrderServiceWebMvcConfigurer.java",
+      "language": "java",
+      "summary": "订单服务Web MVC配置类，注册管理员和商城用户的Token解析参数解析器，配置Swagger静态资源路径，集成Sentinel流量控制拦截器（无Seata拦截器）。",
+      "tags": ["MVC配置", "拦截器", "参数解析", "Sentinel", "订单服务"],
+      "lines": 71
+    },
+    {
+      "id": "class::ltd.order.cloud.newbee.config.OrderServiceWebMvcConfigurer",
+      "type": "class",
+      "name": "OrderServiceWebMvcConfigurer",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OrderServiceWebMvcConfigurer.java",
+      "language": "java",
+      "summary": "订单服务MVC配置类，继承WebMvcConfigurationSupport，注册TokenToAdminUser和TokenToMallUser参数解析器(@Lazy延迟注入)，配置Swagger资源映射，添加Sentinel限流拦截器（与商品服务不同，未集成Seata拦截器）。",
+      "tags": ["@Configuration", "WebMvcConfigurationSupport", "参数解析器注册"],
+      "members": ["log", "sentinelProperties", "sentinelWebInterceptorOptional", "tokenToAdminUserMethodArgumentResolver", "tokenToMallUserMethodArgumentResolver"],
+      "methods": ["addArgumentResolvers", "addResourceHandlers", "addInterceptors"],
+      "lines": {"start": 29, "end": 71}
+    },
+    {
+      "id": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "type": "file",
+      "name": "TokenToAdminUserMethodArgumentResolver.java (order)",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "language": "java",
+      "summary": "订单服务管理员Token参数解析器，逻辑与商品服务版本一致：从请求头提取token通过Feign调用用户服务验证管理员身份，封装LoginAdminUser对象注入Controller。",
+      "tags": ["参数解析器", "Token认证", "管理员", "订单服务", "Feign调用"],
+      "lines": 71
+    },
+    {
+      "id": "class::ltd.order.cloud.newbee.config.handler.TokenToAdminUserMethodArgumentResolver",
+      "type": "class",
+      "name": "TokenToAdminUserMethodArgumentResolver (order)",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "language": "java",
+      "summary": "管理员Token解析器(订单服务)，实现HandlerMethodArgumentResolver。与商品服务版本逻辑相同，通过Feign远程调用用户服务验证管理员token有效性并封装LoginAdminUser对象。",
+      "tags": ["HandlerMethodArgumentResolver", "@Component", "Token验证"],
+      "members": ["newBeeCloudUserService"],
+      "methods": ["TokenToAdminUserMethodArgumentResolver()", "supportsParameter(MethodParameter)", "resolveArgument(...)"],
+      "lines": {"start": 29, "end": 71}
+    },
+    {
+      "id": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "type": "file",
+      "name": "TokenToMallUserMethodArgumentResolver.java (order)",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "language": "java",
+      "summary": "订单服务商城用户Token参数解析器，逻辑与商品服务版本一致：从请求头提取token通过Feign调用用户服务验证普通用户身份，构造MallUserToken对象注入Controller。",
+      "tags": ["参数解析器", "Token认证", "商城用户", "订单服务", "Feign调用"],
+      "lines": 61
+    },
+    {
+      "id": "class::ltd.order.cloud.newbee.config.handler.TokenToMallUserMethodArgumentResolver",
+      "type": "class",
+      "name": "TokenToMallUserMethodArgumentResolver (order)",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "language": "java",
+      "summary": "商城用户Token解析器(订单服务)，实现HandlerMethodArgumentResolver。与商品服务版本逻辑相同，通过Feign远程调用获取MallUserDTO后构造MallUserToken返回。",
+      "tags": ["HandlerMethodArgumentResolver", "@Component", "Token验证"],
+      "members": ["newBeeCloudUserService"],
+      "methods": ["TokenToMallUserMethodArgumentResolver()", "supportsParameter(MethodParameter)", "resolveArgument(...)"],
+      "lines": {"start": 27, "end": 61}
+    },
+    {
+      "id": "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/NewBeeMallCloudRecommendServiceApplication.java",
+      "type": "file",
+      "name": "NewBeeMallCloudRecommendServiceApplication.java",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/NewBeeMallCloudRecommendServiceApplication.java",
+      "language": "java",
+      "summary": "推荐服务微服务启动类，同时启用用户服务和商品服务的Feign客户端(依赖商品API获取商品数据用于推荐)，注册到Nacos服务中心并扫描MyBatis映射。",
+      "tags": ["启动类", "SpringBoot", "推荐服务", "微服务", "Feign"],
+      "lines": 37
+    },
+    {
+      "id": "class::ltd.recommend.cloud.newbee.NewBeeMallCloudRecommendServiceApplication",
+      "type": "class",
+      "name": "NewBeeMallCloudRecommendServiceApplication",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/NewBeeMallCloudRecommendServiceApplication.java",
+      "language": "java",
+      "summary": "推荐服务启动入口，与商品服务不同的是同时启用了NewBeeCloudUserServiceFeign和NewBeeCloudGoodsServiceFeign两个Feign客户端，因为推荐服务需要同时调用用户服务和商品服务获取数据。",
+      "tags": ["@SpringBootApplication", "@EnableDiscoveryClient", "@EnableFeignClients"],
+      "members": [],
+      "methods": ["main(String[])"],
+      "lines": {"start": 24, "end": 37}
+    },
+    {
+      "id": "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/RecommendServiceExceptionHandler.java",
+      "type": "file",
+      "name": "RecommendServiceExceptionHandler.java",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/RecommendServiceExceptionHandler.java",
+      "language": "java",
+      "summary": "推荐服务全局异常处理器，捕获参数绑定异常和通用异常，仅对管理员未登录/过期返回419错误码（不处理普通用户未登录416），其余返回500。",
+      "tags": ["异常处理", "全局拦截", "推荐服务", "Spring"],
+      "lines": 71
+    },
+    {
+      "id": "class::ltd.recommend.cloud.newbee.config.RecommendServiceExceptionHandler",
+      "type": "class",
+      "name": "RecommendServiceExceptionHandler",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/RecommendServiceExceptionHandler.java",
+      "language": "java",
+      "summary": "推荐服务全局异常处理器，与其他服务不同的是只处理管理员登录过期(419)，不处理普通用户登录过期(416)，因为推荐服务主要面向管理员管理首页推荐数据。",
+      "tags": ["@RestControllerAdvice", "@ExceptionHandler", "统一异常处理"],
+      "members": ["log"],
+      "methods": ["bindException(BindException)", "bindException(MethodArgumentNotValidException)", "handleException(Exception,HttpServletRequest)"],
+      "lines": {"start": 29, "end": 71}
+    },
+    {
+      "id": "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/RecommendServiceWebMvcConfigurer.java",
+      "type": "file",
+      "name": "RecommendServiceWebMvcConfigurer.java",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/RecommendServiceWebMvcConfigurer.java",
+      "language": "java",
+      "summary": "推荐服务Web MVC配置类，仅注册管理员Token解析器（不注册商城用户解析器），配置Swagger静态资源和Sentinel限流拦截器。",
+      "tags": ["MVC配置", "拦截器", "参数解析", "Sentinel", "推荐服务"],
+      "lines": 64
+    },
+    {
+      "id": "class::ltd.recommend.cloud.newbee.config.RecommendServiceWebMvcConfigurer",
+      "type": "class",
+      "name": "RecommendServiceWebMvcConfigurer",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/RecommendServiceWebMvcConfigurer.java",
+      "language": "java",
+      "summary": "推荐服务MVC配置类，与其他服务不同的是只注册TokenToAdminUser参数解析器（推荐服务只有管理员接口），配置Swagger资源映射和Sentinel限流拦截器。",
+      "tags": ["@Configuration", "WebMvcConfigurationSupport", "参数解析器注册"],
+      "members": ["log", "sentinelProperties", "sentinelWebInterceptorOptional", "tokenToAdminUserMethodArgumentResolver"],
+      "methods": ["addArgumentResolvers", "addResourceHandlers", "addInterceptors"],
+      "lines": {"start": 29, "end": 64}
+    },
+    {
+      "id": "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "type": "file",
+      "name": "TokenToAdminUserMethodArgumentResolver.java (recommend)",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "language": "java",
+      "summary": "推荐服务管理员Token参数解析器，实现HandlerMethodArgumentResolver接口，从请求头提取token调用用户服务Feign接口验证管理员身份，封装LoginAdminUser对象。",
+      "tags": ["参数解析器", "Token认证", "管理员", "推荐服务", "Feign调用"],
+      "lines": 70
+    },
+    {
+      "id": "class::ltd.recommend.cloud.newbee.config.handler.TokenToAdminUserMethodArgumentResolver",
+      "type": "class",
+      "name": "TokenToAdminUserMethodArgumentResolver (recommend)",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "language": "java",
+      "summary": "管理员Token解析器(推荐服务)，实现HandlerMethodArgumentResolver。逻辑与商品服务/订单服务版本相同，通过Feign远程验证管理员token并构造LoginAdminUser对象。",
+      "tags": ["HandlerMethodArgumentResolver", "@Component", "Token验证"],
+      "members": ["newBeeCloudUserService"],
+      "methods": ["TokenToAdminUserMethodArgumentResolver()", "supportsParameter(MethodParameter)", "resolveArgument(...)"],
+      "lines": {"start": 28, "end": 70}
+    },
+    {
+      "id": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/ShopCartServiceExceptionHandler.java",
+      "type": "file",
+      "name": "ShopCartServiceExceptionHandler.java",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/ShopCartServiceExceptionHandler.java",
+      "language": "java",
+      "summary": "购物车服务全局异常处理器，捕获参数绑定异常和通用异常，仅处理普通用户未登录/过期返回416错误码（不处理管理员419），因为购物车服务仅面向普通商城用户。",
+      "tags": ["异常处理", "全局拦截", "购物车服务", "Spring"],
+      "lines": 71
+    },
+    {
+      "id": "class::ltd.shopcart.cloud.newbee.config.ShopCartServiceExceptionHandler",
+      "type": "class",
+      "name": "ShopCartServiceExceptionHandler",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/ShopCartServiceExceptionHandler.java",
+      "language": "java",
+      "summary": "购物车服务全局异常处理器，与其他服务不同的是只处理普通用户未登录/过期(416)，不处理管理员异常(419)，因为购物车服务完全面向商城普通用户。",
+      "tags": ["@RestControllerAdvice", "@ExceptionHandler", "统一异常处理"],
+      "members": ["log"],
+      "methods": ["bindException(BindException)", "bindException(MethodArgumentNotValidException)", "handleException(Exception,HttpServletRequest)"],
+      "lines": {"start": 29, "end": 71}
+    },
+    {
+      "id": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/ShopCartServiceWebMvcConfigurer.java",
+      "type": "file",
+      "name": "ShopCartServiceWebMvcConfigurer.java",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/ShopCartServiceWebMvcConfigurer.java",
+      "language": "java",
+      "summary": "购物车服务Web MVC配置类，仅注册商城用户Token解析器（不注册管理员解析器），配置Swagger资源、Seata分布式事务拦截器和Sentinel限流拦截器。",
+      "tags": ["MVC配置", "拦截器", "参数解析", "Seata", "Sentinel", "购物车服务"],
+      "lines": 67
+    },
+    {
+      "id": "class::ltd.shopcart.cloud.newbee.config.ShopCartServiceWebMvcConfigurer",
+      "type": "class",
+      "name": "ShopCartServiceWebMvcConfigurer",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/ShopCartServiceWebMvcConfigurer.java",
+      "language": "java",
+      "summary": "购物车服务MVC配置类，与其他服务不同的是只注册TokenToMallUser参数解析器（购物车服务仅面向普通用户），同时集成了Seata和Sentinel拦截器。",
+      "tags": ["@Configuration", "WebMvcConfigurationSupport", "参数解析器注册"],
+      "members": ["log", "sentinelProperties", "sentinelWebInterceptorOptional", "tokenToMallUserMethodArgumentResolver"],
+      "methods": ["addArgumentResolvers", "addResourceHandlers", "addInterceptors"],
+      "lines": {"start": 31, "end": 67}
+    },
+    {
+      "id": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "type": "file",
+      "name": "TokenToMallUserMethodArgumentResolver.java (shopcart)",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "language": "java",
+      "summary": "购物车服务商城用户Token参数解析器，实现HandlerMethodArgumentResolver接口，从请求头提取token通过Feign调用用户服务验证普通用户身份，构造MallUserToken对象。",
+      "tags": ["参数解析器", "Token认证", "商城用户", "购物车服务", "Feign调用"],
+      "lines": 61
+    },
+    {
+      "id": "class::ltd.shopcart.cloud.newbee.config.handler.TokenToMallUserMethodArgumentResolver",
+      "type": "class",
+      "name": "TokenToMallUserMethodArgumentResolver (shopcart)",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "language": "java",
+      "summary": "商城用户Token解析器(购物车服务)，实现HandlerMethodArgumentResolver。与商品服务/订单服务版本逻辑相同，通过Feign远程获取MallUserDTO后构造MallUserToken返回。",
+      "tags": ["HandlerMethodArgumentResolver", "@Component", "Token验证"],
+      "members": ["newBeeCloudUserService"],
+      "methods": ["TokenToMallUserMethodArgumentResolver()", "supportsParameter(MethodParameter)", "resolveArgument(...)"],
+      "lines": {"start": 27, "end": 61}
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/dto/MallUserDTO.java",
+      "type": "file",
+      "name": "MallUserDTO.java",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/dto/MallUserDTO.java",
+      "language": "java",
+      "summary": "商城用户数据传输对象(DTO)，包含userId、nickName、loginName、introduceSign四个字段，实现Serializable接口，用于跨服务传输用户基础信息。",
+      "tags": ["dto", "数据传输", "用户信息", "user-api"],
+      "lines": 45
+    },
+    {
+      "id": "class::ltd.user.cloud.newbee.dto.MallUserDTO",
+      "type": "class",
+      "name": "MallUserDTO",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/dto/MallUserDTO.java",
+      "language": "java",
+      "summary": "商城用户DTO，实现Serializable序列化接口，包含用户ID(userId)、昵称(nickName)、登录名(loginName)和个性签名(introduceSign)四个字段及对应的getter/setter。作为用户服务API模块的核心DTO，被其他微服务通过Feign远程调用获取。",
+      "tags": ["DTO", "Serializable", "用户数据"],
+      "members": ["userId", "nickName", "loginName", "introduceSign"],
+      "methods": ["getUserId", "setUserId", "getNickName", "setNickName", "getLoginName", "setLoginName", "getIntroduceSign", "setIntroduceSign"],
+      "lines": {"start": 5, "end": 45}
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/openfeign/NewBeeCloudUserServiceFeign.java",
+      "type": "file",
+      "name": "NewBeeCloudUserServiceFeign.java",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/openfeign/NewBeeCloudUserServiceFeign.java",
+      "language": "java",
+      "summary": "用户服务Feign客户端接口，定义了两个远程调用方法：通过token获取管理员信息(getAdminUserByToken)和通过token获取商城用户信息(getMallUserByToken)，是各业务服务调用用户中心的核心API接口。",
+      "tags": ["Feign", "远程调用", "用户服务API", "openfeign", "微服务通信"],
+      "lines": 26
+    },
+    {
+      "id": "interface::ltd.user.cloud.newbee.openfeign.NewBeeCloudUserServiceFeign",
+      "type": "interface",
+      "name": "NewBeeCloudUserServiceFeign",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/openfeign/NewBeeCloudUserServiceFeign.java",
+      "language": "java",
+      "summary": "用户服务Feign客户端接口，@FeignClient指向newbee-mall-cloud-user-service服务(path=/users)。提供getAdminUserByToken(GET /admin/{token})和getMallUserByToken(GET /mall/getDetailByToken)两个方法，分别用于管理员token验证和商城用户token验证。被商品、订单、推荐、购物车等多个服务依赖。",
+      "tags": ["@FeignClient", "远程接口", "用户认证API"],
+      "members": [],
+      "methods": ["getAdminUserByToken(String)", "getMallUserByToken(String)"],
+      "lines": {"start": 18, "end": 26}
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/UserServiceExceptionHandler.java",
+      "type": "file",
+      "name": "UserServiceExceptionHandler.java",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/UserServiceExceptionHandler.java",
+      "language": "java",
+      "summary": "用户服务全局异常处理器，同时处理管理员和普通用户的登录过期异常(419和416)，以及参数绑定异常(510)和未知异常(500)。作为用户中心的异常处理器，覆盖最完整的异常场景。",
+      "tags": ["异常处理", "全局拦截", "用户服务", "Spring"],
+      "lines": 74
+    },
+    {
+      "id": "class::ltd.user.cloud.newbee.config.UserServiceExceptionHandler",
+      "type": "class",
+      "name": "UserServiceExceptionHandler",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/UserServiceExceptionHandler.java",
+      "language": "java",
+      "summary": "用户服务全局异常处理器，是最完整的异常处理器，同时处理管理员未登录/过期(419)和普通用户未登录/过期(416)两种认证异常，因为用户服务需要同时支撑管理员和普通用户的认证流程。",
+      "tags": ["@RestControllerAdvice", "@ExceptionHandler", "统一异常处理"],
+      "members": ["log"],
+      "methods": ["bindException(BindException)", "bindException(MethodArgumentNotValidException)", "handleException(Exception,HttpServletRequest)"],
+      "lines": {"start": 29, "end": 74}
+    }
+  ],
+  "edges": [
+    {
+      "source": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/NewBeeMallCloudGoodsServiceApplication.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/openfeign/NewBeeCloudUserServiceFeign.java",
+      "type": "imports",
+      "label": "Feign客户端启用"
+    },
+    {
+      "source": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/GoodsServiceExceptionHandler.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "type": "imports",
+      "label": "使用Result封装响应"
+    },
+    {
+      "source": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/GoodsServiceExceptionHandler.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "type": "imports",
+      "label": "使用枚举判断异常类型"
+    },
+    {
+      "source": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/GoodsServiceExceptionHandler.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/exception/NewBeeMallException.java",
+      "type": "imports",
+      "label": "instanceof判断自定义异常"
+    },
+    {
+      "source": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/GoodsServiceWebMvcConfigurer.java",
+      "target": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "type": "imports",
+      "label": "注入管理员Token解析器"
+    },
+    {
+      "source": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/GoodsServiceWebMvcConfigurer.java",
+      "target": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "type": "imports",
+      "label": "注入商城用户Token解析器"
+    },
+    {
+      "source": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "type": "imports",
+      "label": "使用Result接收Feign响应"
+    },
+    {
+      "source": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "type": "imports",
+      "label": "使用管理员未登录错误码"
+    },
+    {
+      "source": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/exception/NewBeeMallException.java",
+      "type": "imports",
+      "label": "调用fail()抛出异常"
+    },
+    {
+      "source": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/openfeign/NewBeeCloudUserServiceFeign.java",
+      "type": "imports",
+      "label": "Feign远程调用验证管理员Token"
+    },
+    {
+      "source": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "type": "imports",
+      "label": "使用Result接收Feign响应"
+    },
+    {
+      "source": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "type": "imports",
+      "label": "使用登录过期错误码"
+    },
+    {
+      "source": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/exception/NewBeeMallException.java",
+      "type": "imports",
+      "label": "调用fail()抛出异常"
+    },
+    {
+      "source": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/dto/MallUserDTO.java",
+      "type": "imports",
+      "label": "使用MallUserDTO获取用户ID"
+    },
+    {
+      "source": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/openfeign/NewBeeCloudUserServiceFeign.java",
+      "type": "imports",
+      "label": "Feign远程调用验证用户Token"
+    },
+    {
+      "source": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeMallGoodsCategoryController.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "type": "imports",
+      "label": "使用Result作为返回类型"
+    },
+    {
+      "source": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeMallGoodsCategoryController.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "type": "imports",
+      "label": "使用数据不存在错误码"
+    },
+    {
+      "source": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeMallGoodsCategoryController.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/exception/NewBeeMallException.java",
+      "type": "imports",
+      "label": "调用fail()抛出异常"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OrderServiceExceptionHandler.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "type": "imports",
+      "label": "使用Result封装响应"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OrderServiceExceptionHandler.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "type": "imports",
+      "label": "使用枚举判断异常类型"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OrderServiceExceptionHandler.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/exception/NewBeeMallException.java",
+      "type": "imports",
+      "label": "instanceof判断自定义异常"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OrderServiceWebMvcConfigurer.java",
+      "target": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "type": "imports",
+      "label": "注入管理员Token解析器"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OrderServiceWebMvcConfigurer.java",
+      "target": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "type": "imports",
+      "label": "注入商城用户Token解析器"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "type": "imports",
+      "label": "使用Result接收Feign响应"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "type": "imports",
+      "label": "使用管理员未登录错误码"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/exception/NewBeeMallException.java",
+      "type": "imports",
+      "label": "调用fail()抛出异常"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/openfeign/NewBeeCloudUserServiceFeign.java",
+      "type": "imports",
+      "label": "Feign远程调用验证管理员Token"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "type": "imports",
+      "label": "使用Result接收Feign响应"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "type": "imports",
+      "label": "使用登录过期错误码"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/exception/NewBeeMallException.java",
+      "type": "imports",
+      "label": "调用fail()抛出异常"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/dto/MallUserDTO.java",
+      "type": "imports",
+      "label": "使用MallUserDTO获取用户ID"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/openfeign/NewBeeCloudUserServiceFeign.java",
+      "type": "imports",
+      "label": "Feign远程调用验证用户Token"
+    },
+    {
+      "source": "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/NewBeeMallCloudRecommendServiceApplication.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/openfeign/NewBeeCloudUserServiceFeign.java",
+      "type": "imports",
+      "label": "Feign客户端启用"
+    },
+    {
+      "source": "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/RecommendServiceExceptionHandler.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "type": "imports",
+      "label": "使用Result封装响应"
+    },
+    {
+      "source": "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/RecommendServiceExceptionHandler.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "type": "imports",
+      "label": "使用枚举判断异常类型"
+    },
+    {
+      "source": "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/RecommendServiceExceptionHandler.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/exception/NewBeeMallException.java",
+      "type": "imports",
+      "label": "instanceof判断自定义异常"
+    },
+    {
+      "source": "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/RecommendServiceWebMvcConfigurer.java",
+      "target": "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "type": "imports",
+      "label": "注入管理员Token解析器"
+    },
+    {
+      "source": "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "type": "imports",
+      "label": "使用Result接收Feign响应"
+    },
+    {
+      "source": "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "type": "imports",
+      "label": "使用管理员未登录错误码"
+    },
+    {
+      "source": "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/exception/NewBeeMallException.java",
+      "type": "imports",
+      "label": "调用fail()抛出异常"
+    },
+    {
+      "source": "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/openfeign/NewBeeCloudUserServiceFeign.java",
+      "type": "imports",
+      "label": "Feign远程调用验证管理员Token"
+    },
+    {
+      "source": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/ShopCartServiceExceptionHandler.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "type": "imports",
+      "label": "使用Result封装响应"
+    },
+    {
+      "source": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/ShopCartServiceExceptionHandler.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "type": "imports",
+      "label": "使用枚举判断异常类型"
+    },
+    {
+      "source": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/ShopCartServiceExceptionHandler.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/exception/NewBeeMallException.java",
+      "type": "imports",
+      "label": "instanceof判断自定义异常"
+    },
+    {
+      "source": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/ShopCartServiceWebMvcConfigurer.java",
+      "target": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "type": "imports",
+      "label": "注入商城用户Token解析器"
+    },
+    {
+      "source": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "type": "imports",
+      "label": "使用Result接收Feign响应"
+    },
+    {
+      "source": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "type": "imports",
+      "label": "使用登录过期错误码"
+    },
+    {
+      "source": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/exception/NewBeeMallException.java",
+      "type": "imports",
+      "label": "调用fail()抛出异常"
+    },
+    {
+      "source": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/dto/MallUserDTO.java",
+      "type": "imports",
+      "label": "使用MallUserDTO获取用户ID"
+    },
+    {
+      "source": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/openfeign/NewBeeCloudUserServiceFeign.java",
+      "type": "imports",
+      "label": "Feign远程调用验证用户Token"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/openfeign/NewBeeCloudUserServiceFeign.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "type": "imports",
+      "label": "使用Result作为返回类型"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/openfeign/NewBeeCloudUserServiceFeign.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/dto/MallUserDTO.java",
+      "type": "imports",
+      "label": "使用MallUserDTO作为泛型参数"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/UserServiceExceptionHandler.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "type": "imports",
+      "label": "使用Result封装响应"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/UserServiceExceptionHandler.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "type": "imports",
+      "label": "使用枚举判断异常类型"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/UserServiceExceptionHandler.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/exception/NewBeeMallException.java",
+      "type": "imports",
+      "label": "instanceof判断自定义异常"
+    },
+    {
+      "source": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "target": "class::ltd.common.cloud.newbee.dto.Result",
+      "type": "contains",
+      "label": "包含"
+    },
+    {
+      "source": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "target": "class::ltd.common.cloud.newbee.enums.ServiceResultEnum",
+      "type": "contains",
+      "label": "包含"
+    },
+    {
+      "source": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/exception/NewBeeMallException.java",
+      "target": "class::ltd.common.cloud.newbee.exception.NewBeeMallException",
+      "type": "contains",
+      "label": "包含"
+    },
+    {
+      "source": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/NewBeeMallCloudGoodsServiceApplication.java",
+      "target": "class::ltd.goods.cloud.newbee.NewBeeMallCloudGoodsServiceApplication",
+      "type": "contains",
+      "label": "包含"
+    },
+    {
+      "source": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/GoodsServiceExceptionHandler.java",
+      "target": "class::ltd.goods.cloud.newbee.config.GoodsServiceExceptionHandler",
+      "type": "contains",
+      "label": "包含"
+    },
+    {
+      "source": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/GoodsServiceWebMvcConfigurer.java",
+      "target": "class::ltd.goods.cloud.newbee.config.GoodsServiceWebMvcConfigurer",
+      "type": "contains",
+      "label": "包含"
+    },
+    {
+      "source": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "target": "class::ltd.goods.cloud.newbee.config.handler.TokenToAdminUserMethodArgumentResolver",
+      "type": "contains",
+      "label": "包含"
+    },
+    {
+      "source": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "target": "class::ltd.goods.cloud.newbee.config.handler.TokenToMallUserMethodArgumentResolver",
+      "type": "contains",
+      "label": "包含"
+    },
+    {
+      "source": "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeMallGoodsCategoryController.java",
+      "target": "class::ltd.goods.cloud.newbee.controller.NewBeeMallGoodsCategoryController",
+      "type": "contains",
+      "label": "包含"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OrderServiceExceptionHandler.java",
+      "target": "class::ltd.order.cloud.newbee.config.OrderServiceExceptionHandler",
+      "type": "contains",
+      "label": "包含"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OrderServiceWebMvcConfigurer.java",
+      "target": "class::ltd.order.cloud.newbee.config.OrderServiceWebMvcConfigurer",
+      "type": "contains",
+      "label": "包含"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "target": "class::ltd.order.cloud.newbee.config.handler.TokenToAdminUserMethodArgumentResolver",
+      "type": "contains",
+      "label": "包含"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "target": "class::ltd.order.cloud.newbee.config.handler.TokenToMallUserMethodArgumentResolver",
+      "type": "contains",
+      "label": "包含"
+    },
+    {
+      "source": "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/NewBeeMallCloudRecommendServiceApplication.java",
+      "target": "class::ltd.recommend.cloud.newbee.NewBeeMallCloudRecommendServiceApplication",
+      "type": "contains",
+      "label": "包含"
+    },
+    {
+      "source": "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/RecommendServiceExceptionHandler.java",
+      "target": "class::ltd.recommend.cloud.newbee.config.RecommendServiceExceptionHandler",
+      "type": "contains",
+      "label": "包含"
+    },
+    {
+      "source": "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/RecommendServiceWebMvcConfigurer.java",
+      "target": "class::ltd.recommend.cloud.newbee.config.RecommendServiceWebMvcConfigurer",
+      "type": "contains",
+      "label": "包含"
+    },
+    {
+      "source": "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "target": "class::ltd.recommend.cloud.newbee.config.handler.TokenToAdminUserMethodArgumentResolver",
+      "type": "contains",
+      "label": "包含"
+    },
+    {
+      "source": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/ShopCartServiceExceptionHandler.java",
+      "target": "class::ltd.shopcart.cloud.newbee.config.ShopCartServiceExceptionHandler",
+      "type": "contains",
+      "label": "包含"
+    },
+    {
+      "source": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/ShopCartServiceWebMvcConfigurer.java",
+      "target": "class::ltd.shopcart.cloud.newbee.config.ShopCartServiceWebMvcConfigurer",
+      "type": "contains",
+      "label": "包含"
+    },
+    {
+      "source": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "target": "class::ltd.shopcart.cloud.newbee.config.handler.TokenToMallUserMethodArgumentResolver",
+      "type": "contains",
+      "label": "包含"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/dto/MallUserDTO.java",
+      "target": "class::ltd.user.cloud.newbee.dto.MallUserDTO",
+      "type": "contains",
+      "label": "包含"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/openfeign/NewBeeCloudUserServiceFeign.java",
+      "target": "interface::ltd.user.cloud.newbee.openfeign.NewBeeCloudUserServiceFeign",
+      "type": "contains",
+      "label": "包含"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/UserServiceExceptionHandler.java",
+      "target": "class::ltd.user.cloud.newbee.config.UserServiceExceptionHandler",
+      "type": "contains",
+      "label": "包含"
+    },
+    {
+      "source": "class::ltd.goods.cloud.newbee.config.handler.TokenToAdminUserMethodArgumentResolver",
+      "target": "interface::ltd.user.cloud.newbee.openfeign.NewBeeCloudUserServiceFeign",
+      "type": "calls",
+      "label": "调用getAdminUserByToken验证管理员"
+    },
+    {
+      "source": "class::ltd.goods.cloud.newbee.config.handler.TokenToMallUserMethodArgumentResolver",
+      "target": "interface::ltd.user.cloud.newbee.openfeign.NewBeeCloudUserServiceFeign",
+      "type": "calls",
+      "label": "调用getMallUserByToken验证用户"
+    },
+    {
+      "source": "class::ltd.order.cloud.newbee.config.handler.TokenToAdminUserMethodArgumentResolver",
+      "target": "interface::ltd.user.cloud.newbee.openfeign.NewBeeCloudUserServiceFeign",
+      "type": "calls",
+      "label": "调用getAdminUserByToken验证管理员"
+    },
+    {
+      "source": "class::ltd.order.cloud.newbee.config.handler.TokenToMallUserMethodArgumentResolver",
+      "target": "interface::ltd.user.cloud.newbee.openfeign.NewBeeCloudUserServiceFeign",
+      "type": "calls",
+      "label": "调用getMallUserByToken验证用户"
+    },
+    {
+      "source": "class::ltd.recommend.cloud.newbee.config.handler.TokenToAdminUserMethodArgumentResolver",
+      "target": "interface::ltd.user.cloud.newbee.openfeign.NewBeeCloudUserServiceFeign",
+      "type": "calls",
+      "label": "调用getAdminUserByToken验证管理员"
+    },
+    {
+      "source": "class::ltd.shopcart.cloud.newbee.config.handler.TokenToMallUserMethodArgumentResolver",
+      "target": "interface::ltd.user.cloud.newbee.openfeign.NewBeeCloudUserServiceFeign",
+      "type": "calls",
+      "label": "调用getMallUserByToken验证用户"
+    },
+    {
+      "source": "class::ltd.goods.cloud.newbee.config.handler.TokenToAdminUserMethodArgumentResolver",
+      "target": "class::ltd.common.cloud.newbee.exception.NewBeeMallException",
+      "type": "calls",
+      "label": "调用fail()抛出未登录异常"
+    },
+    {
+      "source": "class::ltd.goods.cloud.newbee.config.handler.TokenToMallUserMethodArgumentResolver",
+      "target": "class::ltd.common.cloud.newbee.exception.NewBeeMallException",
+      "type": "calls",
+      "label": "调用fail()抛出登录过期异常"
+    },
+    {
+      "source": "class::ltd.order.cloud.newbee.config.handler.TokenToAdminUserMethodArgumentResolver",
+      "target": "class::ltd.common.cloud.newbee.exception.NewBeeMallException",
+      "type": "calls",
+      "label": "调用fail()抛出未登录异常"
+    },
+    {
+      "source": "class::ltd.order.cloud.newbee.config.handler.TokenToMallUserMethodArgumentResolver",
+      "target": "class::ltd.common.cloud.newbee.exception.NewBeeMallException",
+      "type": "calls",
+      "label": "调用fail()抛出登录过期异常"
+    },
+    {
+      "source": "class::ltd.recommend.cloud.newbee.config.handler.TokenToAdminUserMethodArgumentResolver",
+      "target": "class::ltd.common.cloud.newbee.exception.NewBeeMallException",
+      "type": "calls",
+      "label": "调用fail()抛出未登录异常"
+    },
+    {
+      "source": "class::ltd.shopcart.cloud.newbee.config.handler.TokenToMallUserMethodArgumentResolver",
+      "target": "class::ltd.common.cloud.newbee.exception.NewBeeMallException",
+      "type": "calls",
+      "label": "调用fail()抛出登录过期异常"
+    },
+    {
+      "source": "class::ltd.goods.cloud.newbee.controller.NewBeeMallGoodsCategoryController",
+      "target": "class::ltd.common.cloud.newbee.exception.NewBeeMallException",
+      "type": "calls",
+      "label": "调用fail()抛出数据不存在异常"
+    }
+  ]
+}

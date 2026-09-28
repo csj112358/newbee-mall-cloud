@@ -1,0 +1,42 @@
+{
+  "projectRoot": "E:/Github/newbee-mall-cloud",
+  "batchFiles": [
+    {
+      "path": "static-files/newbee_mall_cloud_cart_db.sql",
+      "language": "sql",
+      "sizeLines": 32,
+      "fileCategory": "data"
+    },
+    {
+      "path": "static-files/newbee_mall_cloud_goods_db.sql",
+      "language": "sql",
+      "sizeLines": 927,
+      "fileCategory": "data"
+    },
+    {
+      "path": "static-files/newbee_mall_cloud_order_db.sql",
+      "language": "sql",
+      "sizeLines": 87,
+      "fileCategory": "data"
+    },
+    {
+      "path": "static-files/newbee_mall_cloud_recommend_db.sql",
+      "language": "sql",
+      "sizeLines": 77,
+      "fileCategory": "data"
+    },
+    {
+      "path": "static-files/newbee_mall_cloud_user_db.sql",
+      "language": "sql",
+      "sizeLines": 47,
+      "fileCategory": "data"
+    }
+  ],
+  "batchImportData": {
+    "static-files/newbee_mall_cloud_cart_db.sql": [],
+    "static-files/newbee_mall_cloud_goods_db.sql": [],
+    "static-files/newbee_mall_cloud_order_db.sql": [],
+    "static-files/newbee_mall_cloud_recommend_db.sql": [],
+    "static-files/newbee_mall_cloud_user_db.sql": []
+  }
+}

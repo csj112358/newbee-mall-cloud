@@ -1,0 +1,1560 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 10,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 10,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 10,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageResult.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 89,
+      "nonEmptyLines": 69,
+      "functions": [
+        {
+          "name": "PageResult",
+          "startLine": 41,
+          "endLine": 47,
+          "params": [
+            "list",
+            "totalCount",
+            "pageSize",
+            "currPage"
+          ]
+        },
+        {
+          "name": "getTotalCount",
+          "startLine": 49,
+          "endLine": 51,
+          "params": []
+        },
+        {
+          "name": "setTotalCount",
+          "startLine": 53,
+          "endLine": 55,
+          "params": [
+            "totalCount"
+          ]
+        },
+        {
+          "name": "getPageSize",
+          "startLine": 57,
+          "endLine": 59,
+          "params": []
+        },
+        {
+          "name": "setPageSize",
+          "startLine": 61,
+          "endLine": 63,
+          "params": [
+            "pageSize"
+          ]
+        },
+        {
+          "name": "getTotalPage",
+          "startLine": 65,
+          "endLine": 67,
+          "params": []
+        },
+        {
+          "name": "setTotalPage",
+          "startLine": 69,
+          "endLine": 71,
+          "params": [
+            "totalPage"
+          ]
+        },
+        {
+          "name": "getCurrPage",
+          "startLine": 73,
+          "endLine": 75,
+          "params": []
+        },
+        {
+          "name": "setCurrPage",
+          "startLine": 77,
+          "endLine": 79,
+          "params": [
+            "currPage"
+          ]
+        },
+        {
+          "name": "getList",
+          "startLine": 81,
+          "endLine": 83,
+          "params": []
+        },
+        {
+          "name": "setList",
+          "startLine": 85,
+          "endLine": 87,
+          "params": [
+            "list"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PageResult",
+          "startLine": 16,
+          "endLine": 89,
+          "methods": [
+            "PageResult",
+            "getTotalCount",
+            "setTotalCount",
+            "getPageSize",
+            "setPageSize",
+            "getTotalPage",
+            "setTotalPage",
+            "getCurrPage",
+            "setCurrPage",
+            "getList",
+            "setList"
+          ],
+          "properties": [
+            "totalCount",
+            "pageSize",
+            "totalPage",
+            "currPage",
+            "list"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PageResult",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "getTotalCount",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "setTotalCount",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "getPageSize",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "setPageSize",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "getTotalPage",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "setTotalPage",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "getCurrPage",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "setCurrPage",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "getList",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "setList",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "PageResult",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "PageResult",
+          "callee": "Math.ceil",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 12,
+        "functionCount": 11,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 21,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/NewBeeMallShoppingCartController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 150,
+      "nonEmptyLines": 138,
+      "functions": [
+        {
+          "name": "cartItemPageList",
+          "startLine": 45,
+          "endLine": 58,
+          "params": [
+            "pageNumber",
+            "loginMallUserToken"
+          ]
+        },
+        {
+          "name": "cartItemList",
+          "startLine": 60,
+          "endLine": 64,
+          "params": [
+            "loginMallUserToken"
+          ]
+        },
+        {
+          "name": "saveNewBeeMallShoppingCartItem",
+          "startLine": 66,
+          "endLine": 77,
+          "params": [
+            "saveCartItemParam",
+            "loginMallUserToken"
+          ]
+        },
+        {
+          "name": "updateNewBeeMallShoppingCartItem",
+          "startLine": 79,
+          "endLine": 90,
+          "params": [
+            "updateCartItemParam",
+            "loginMallUserToken"
+          ]
+        },
+        {
+          "name": "updateNewBeeMallShoppingCartItem",
+          "startLine": 92,
+          "endLine": 107,
+          "params": [
+            "newBeeMallShoppingCartItemId",
+            "loginMallUserToken"
+          ]
+        },
+        {
+          "name": "toSettle",
+          "startLine": 109,
+          "endLine": 130,
+          "params": [
+            "cartItemIds",
+            "loginMallUserToken"
+          ]
+        },
+        {
+          "name": "cartItemListByIds",
+          "startLine": 132,
+          "endLine": 139,
+          "params": [
+            "cartItemIds"
+          ]
+        },
+        {
+          "name": "deleteByCartItemIds",
+          "startLine": 141,
+          "endLine": 149,
+          "params": [
+            "cartItemIds",
+            "request"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeMallShoppingCartController",
+          "startLine": 38,
+          "endLine": 150,
+          "methods": [
+            "cartItemPageList",
+            "cartItemList",
+            "saveNewBeeMallShoppingCartItem",
+            "updateNewBeeMallShoppingCartItem",
+            "updateNewBeeMallShoppingCartItem",
+            "toSettle",
+            "cartItemListByIds",
+            "deleteByCartItemIds"
+          ],
+          "properties": [
+            "newBeeMallShoppingCartService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "cartItemPageList",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "cartItemList",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "saveNewBeeMallShoppingCartItem",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "updateNewBeeMallShoppingCartItem",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "updateNewBeeMallShoppingCartItem",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "toSettle",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "cartItemListByIds",
+          "line": 132,
+          "isDefault": false
+        },
+        {
+          "name": "deleteByCartItemIds",
+          "line": 141,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeMallShoppingCartController",
+          "line": 38,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "cartItemPageList",
+          "callee": "new HashMap",
+          "lineNumber": 48
+        },
+        {
+          "caller": "cartItemPageList",
+          "callee": "params.put",
+          "lineNumber": 52
+        },
+        {
+          "caller": "cartItemPageList",
+          "callee": "loginMallUserToken.getUserId",
+          "lineNumber": 52
+        },
+        {
+          "caller": "cartItemPageList",
+          "callee": "params.put",
+          "lineNumber": 53
+        },
+        {
+          "caller": "cartItemPageList",
+          "callee": "params.put",
+          "lineNumber": 54
+        },
+        {
+          "caller": "cartItemPageList",
+          "callee": "new PageQueryUtil",
+          "lineNumber": 56
+        },
+        {
+          "caller": "cartItemPageList",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 57
+        },
+        {
+          "caller": "cartItemPageList",
+          "callee": "newBeeMallShoppingCartService.getMyShoppingCartItems",
+          "lineNumber": 57
+        },
+        {
+          "caller": "cartItemList",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 63
+        },
+        {
+          "caller": "cartItemList",
+          "callee": "newBeeMallShoppingCartService.getMyShoppingCartItems",
+          "lineNumber": 63
+        },
+        {
+          "caller": "cartItemList",
+          "callee": "loginMallUserToken.getUserId",
+          "lineNumber": 63
+        },
+        {
+          "caller": "saveNewBeeMallShoppingCartItem",
+          "callee": "newBeeMallShoppingCartService.saveNewBeeMallCartItem",
+          "lineNumber": 70
+        },
+        {
+          "caller": "saveNewBeeMallShoppingCartItem",
+          "callee": "loginMallUserToken.getUserId",
+          "lineNumber": 70
+        },
+        {
+          "caller": "saveNewBeeMallShoppingCartItem",
+          "callee": "ServiceResultEnum.SUCCESS.getResult().equals",
+          "lineNumber": 72
+        },
+        {
+          "caller": "saveNewBeeMallShoppingCartItem",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 72
+        },
+        {
+          "caller": "saveNewBeeMallShoppingCartItem",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 73
+        },
+        {
+          "caller": "saveNewBeeMallShoppingCartItem",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 76
+        },
+        {
+          "caller": "updateNewBeeMallShoppingCartItem",
+          "callee": "newBeeMallShoppingCartService.updateNewBeeMallCartItem",
+          "lineNumber": 83
+        },
+        {
+          "caller": "updateNewBeeMallShoppingCartItem",
+          "callee": "loginMallUserToken.getUserId",
+          "lineNumber": 83
+        },
+        {
+          "caller": "updateNewBeeMallShoppingCartItem",
+          "callee": "ServiceResultEnum.SUCCESS.getResult().equals",
+          "lineNumber": 85
+        },
+        {
+          "caller": "updateNewBeeMallShoppingCartItem",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 85
+        },
+        {
+          "caller": "updateNewBeeMallShoppingCartItem",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 86
+        },
+        {
+          "caller": "updateNewBeeMallShoppingCartItem",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 89
+        },
+        {
+          "caller": "updateNewBeeMallShoppingCartItem",
+          "callee": "newBeeMallShoppingCartService.getNewBeeMallCartItemById",
+          "lineNumber": 96
+        },
+        {
+          "caller": "updateNewBeeMallShoppingCartItem",
+          "callee": "loginMallUserToken.getUserId().equals",
+          "lineNumber": 97
+        },
+        {
+          "caller": "updateNewBeeMallShoppingCartItem",
+          "callee": "loginMallUserToken.getUserId",
+          "lineNumber": 97
+        },
+        {
+          "caller": "updateNewBeeMallShoppingCartItem",
+          "callee": "newBeeMallCartItemById.getUserId",
+          "lineNumber": 97
+        },
+        {
+          "caller": "updateNewBeeMallShoppingCartItem",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 98
+        },
+        {
+          "caller": "updateNewBeeMallShoppingCartItem",
+          "callee": "ServiceResultEnum.REQUEST_FORBIDEN_ERROR.getResult",
+          "lineNumber": 98
+        },
+        {
+          "caller": "updateNewBeeMallShoppingCartItem",
+          "callee": "newBeeMallShoppingCartService.deleteById",
+          "lineNumber": 100
+        },
+        {
+          "caller": "updateNewBeeMallShoppingCartItem",
+          "callee": "loginMallUserToken.getUserId",
+          "lineNumber": 100
+        },
+        {
+          "caller": "updateNewBeeMallShoppingCartItem",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 103
+        },
+        {
+          "caller": "updateNewBeeMallShoppingCartItem",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 106
+        },
+        {
+          "caller": "updateNewBeeMallShoppingCartItem",
+          "callee": "ServiceResultEnum.OPERATE_ERROR.getResult",
+          "lineNumber": 106
+        },
+        {
+          "caller": "toSettle",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 113
+        },
+        {
+          "caller": "toSettle",
+          "callee": "newBeeMallShoppingCartService.getCartItemsForSettle",
+          "lineNumber": 116
+        },
+        {
+          "caller": "toSettle",
+          "callee": "Arrays.asList",
+          "lineNumber": 116
+        },
+        {
+          "caller": "toSettle",
+          "callee": "loginMallUserToken.getUserId",
+          "lineNumber": 116
+        },
+        {
+          "caller": "toSettle",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 117
+        },
+        {
+          "caller": "toSettle",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 119
+        },
+        {
+          "caller": "toSettle",
+          "callee": "newBeeMallShoppingCartItemVO.getGoodsCount",
+          "lineNumber": 123
+        },
+        {
+          "caller": "toSettle",
+          "callee": "newBeeMallShoppingCartItemVO.getSellingPrice",
+          "lineNumber": 123
+        },
+        {
+          "caller": "toSettle",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 126
+        },
+        {
+          "caller": "toSettle",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 129
+        },
+        {
+          "caller": "cartItemListByIds",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 135
+        },
+        {
+          "caller": "cartItemListByIds",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 136
+        },
+        {
+          "caller": "cartItemListByIds",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 138
+        },
+        {
+          "caller": "cartItemListByIds",
+          "callee": "newBeeMallShoppingCartService.getCartItemsByCartIds",
+          "lineNumber": 138
+        },
+        {
+          "caller": "deleteByCartItemIds",
+          "callee": "System.out.println",
+          "lineNumber": 144
+        },
+        {
+          "caller": "deleteByCartItemIds",
+          "callee": "RootContext.getXID",
+          "lineNumber": 144
+        },
+        {
+          "caller": "deleteByCartItemIds",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 145
+        },
+        {
+          "caller": "deleteByCartItemIds",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 146
+        },
+        {
+          "caller": "deleteByCartItemIds",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 148
+        },
+        {
+          "caller": "deleteByCartItemIds",
+          "callee": "newBeeMallShoppingCartService.deleteCartItemsByCartIds",
+          "lineNumber": 148
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 9,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/param/SaveCartItemParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "SaveCartItemParam",
+          "startLine": 19,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "goodsCount",
+            "goodsId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SaveCartItemParam",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/param/UpdateCartItemParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "UpdateCartItemParam",
+          "startLine": 19,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "cartItemId",
+            "goodsCount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "UpdateCartItemParam",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/vo/NewBeeMallShoppingCartItemVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 30,
+      "classes": [
+        {
+          "name": "NewBeeMallShoppingCartItemVO",
+          "startLine": 19,
+          "endLine": 39,
+          "methods": [],
+          "properties": [
+            "cartItemId",
+            "goodsId",
+            "goodsCount",
+            "goodsName",
+            "goodsCoverImg",
+            "sellingPrice"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewBeeMallShoppingCartItemVO",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/dao/NewBeeMallShoppingCartItemMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "NewBeeMallShoppingCartItemMapper",
+          "startLine": 17,
+          "endLine": 45,
+          "methods": [
+            "deleteByPrimaryKey",
+            "insert",
+            "insertSelective",
+            "selectByPrimaryKey",
+            "selectByUserIdAndGoodsId",
+            "selectByUserId",
+            "selectByUserIdAndCartItemIds",
+            "selectByCartItemIds",
+            "selectCountByUserId",
+            "updateByPrimaryKeySelective",
+            "updateByPrimaryKey",
+            "deleteBatch",
+            "findMyNewBeeMallCartItems",
+            "getTotalMyNewBeeMallCartItems"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewBeeMallShoppingCartItemMapper",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/entity/NewBeeMallShoppingCartItem.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "NewBeeMallShoppingCartItem",
+          "startLine": 15,
+          "endLine": 30,
+          "methods": [],
+          "properties": [
+            "cartItemId",
+            "userId",
+            "goodsId",
+            "goodsCount",
+            "isDeleted",
+            "createTime",
+            "updateTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewBeeMallShoppingCartItem",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/NewBeeMallShoppingCartService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 98,
+      "nonEmptyLines": 85,
+      "classes": [
+        {
+          "name": "NewBeeMallShoppingCartService",
+          "startLine": 20,
+          "endLine": 98,
+          "methods": [
+            "saveNewBeeMallCartItem",
+            "updateNewBeeMallCartItem",
+            "getNewBeeMallCartItemById",
+            "deleteById",
+            "getMyShoppingCartItems",
+            "getCartItemsForSettle",
+            "getCartItemsByCartIds",
+            "deleteCartItemsByCartIds",
+            "getMyShoppingCartItems"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewBeeMallShoppingCartService",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/impl/NewBeeMallShoppingCartServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 211,
+      "nonEmptyLines": 196,
+      "functions": [
+        {
+          "name": "saveNewBeeMallCartItem",
+          "startLine": 42,
+          "endLine": 75,
+          "params": [
+            "saveCartItemParam",
+            "userId"
+          ]
+        },
+        {
+          "name": "updateNewBeeMallCartItem",
+          "startLine": 77,
+          "endLine": 105,
+          "params": [
+            "updateCartItemParam",
+            "userId"
+          ]
+        },
+        {
+          "name": "getNewBeeMallCartItemById",
+          "startLine": 107,
+          "endLine": 114,
+          "params": [
+            "newBeeMallShoppingCartItemId"
+          ]
+        },
+        {
+          "name": "deleteById",
+          "startLine": 116,
+          "endLine": 127,
+          "params": [
+            "shoppingCartItemId",
+            "userId"
+          ]
+        },
+        {
+          "name": "getMyShoppingCartItems",
+          "startLine": 129,
+          "endLine": 134,
+          "params": [
+            "newBeeMallUserId"
+          ]
+        },
+        {
+          "name": "getCartItemsForSettle",
+          "startLine": 136,
+          "endLine": 150,
+          "params": [
+            "cartItemIds",
+            "newBeeMallUserId"
+          ]
+        },
+        {
+          "name": "getCartItemsByCartIds",
+          "startLine": 152,
+          "endLine": 155,
+          "params": [
+            "cartItemIds"
+          ]
+        },
+        {
+          "name": "deleteCartItemsByCartIds",
+          "startLine": 157,
+          "endLine": 160,
+          "params": [
+            "cartItemIds"
+          ]
+        },
+        {
+          "name": "getNewBeeMallShoppingCartItemVOS",
+          "startLine": 169,
+          "endLine": 201,
+          "params": [
+            "newBeeMallShoppingCartItemVOS",
+            "newBeeMallShoppingCartItems"
+          ]
+        },
+        {
+          "name": "getMyShoppingCartItems",
+          "startLine": 203,
+          "endLine": 210,
+          "params": [
+            "pageUtil"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeMallShoppingCartServiceImpl",
+          "startLine": 33,
+          "endLine": 211,
+          "methods": [
+            "saveNewBeeMallCartItem",
+            "updateNewBeeMallCartItem",
+            "getNewBeeMallCartItemById",
+            "deleteById",
+            "getMyShoppingCartItems",
+            "getCartItemsForSettle",
+            "getCartItemsByCartIds",
+            "deleteCartItemsByCartIds",
+            "getNewBeeMallShoppingCartItemVOS",
+            "getMyShoppingCartItems"
+          ],
+          "properties": [
+            "newBeeMallShoppingCartItemMapper",
+            "goodsService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "saveNewBeeMallCartItem",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "updateNewBeeMallCartItem",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "getNewBeeMallCartItemById",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "deleteById",
+          "line": 116,
+          "isDefault": false
+        },
+        {
+          "name": "getMyShoppingCartItems",
+          "line": 129,
+          "isDefault": false
+        },
+        {
+          "name": "getCartItemsForSettle",
+          "line": 136,
+          "isDefault": false
+        },
+        {
+          "name": "getCartItemsByCartIds",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "deleteCartItemsByCartIds",
+          "line": 157,
+          "isDefault": false
+        },
+        {
+          "name": "getMyShoppingCartItems",
+          "line": 203,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeMallShoppingCartServiceImpl",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "saveNewBeeMallCartItem",
+          "callee": "newBeeMallShoppingCartItemMapper.selectByUserIdAndGoodsId",
+          "lineNumber": 44
+        },
+        {
+          "caller": "saveNewBeeMallCartItem",
+          "callee": "saveCartItemParam.getGoodsId",
+          "lineNumber": 44
+        },
+        {
+          "caller": "saveNewBeeMallCartItem",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 47
+        },
+        {
+          "caller": "saveNewBeeMallCartItem",
+          "callee": "ServiceResultEnum.SHOPPING_CART_ITEM_EXIST_ERROR.getResult",
+          "lineNumber": 47
+        },
+        {
+          "caller": "saveNewBeeMallCartItem",
+          "callee": "goodsService.getGoodsDetail",
+          "lineNumber": 49
+        },
+        {
+          "caller": "saveNewBeeMallCartItem",
+          "callee": "saveCartItemParam.getGoodsId",
+          "lineNumber": 49
+        },
+        {
+          "caller": "saveNewBeeMallCartItem",
+          "callee": "goodsDetailResult.getResultCode",
+          "lineNumber": 51
+        },
+        {
+          "caller": "saveNewBeeMallCartItem",
+          "callee": "ServiceResultEnum.GOODS_NOT_EXIST.getResult",
+          "lineNumber": 52
+        },
+        {
+          "caller": "saveNewBeeMallCartItem",
+          "callee": "newBeeMallShoppingCartItemMapper.selectCountByUserId",
+          "lineNumber": 54
+        },
+        {
+          "caller": "saveNewBeeMallCartItem",
+          "callee": "saveCartItemParam.getGoodsCount",
+          "lineNumber": 56
+        },
+        {
+          "caller": "saveNewBeeMallCartItem",
+          "callee": "ServiceResultEnum.SHOPPING_CART_ITEM_NUMBER_ERROR.getResult",
+          "lineNumber": 57
+        },
+        {
+          "caller": "saveNewBeeMallCartItem",
+          "callee": "saveCartItemParam.getGoodsCount",
+          "lineNumber": 60
+        },
+        {
+          "caller": "saveNewBeeMallCartItem",
+          "callee": "ServiceResultEnum.SHOPPING_CART_ITEM_LIMIT_NUMBER_ERROR.getResult",
+          "lineNumber": 61
+        },
+        {
+          "caller": "saveNewBeeMallCartItem",
+          "callee": "ServiceResultEnum.SHOPPING_CART_ITEM_TOTAL_NUMBER_ERROR.getResult",
+          "lineNumber": 65
+        },
+        {
+          "caller": "saveNewBeeMallCartItem",
+          "callee": "new NewBeeMallShoppingCartItem",
+          "lineNumber": 67
+        },
+        {
+          "caller": "saveNewBeeMallCartItem",
+          "callee": "BeanUtil.copyProperties",
+          "lineNumber": 68
+        },
+        {
+          "caller": "saveNewBeeMallCartItem",
+          "callee": "newBeeMallShoppingCartItem.setUserId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "saveNewBeeMallCartItem",
+          "callee": "newBeeMallShoppingCartItemMapper.insertSelective",
+          "lineNumber": 71
+        },
+        {
+          "caller": "saveNewBeeMallCartItem",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 72
+        },
+        {
+          "caller": "saveNewBeeMallCartItem",
+          "callee": "ServiceResultEnum.DB_ERROR.getResult",
+          "lineNumber": 74
+        },
+        {
+          "caller": "updateNewBeeMallCartItem",
+          "callee": "newBeeMallShoppingCartItemMapper.selectByPrimaryKey",
+          "lineNumber": 79
+        },
+        {
+          "caller": "updateNewBeeMallCartItem",
+          "callee": "updateCartItemParam.getCartItemId",
+          "lineNumber": 79
+        },
+        {
+          "caller": "updateNewBeeMallCartItem",
+          "callee": "ServiceResultEnum.DATA_NOT_EXIST.getResult",
+          "lineNumber": 81
+        },
+        {
+          "caller": "updateNewBeeMallCartItem",
+          "callee": "newBeeMallShoppingCartItemUpdate.getUserId().equals",
+          "lineNumber": 83
+        },
+        {
+          "caller": "updateNewBeeMallCartItem",
+          "callee": "newBeeMallShoppingCartItemUpdate.getUserId",
+          "lineNumber": 83
+        },
+        {
+          "caller": "updateNewBeeMallCartItem",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 84
+        },
+        {
+          "caller": "updateNewBeeMallCartItem",
+          "callee": "ServiceResultEnum.REQUEST_FORBIDEN_ERROR.getResult",
+          "lineNumber": 84
+        },
+        {
+          "caller": "updateNewBeeMallCartItem",
+          "callee": "updateCartItemParam.getGoodsCount",
+          "lineNumber": 87
+        },
+        {
+          "caller": "updateNewBeeMallCartItem",
+          "callee": "ServiceResultEnum.SHOPPING_CART_ITEM_LIMIT_NUMBER_ERROR.getResult",
+          "lineNumber": 88
+        },
+        {
+          "caller": "updateNewBeeMallCartItem",
+          "callee": "newBeeMallShoppingCartItemUpdate.getUserId().equals",
+          "lineNumber": 91
+        },
+        {
+          "caller": "updateNewBeeMallCartItem",
+          "callee": "newBeeMallShoppingCartItemUpdate.getUserId",
+          "lineNumber": 91
+        },
+        {
+          "caller": "updateNewBeeMallCartItem",
+          "callee": "ServiceResultEnum.NO_PERMISSION_ERROR.getResult",
+          "lineNumber": 92
+        },
+        {
+          "caller": "updateNewBeeMallCartItem",
+          "callee": "updateCartItemParam.getGoodsCount().equals",
+          "lineNumber": 95
+        },
+        {
+          "caller": "updateNewBeeMallCartItem",
+          "callee": "updateCartItemParam.getGoodsCount",
+          "lineNumber": 95
+        },
+        {
+          "caller": "updateNewBeeMallCartItem",
+          "callee": "newBeeMallShoppingCartItemUpdate.getGoodsCount",
+          "lineNumber": 95
+        },
+        {
+          "caller": "updateNewBeeMallCartItem",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 96
+        },
+        {
+          "caller": "updateNewBeeMallCartItem",
+          "callee": "newBeeMallShoppingCartItemUpdate.setGoodsCount",
+          "lineNumber": 98
+        },
+        {
+          "caller": "updateNewBeeMallCartItem",
+          "callee": "updateCartItemParam.getGoodsCount",
+          "lineNumber": 98
+        },
+        {
+          "caller": "updateNewBeeMallCartItem",
+          "callee": "newBeeMallShoppingCartItemUpdate.setUpdateTime",
+          "lineNumber": 99
+        },
+        {
+          "caller": "updateNewBeeMallCartItem",
+          "callee": "new Date",
+          "lineNumber": 99
+        },
+        {
+          "caller": "updateNewBeeMallCartItem",
+          "callee": "newBeeMallShoppingCartItemMapper.updateByPrimaryKeySelective",
+          "lineNumber": 101
+        },
+        {
+          "caller": "updateNewBeeMallCartItem",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 102
+        },
+        {
+          "caller": "updateNewBeeMallCartItem",
+          "callee": "ServiceResultEnum.DB_ERROR.getResult",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getNewBeeMallCartItemById",
+          "callee": "newBeeMallShoppingCartItemMapper.selectByPrimaryKey",
+          "lineNumber": 109
+        },
+        {
+          "caller": "getNewBeeMallCartItemById",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getNewBeeMallCartItemById",
+          "callee": "ServiceResultEnum.DATA_NOT_EXIST.getResult",
+          "lineNumber": 111
+        },
+        {
+          "caller": "deleteById",
+          "callee": "newBeeMallShoppingCartItemMapper.selectByPrimaryKey",
+          "lineNumber": 118
+        },
+        {
+          "caller": "deleteById",
+          "callee": "userId.equals",
+          "lineNumber": 123
+        },
+        {
+          "caller": "deleteById",
+          "callee": "newBeeMallShoppingCartItem.getUserId",
+          "lineNumber": 123
+        },
+        {
+          "caller": "deleteById",
+          "callee": "newBeeMallShoppingCartItemMapper.deleteByPrimaryKey",
+          "lineNumber": 126
+        },
+        {
+          "caller": "getMyShoppingCartItems",
+          "callee": "new ArrayList<>",
+          "lineNumber": 131
+        },
+        {
+          "caller": "getMyShoppingCartItems",
+          "callee": "newBeeMallShoppingCartItemMapper.selectByUserId",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getMyShoppingCartItems",
+          "callee": "getNewBeeMallShoppingCartItemVOS",
+          "lineNumber": 133
+        },
+        {
+          "caller": "getCartItemsForSettle",
+          "callee": "new ArrayList<>",
+          "lineNumber": 138
+        },
+        {
+          "caller": "getCartItemsForSettle",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 139
+        },
+        {
+          "caller": "getCartItemsForSettle",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 140
+        },
+        {
+          "caller": "getCartItemsForSettle",
+          "callee": "newBeeMallShoppingCartItemMapper.selectByUserIdAndCartItemIds",
+          "lineNumber": 142
+        },
+        {
+          "caller": "getCartItemsForSettle",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 143
+        },
+        {
+          "caller": "getCartItemsForSettle",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 144
+        },
+        {
+          "caller": "getCartItemsForSettle",
+          "callee": "newBeeMallShoppingCartItems.size",
+          "lineNumber": 146
+        },
+        {
+          "caller": "getCartItemsForSettle",
+          "callee": "cartItemIds.size",
+          "lineNumber": 146
+        },
+        {
+          "caller": "getCartItemsForSettle",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 147
+        },
+        {
+          "caller": "getCartItemsForSettle",
+          "callee": "getNewBeeMallShoppingCartItemVOS",
+          "lineNumber": 149
+        },
+        {
+          "caller": "getCartItemsByCartIds",
+          "callee": "newBeeMallShoppingCartItemMapper.selectByCartItemIds",
+          "lineNumber": 154
+        },
+        {
+          "caller": "deleteCartItemsByCartIds",
+          "callee": "newBeeMallShoppingCartItemMapper.deleteBatch",
+          "lineNumber": 159
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 170
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "newBeeMallShoppingCartItems.stream().map(NewBeeMallShoppingCartItem::getGoodsId).collect",
+          "lineNumber": 172
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "newBeeMallShoppingCartItems.stream().map",
+          "lineNumber": 172
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "newBeeMallShoppingCartItems.stream",
+          "lineNumber": 172
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "Collectors.toList",
+          "lineNumber": 172
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "goodsService.listByGoodsIds",
+          "lineNumber": 173
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "newBeeMallGoodsDTOResult.getResultCode",
+          "lineNumber": 175
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 176
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "ServiceResultEnum.GOODS_NOT_EXIST.getResult",
+          "lineNumber": 176
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "new HashMap<>",
+          "lineNumber": 178
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "newBeeMallGoodsDTOResult.getData",
+          "lineNumber": 179
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 180
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "newBeeMallGoodsDTOS.stream().collect",
+          "lineNumber": 181
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "newBeeMallGoodsDTOS.stream",
+          "lineNumber": 181
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "Collectors.toMap",
+          "lineNumber": 181
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "Function.identity",
+          "lineNumber": 181
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "new NewBeeMallShoppingCartItemVO",
+          "lineNumber": 184
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "BeanUtil.copyProperties",
+          "lineNumber": 185
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "newBeeMallGoodsDTOMap.containsKey",
+          "lineNumber": 186
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "newBeeMallShoppingCartItem.getGoodsId",
+          "lineNumber": 186
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "newBeeMallGoodsDTOMap.get",
+          "lineNumber": 187
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "newBeeMallShoppingCartItem.getGoodsId",
+          "lineNumber": 187
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "newBeeMallShoppingCartItemVO.setGoodsCoverImg",
+          "lineNumber": 188
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "newBeeMallGoodsDtoTemp.getGoodsCoverImg",
+          "lineNumber": 188
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "newBeeMallGoodsDtoTemp.getGoodsName",
+          "lineNumber": 189
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "goodsName.length",
+          "lineNumber": 191
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "goodsName.substring",
+          "lineNumber": 192
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "newBeeMallShoppingCartItemVO.setGoodsName",
+          "lineNumber": 194
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "newBeeMallShoppingCartItemVO.setSellingPrice",
+          "lineNumber": 195
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "newBeeMallGoodsDtoTemp.getSellingPrice",
+          "lineNumber": 195
+        },
+        {
+          "caller": "getNewBeeMallShoppingCartItemVOS",
+          "callee": "newBeeMallShoppingCartItemVOS.add",
+          "lineNumber": 196
+        },
+        {
+          "caller": "getMyShoppingCartItems",
+          "callee": "new ArrayList<>",
+          "lineNumber": 205
+        },
+        {
+          "caller": "getMyShoppingCartItems",
+          "callee": "newBeeMallShoppingCartItemMapper.findMyNewBeeMallCartItems",
+          "lineNumber": 206
+        },
+        {
+          "caller": "getMyShoppingCartItems",
+          "callee": "newBeeMallShoppingCartItemMapper.getTotalMyNewBeeMallCartItems",
+          "lineNumber": 207
+        },
+        {
+          "caller": "getMyShoppingCartItems",
+          "callee": "new PageResult",
+          "lineNumber": 208
+        },
+        {
+          "caller": "getMyShoppingCartItems",
+          "callee": "getNewBeeMallShoppingCartItemVOS",
+          "lineNumber": 208
+        },
+        {
+          "caller": "getMyShoppingCartItems",
+          "callee": "pageUtil.getLimit",
+          "lineNumber": 208
+        },
+        {
+          "caller": "getMyShoppingCartItems",
+          "callee": "pageUtil.getPage",
+          "lineNumber": 208
+        }
+      ],
+      "metrics": {
+        "importCount": 14,
+        "exportCount": 10,
+        "functionCount": 10,
+        "classCount": 1
+      }
+    }
+  ]
+}

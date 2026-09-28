@@ -1,0 +1,3318 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 28,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 28,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 28,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/NewBeeMallCategoryLevelEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 48,
+      "functions": [
+        {
+          "name": "NewBeeMallCategoryLevelEnum",
+          "startLine": 29,
+          "endLine": 32,
+          "params": [
+            "level",
+            "name"
+          ]
+        },
+        {
+          "name": "getNewBeeMallOrderStatusEnumByLevel",
+          "startLine": 34,
+          "endLine": 41,
+          "params": [
+            "level"
+          ]
+        },
+        {
+          "name": "getLevel",
+          "startLine": 43,
+          "endLine": 45,
+          "params": []
+        },
+        {
+          "name": "setLevel",
+          "startLine": 47,
+          "endLine": 49,
+          "params": [
+            "level"
+          ]
+        },
+        {
+          "name": "getName",
+          "startLine": 51,
+          "endLine": 53,
+          "params": []
+        },
+        {
+          "name": "setName",
+          "startLine": 55,
+          "endLine": 57,
+          "params": [
+            "name"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeMallCategoryLevelEnum",
+          "startLine": 18,
+          "endLine": 58,
+          "methods": [
+            "NewBeeMallCategoryLevelEnum",
+            "getNewBeeMallOrderStatusEnumByLevel",
+            "getLevel",
+            "setLevel",
+            "getName",
+            "setName"
+          ],
+          "properties": [
+            "level",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getNewBeeMallOrderStatusEnumByLevel",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "getLevel",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "setLevel",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "getName",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "setName",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeMallCategoryLevelEnum",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getNewBeeMallOrderStatusEnumByLevel",
+          "callee": "NewBeeMallCategoryLevelEnum.values",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getNewBeeMallOrderStatusEnumByLevel",
+          "callee": "newBeeMallCategoryLevelEnum.getLevel",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/GoodsServiceSwagger3Config.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 61,
+      "functions": [
+        {
+          "name": "api",
+          "startLine": 35,
+          "endLine": 45,
+          "params": []
+        },
+        {
+          "name": "getGlobalRequestParameters",
+          "startLine": 48,
+          "endLine": 58,
+          "params": []
+        },
+        {
+          "name": "apiInfo",
+          "startLine": 60,
+          "endLine": 66,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "GoodsServiceSwagger3Config",
+          "startLine": 31,
+          "endLine": 67,
+          "methods": [
+            "api",
+            "getGlobalRequestParameters",
+            "apiInfo"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "api",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "GoodsServiceSwagger3Config",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo())\r\n                .ignoredParameterTypes(AdminUserToken.class, LoginAdminUser.class, MallUserToken.class)\r\n                .select()\r\n                .apis(RequestHandlerSelectors.basePackage(\"ltd.goods.cloud.newbee.controller\"))\r\n                .paths(PathSelectors.any())\r\n                .build().globalRequestParameters",
+          "lineNumber": 37
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo())\r\n                .ignoredParameterTypes(AdminUserToken.class, LoginAdminUser.class, MallUserToken.class)\r\n                .select()\r\n                .apis(RequestHandlerSelectors.basePackage(\"ltd.goods.cloud.newbee.controller\"))\r\n                .paths(PathSelectors.any()).build",
+          "lineNumber": 37
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo())\r\n                .ignoredParameterTypes(AdminUserToken.class, LoginAdminUser.class, MallUserToken.class)\r\n                .select()\r\n                .apis(RequestHandlerSelectors.basePackage(\"ltd.goods.cloud.newbee.controller\")).paths",
+          "lineNumber": 37
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo())\r\n                .ignoredParameterTypes(AdminUserToken.class, LoginAdminUser.class, MallUserToken.class)\r\n                .select().apis",
+          "lineNumber": 37
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo())\r\n                .ignoredParameterTypes(AdminUserToken.class, LoginAdminUser.class, MallUserToken.class).select",
+          "lineNumber": 37
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo()).ignoredParameterTypes",
+          "lineNumber": 37
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30).apiInfo",
+          "lineNumber": 37
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket",
+          "lineNumber": 37
+        },
+        {
+          "caller": "api",
+          "callee": "apiInfo",
+          "lineNumber": 38
+        },
+        {
+          "caller": "api",
+          "callee": "RequestHandlerSelectors.basePackage",
+          "lineNumber": 41
+        },
+        {
+          "caller": "api",
+          "callee": "PathSelectors.any",
+          "lineNumber": 42
+        },
+        {
+          "caller": "api",
+          "callee": "getGlobalRequestParameters",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new ArrayList<>",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "parameters.add",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder()\r\n                .name(\"token\")\r\n                .description(\"登录认证token\")\r\n                .required(false) // 非必传\r\n                .in(ParameterType.HEADER) //请求头中的参数，其它类型可以点进ParameterType类中查看\r\n                .query(q -> q.model(m -> m.scalarModel(ScalarType.STRING))).build",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder()\r\n                .name(\"token\")\r\n                .description(\"登录认证token\")\r\n                .required(false) // 非必传\r\n                .in(ParameterType.HEADER).query",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder()\r\n                .name(\"token\")\r\n                .description(\"登录认证token\")\r\n                .required(false).in",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder()\r\n                .name(\"token\")\r\n                .description(\"登录认证token\").required",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder()\r\n                .name(\"token\").description",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder().name",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "q.model",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "m.scalarModel",
+          "lineNumber": 55
+        },
+        {
+          "caller": "apiInfo",
+          "callee": "new ApiInfoBuilder()\r\n                .title(\"newbee-mall-cloud-goods-service接口文档\")\r\n                .description(\"swagger接口文档\")\r\n                .version(\"2.0\").build",
+          "lineNumber": 61
+        },
+        {
+          "caller": "apiInfo",
+          "callee": "new ApiInfoBuilder()\r\n                .title(\"newbee-mall-cloud-goods-service接口文档\")\r\n                .description(\"swagger接口文档\").version",
+          "lineNumber": 61
+        },
+        {
+          "caller": "apiInfo",
+          "callee": "new ApiInfoBuilder()\r\n                .title(\"newbee-mall-cloud-goods-service接口文档\").description",
+          "lineNumber": 61
+        },
+        {
+          "caller": "apiInfo",
+          "callee": "new ApiInfoBuilder().title",
+          "lineNumber": 61
+        },
+        {
+          "caller": "apiInfo",
+          "callee": "new ApiInfoBuilder",
+          "lineNumber": 61
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 21,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 21,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsCategoryController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 177,
+      "nonEmptyLines": 165,
+      "functions": [
+        {
+          "name": "list",
+          "startLine": 58,
+          "endLine": 75,
+          "params": [
+            "pageNumber",
+            "pageSize",
+            "categoryLevel",
+            "parentId",
+            "adminUser"
+          ]
+        },
+        {
+          "name": "listForSelect",
+          "startLine": 80,
+          "endLine": 110,
+          "params": [
+            "categoryId",
+            "adminUser"
+          ]
+        },
+        {
+          "name": "save",
+          "startLine": 115,
+          "endLine": 127,
+          "params": [
+            "goodsCategoryAddParam",
+            "adminUser"
+          ]
+        },
+        {
+          "name": "update",
+          "startLine": 133,
+          "endLine": 145,
+          "params": [
+            "goodsCategoryEditParam",
+            "adminUser"
+          ]
+        },
+        {
+          "name": "info",
+          "startLine": 150,
+          "endLine": 159,
+          "params": [
+            "id",
+            "adminUser"
+          ]
+        },
+        {
+          "name": "delete",
+          "startLine": 164,
+          "endLine": 176,
+          "params": [
+            "batchIdParam",
+            "adminUser"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeAdminGoodsCategoryController",
+          "startLine": 45,
+          "endLine": 177,
+          "methods": [
+            "list",
+            "listForSelect",
+            "save",
+            "update",
+            "info",
+            "delete"
+          ],
+          "properties": [
+            "logger",
+            "newBeeMallCategoryService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "list",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "listForSelect",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "save",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "update",
+          "line": 133,
+          "isDefault": false
+        },
+        {
+          "name": "info",
+          "line": 150,
+          "isDefault": false
+        },
+        {
+          "name": "delete",
+          "line": 164,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeAdminGoodsCategoryController",
+          "line": 45,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "list",
+          "callee": "logger.info",
+          "lineNumber": 64
+        },
+        {
+          "caller": "list",
+          "callee": "adminUser.toString",
+          "lineNumber": 64
+        },
+        {
+          "caller": "list",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 66
+        },
+        {
+          "caller": "list",
+          "callee": "new HashMap",
+          "lineNumber": 68
+        },
+        {
+          "caller": "list",
+          "callee": "params.put",
+          "lineNumber": 69
+        },
+        {
+          "caller": "list",
+          "callee": "params.put",
+          "lineNumber": 70
+        },
+        {
+          "caller": "list",
+          "callee": "params.put",
+          "lineNumber": 71
+        },
+        {
+          "caller": "list",
+          "callee": "params.put",
+          "lineNumber": 72
+        },
+        {
+          "caller": "list",
+          "callee": "new PageQueryUtil",
+          "lineNumber": 73
+        },
+        {
+          "caller": "list",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 74
+        },
+        {
+          "caller": "list",
+          "callee": "newBeeMallCategoryService.getCategorisPage",
+          "lineNumber": 74
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "logger.info",
+          "lineNumber": 83
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "adminUser.toString",
+          "lineNumber": 83
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 85
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "newBeeMallCategoryService.getGoodsCategoryById",
+          "lineNumber": 87
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "category.getCategoryLevel",
+          "lineNumber": 89
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "NewBeeMallCategoryLevelEnum.LEVEL_THREE.getLevel",
+          "lineNumber": 89
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 90
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "new HashMap",
+          "lineNumber": 92
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "category.getCategoryLevel",
+          "lineNumber": 93
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "NewBeeMallCategoryLevelEnum.LEVEL_ONE.getLevel",
+          "lineNumber": 93
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "newBeeMallCategoryService.selectByLevelAndParentIdsAndNumber",
+          "lineNumber": 96
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "Collections.singletonList",
+          "lineNumber": 96
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "NewBeeMallCategoryLevelEnum.LEVEL_TWO.getLevel",
+          "lineNumber": 96
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 97
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "newBeeMallCategoryService.selectByLevelAndParentIdsAndNumber",
+          "lineNumber": 99
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "Collections.singletonList",
+          "lineNumber": 99
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "secondLevelCategories.get(0).getCategoryId",
+          "lineNumber": 99
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "secondLevelCategories.get",
+          "lineNumber": 99
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "NewBeeMallCategoryLevelEnum.LEVEL_THREE.getLevel",
+          "lineNumber": 99
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "categoryResult.put",
+          "lineNumber": 100
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "categoryResult.put",
+          "lineNumber": 101
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "category.getCategoryLevel",
+          "lineNumber": 104
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "NewBeeMallCategoryLevelEnum.LEVEL_TWO.getLevel",
+          "lineNumber": 104
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "newBeeMallCategoryService.selectByLevelAndParentIdsAndNumber",
+          "lineNumber": 106
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "Collections.singletonList",
+          "lineNumber": 106
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "NewBeeMallCategoryLevelEnum.LEVEL_THREE.getLevel",
+          "lineNumber": 106
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "categoryResult.put",
+          "lineNumber": 107
+        },
+        {
+          "caller": "listForSelect",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 109
+        },
+        {
+          "caller": "save",
+          "callee": "logger.info",
+          "lineNumber": 118
+        },
+        {
+          "caller": "save",
+          "callee": "adminUser.toString",
+          "lineNumber": 118
+        },
+        {
+          "caller": "save",
+          "callee": "new GoodsCategory",
+          "lineNumber": 119
+        },
+        {
+          "caller": "save",
+          "callee": "BeanUtil.copyProperties",
+          "lineNumber": 120
+        },
+        {
+          "caller": "save",
+          "callee": "newBeeMallCategoryService.saveCategory",
+          "lineNumber": 121
+        },
+        {
+          "caller": "save",
+          "callee": "ServiceResultEnum.SUCCESS.getResult().equals",
+          "lineNumber": 122
+        },
+        {
+          "caller": "save",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 122
+        },
+        {
+          "caller": "save",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 123
+        },
+        {
+          "caller": "save",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 125
+        },
+        {
+          "caller": "update",
+          "callee": "logger.info",
+          "lineNumber": 136
+        },
+        {
+          "caller": "update",
+          "callee": "adminUser.toString",
+          "lineNumber": 136
+        },
+        {
+          "caller": "update",
+          "callee": "new GoodsCategory",
+          "lineNumber": 137
+        },
+        {
+          "caller": "update",
+          "callee": "BeanUtil.copyProperties",
+          "lineNumber": 138
+        },
+        {
+          "caller": "update",
+          "callee": "newBeeMallCategoryService.updateGoodsCategory",
+          "lineNumber": 139
+        },
+        {
+          "caller": "update",
+          "callee": "ServiceResultEnum.SUCCESS.getResult().equals",
+          "lineNumber": 140
+        },
+        {
+          "caller": "update",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 140
+        },
+        {
+          "caller": "update",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 141
+        },
+        {
+          "caller": "update",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 143
+        },
+        {
+          "caller": "info",
+          "callee": "logger.info",
+          "lineNumber": 153
+        },
+        {
+          "caller": "info",
+          "callee": "adminUser.toString",
+          "lineNumber": 153
+        },
+        {
+          "caller": "info",
+          "callee": "newBeeMallCategoryService.getGoodsCategoryById",
+          "lineNumber": 154
+        },
+        {
+          "caller": "info",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 156
+        },
+        {
+          "caller": "info",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 158
+        },
+        {
+          "caller": "delete",
+          "callee": "logger.info",
+          "lineNumber": 167
+        },
+        {
+          "caller": "delete",
+          "callee": "adminUser.toString",
+          "lineNumber": 167
+        },
+        {
+          "caller": "delete",
+          "callee": "batchIdParam.getIds",
+          "lineNumber": 168
+        },
+        {
+          "caller": "delete",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 169
+        },
+        {
+          "caller": "delete",
+          "callee": "newBeeMallCategoryService.deleteBatch",
+          "lineNumber": 171
+        },
+        {
+          "caller": "delete",
+          "callee": "batchIdParam.getIds",
+          "lineNumber": 171
+        },
+        {
+          "caller": "delete",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 172
+        },
+        {
+          "caller": "delete",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 174
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsInfoController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 201,
+      "nonEmptyLines": 186,
+      "functions": [
+        {
+          "name": "list",
+          "startLine": 62,
+          "endLine": 83,
+          "params": [
+            "pageNumber",
+            "pageSize",
+            "goodsName",
+            "goodsSellStatus",
+            "adminUser"
+          ]
+        },
+        {
+          "name": "save",
+          "startLine": 88,
+          "endLine": 100,
+          "params": [
+            "goodsAddParam",
+            "adminUser"
+          ]
+        },
+        {
+          "name": "update",
+          "startLine": 106,
+          "endLine": 118,
+          "params": [
+            "goodsEditParam",
+            "adminUser"
+          ]
+        },
+        {
+          "name": "info",
+          "startLine": 123,
+          "endLine": 149,
+          "params": [
+            "id",
+            "adminUser"
+          ]
+        },
+        {
+          "name": "delete",
+          "startLine": 154,
+          "endLine": 169,
+          "params": [
+            "batchIdParam",
+            "sellStatus",
+            "adminUser"
+          ]
+        },
+        {
+          "name": "goodsDetail",
+          "startLine": 174,
+          "endLine": 179,
+          "params": [
+            "goodsId"
+          ]
+        },
+        {
+          "name": "getNewBeeMallGoodsByIds",
+          "startLine": 184,
+          "endLine": 189,
+          "params": [
+            "goodsIds"
+          ]
+        },
+        {
+          "name": "updateStock",
+          "startLine": 194,
+          "endLine": 199,
+          "params": [
+            "updateStockNumDTO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeAdminGoodsInfoController",
+          "startLine": 47,
+          "endLine": 201,
+          "methods": [
+            "list",
+            "save",
+            "update",
+            "info",
+            "delete",
+            "goodsDetail",
+            "getNewBeeMallGoodsByIds",
+            "updateStock"
+          ],
+          "properties": [
+            "logger",
+            "newBeeMallGoodsService",
+            "newBeeMallCategoryService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "list",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "save",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "update",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "info",
+          "line": 123,
+          "isDefault": false
+        },
+        {
+          "name": "delete",
+          "line": 154,
+          "isDefault": false
+        },
+        {
+          "name": "goodsDetail",
+          "line": 174,
+          "isDefault": false
+        },
+        {
+          "name": "getNewBeeMallGoodsByIds",
+          "line": 184,
+          "isDefault": false
+        },
+        {
+          "name": "updateStock",
+          "line": 194,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeAdminGoodsInfoController",
+          "line": 47,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "list",
+          "callee": "logger.info",
+          "lineNumber": 68
+        },
+        {
+          "caller": "list",
+          "callee": "adminUser.toString",
+          "lineNumber": 68
+        },
+        {
+          "caller": "list",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 70
+        },
+        {
+          "caller": "list",
+          "callee": "new HashMap",
+          "lineNumber": 72
+        },
+        {
+          "caller": "list",
+          "callee": "params.put",
+          "lineNumber": 73
+        },
+        {
+          "caller": "list",
+          "callee": "params.put",
+          "lineNumber": 74
+        },
+        {
+          "caller": "list",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 75
+        },
+        {
+          "caller": "list",
+          "callee": "params.put",
+          "lineNumber": 76
+        },
+        {
+          "caller": "list",
+          "callee": "params.put",
+          "lineNumber": 79
+        },
+        {
+          "caller": "list",
+          "callee": "new PageQueryUtil",
+          "lineNumber": 81
+        },
+        {
+          "caller": "list",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 82
+        },
+        {
+          "caller": "list",
+          "callee": "newBeeMallGoodsService.getNewBeeMallGoodsPage",
+          "lineNumber": 82
+        },
+        {
+          "caller": "save",
+          "callee": "logger.info",
+          "lineNumber": 91
+        },
+        {
+          "caller": "save",
+          "callee": "adminUser.toString",
+          "lineNumber": 91
+        },
+        {
+          "caller": "save",
+          "callee": "new NewBeeMallGoods",
+          "lineNumber": 92
+        },
+        {
+          "caller": "save",
+          "callee": "BeanUtil.copyProperties",
+          "lineNumber": 93
+        },
+        {
+          "caller": "save",
+          "callee": "newBeeMallGoodsService.saveNewBeeMallGoods",
+          "lineNumber": 94
+        },
+        {
+          "caller": "save",
+          "callee": "ServiceResultEnum.SUCCESS.getResult().equals",
+          "lineNumber": 95
+        },
+        {
+          "caller": "save",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 95
+        },
+        {
+          "caller": "save",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 96
+        },
+        {
+          "caller": "save",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 98
+        },
+        {
+          "caller": "update",
+          "callee": "logger.info",
+          "lineNumber": 109
+        },
+        {
+          "caller": "update",
+          "callee": "adminUser.toString",
+          "lineNumber": 109
+        },
+        {
+          "caller": "update",
+          "callee": "new NewBeeMallGoods",
+          "lineNumber": 110
+        },
+        {
+          "caller": "update",
+          "callee": "BeanUtil.copyProperties",
+          "lineNumber": 111
+        },
+        {
+          "caller": "update",
+          "callee": "newBeeMallGoodsService.updateNewBeeMallGoods",
+          "lineNumber": 112
+        },
+        {
+          "caller": "update",
+          "callee": "ServiceResultEnum.SUCCESS.getResult().equals",
+          "lineNumber": 113
+        },
+        {
+          "caller": "update",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 113
+        },
+        {
+          "caller": "update",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 114
+        },
+        {
+          "caller": "update",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 116
+        },
+        {
+          "caller": "info",
+          "callee": "logger.info",
+          "lineNumber": 126
+        },
+        {
+          "caller": "info",
+          "callee": "adminUser.toString",
+          "lineNumber": 126
+        },
+        {
+          "caller": "info",
+          "callee": "new HashMap",
+          "lineNumber": 127
+        },
+        {
+          "caller": "info",
+          "callee": "newBeeMallGoodsService.getNewBeeMallGoodsById",
+          "lineNumber": 128
+        },
+        {
+          "caller": "info",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 130
+        },
+        {
+          "caller": "info",
+          "callee": "ServiceResultEnum.DATA_NOT_EXIST.getResult",
+          "lineNumber": 130
+        },
+        {
+          "caller": "info",
+          "callee": "goodsInfo.put",
+          "lineNumber": 132
+        },
+        {
+          "caller": "info",
+          "callee": "newBeeMallCategoryService.getGoodsCategoryById",
+          "lineNumber": 136
+        },
+        {
+          "caller": "info",
+          "callee": "goods.getGoodsCategoryId",
+          "lineNumber": 136
+        },
+        {
+          "caller": "info",
+          "callee": "goodsInfo.put",
+          "lineNumber": 138
+        },
+        {
+          "caller": "info",
+          "callee": "newBeeMallCategoryService.getGoodsCategoryById",
+          "lineNumber": 139
+        },
+        {
+          "caller": "info",
+          "callee": "thirdCategory.getParentId",
+          "lineNumber": 139
+        },
+        {
+          "caller": "info",
+          "callee": "goodsInfo.put",
+          "lineNumber": 141
+        },
+        {
+          "caller": "info",
+          "callee": "newBeeMallCategoryService.getGoodsCategoryById",
+          "lineNumber": 142
+        },
+        {
+          "caller": "info",
+          "callee": "secondCategory.getParentId",
+          "lineNumber": 142
+        },
+        {
+          "caller": "info",
+          "callee": "goodsInfo.put",
+          "lineNumber": 144
+        },
+        {
+          "caller": "info",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 148
+        },
+        {
+          "caller": "delete",
+          "callee": "logger.info",
+          "lineNumber": 157
+        },
+        {
+          "caller": "delete",
+          "callee": "adminUser.toString",
+          "lineNumber": 157
+        },
+        {
+          "caller": "delete",
+          "callee": "batchIdParam.getIds",
+          "lineNumber": 158
+        },
+        {
+          "caller": "delete",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 159
+        },
+        {
+          "caller": "delete",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 162
+        },
+        {
+          "caller": "delete",
+          "callee": "newBeeMallGoodsService.batchUpdateSellStatus",
+          "lineNumber": 164
+        },
+        {
+          "caller": "delete",
+          "callee": "batchIdParam.getIds",
+          "lineNumber": 164
+        },
+        {
+          "caller": "delete",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 165
+        },
+        {
+          "caller": "delete",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 167
+        },
+        {
+          "caller": "goodsDetail",
+          "callee": "newBeeMallGoodsService.getNewBeeMallGoodsById",
+          "lineNumber": 177
+        },
+        {
+          "caller": "goodsDetail",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 178
+        },
+        {
+          "caller": "getNewBeeMallGoodsByIds",
+          "callee": "newBeeMallGoodsService.getNewBeeMallGoodsByIds",
+          "lineNumber": 187
+        },
+        {
+          "caller": "getNewBeeMallGoodsByIds",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 188
+        },
+        {
+          "caller": "updateStock",
+          "callee": "System.out.println",
+          "lineNumber": 197
+        },
+        {
+          "caller": "updateStock",
+          "callee": "RootContext.getXID",
+          "lineNumber": 197
+        },
+        {
+          "caller": "updateStock",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 198
+        },
+        {
+          "caller": "updateStock",
+          "callee": "newBeeMallGoodsService.updateStockNum",
+          "lineNumber": 198
+        },
+        {
+          "caller": "updateStock",
+          "callee": "updateStockNumDTO.getStockNumDTOS",
+          "lineNumber": 198
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 9,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeMallGoodsController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 117,
+      "nonEmptyLines": 104,
+      "functions": [
+        {
+          "name": "test1",
+          "startLine": 48,
+          "endLine": 51,
+          "params": []
+        },
+        {
+          "name": "test2",
+          "startLine": 53,
+          "endLine": 57,
+          "params": []
+        },
+        {
+          "name": "test3",
+          "startLine": 59,
+          "endLine": 63,
+          "params": []
+        },
+        {
+          "name": "search",
+          "startLine": 65,
+          "endLine": 98,
+          "params": [
+            "keyword",
+            "goodsCategoryId",
+            "orderBy",
+            "pageNumber",
+            "loginMallUserToken"
+          ]
+        },
+        {
+          "name": "goodsDetail",
+          "startLine": 100,
+          "endLine": 115,
+          "params": [
+            "goodsId",
+            "loginMallUserToken"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeMallGoodsController",
+          "startLine": 38,
+          "endLine": 117,
+          "methods": [
+            "test1",
+            "test2",
+            "test3",
+            "search",
+            "goodsDetail"
+          ],
+          "properties": [
+            "logger",
+            "newBeeMallGoodsService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "test1",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "test2",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "test3",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "search",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "goodsDetail",
+          "line": 100,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeMallGoodsController",
+          "line": 38,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test1",
+          "callee": "new BindException",
+          "lineNumber": 50
+        },
+        {
+          "caller": "test2",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test2",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test3",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 62
+        },
+        {
+          "caller": "search",
+          "callee": "logger.info",
+          "lineNumber": 73
+        },
+        {
+          "caller": "search",
+          "callee": "loginMallUserToken.getUserId",
+          "lineNumber": 73
+        },
+        {
+          "caller": "search",
+          "callee": "new HashMap",
+          "lineNumber": 75
+        },
+        {
+          "caller": "search",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 77
+        },
+        {
+          "caller": "search",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 78
+        },
+        {
+          "caller": "search",
+          "callee": "params.put",
+          "lineNumber": 83
+        },
+        {
+          "caller": "search",
+          "callee": "params.put",
+          "lineNumber": 84
+        },
+        {
+          "caller": "search",
+          "callee": "params.put",
+          "lineNumber": 85
+        },
+        {
+          "caller": "search",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 87
+        },
+        {
+          "caller": "search",
+          "callee": "params.put",
+          "lineNumber": 88
+        },
+        {
+          "caller": "search",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 90
+        },
+        {
+          "caller": "search",
+          "callee": "params.put",
+          "lineNumber": 91
+        },
+        {
+          "caller": "search",
+          "callee": "params.put",
+          "lineNumber": 94
+        },
+        {
+          "caller": "search",
+          "callee": "new PageQueryUtil",
+          "lineNumber": 96
+        },
+        {
+          "caller": "search",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 97
+        },
+        {
+          "caller": "search",
+          "callee": "newBeeMallGoodsService.searchNewBeeMallGoods",
+          "lineNumber": 97
+        },
+        {
+          "caller": "goodsDetail",
+          "callee": "logger.info",
+          "lineNumber": 103
+        },
+        {
+          "caller": "goodsDetail",
+          "callee": "loginMallUserToken.getUserId",
+          "lineNumber": 103
+        },
+        {
+          "caller": "goodsDetail",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 105
+        },
+        {
+          "caller": "goodsDetail",
+          "callee": "newBeeMallGoodsService.getNewBeeMallGoodsById",
+          "lineNumber": 107
+        },
+        {
+          "caller": "goodsDetail",
+          "callee": "goods.getGoodsSellStatus",
+          "lineNumber": 108
+        },
+        {
+          "caller": "goodsDetail",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 109
+        },
+        {
+          "caller": "goodsDetail",
+          "callee": "ServiceResultEnum.GOODS_PUT_DOWN.getResult",
+          "lineNumber": 109
+        },
+        {
+          "caller": "goodsDetail",
+          "callee": "new NewBeeMallGoodsDetailVO",
+          "lineNumber": 111
+        },
+        {
+          "caller": "goodsDetail",
+          "callee": "BeanUtil.copyProperties",
+          "lineNumber": 112
+        },
+        {
+          "caller": "goodsDetail",
+          "callee": "goodsDetailVO.setGoodsCarouselList",
+          "lineNumber": 113
+        },
+        {
+          "caller": "goodsDetail",
+          "callee": "goods.getGoodsCarousel().split",
+          "lineNumber": 113
+        },
+        {
+          "caller": "goodsDetail",
+          "callee": "goods.getGoodsCarousel",
+          "lineNumber": 113
+        },
+        {
+          "caller": "goodsDetail",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 114
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/param/BatchIdParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "BatchIdParam",
+          "startLine": 15,
+          "endLine": 19,
+          "methods": [],
+          "properties": [
+            "ids"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BatchIdParam",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/param/GoodsAddParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 57,
+      "classes": [
+        {
+          "name": "GoodsAddParam",
+          "startLine": 20,
+          "endLine": 70,
+          "methods": [],
+          "properties": [
+            "goodsName",
+            "goodsIntro",
+            "goodsCategoryId",
+            "goodsCoverImg",
+            "originalPrice",
+            "sellingPrice",
+            "stockNum",
+            "tag",
+            "goodsSellStatus",
+            "goodsDetailContent"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "GoodsAddParam",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/param/GoodsCategoryAddParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 37,
+      "classes": [
+        {
+          "name": "GoodsCategoryAddParam",
+          "startLine": 20,
+          "endLine": 44,
+          "methods": [],
+          "properties": [
+            "categoryLevel",
+            "parentId",
+            "categoryName",
+            "categoryRank"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "GoodsCategoryAddParam",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/param/GoodsCategoryEditParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 41,
+      "classes": [
+        {
+          "name": "GoodsCategoryEditParam",
+          "startLine": 20,
+          "endLine": 49,
+          "methods": [],
+          "properties": [
+            "categoryId",
+            "categoryLevel",
+            "parentId",
+            "categoryName",
+            "categoryRank"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "GoodsCategoryEditParam",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/param/GoodsEditParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 61,
+      "classes": [
+        {
+          "name": "GoodsEditParam",
+          "startLine": 20,
+          "endLine": 75,
+          "methods": [],
+          "properties": [
+            "goodsId",
+            "goodsName",
+            "goodsIntro",
+            "goodsCategoryId",
+            "goodsCoverImg",
+            "originalPrice",
+            "sellingPrice",
+            "stockNum",
+            "tag",
+            "goodsSellStatus",
+            "goodsDetailContent"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "GoodsEditParam",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/NewBeeMallGoodsDetailVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 36,
+      "classes": [
+        {
+          "name": "NewBeeMallGoodsDetailVO",
+          "startLine": 19,
+          "endLine": 48,
+          "methods": [],
+          "properties": [
+            "goodsId",
+            "goodsName",
+            "goodsIntro",
+            "goodsCoverImg",
+            "sellingPrice",
+            "tag",
+            "goodsCarouselList",
+            "originalPrice",
+            "goodsDetailContent"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewBeeMallGoodsDetailVO",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/NewBeeMallIndexCategoryVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "NewBeeMallIndexCategoryVO",
+          "startLine": 20,
+          "endLine": 34,
+          "methods": [],
+          "properties": [
+            "categoryId",
+            "categoryLevel",
+            "categoryName",
+            "secondLevelCategoryVOS"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewBeeMallIndexCategoryVO",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/NewBeeMallSearchGoodsVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "NewBeeMallSearchGoodsVO",
+          "startLine": 19,
+          "endLine": 37,
+          "methods": [],
+          "properties": [
+            "goodsId",
+            "goodsName",
+            "goodsIntro",
+            "goodsCoverImg",
+            "sellingPrice"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewBeeMallSearchGoodsVO",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/SecondLevelCategoryVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "SecondLevelCategoryVO",
+          "startLine": 20,
+          "endLine": 37,
+          "methods": [],
+          "properties": [
+            "categoryId",
+            "parentId",
+            "categoryLevel",
+            "categoryName",
+            "thirdLevelCategoryVOS"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SecondLevelCategoryVO",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/ThirdLevelCategoryVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "ThirdLevelCategoryVO",
+          "startLine": 19,
+          "endLine": 30,
+          "methods": [],
+          "properties": [
+            "categoryId",
+            "categoryLevel",
+            "categoryName"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ThirdLevelCategoryVO",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/dao/GoodsCategoryMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "GoodsCategoryMapper",
+          "startLine": 17,
+          "endLine": 39,
+          "methods": [
+            "deleteByPrimaryKey",
+            "insert",
+            "insertSelective",
+            "selectByPrimaryKey",
+            "selectByLevelAndName",
+            "updateByPrimaryKeySelective",
+            "updateByPrimaryKey",
+            "findGoodsCategoryList",
+            "getTotalGoodsCategories",
+            "deleteBatch",
+            "selectByLevelAndParentIdsAndNumber"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "GoodsCategoryMapper",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/dao/NewBeeMallGoodsMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 32,
+      "classes": [
+        {
+          "name": "NewBeeMallGoodsMapper",
+          "startLine": 18,
+          "endLine": 51,
+          "methods": [
+            "deleteByPrimaryKey",
+            "insert",
+            "insertSelective",
+            "selectByPrimaryKey",
+            "selectByCategoryIdAndName",
+            "updateByPrimaryKeySelective",
+            "updateByPrimaryKeyWithBLOBs",
+            "updateByPrimaryKey",
+            "findNewBeeMallGoodsList",
+            "getTotalNewBeeMallGoods",
+            "selectByPrimaryKeys",
+            "findNewBeeMallGoodsListBySearch",
+            "getTotalNewBeeMallGoodsBySearch",
+            "batchInsert",
+            "updateStockNum",
+            "batchUpdateSellStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewBeeMallGoodsMapper",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/GoodsCategory.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "GoodsCategory",
+          "startLine": 16,
+          "endLine": 39,
+          "methods": [],
+          "properties": [
+            "categoryId",
+            "categoryLevel",
+            "parentId",
+            "categoryName",
+            "categoryRank",
+            "isDeleted",
+            "createTime",
+            "createUser",
+            "updateTime",
+            "updateUser"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "GoodsCategory",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/LoginAdminUser.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "LoginAdminUser",
+          "startLine": 13,
+          "endLine": 24,
+          "methods": [],
+          "properties": [
+            "adminUserId",
+            "loginUserName",
+            "loginPassword",
+            "nickName",
+            "locked"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LoginAdminUser",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/NewBeeMallGoods.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 33,
+      "classes": [
+        {
+          "name": "NewBeeMallGoods",
+          "startLine": 16,
+          "endLine": 51,
+          "methods": [],
+          "properties": [
+            "goodsId",
+            "goodsName",
+            "goodsIntro",
+            "goodsCategoryId",
+            "goodsCoverImg",
+            "goodsCarousel",
+            "originalPrice",
+            "sellingPrice",
+            "stockNum",
+            "tag",
+            "goodsSellStatus",
+            "createUser",
+            "createTime",
+            "updateUser",
+            "updateTime",
+            "goodsDetailContent"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewBeeMallGoods",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/StockNumDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "StockNumDTO",
+          "startLine": 17,
+          "endLine": 22,
+          "methods": [],
+          "properties": [
+            "goodsId",
+            "goodsCount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "StockNumDTO",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/UpdateStockNumDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 21,
+      "functions": [
+        {
+          "name": "getStockNumDTOS",
+          "startLine": 19,
+          "endLine": 21,
+          "params": []
+        },
+        {
+          "name": "setStockNumDTOS",
+          "startLine": 23,
+          "endLine": 25,
+          "params": [
+            "stockNumDTOS"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "UpdateStockNumDTO",
+          "startLine": 14,
+          "endLine": 26,
+          "methods": [
+            "getStockNumDTOS",
+            "setStockNumDTOS"
+          ],
+          "properties": [
+            "stockNumDTOS"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getStockNumDTOS",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "setStockNumDTOS",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "UpdateStockNumDTO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/NewBeeMallCategoryService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 41,
+      "classes": [
+        {
+          "name": "NewBeeMallCategoryService",
+          "startLine": 18,
+          "endLine": 52,
+          "methods": [
+            "saveCategory",
+            "updateGoodsCategory",
+            "getGoodsCategoryById",
+            "deleteBatch",
+            "getCategorisPage",
+            "selectByLevelAndParentIdsAndNumber",
+            "getCategoriesForIndex"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewBeeMallCategoryService",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/NewBeeMallGoodsService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 74,
+      "classes": [
+        {
+          "name": "NewBeeMallGoodsService",
+          "startLine": 19,
+          "endLine": 85,
+          "methods": [
+            "getNewBeeMallGoodsPage",
+            "saveNewBeeMallGoods",
+            "batchSaveNewBeeMallGoods",
+            "updateNewBeeMallGoods",
+            "batchUpdateSellStatus",
+            "getNewBeeMallGoodsById",
+            "getNewBeeMallGoodsByIds",
+            "searchNewBeeMallGoods",
+            "updateStockNum"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewBeeMallGoodsService",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallCategoryServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 148,
+      "nonEmptyLines": 134,
+      "functions": [
+        {
+          "name": "saveCategory",
+          "startLine": 37,
+          "endLine": 47,
+          "params": [
+            "goodsCategory"
+          ]
+        },
+        {
+          "name": "updateGoodsCategory",
+          "startLine": 49,
+          "endLine": 65,
+          "params": [
+            "goodsCategory"
+          ]
+        },
+        {
+          "name": "getGoodsCategoryById",
+          "startLine": 67,
+          "endLine": 70,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteBatch",
+          "startLine": 72,
+          "endLine": 79,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getCategorisPage",
+          "startLine": 81,
+          "endLine": 87,
+          "params": [
+            "pageUtil"
+          ]
+        },
+        {
+          "name": "selectByLevelAndParentIdsAndNumber",
+          "startLine": 89,
+          "endLine": 92,
+          "params": [
+            "parentIds",
+            "categoryLevel"
+          ]
+        },
+        {
+          "name": "getCategoriesForIndex",
+          "startLine": 95,
+          "endLine": 146,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeMallCategoryServiceImpl",
+          "startLine": 31,
+          "endLine": 148,
+          "methods": [
+            "saveCategory",
+            "updateGoodsCategory",
+            "getGoodsCategoryById",
+            "deleteBatch",
+            "getCategorisPage",
+            "selectByLevelAndParentIdsAndNumber",
+            "getCategoriesForIndex"
+          ],
+          "properties": [
+            "goodsCategoryMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "saveCategory",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "updateGoodsCategory",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "getGoodsCategoryById",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "deleteBatch",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "getCategorisPage",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "selectByLevelAndParentIdsAndNumber",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "getCategoriesForIndex",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeMallCategoryServiceImpl",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "saveCategory",
+          "callee": "goodsCategoryMapper.selectByLevelAndName",
+          "lineNumber": 39
+        },
+        {
+          "caller": "saveCategory",
+          "callee": "goodsCategory.getCategoryLevel",
+          "lineNumber": 39
+        },
+        {
+          "caller": "saveCategory",
+          "callee": "goodsCategory.getCategoryName",
+          "lineNumber": 39
+        },
+        {
+          "caller": "saveCategory",
+          "callee": "ServiceResultEnum.SAME_CATEGORY_EXIST.getResult",
+          "lineNumber": 41
+        },
+        {
+          "caller": "saveCategory",
+          "callee": "goodsCategoryMapper.insertSelective",
+          "lineNumber": 43
+        },
+        {
+          "caller": "saveCategory",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 44
+        },
+        {
+          "caller": "saveCategory",
+          "callee": "ServiceResultEnum.DB_ERROR.getResult",
+          "lineNumber": 46
+        },
+        {
+          "caller": "updateGoodsCategory",
+          "callee": "goodsCategoryMapper.selectByPrimaryKey",
+          "lineNumber": 51
+        },
+        {
+          "caller": "updateGoodsCategory",
+          "callee": "goodsCategory.getCategoryId",
+          "lineNumber": 51
+        },
+        {
+          "caller": "updateGoodsCategory",
+          "callee": "ServiceResultEnum.DATA_NOT_EXIST.getResult",
+          "lineNumber": 53
+        },
+        {
+          "caller": "updateGoodsCategory",
+          "callee": "goodsCategoryMapper.selectByLevelAndName",
+          "lineNumber": 55
+        },
+        {
+          "caller": "updateGoodsCategory",
+          "callee": "goodsCategory.getCategoryLevel",
+          "lineNumber": 55
+        },
+        {
+          "caller": "updateGoodsCategory",
+          "callee": "goodsCategory.getCategoryName",
+          "lineNumber": 55
+        },
+        {
+          "caller": "updateGoodsCategory",
+          "callee": "temp2.getCategoryId().equals",
+          "lineNumber": 56
+        },
+        {
+          "caller": "updateGoodsCategory",
+          "callee": "temp2.getCategoryId",
+          "lineNumber": 56
+        },
+        {
+          "caller": "updateGoodsCategory",
+          "callee": "goodsCategory.getCategoryId",
+          "lineNumber": 56
+        },
+        {
+          "caller": "updateGoodsCategory",
+          "callee": "ServiceResultEnum.SAME_CATEGORY_EXIST.getResult",
+          "lineNumber": 58
+        },
+        {
+          "caller": "updateGoodsCategory",
+          "callee": "goodsCategory.setUpdateTime",
+          "lineNumber": 60
+        },
+        {
+          "caller": "updateGoodsCategory",
+          "callee": "new Date",
+          "lineNumber": 60
+        },
+        {
+          "caller": "updateGoodsCategory",
+          "callee": "goodsCategoryMapper.updateByPrimaryKeySelective",
+          "lineNumber": 61
+        },
+        {
+          "caller": "updateGoodsCategory",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 62
+        },
+        {
+          "caller": "updateGoodsCategory",
+          "callee": "ServiceResultEnum.DB_ERROR.getResult",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getGoodsCategoryById",
+          "callee": "goodsCategoryMapper.selectByPrimaryKey",
+          "lineNumber": 69
+        },
+        {
+          "caller": "deleteBatch",
+          "callee": "goodsCategoryMapper.deleteBatch",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getCategorisPage",
+          "callee": "goodsCategoryMapper.findGoodsCategoryList",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getCategorisPage",
+          "callee": "goodsCategoryMapper.getTotalGoodsCategories",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getCategorisPage",
+          "callee": "new PageResult",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getCategorisPage",
+          "callee": "pageUtil.getLimit",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getCategorisPage",
+          "callee": "pageUtil.getPage",
+          "lineNumber": 85
+        },
+        {
+          "caller": "selectByLevelAndParentIdsAndNumber",
+          "callee": "goodsCategoryMapper.selectByLevelAndParentIdsAndNumber",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "new ArrayList<>",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "goodsCategoryMapper.selectByLevelAndParentIdsAndNumber",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "Collections.singletonList",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "NewBeeMallCategoryLevelEnum.LEVEL_ONE.getLevel",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "firstLevelCategories.stream().map(GoodsCategory::getCategoryId).collect",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "firstLevelCategories.stream().map",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "firstLevelCategories.stream",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "Collectors.toList",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "goodsCategoryMapper.selectByLevelAndParentIdsAndNumber",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "NewBeeMallCategoryLevelEnum.LEVEL_TWO.getLevel",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "secondLevelCategories.stream().map(GoodsCategory::getCategoryId).collect",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "secondLevelCategories.stream().map",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "secondLevelCategories.stream",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "Collectors.toList",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "goodsCategoryMapper.selectByLevelAndParentIdsAndNumber",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "NewBeeMallCategoryLevelEnum.LEVEL_THREE.getLevel",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "thirdLevelCategories.stream().collect",
+          "lineNumber": 110
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "thirdLevelCategories.stream",
+          "lineNumber": 110
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "groupingBy",
+          "lineNumber": 110
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "new ArrayList<>",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "new SecondLevelCategoryVO",
+          "lineNumber": 114
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "BeanUtil.copyProperties",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "thirdLevelCategoryMap.containsKey",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "secondLevelCategory.getCategoryId",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "thirdLevelCategoryMap.get",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "secondLevelCategory.getCategoryId",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "secondLevelCategoryVO.setThirdLevelCategoryVOS",
+          "lineNumber": 120
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "BeanUtil.copyList",
+          "lineNumber": 120
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "secondLevelCategoryVOS.add",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 125
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "secondLevelCategoryVOS.stream().collect",
+          "lineNumber": 127
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "secondLevelCategoryVOS.stream",
+          "lineNumber": 127
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "groupingBy",
+          "lineNumber": 127
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "new NewBeeMallIndexCategoryVO",
+          "lineNumber": 129
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "BeanUtil.copyProperties",
+          "lineNumber": 130
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "secondLevelCategoryVOMap.containsKey",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "firstCategory.getCategoryId",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "secondLevelCategoryVOMap.get",
+          "lineNumber": 134
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "firstCategory.getCategoryId",
+          "lineNumber": 134
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "newBeeMallIndexCategoryVO.setSecondLevelCategoryVOS",
+          "lineNumber": 135
+        },
+        {
+          "caller": "getCategoriesForIndex",
+          "callee": "newBeeMallIndexCategoryVOS.add",
+          "lineNumber": 136
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallGoodsServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 143,
+      "nonEmptyLines": 129,
+      "functions": [
+        {
+          "name": "getNewBeeMallGoodsPage",
+          "startLine": 40,
+          "endLine": 46,
+          "params": [
+            "pageUtil"
+          ]
+        },
+        {
+          "name": "saveNewBeeMallGoods",
+          "startLine": 48,
+          "endLine": 62,
+          "params": [
+            "goods"
+          ]
+        },
+        {
+          "name": "batchSaveNewBeeMallGoods",
+          "startLine": 64,
+          "endLine": 69,
+          "params": [
+            "newBeeMallGoodsList"
+          ]
+        },
+        {
+          "name": "updateNewBeeMallGoods",
+          "startLine": 71,
+          "endLine": 92,
+          "params": [
+            "goods"
+          ]
+        },
+        {
+          "name": "getNewBeeMallGoodsById",
+          "startLine": 94,
+          "endLine": 101,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getNewBeeMallGoodsByIds",
+          "startLine": 103,
+          "endLine": 106,
+          "params": [
+            "goodsIds"
+          ]
+        },
+        {
+          "name": "batchUpdateSellStatus",
+          "startLine": 108,
+          "endLine": 111,
+          "params": [
+            "ids",
+            "sellStatus"
+          ]
+        },
+        {
+          "name": "searchNewBeeMallGoods",
+          "startLine": 114,
+          "endLine": 137,
+          "params": [
+            "pageUtil"
+          ]
+        },
+        {
+          "name": "updateStockNum",
+          "startLine": 139,
+          "endLine": 142,
+          "params": [
+            "stockNumDTOS"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeMallGoodsServiceImpl",
+          "startLine": 32,
+          "endLine": 143,
+          "methods": [
+            "getNewBeeMallGoodsPage",
+            "saveNewBeeMallGoods",
+            "batchSaveNewBeeMallGoods",
+            "updateNewBeeMallGoods",
+            "getNewBeeMallGoodsById",
+            "getNewBeeMallGoodsByIds",
+            "batchUpdateSellStatus",
+            "searchNewBeeMallGoods",
+            "updateStockNum"
+          ],
+          "properties": [
+            "goodsMapper",
+            "goodsCategoryMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getNewBeeMallGoodsPage",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "saveNewBeeMallGoods",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "batchSaveNewBeeMallGoods",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "updateNewBeeMallGoods",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "getNewBeeMallGoodsById",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "getNewBeeMallGoodsByIds",
+          "line": 103,
+          "isDefault": false
+        },
+        {
+          "name": "batchUpdateSellStatus",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "searchNewBeeMallGoods",
+          "line": 114,
+          "isDefault": false
+        },
+        {
+          "name": "updateStockNum",
+          "line": 139,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeMallGoodsServiceImpl",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getNewBeeMallGoodsPage",
+          "callee": "goodsMapper.findNewBeeMallGoodsList",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getNewBeeMallGoodsPage",
+          "callee": "goodsMapper.getTotalNewBeeMallGoods",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getNewBeeMallGoodsPage",
+          "callee": "new PageResult",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getNewBeeMallGoodsPage",
+          "callee": "pageUtil.getLimit",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getNewBeeMallGoodsPage",
+          "callee": "pageUtil.getPage",
+          "lineNumber": 44
+        },
+        {
+          "caller": "saveNewBeeMallGoods",
+          "callee": "goodsCategoryMapper.selectByPrimaryKey",
+          "lineNumber": 50
+        },
+        {
+          "caller": "saveNewBeeMallGoods",
+          "callee": "goods.getGoodsCategoryId",
+          "lineNumber": 50
+        },
+        {
+          "caller": "saveNewBeeMallGoods",
+          "callee": "goodsCategory.getCategoryLevel().intValue",
+          "lineNumber": 52
+        },
+        {
+          "caller": "saveNewBeeMallGoods",
+          "callee": "goodsCategory.getCategoryLevel",
+          "lineNumber": 52
+        },
+        {
+          "caller": "saveNewBeeMallGoods",
+          "callee": "NewBeeMallCategoryLevelEnum.LEVEL_THREE.getLevel",
+          "lineNumber": 52
+        },
+        {
+          "caller": "saveNewBeeMallGoods",
+          "callee": "ServiceResultEnum.GOODS_CATEGORY_ERROR.getResult",
+          "lineNumber": 53
+        },
+        {
+          "caller": "saveNewBeeMallGoods",
+          "callee": "goodsMapper.selectByCategoryIdAndName",
+          "lineNumber": 55
+        },
+        {
+          "caller": "saveNewBeeMallGoods",
+          "callee": "goods.getGoodsName",
+          "lineNumber": 55
+        },
+        {
+          "caller": "saveNewBeeMallGoods",
+          "callee": "goods.getGoodsCategoryId",
+          "lineNumber": 55
+        },
+        {
+          "caller": "saveNewBeeMallGoods",
+          "callee": "ServiceResultEnum.SAME_GOODS_EXIST.getResult",
+          "lineNumber": 56
+        },
+        {
+          "caller": "saveNewBeeMallGoods",
+          "callee": "goodsMapper.insertSelective",
+          "lineNumber": 58
+        },
+        {
+          "caller": "saveNewBeeMallGoods",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 59
+        },
+        {
+          "caller": "saveNewBeeMallGoods",
+          "callee": "ServiceResultEnum.DB_ERROR.getResult",
+          "lineNumber": 61
+        },
+        {
+          "caller": "batchSaveNewBeeMallGoods",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 66
+        },
+        {
+          "caller": "batchSaveNewBeeMallGoods",
+          "callee": "goodsMapper.batchInsert",
+          "lineNumber": 67
+        },
+        {
+          "caller": "updateNewBeeMallGoods",
+          "callee": "goodsCategoryMapper.selectByPrimaryKey",
+          "lineNumber": 73
+        },
+        {
+          "caller": "updateNewBeeMallGoods",
+          "callee": "goods.getGoodsCategoryId",
+          "lineNumber": 73
+        },
+        {
+          "caller": "updateNewBeeMallGoods",
+          "callee": "goodsCategory.getCategoryLevel().intValue",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updateNewBeeMallGoods",
+          "callee": "goodsCategory.getCategoryLevel",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updateNewBeeMallGoods",
+          "callee": "NewBeeMallCategoryLevelEnum.LEVEL_THREE.getLevel",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updateNewBeeMallGoods",
+          "callee": "ServiceResultEnum.GOODS_CATEGORY_ERROR.getResult",
+          "lineNumber": 76
+        },
+        {
+          "caller": "updateNewBeeMallGoods",
+          "callee": "goodsMapper.selectByPrimaryKey",
+          "lineNumber": 78
+        },
+        {
+          "caller": "updateNewBeeMallGoods",
+          "callee": "goods.getGoodsId",
+          "lineNumber": 78
+        },
+        {
+          "caller": "updateNewBeeMallGoods",
+          "callee": "ServiceResultEnum.DATA_NOT_EXIST.getResult",
+          "lineNumber": 80
+        },
+        {
+          "caller": "updateNewBeeMallGoods",
+          "callee": "goodsMapper.selectByCategoryIdAndName",
+          "lineNumber": 82
+        },
+        {
+          "caller": "updateNewBeeMallGoods",
+          "callee": "goods.getGoodsName",
+          "lineNumber": 82
+        },
+        {
+          "caller": "updateNewBeeMallGoods",
+          "callee": "goods.getGoodsCategoryId",
+          "lineNumber": 82
+        },
+        {
+          "caller": "updateNewBeeMallGoods",
+          "callee": "temp2.getGoodsId().equals",
+          "lineNumber": 83
+        },
+        {
+          "caller": "updateNewBeeMallGoods",
+          "callee": "temp2.getGoodsId",
+          "lineNumber": 83
+        },
+        {
+          "caller": "updateNewBeeMallGoods",
+          "callee": "goods.getGoodsId",
+          "lineNumber": 83
+        },
+        {
+          "caller": "updateNewBeeMallGoods",
+          "callee": "ServiceResultEnum.SAME_GOODS_EXIST.getResult",
+          "lineNumber": 85
+        },
+        {
+          "caller": "updateNewBeeMallGoods",
+          "callee": "goods.setUpdateTime",
+          "lineNumber": 87
+        },
+        {
+          "caller": "updateNewBeeMallGoods",
+          "callee": "new Date",
+          "lineNumber": 87
+        },
+        {
+          "caller": "updateNewBeeMallGoods",
+          "callee": "goodsMapper.updateByPrimaryKeySelective",
+          "lineNumber": 88
+        },
+        {
+          "caller": "updateNewBeeMallGoods",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 89
+        },
+        {
+          "caller": "updateNewBeeMallGoods",
+          "callee": "ServiceResultEnum.DB_ERROR.getResult",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getNewBeeMallGoodsById",
+          "callee": "goodsMapper.selectByPrimaryKey",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getNewBeeMallGoodsById",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getNewBeeMallGoodsById",
+          "callee": "ServiceResultEnum.GOODS_NOT_EXIST.getResult",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getNewBeeMallGoodsByIds",
+          "callee": "goodsMapper.selectByPrimaryKeys",
+          "lineNumber": 105
+        },
+        {
+          "caller": "batchUpdateSellStatus",
+          "callee": "goodsMapper.batchUpdateSellStatus",
+          "lineNumber": 110
+        },
+        {
+          "caller": "searchNewBeeMallGoods",
+          "callee": "goodsMapper.findNewBeeMallGoodsListBySearch",
+          "lineNumber": 116
+        },
+        {
+          "caller": "searchNewBeeMallGoods",
+          "callee": "goodsMapper.getTotalNewBeeMallGoodsBySearch",
+          "lineNumber": 117
+        },
+        {
+          "caller": "searchNewBeeMallGoods",
+          "callee": "new ArrayList<>",
+          "lineNumber": 118
+        },
+        {
+          "caller": "searchNewBeeMallGoods",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 119
+        },
+        {
+          "caller": "searchNewBeeMallGoods",
+          "callee": "BeanUtil.copyList",
+          "lineNumber": 120
+        },
+        {
+          "caller": "searchNewBeeMallGoods",
+          "callee": "newBeeMallSearchGoodsVO.getGoodsName",
+          "lineNumber": 122
+        },
+        {
+          "caller": "searchNewBeeMallGoods",
+          "callee": "newBeeMallSearchGoodsVO.getGoodsIntro",
+          "lineNumber": 123
+        },
+        {
+          "caller": "searchNewBeeMallGoods",
+          "callee": "goodsName.length",
+          "lineNumber": 125
+        },
+        {
+          "caller": "searchNewBeeMallGoods",
+          "callee": "goodsName.substring",
+          "lineNumber": 126
+        },
+        {
+          "caller": "searchNewBeeMallGoods",
+          "callee": "newBeeMallSearchGoodsVO.setGoodsName",
+          "lineNumber": 127
+        },
+        {
+          "caller": "searchNewBeeMallGoods",
+          "callee": "goodsIntro.length",
+          "lineNumber": 129
+        },
+        {
+          "caller": "searchNewBeeMallGoods",
+          "callee": "goodsIntro.substring",
+          "lineNumber": 130
+        },
+        {
+          "caller": "searchNewBeeMallGoods",
+          "callee": "newBeeMallSearchGoodsVO.setGoodsIntro",
+          "lineNumber": 131
+        },
+        {
+          "caller": "searchNewBeeMallGoods",
+          "callee": "new PageResult",
+          "lineNumber": 135
+        },
+        {
+          "caller": "searchNewBeeMallGoods",
+          "callee": "pageUtil.getLimit",
+          "lineNumber": 135
+        },
+        {
+          "caller": "searchNewBeeMallGoods",
+          "callee": "pageUtil.getPage",
+          "lineNumber": 135
+        },
+        {
+          "caller": "updateStockNum",
+          "callee": "goodsMapper.updateStockNum",
+          "lineNumber": 141
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    }
+  ]
+}

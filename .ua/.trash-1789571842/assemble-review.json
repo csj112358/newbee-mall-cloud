@@ -1,0 +1,124 @@
+{
+  "status": "pass",
+  "timestamp": "2026-09-16T22:51:17.409332",
+  "graph_stats": {
+    "nodes": 405,
+    "edges": 731,
+    "node_types": {
+      "file": 180,
+      "class": 129,
+      "function": 39,
+      "config": 42,
+      "table": 14,
+      "document": 1
+    },
+    "edge_types": {
+      "contains": 124,
+      "imports": 423,
+      "implements": 7,
+      "uses": 43,
+      "calls": 54,
+      "configures": 32,
+      "depends_on": 20,
+      "documents": 5,
+      "related": 8,
+      "similar_to": 15
+    },
+    "complexity_distribution": {
+      "moderate": 351,
+      "simple": 51,
+      "complex": 3
+    }
+  },
+  "integrity_checks": {
+    "missing_endpoint_edges": 0,
+    "nodes_without_type": 0,
+    "edges_without_type": 0,
+    "self_loops": 0,
+    "duplicate_edges": 0,
+    "duplicate_node_ids": 0
+  },
+  "fixes_applied": {
+    "node_kind_to_type": {
+      "count": 121,
+      "description": "Normalized nodes using 'kind' field to 'type' field (schema compliance)"
+    },
+    "edge_kind_to_type": {
+      "count": 78,
+      "description": "Normalized edges using 'kind' field to 'type' field (schema compliance)"
+    },
+    "interface_to_class": {
+      "count": 1,
+      "description": "Changed node type 'interface' to 'class' (schema only allows file/class/function/config/table/document)",
+      "affected": [
+        "file::interface::ltd.user.cloud.newbee.openfeign.NewBeeCloudUserServiceFeign -> type: class, then renamed to class::ltd.user.cloud.newbee.openfeign.NewBeeCloudUserServiceFeign"
+      ]
+    },
+    "id_format_normalization": {
+      "count": 225,
+      "description": "Normalized single-colon IDs (file:path, class:path, config:path, table:path, document:path) to double-colon format (file::path, class::path, etc.)"
+    },
+    "file_method_to_function": {
+      "count": 16,
+      "description": "Converted file:method:: prefixed nodes to function:: prefix with correct type"
+    },
+    "cross_batch_import_edges_recovered": {
+      "count": 207,
+      "description": "Added missing import edges from scan-result.json importMap where both source and target file nodes exist in graph"
+    },
+    "interface_node_id_normalization": {
+      "count": 1,
+      "description": "Renamed anomalous file::interface:: prefix to class:: prefix (7 edge references updated)",
+      "old_id": "file::interface::ltd.user.cloud.newbee.openfeign.NewBeeCloudUserServiceFeign",
+      "new_id": "class::ltd.user.cloud.newbee.openfeign.NewBeeCloudUserServiceFeign"
+    }
+  },
+  "merge_report_issues_review": {
+    "prefix_canonicalization_23_func_to_function": {
+      "status": "verified_ok",
+      "description": "Merge script correctly normalized 23 func: prefixes to function:. Confirmed no residual func: prefixes remain."
+    },
+    "bare_path_to_file_19": {
+      "status": "verified_ok",
+      "description": "Merge script correctly added file: prefix to 19 bare paths. All file nodes now have proper file:: prefix."
+    },
+    "bare_path_to_config_6": {
+      "status": "verified_ok",
+      "description": "Merge script correctly added config: prefix to 6 bare paths. All config nodes now have proper config:: prefix."
+    },
+    "bare_path_to_class_2": {
+      "status": "verified_ok",
+      "description": "Merge script correctly added class: prefix to 2 bare paths. All class nodes now have proper class:: prefix."
+    },
+    "edge_references_rewritten_41": {
+      "status": "verified_ok",
+      "description": "Merge script rewrote 41 edge references after ID normalization. No dangling references remain."
+    },
+    "unknown_interface_type_1": {
+      "status": "fixed",
+      "description": "Changed type from 'interface' to 'class'. Schema does not support 'interface' as a node type."
+    },
+    "complexity_none_325_defaulted": {
+      "status": "accepted",
+      "description": "325 nodes had null complexity, defaulted to 'moderate' by merge script. This is acceptable for initial assembly; complexity analysis can be refined in a later pass."
+    },
+    "dropped_edges_encoding": {
+      "status": "accepted",
+      "description": "Some edges were dropped due to empty source/target strings (encoding issues in batch files). After review, all remaining edges have valid endpoints. 0 edges with missing endpoints."
+    }
+  },
+  "cross_batch_edge_analysis": {
+    "import_map_entries": 223,
+    "non_empty_import_entries": 74,
+    "existing_import_edges_before_review": 216,
+    "missing_import_edges_recovered": 207,
+    "total_import_edges_after_review": 423,
+    "import_map_entries_with_no_file_node": "Skipped - these source/target files don't have a whole-file node in the graph (covered by batch scanning limits)"
+  },
+  "notes": [
+    "Garbled Chinese text in node summaries is actually valid UTF-8 (confirmed: CJK codepoints U+4E00-U+9FFF). Display corruption is a terminal encoding issue, not a data problem.",
+    "The 16 file:method:: nodes were converted to function:: nodes with correct type, as they represent Java methods extracted during scanning.",
+    "Complexity distribution after fix: 351 moderate, 51 simple, 3 complex. The high count of 'moderate' reflects the merge script's defaulting of 325 null values.",
+    "Edge count increased from 524 to 731 after recovering 207 cross-batch import edges from the importMap."
+  ]
+}

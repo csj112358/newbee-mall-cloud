@@ -1,0 +1,138 @@
+{
+  "projectRoot": "E:/Github/newbee-mall-cloud",
+  "batchFiles": [
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/BeanUtil.java",
+      "language": "java",
+      "sizeLines": 93,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "language": "java",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallOrderController.java",
+      "language": "java",
+      "sizeLines": 123,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallUserAddressController.java",
+      "language": "java",
+      "sizeLines": 115,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/SaveMallUserAddressParam.java",
+      "language": "java",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/SaveOrderParam.java",
+      "language": "java",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/UpdateMallUserAddressParam.java",
+      "language": "java",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderListVO.java",
+      "language": "java",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallUserAddressVO.java",
+      "language": "java",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/MallUserAddressMapper.java",
+      "language": "java",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/MallUserAddress.java",
+      "language": "java",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallUserAddressService.java",
+      "language": "java",
+      "sizeLines": 65,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallUserAddressServiceImpl.java",
+      "language": "java",
+      "sizeLines": 98,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/BeanUtil.java": [],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/annotation/TokenToMallUser.java": [],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallOrderController.java": [
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageResult.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/ResultGenerator.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/exception/NewBeeMallException.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/MallUserToken.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/SaveOrderParam.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderDetailVO.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderListVO.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/MallUserAddress.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallOrderService.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallUserAddressService.java"
+    ],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallUserAddressController.java": [
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/ResultGenerator.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/MallUserToken.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/BeanUtil.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/SaveMallUserAddressParam.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/UpdateMallUserAddressParam.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallUserAddressVO.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/MallUserAddress.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallUserAddressService.java"
+    ],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/SaveMallUserAddressParam.java": [],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/SaveOrderParam.java": [],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/UpdateMallUserAddressParam.java": [],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderListVO.java": [],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallUserAddressVO.java": [],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/MallUserAddressMapper.java": [
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/MallUserAddress.java"
+    ],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/MallUserAddress.java": [],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallUserAddressService.java": [
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallUserAddressVO.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/MallUserAddress.java"
+    ],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallUserAddressServiceImpl.java": [
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/exception/NewBeeMallException.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/BeanUtil.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallUserAddressVO.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/MallUserAddressMapper.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/MallUserAddress.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallUserAddressService.java"
+    ]
+  }
+}

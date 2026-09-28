@@ -1,0 +1,1644 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 13,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 13,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 13,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/BeanUtil.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 93,
+      "nonEmptyLines": 83,
+      "functions": [
+        {
+          "name": "copyProperties",
+          "startLine": 14,
+          "endLine": 20,
+          "params": [
+            "source",
+            "target"
+          ]
+        },
+        {
+          "name": "copyList",
+          "startLine": 22,
+          "endLine": 24,
+          "params": [
+            "sources",
+            "clazz"
+          ]
+        },
+        {
+          "name": "copyList",
+          "startLine": 26,
+          "endLine": 45,
+          "params": [
+            "sources",
+            "clazz",
+            "callback"
+          ]
+        },
+        {
+          "name": "toMap",
+          "startLine": 47,
+          "endLine": 59,
+          "params": [
+            "bean"
+          ]
+        },
+        {
+          "name": "toBean",
+          "startLine": 61,
+          "endLine": 69,
+          "params": [
+            "map",
+            "beanType"
+          ]
+        },
+        {
+          "name": "checkPojoNullField",
+          "startLine": 76,
+          "endLine": 92,
+          "params": [
+            "o",
+            "clz"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BeanUtil",
+          "startLine": 12,
+          "endLine": 93,
+          "methods": [
+            "copyProperties",
+            "copyList",
+            "copyList",
+            "toMap",
+            "toBean",
+            "checkPojoNullField"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "copyProperties",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "copyList",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "copyList",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "toMap",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "toBean",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "checkPojoNullField",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "BeanUtil",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "copyProperties",
+          "callee": "BeanUtils.copyProperties",
+          "lineNumber": 18
+        },
+        {
+          "caller": "copyList",
+          "callee": "copyList",
+          "lineNumber": 23
+        },
+        {
+          "caller": "copyList",
+          "callee": "new ArrayList<>",
+          "lineNumber": 27
+        },
+        {
+          "caller": "copyList",
+          "callee": "clazz.newInstance",
+          "lineNumber": 31
+        },
+        {
+          "caller": "copyList",
+          "callee": "copyProperties",
+          "lineNumber": 32
+        },
+        {
+          "caller": "copyList",
+          "callee": "callback.set",
+          "lineNumber": 34
+        },
+        {
+          "caller": "copyList",
+          "callee": "targetList.add",
+          "lineNumber": 36
+        },
+        {
+          "caller": "copyList",
+          "callee": "e.printStackTrace",
+          "lineNumber": 39
+        },
+        {
+          "caller": "copyList",
+          "callee": "e.printStackTrace",
+          "lineNumber": 41
+        },
+        {
+          "caller": "toMap",
+          "callee": "new LinkedHashMap<>",
+          "lineNumber": 48
+        },
+        {
+          "caller": "toMap",
+          "callee": "new ArrayList<>",
+          "lineNumber": 49
+        },
+        {
+          "caller": "toMap",
+          "callee": "Arrays.asList",
+          "lineNumber": 49
+        },
+        {
+          "caller": "toMap",
+          "callee": "ignoreList.add",
+          "lineNumber": 50
+        },
+        {
+          "caller": "toMap",
+          "callee": "PropertyAccessorFactory.forBeanPropertyAccess",
+          "lineNumber": 51
+        },
+        {
+          "caller": "toMap",
+          "callee": "beanWrapper.getPropertyDescriptors",
+          "lineNumber": 52
+        },
+        {
+          "caller": "toMap",
+          "callee": "ignoreList.contains",
+          "lineNumber": 53
+        },
+        {
+          "caller": "toMap",
+          "callee": "pd.getName",
+          "lineNumber": 53
+        },
+        {
+          "caller": "toMap",
+          "callee": "beanWrapper.isReadableProperty",
+          "lineNumber": 53
+        },
+        {
+          "caller": "toMap",
+          "callee": "pd.getName",
+          "lineNumber": 53
+        },
+        {
+          "caller": "toMap",
+          "callee": "beanWrapper.getPropertyValue",
+          "lineNumber": 54
+        },
+        {
+          "caller": "toMap",
+          "callee": "pd.getName",
+          "lineNumber": 54
+        },
+        {
+          "caller": "toMap",
+          "callee": "map.put",
+          "lineNumber": 55
+        },
+        {
+          "caller": "toMap",
+          "callee": "pd.getName",
+          "lineNumber": 55
+        },
+        {
+          "caller": "toBean",
+          "callee": "new BeanWrapperImpl",
+          "lineNumber": 62
+        },
+        {
+          "caller": "toBean",
+          "callee": "map.forEach",
+          "lineNumber": 63
+        },
+        {
+          "caller": "toBean",
+          "callee": "beanWrapper.isWritableProperty",
+          "lineNumber": 64
+        },
+        {
+          "caller": "toBean",
+          "callee": "beanWrapper.setPropertyValue",
+          "lineNumber": 65
+        },
+        {
+          "caller": "toBean",
+          "callee": "beanWrapper.getWrappedInstance",
+          "lineNumber": 68
+        },
+        {
+          "caller": "checkPojoNullField",
+          "callee": "clz.getDeclaredFields",
+          "lineNumber": 78
+        },
+        {
+          "caller": "checkPojoNullField",
+          "callee": "field.setAccessible",
+          "lineNumber": 80
+        },
+        {
+          "caller": "checkPojoNullField",
+          "callee": "field.get",
+          "lineNumber": 81
+        },
+        {
+          "caller": "checkPojoNullField",
+          "callee": "clz.getSuperclass",
+          "lineNumber": 85
+        },
+        {
+          "caller": "checkPojoNullField",
+          "callee": "checkPojoNullField",
+          "lineNumber": 86
+        },
+        {
+          "caller": "checkPojoNullField",
+          "callee": "clz.getSuperclass",
+          "lineNumber": 86
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 21,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallOrderController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 123,
+      "nonEmptyLines": 112,
+      "functions": [
+        {
+          "name": "saveOrder",
+          "startLine": 46,
+          "endLine": 64,
+          "params": [
+            "saveOrderParam",
+            "loginMallUserToken"
+          ]
+        },
+        {
+          "name": "orderDetailPage",
+          "startLine": 66,
+          "endLine": 70,
+          "params": [
+            "orderNo",
+            "loginMallUserToken"
+          ]
+        },
+        {
+          "name": "orderList",
+          "startLine": 72,
+          "endLine": 88,
+          "params": [
+            "pageNumber",
+            "status",
+            "loginMallUserToken"
+          ]
+        },
+        {
+          "name": "cancelOrder",
+          "startLine": 90,
+          "endLine": 99,
+          "params": [
+            "orderNo",
+            "loginMallUserToken"
+          ]
+        },
+        {
+          "name": "finishOrder",
+          "startLine": 101,
+          "endLine": 110,
+          "params": [
+            "orderNo",
+            "loginMallUserToken"
+          ]
+        },
+        {
+          "name": "paySuccess",
+          "startLine": 112,
+          "endLine": 121,
+          "params": [
+            "orderNo",
+            "payType"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeMallOrderController",
+          "startLine": 36,
+          "endLine": 123,
+          "methods": [
+            "saveOrder",
+            "orderDetailPage",
+            "orderList",
+            "cancelOrder",
+            "finishOrder",
+            "paySuccess"
+          ],
+          "properties": [
+            "newBeeMallOrderService",
+            "newBeeMallUserAddressService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "saveOrder",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "orderDetailPage",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "orderList",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "cancelOrder",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "finishOrder",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "paySuccess",
+          "line": 112,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeMallOrderController",
+          "line": 36,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "saveOrder",
+          "callee": "saveOrderParam.getCartItemIds",
+          "lineNumber": 49
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "saveOrderParam.getAddressId",
+          "lineNumber": 49
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 50
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "ServiceResultEnum.PARAM_ERROR.getResult",
+          "lineNumber": 50
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "saveOrderParam.getCartItemIds",
+          "lineNumber": 52
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 53
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "ServiceResultEnum.PARAM_ERROR.getResult",
+          "lineNumber": 53
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "newBeeMallUserAddressService.getMallUserAddressById",
+          "lineNumber": 55
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "saveOrderParam.getAddressId",
+          "lineNumber": 55
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "loginMallUserToken.getUserId().equals",
+          "lineNumber": 56
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "loginMallUserToken.getUserId",
+          "lineNumber": 56
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "address.getUserId",
+          "lineNumber": 56
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 57
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "ServiceResultEnum.REQUEST_FORBIDEN_ERROR.getResult",
+          "lineNumber": 57
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "newBeeMallOrderService.saveOrder",
+          "lineNumber": 60
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "loginMallUserToken.getUserId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "Arrays.asList",
+          "lineNumber": 60
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "saveOrderParam.getCartItemIds",
+          "lineNumber": 60
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 61
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "result.setData",
+          "lineNumber": 62
+        },
+        {
+          "caller": "orderDetailPage",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 69
+        },
+        {
+          "caller": "orderDetailPage",
+          "callee": "newBeeMallOrderService.getOrderDetailByOrderNo",
+          "lineNumber": 69
+        },
+        {
+          "caller": "orderDetailPage",
+          "callee": "loginMallUserToken.getUserId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "orderList",
+          "callee": "new HashMap",
+          "lineNumber": 77
+        },
+        {
+          "caller": "orderList",
+          "callee": "params.put",
+          "lineNumber": 81
+        },
+        {
+          "caller": "orderList",
+          "callee": "loginMallUserToken.getUserId",
+          "lineNumber": 81
+        },
+        {
+          "caller": "orderList",
+          "callee": "params.put",
+          "lineNumber": 82
+        },
+        {
+          "caller": "orderList",
+          "callee": "params.put",
+          "lineNumber": 83
+        },
+        {
+          "caller": "orderList",
+          "callee": "params.put",
+          "lineNumber": 84
+        },
+        {
+          "caller": "orderList",
+          "callee": "new PageQueryUtil",
+          "lineNumber": 86
+        },
+        {
+          "caller": "orderList",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 87
+        },
+        {
+          "caller": "orderList",
+          "callee": "newBeeMallOrderService.getMyOrders",
+          "lineNumber": 87
+        },
+        {
+          "caller": "cancelOrder",
+          "callee": "newBeeMallOrderService.cancelOrder",
+          "lineNumber": 93
+        },
+        {
+          "caller": "cancelOrder",
+          "callee": "loginMallUserToken.getUserId",
+          "lineNumber": 93
+        },
+        {
+          "caller": "cancelOrder",
+          "callee": "ServiceResultEnum.SUCCESS.getResult().equals",
+          "lineNumber": 94
+        },
+        {
+          "caller": "cancelOrder",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 94
+        },
+        {
+          "caller": "cancelOrder",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 95
+        },
+        {
+          "caller": "cancelOrder",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 97
+        },
+        {
+          "caller": "finishOrder",
+          "callee": "newBeeMallOrderService.finishOrder",
+          "lineNumber": 104
+        },
+        {
+          "caller": "finishOrder",
+          "callee": "loginMallUserToken.getUserId",
+          "lineNumber": 104
+        },
+        {
+          "caller": "finishOrder",
+          "callee": "ServiceResultEnum.SUCCESS.getResult().equals",
+          "lineNumber": 105
+        },
+        {
+          "caller": "finishOrder",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 105
+        },
+        {
+          "caller": "finishOrder",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 106
+        },
+        {
+          "caller": "finishOrder",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 108
+        },
+        {
+          "caller": "paySuccess",
+          "callee": "newBeeMallOrderService.paySuccess",
+          "lineNumber": 115
+        },
+        {
+          "caller": "paySuccess",
+          "callee": "ServiceResultEnum.SUCCESS.getResult().equals",
+          "lineNumber": 116
+        },
+        {
+          "caller": "paySuccess",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 116
+        },
+        {
+          "caller": "paySuccess",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 117
+        },
+        {
+          "caller": "paySuccess",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 119
+        }
+      ],
+      "metrics": {
+        "importCount": 14,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallUserAddressController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 115,
+      "nonEmptyLines": 105,
+      "functions": [
+        {
+          "name": "addressList",
+          "startLine": 37,
+          "endLine": 41,
+          "params": [
+            "loginMallUserToken"
+          ]
+        },
+        {
+          "name": "saveUserAddress",
+          "startLine": 43,
+          "endLine": 57,
+          "params": [
+            "saveMallUserAddressParam",
+            "loginMallUserToken"
+          ]
+        },
+        {
+          "name": "updateMallUserAddress",
+          "startLine": 59,
+          "endLine": 77,
+          "params": [
+            "updateMallUserAddressParam",
+            "loginMallUserToken"
+          ]
+        },
+        {
+          "name": "getMallUserAddress",
+          "startLine": 79,
+          "endLine": 90,
+          "params": [
+            "addressId",
+            "loginMallUserToken"
+          ]
+        },
+        {
+          "name": "getDefaultMallUserAddress",
+          "startLine": 92,
+          "endLine": 97,
+          "params": [
+            "loginMallUserToken"
+          ]
+        },
+        {
+          "name": "deleteAddress",
+          "startLine": 99,
+          "endLine": 114,
+          "params": [
+            "addressId",
+            "loginMallUserToken"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeMallUserAddressController",
+          "startLine": 29,
+          "endLine": 115,
+          "methods": [
+            "addressList",
+            "saveUserAddress",
+            "updateMallUserAddress",
+            "getMallUserAddress",
+            "getDefaultMallUserAddress",
+            "deleteAddress"
+          ],
+          "properties": [
+            "mallUserAddressService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "addressList",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "saveUserAddress",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "updateMallUserAddress",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "getMallUserAddress",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "getDefaultMallUserAddress",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "deleteAddress",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeMallUserAddressController",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "addressList",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 40
+        },
+        {
+          "caller": "addressList",
+          "callee": "mallUserAddressService.getMyAddresses",
+          "lineNumber": 40
+        },
+        {
+          "caller": "addressList",
+          "callee": "loginMallUserToken.getUserId",
+          "lineNumber": 40
+        },
+        {
+          "caller": "saveUserAddress",
+          "callee": "new MallUserAddress",
+          "lineNumber": 47
+        },
+        {
+          "caller": "saveUserAddress",
+          "callee": "BeanUtil.copyProperties",
+          "lineNumber": 48
+        },
+        {
+          "caller": "saveUserAddress",
+          "callee": "userAddress.setUserId",
+          "lineNumber": 49
+        },
+        {
+          "caller": "saveUserAddress",
+          "callee": "loginMallUserToken.getUserId",
+          "lineNumber": 49
+        },
+        {
+          "caller": "saveUserAddress",
+          "callee": "mallUserAddressService.saveUserAddress",
+          "lineNumber": 50
+        },
+        {
+          "caller": "saveUserAddress",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 53
+        },
+        {
+          "caller": "saveUserAddress",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 56
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "mallUserAddressService.getMallUserAddressById",
+          "lineNumber": 63
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "updateMallUserAddressParam.getAddressId",
+          "lineNumber": 63
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "loginMallUserToken.getUserId().equals",
+          "lineNumber": 64
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "loginMallUserToken.getUserId",
+          "lineNumber": 64
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "mallUserAddressById.getUserId",
+          "lineNumber": 64
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 65
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "ServiceResultEnum.REQUEST_FORBIDEN_ERROR.getResult",
+          "lineNumber": 65
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "new MallUserAddress",
+          "lineNumber": 67
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "BeanUtil.copyProperties",
+          "lineNumber": 68
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "userAddress.setUserId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "loginMallUserToken.getUserId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "mallUserAddressService.updateMallUserAddress",
+          "lineNumber": 70
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 73
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getMallUserAddress",
+          "callee": "mallUserAddressService.getMallUserAddressById",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getMallUserAddress",
+          "callee": "new NewBeeMallUserAddressVO",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getMallUserAddress",
+          "callee": "BeanUtil.copyProperties",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getMallUserAddress",
+          "callee": "loginMallUserToken.getUserId().equals",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getMallUserAddress",
+          "callee": "loginMallUserToken.getUserId",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getMallUserAddress",
+          "callee": "mallUserAddressById.getUserId",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getMallUserAddress",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getMallUserAddress",
+          "callee": "ServiceResultEnum.REQUEST_FORBIDEN_ERROR.getResult",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getMallUserAddress",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getDefaultMallUserAddress",
+          "callee": "mallUserAddressService.getMyDefaultAddressByUserId",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getDefaultMallUserAddress",
+          "callee": "loginMallUserToken.getUserId",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getDefaultMallUserAddress",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 96
+        },
+        {
+          "caller": "deleteAddress",
+          "callee": "mallUserAddressService.getMallUserAddressById",
+          "lineNumber": 103
+        },
+        {
+          "caller": "deleteAddress",
+          "callee": "loginMallUserToken.getUserId().equals",
+          "lineNumber": 104
+        },
+        {
+          "caller": "deleteAddress",
+          "callee": "loginMallUserToken.getUserId",
+          "lineNumber": 104
+        },
+        {
+          "caller": "deleteAddress",
+          "callee": "mallUserAddressById.getUserId",
+          "lineNumber": 104
+        },
+        {
+          "caller": "deleteAddress",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 105
+        },
+        {
+          "caller": "deleteAddress",
+          "callee": "ServiceResultEnum.REQUEST_FORBIDEN_ERROR.getResult",
+          "lineNumber": 105
+        },
+        {
+          "caller": "deleteAddress",
+          "callee": "mallUserAddressService.deleteById",
+          "lineNumber": 107
+        },
+        {
+          "caller": "deleteAddress",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 110
+        },
+        {
+          "caller": "deleteAddress",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 113
+        },
+        {
+          "caller": "deleteAddress",
+          "callee": "ServiceResultEnum.OPERATE_ERROR.getResult",
+          "lineNumber": 113
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/SaveMallUserAddressParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 31,
+      "classes": [
+        {
+          "name": "SaveMallUserAddressParam",
+          "startLine": 17,
+          "endLine": 40,
+          "methods": [],
+          "properties": [
+            "userName",
+            "userPhone",
+            "defaultFlag",
+            "provinceName",
+            "cityName",
+            "regionName",
+            "detailAddress"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SaveMallUserAddressParam",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/SaveOrderParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "SaveOrderParam",
+          "startLine": 19,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "cartItemIds",
+            "addressId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SaveOrderParam",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/UpdateMallUserAddressParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 35,
+      "classes": [
+        {
+          "name": "UpdateMallUserAddressParam",
+          "startLine": 17,
+          "endLine": 46,
+          "methods": [],
+          "properties": [
+            "addressId",
+            "userId",
+            "userName",
+            "userPhone",
+            "defaultFlag",
+            "provinceName",
+            "cityName",
+            "regionName",
+            "detailAddress"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "UpdateMallUserAddressParam",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderListVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 37,
+      "classes": [
+        {
+          "name": "NewBeeMallOrderListVO",
+          "startLine": 22,
+          "endLine": 48,
+          "methods": [],
+          "properties": [
+            "orderId",
+            "orderNo",
+            "totalPrice",
+            "payType",
+            "orderStatus",
+            "orderStatusString",
+            "createTime",
+            "newBeeMallOrderItemVOS"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewBeeMallOrderListVO",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallUserAddressVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 35,
+      "classes": [
+        {
+          "name": "NewBeeMallUserAddressVO",
+          "startLine": 17,
+          "endLine": 46,
+          "methods": [],
+          "properties": [
+            "addressId",
+            "userId",
+            "userName",
+            "userPhone",
+            "defaultFlag",
+            "provinceName",
+            "cityName",
+            "regionName",
+            "detailAddress"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewBeeMallUserAddressVO",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/MallUserAddressMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "MallUserAddressMapper",
+          "startLine": 15,
+          "endLine": 31,
+          "methods": [
+            "deleteByPrimaryKey",
+            "insert",
+            "insertSelective",
+            "selectByPrimaryKey",
+            "getMyDefaultAddress",
+            "findMyAddressList",
+            "updateByPrimaryKeySelective",
+            "updateByPrimaryKey"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MallUserAddressMapper",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/MallUserAddress.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "MallUserAddress",
+          "startLine": 15,
+          "endLine": 40,
+          "methods": [],
+          "properties": [
+            "addressId",
+            "userId",
+            "userName",
+            "userPhone",
+            "defaultFlag",
+            "provinceName",
+            "cityName",
+            "regionName",
+            "detailAddress",
+            "isDeleted",
+            "createTime",
+            "updateTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MallUserAddress",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallUserAddressService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 56,
+      "classes": [
+        {
+          "name": "NewBeeMallUserAddressService",
+          "startLine": 16,
+          "endLine": 65,
+          "methods": [
+            "getMyAddresses",
+            "saveUserAddress",
+            "updateMallUserAddress",
+            "getMallUserAddressById",
+            "getMyDefaultAddressByUserId",
+            "deleteById"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewBeeMallUserAddressService",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallUserAddressServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 98,
+      "nonEmptyLines": 88,
+      "functions": [
+        {
+          "name": "getMyAddresses",
+          "startLine": 31,
+          "endLine": 36,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "saveUserAddress",
+          "startLine": 38,
+          "endLine": 56,
+          "params": [
+            "mallUserAddress"
+          ]
+        },
+        {
+          "name": "updateMallUserAddress",
+          "startLine": 58,
+          "endLine": 78,
+          "params": [
+            "mallUserAddress"
+          ]
+        },
+        {
+          "name": "getMallUserAddressById",
+          "startLine": 80,
+          "endLine": 87,
+          "params": [
+            "addressId"
+          ]
+        },
+        {
+          "name": "getMyDefaultAddressByUserId",
+          "startLine": 89,
+          "endLine": 92,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "deleteById",
+          "startLine": 94,
+          "endLine": 97,
+          "params": [
+            "addressId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeMallUserAddressServiceImpl",
+          "startLine": 25,
+          "endLine": 98,
+          "methods": [
+            "getMyAddresses",
+            "saveUserAddress",
+            "updateMallUserAddress",
+            "getMallUserAddressById",
+            "getMyDefaultAddressByUserId",
+            "deleteById"
+          ],
+          "properties": [
+            "userAddressMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getMyAddresses",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "saveUserAddress",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "updateMallUserAddress",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "getMallUserAddressById",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "getMyDefaultAddressByUserId",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "deleteById",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeMallUserAddressServiceImpl",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getMyAddresses",
+          "callee": "userAddressMapper.findMyAddressList",
+          "lineNumber": 33
+        },
+        {
+          "caller": "getMyAddresses",
+          "callee": "BeanUtil.copyList",
+          "lineNumber": 34
+        },
+        {
+          "caller": "saveUserAddress",
+          "callee": "new Date",
+          "lineNumber": 41
+        },
+        {
+          "caller": "saveUserAddress",
+          "callee": "mallUserAddress.getDefaultFlag().intValue",
+          "lineNumber": 42
+        },
+        {
+          "caller": "saveUserAddress",
+          "callee": "mallUserAddress.getDefaultFlag",
+          "lineNumber": 42
+        },
+        {
+          "caller": "saveUserAddress",
+          "callee": "userAddressMapper.getMyDefaultAddress",
+          "lineNumber": 44
+        },
+        {
+          "caller": "saveUserAddress",
+          "callee": "mallUserAddress.getUserId",
+          "lineNumber": 44
+        },
+        {
+          "caller": "saveUserAddress",
+          "callee": "defaultAddress.setDefaultFlag",
+          "lineNumber": 46
+        },
+        {
+          "caller": "saveUserAddress",
+          "callee": "defaultAddress.setUpdateTime",
+          "lineNumber": 47
+        },
+        {
+          "caller": "saveUserAddress",
+          "callee": "userAddressMapper.updateByPrimaryKeySelective",
+          "lineNumber": 48
+        },
+        {
+          "caller": "saveUserAddress",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 51
+        },
+        {
+          "caller": "saveUserAddress",
+          "callee": "ServiceResultEnum.DB_ERROR.getResult",
+          "lineNumber": 51
+        },
+        {
+          "caller": "saveUserAddress",
+          "callee": "userAddressMapper.insertSelective",
+          "lineNumber": 55
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "getMallUserAddressById",
+          "lineNumber": 60
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "mallUserAddress.getAddressId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "new Date",
+          "lineNumber": 61
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "mallUserAddress.getDefaultFlag().intValue",
+          "lineNumber": 62
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "mallUserAddress.getDefaultFlag",
+          "lineNumber": 62
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "userAddressMapper.getMyDefaultAddress",
+          "lineNumber": 64
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "mallUserAddress.getUserId",
+          "lineNumber": 64
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "defaultAddress.getAddressId().equals",
+          "lineNumber": 65
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "defaultAddress.getAddressId",
+          "lineNumber": 65
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "defaultAddress.setDefaultFlag",
+          "lineNumber": 67
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "defaultAddress.setUpdateTime",
+          "lineNumber": 68
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "userAddressMapper.updateByPrimaryKeySelective",
+          "lineNumber": 69
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 72
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "ServiceResultEnum.DB_ERROR.getResult",
+          "lineNumber": 72
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "mallUserAddress.setUpdateTime",
+          "lineNumber": 76
+        },
+        {
+          "caller": "updateMallUserAddress",
+          "callee": "userAddressMapper.updateByPrimaryKeySelective",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getMallUserAddressById",
+          "callee": "userAddressMapper.selectByPrimaryKey",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getMallUserAddressById",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getMallUserAddressById",
+          "callee": "ServiceResultEnum.DATA_NOT_EXIST.getResult",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getMyDefaultAddressByUserId",
+          "callee": "userAddressMapper.getMyDefaultAddress",
+          "lineNumber": 91
+        },
+        {
+          "caller": "deleteById",
+          "callee": "userAddressMapper.deleteByPrimaryKey",
+          "lineNumber": 96
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    }
+  ]
+}

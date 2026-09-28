@@ -1,0 +1,412 @@
+{
+  "batchIndex": 9,
+  "nodes": [
+    {
+      "id": "file:static-files/newbee_mall_cloud_cart_db.sql",
+      "type": "file",
+      "name": "newbee_mall_cloud_cart_db.sql",
+      "filePath": "static-files/newbee_mall_cloud_cart_db.sql",
+      "language": "sql",
+      "summary": "购物车服务数据库初始化脚本，创建购物车数据库及其表结构，包含购物车项目表和 Seata 分布式事务回滚日志表。",
+      "tags": ["sql", "database", "cart", "schema", "data"],
+      "complexity": "simple",
+      "lineCount": 33,
+      "fileCategory": "data",
+      "languageNotes": "MySQL InnoDB 引擎，使用 Seata AT 模式分布式事务支持"
+    },
+    {
+      "id": "table:static-files/newbee_mall_cloud_cart_db.sql:tb_newbee_mall_shopping_cart_item",
+      "type": "table",
+      "name": "tb_newbee_mall_shopping_cart_item",
+      "filePath": "static-files/newbee_mall_cloud_cart_db.sql",
+      "summary": "购物车项目表，存储用户加入购物车的商品信息，包括商品ID、数量等，支持逻辑删除。",
+      "tags": ["table", "cart", "shopping", "e-commerce"],
+      "complexity": "simple",
+      "startLine": 9,
+      "endLine": 18,
+      "columns": ["cart_item_id", "user_id", "goods_id", "goods_count", "is_deleted", "create_time", "update_time"],
+      "primaryKey": "cart_item_id"
+    },
+    {
+      "id": "table:static-files/newbee_mall_cloud_cart_db.sql:undo_log",
+      "type": "table",
+      "name": "undo_log (cart_db)",
+      "filePath": "static-files/newbee_mall_cloud_cart_db.sql",
+      "summary": "Seata AT 模式分布式事务回滚日志表，存储分支事务的回滚信息，用于事务失败时的数据恢复。",
+      "tags": ["table", "seata", "distributed-transaction", "undo-log"],
+      "complexity": "simple",
+      "startLine": 21,
+      "endLine": 32,
+      "columns": ["branch_id", "xid", "context", "rollback_info", "log_status", "log_created", "log_modified"]
+    },
+    {
+      "id": "file:static-files/newbee_mall_cloud_goods_db.sql",
+      "type": "file",
+      "name": "newbee_mall_cloud_goods_db.sql",
+      "filePath": "static-files/newbee_mall_cloud_goods_db.sql",
+      "language": "sql",
+      "summary": "商品服务数据库初始化脚本，创建商品数据库及其表结构，包含商品分类表、商品信息表和 Seata 回滚日志表，并预置大量商品分类和商品测试数据。",
+      "tags": ["sql", "database", "goods", "products", "schema", "data"],
+      "complexity": "moderate",
+      "lineCount": 928,
+      "fileCategory": "data",
+      "languageNotes": "MySQL InnoDB 引擎，包含大量 INSERT 初始化数据，支持三级商品分类体系"
+    },
+    {
+      "id": "table:static-files/newbee_mall_cloud_goods_db.sql:tb_newbee_mall_goods_category",
+      "type": "table",
+      "name": "tb_newbee_mall_goods_category",
+      "filePath": "static-files/newbee_mall_cloud_goods_db.sql",
+      "summary": "商品分类表，支持三级分类层次结构（一级、二级、三级分类），通过 parent_id 实现自引用树形结构，包含排序和逻辑删除功能。",
+      "tags": ["table", "goods", "category", "hierarchy", "e-commerce"],
+      "complexity": "moderate",
+      "startLine": 10,
+      "endLine": 22,
+      "columns": ["category_id", "category_level", "parent_id", "category_name", "category_rank", "is_deleted", "create_time", "create_user", "update_time", "update_user"],
+      "primaryKey": "category_id"
+    },
+    {
+      "id": "table:static-files/newbee_mall_cloud_goods_db.sql:tb_newbee_mall_goods_info",
+      "type": "table",
+      "name": "tb_newbee_mall_goods_info",
+      "filePath": "static-files/newbee_mall_cloud_goods_db.sql",
+      "summary": "商品信息表，存储商品的核心数据，包括名称、简介、分类关联、封面图、轮播图、详情内容、原价、售价、库存、标签及上下架状态等。",
+      "tags": ["table", "goods", "product", "e-commerce", "inventory"],
+      "complexity": "moderate",
+      "startLine": 143,
+      "endLine": 161,
+      "columns": ["goods_id", "goods_name", "goods_intro", "goods_category_id", "goods_cover_img", "goods_carousel", "goods_detail_content", "original_price", "selling_price", "stock_num", "tag", "goods_sell_status", "create_user", "create_time", "update_user", "update_time"],
+      "primaryKey": "goods_id"
+    },
+    {
+      "id": "table:static-files/newbee_mall_cloud_goods_db.sql:undo_log",
+      "type": "table",
+      "name": "undo_log (goods_db)",
+      "filePath": "static-files/newbee_mall_cloud_goods_db.sql",
+      "summary": "Seata AT 模式分布式事务回滚日志表，存储分支事务的回滚信息，用于事务失败时的数据恢复。",
+      "tags": ["table", "seata", "distributed-transaction", "undo-log"],
+      "complexity": "simple",
+      "startLine": 916,
+      "endLine": 928,
+      "columns": ["branch_id", "xid", "context", "rollback_info", "log_status", "log_created", "log_modified"]
+    },
+    {
+      "id": "file:static-files/newbee_mall_cloud_order_db.sql",
+      "type": "file",
+      "name": "newbee_mall_cloud_order_db.sql",
+      "filePath": "static-files/newbee_mall_cloud_order_db.sql",
+      "language": "sql",
+      "summary": "订单服务数据库初始化脚本，创建订单数据库及其表结构，包含订单主表、订单收货地址表、订单商品项表、用户收货地址表和 Seata 回滚日志表。",
+      "tags": ["sql", "database", "order", "schema", "data"],
+      "complexity": "moderate",
+      "lineCount": 88,
+      "fileCategory": "data",
+      "languageNotes": "MySQL InnoDB 引擎，订单系统包含支付状态和订单状态的完整生命周期管理"
+    },
+    {
+      "id": "table:static-files/newbee_mall_cloud_order_db.sql:tb_newbee_mall_order",
+      "type": "table",
+      "name": "tb_newbee_mall_order",
+      "filePath": "static-files/newbee_mall_cloud_order_db.sql",
+      "summary": "订单主表，存储订单核心信息，包括订单号、用户ID、总价、支付状态（未支付/成功/失败）、支付类型（支付宝/微信）、订单状态（待支付到交易成功的完整生命周期）等。",
+      "tags": ["table", "order", "payment", "e-commerce", "transaction"],
+      "complexity": "moderate",
+      "startLine": 8,
+      "endLine": 22,
+      "columns": ["order_id", "order_no", "user_id", "total_price", "pay_status", "pay_type", "pay_time", "order_status", "extra_info", "is_deleted", "create_time", "update_time"],
+      "primaryKey": "order_id"
+    },
+    {
+      "id": "table:static-files/newbee_mall_cloud_order_db.sql:tb_newbee_mall_order_address",
+      "type": "table",
+      "name": "tb_newbee_mall_order_address",
+      "filePath": "static-files/newbee_mall_cloud_order_db.sql",
+      "summary": "订单收货地址关联表，存储订单对应的收货地址快照信息，包括收货人姓名、手机号以及省市区详细地址。",
+      "tags": ["table", "order", "address", "shipping", "e-commerce"],
+      "complexity": "simple",
+      "startLine": 29,
+      "endLine": 38,
+      "columns": ["order_id", "user_name", "user_phone", "province_name", "city_name", "region_name", "detail_address"],
+      "primaryKey": "order_id"
+    },
+    {
+      "id": "table:static-files/newbee_mall_cloud_order_db.sql:tb_newbee_mall_order_item",
+      "type": "table",
+      "name": "tb_newbee_mall_order_item",
+      "filePath": "static-files/newbee_mall_cloud_order_db.sql",
+      "summary": "订单商品项表，存储订单中每个商品的快照信息，包括商品名称、封面图、售价和数量，用于保留下单时的商品信息。",
+      "tags": ["table", "order", "order-item", "snapshot", "e-commerce"],
+      "complexity": "simple",
+      "startLine": 45,
+      "endLine": 55,
+      "columns": ["order_item_id", "order_id", "goods_id", "goods_name", "goods_cover_img", "selling_price", "goods_count", "create_time"],
+      "primaryKey": "order_item_id"
+    },
+    {
+      "id": "table:static-files/newbee_mall_cloud_order_db.sql:tb_newbee_mall_user_address",
+      "type": "table",
+      "name": "tb_newbee_mall_user_address",
+      "filePath": "static-files/newbee_mall_cloud_order_db.sql",
+      "summary": "用户收货地址表，存储用户管理的多个收货地址，支持设置默认地址，包含省市区和详细街道地址信息。",
+      "tags": ["table", "user", "address", "shipping", "e-commerce"],
+      "complexity": "simple",
+      "startLine": 59,
+      "endLine": 73,
+      "columns": ["address_id", "user_id", "user_name", "user_phone", "default_flag", "province_name", "city_name", "region_name", "detail_address", "is_deleted", "create_time", "update_time"],
+      "primaryKey": "address_id"
+    },
+    {
+      "id": "table:static-files/newbee_mall_cloud_order_db.sql:undo_log",
+      "type": "table",
+      "name": "undo_log (order_db)",
+      "filePath": "static-files/newbee_mall_cloud_order_db.sql",
+      "summary": "Seata AT 模式分布式事务回滚日志表，存储分支事务的回滚信息，用于事务失败时的数据恢复。",
+      "tags": ["table", "seata", "distributed-transaction", "undo-log"],
+      "complexity": "simple",
+      "startLine": 76,
+      "endLine": 87,
+      "columns": ["branch_id", "xid", "context", "rollback_info", "log_status", "log_created", "log_modified"]
+    },
+    {
+      "id": "file:static-files/newbee_mall_cloud_recommend_db.sql",
+      "type": "file",
+      "name": "newbee_mall_cloud_recommend_db.sql",
+      "filePath": "static-files/newbee_mall_cloud_recommend_db.sql",
+      "language": "sql",
+      "summary": "推荐服务数据库初始化脚本，创建推荐数据库及其表结构，包含首页配置项表（热搜、热销、新品、推荐）和轮播图表，并预置首页推荐和轮播图初始数据。",
+      "tags": ["sql", "database", "recommend", "homepage", "schema", "data"],
+      "complexity": "moderate",
+      "lineCount": 78,
+      "fileCategory": "data",
+      "languageNotes": "MySQL InnoDB 引擎，首页配置支持搜索框热搜、热销商品、新品上线、为你推荐等多种类型"
+    },
+    {
+      "id": "table:static-files/newbee_mall_cloud_recommend_db.sql:tb_newbee_mall_index_config",
+      "type": "table",
+      "name": "tb_newbee_mall_index_config",
+      "filePath": "static-files/newbee_mall_cloud_recommend_db.sql",
+      "summary": "首页配置项表，管理商城首页各区域的推荐内容，包括搜索框热搜、搜索下拉框热搜、热销商品、新品上线和为你推荐五种配置类型，通过排序值控制显示顺序。",
+      "tags": ["table", "config", "recommend", "homepage", "e-commerce"],
+      "complexity": "moderate",
+      "startLine": 10,
+      "endLine": 23,
+      "columns": ["config_id", "config_name", "config_type", "goods_id", "redirect_url", "config_rank", "is_deleted", "create_time", "create_user", "update_time", "update_user"],
+      "primaryKey": "config_id"
+    },
+    {
+      "id": "table:static-files/newbee_mall_cloud_recommend_db.sql:tb_newbee_mall_carousel",
+      "type": "table",
+      "name": "tb_newbee_mall_carousel",
+      "filePath": "static-files/newbee_mall_cloud_recommend_db.sql",
+      "summary": "首页轮播图表，管理商城首页轮播图的展示，包含轮播图URL、点击跳转地址和排序值。",
+      "tags": ["table", "carousel", "banner", "homepage", "e-commerce"],
+      "complexity": "simple",
+      "startLine": 56,
+      "endLine": 67,
+      "columns": ["carousel_id", "carousel_url", "redirect_url", "carousel_rank", "is_deleted", "create_time", "create_user", "update_time", "update_user"],
+      "primaryKey": "carousel_id"
+    },
+    {
+      "id": "file:static-files/newbee_mall_cloud_user_db.sql",
+      "type": "file",
+      "name": "newbee_mall_cloud_user_db.sql",
+      "filePath": "static-files/newbee_mall_cloud_user_db.sql",
+      "language": "sql",
+      "summary": "用户服务数据库初始化脚本，创建用户数据库及其表结构，包含管理员用户表和商城用户表，并预置管理员和测试用户数据。",
+      "tags": ["sql", "database", "user", "auth", "schema", "data"],
+      "complexity": "simple",
+      "lineCount": 48,
+      "fileCategory": "data",
+      "languageNotes": "MySQL InnoDB 引擎，密码使用 MD5 加密存储"
+    },
+    {
+      "id": "table:static-files/newbee_mall_cloud_user_db.sql:tb_newbee_mall_admin_user",
+      "type": "table",
+      "name": "tb_newbee_mall_admin_user",
+      "filePath": "static-files/newbee_mall_cloud_user_db.sql",
+      "summary": "管理员用户表，存储后台管理员的登录信息，包括登录名、密码（MD5加密）和昵称，支持账户锁定功能。",
+      "tags": ["table", "user", "admin", "authentication", "management"],
+      "complexity": "simple",
+      "startLine": 10,
+      "endLine": 17,
+      "columns": ["admin_user_id", "login_user_name", "login_password", "nick_name", "locked"],
+      "primaryKey": "admin_user_id"
+    },
+    {
+      "id": "table:static-files/newbee_mall_cloud_user_db.sql:tb_newbee_mall_user",
+      "type": "table",
+      "name": "tb_newbee_mall_user",
+      "filePath": "static-files/newbee_mall_cloud_user_db.sql",
+      "summary": "商城用户表，存储前台用户信息，包括昵称、登录名（默认手机号）、MD5加密密码、个性签名，支持逻辑删除和账户锁定。",
+      "tags": ["table", "user", "customer", "authentication", "e-commerce"],
+      "complexity": "simple",
+      "startLine": 31,
+      "endLine": 41,
+      "columns": ["user_id", "nick_name", "login_name", "password_md5", "introduce_sign", "is_deleted", "locked_flag", "create_time"],
+      "primaryKey": "user_id"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:static-files/newbee_mall_cloud_cart_db.sql",
+      "target": "table:static-files/newbee_mall_cloud_cart_db.sql:tb_newbee_mall_shopping_cart_item",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "定义购物车项目表"
+    },
+    {
+      "source": "file:static-files/newbee_mall_cloud_cart_db.sql",
+      "target": "table:static-files/newbee_mall_cloud_cart_db.sql:undo_log",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "定义Seata回滚日志表"
+    },
+    {
+      "source": "file:static-files/newbee_mall_cloud_goods_db.sql",
+      "target": "table:static-files/newbee_mall_cloud_goods_db.sql:tb_newbee_mall_goods_category",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "定义商品分类表"
+    },
+    {
+      "source": "file:static-files/newbee_mall_cloud_goods_db.sql",
+      "target": "table:static-files/newbee_mall_cloud_goods_db.sql:tb_newbee_mall_goods_info",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "定义商品信息表"
+    },
+    {
+      "source": "file:static-files/newbee_mall_cloud_goods_db.sql",
+      "target": "table:static-files/newbee_mall_cloud_goods_db.sql:undo_log",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "定义Seata回滚日志表"
+    },
+    {
+      "source": "file:static-files/newbee_mall_cloud_order_db.sql",
+      "target": "table:static-files/newbee_mall_cloud_order_db.sql:tb_newbee_mall_order",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "定义订单主表"
+    },
+    {
+      "source": "file:static-files/newbee_mall_cloud_order_db.sql",
+      "target": "table:static-files/newbee_mall_cloud_order_db.sql:tb_newbee_mall_order_address",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "定义订单收货地址表"
+    },
+    {
+      "source": "file:static-files/newbee_mall_cloud_order_db.sql",
+      "target": "table:static-files/newbee_mall_cloud_order_db.sql:tb_newbee_mall_order_item",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "定义订单商品项表"
+    },
+    {
+      "source": "file:static-files/newbee_mall_cloud_order_db.sql",
+      "target": "table:static-files/newbee_mall_cloud_order_db.sql:tb_newbee_mall_user_address",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "定义用户收货地址表"
+    },
+    {
+      "source": "file:static-files/newbee_mall_cloud_order_db.sql",
+      "target": "table:static-files/newbee_mall_cloud_order_db.sql:undo_log",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "定义Seata回滚日志表"
+    },
+    {
+      "source": "file:static-files/newbee_mall_cloud_recommend_db.sql",
+      "target": "table:static-files/newbee_mall_cloud_recommend_db.sql:tb_newbee_mall_index_config",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "定义首页配置项表"
+    },
+    {
+      "source": "file:static-files/newbee_mall_cloud_recommend_db.sql",
+      "target": "table:static-files/newbee_mall_cloud_recommend_db.sql:tb_newbee_mall_carousel",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "定义轮播图表"
+    },
+    {
+      "source": "file:static-files/newbee_mall_cloud_user_db.sql",
+      "target": "table:static-files/newbee_mall_cloud_user_db.sql:tb_newbee_mall_admin_user",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "定义管理员用户表"
+    },
+    {
+      "source": "file:static-files/newbee_mall_cloud_user_db.sql",
+      "target": "table:static-files/newbee_mall_cloud_user_db.sql:tb_newbee_mall_user",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "定义商城用户表"
+    },
+    {
+      "source": "table:static-files/newbee_mall_cloud_goods_db.sql:tb_newbee_mall_goods_info",
+      "target": "table:static-files/newbee_mall_cloud_goods_db.sql:tb_newbee_mall_goods_category",
+      "type": "depends_on",
+      "weight": 0.6,
+      "label": "goods_category_id 关联商品分类"
+    },
+    {
+      "source": "table:static-files/newbee_mall_cloud_cart_db.sql:tb_newbee_mall_shopping_cart_item",
+      "target": "table:static-files/newbee_mall_cloud_user_db.sql:tb_newbee_mall_user",
+      "type": "depends_on",
+      "weight": 0.6,
+      "label": "user_id 关联用户"
+    },
+    {
+      "source": "table:static-files/newbee_mall_cloud_cart_db.sql:tb_newbee_mall_shopping_cart_item",
+      "target": "table:static-files/newbee_mall_cloud_goods_db.sql:tb_newbee_mall_goods_info",
+      "type": "depends_on",
+      "weight": 0.6,
+      "label": "goods_id 关联商品"
+    },
+    {
+      "source": "table:static-files/newbee_mall_cloud_order_db.sql:tb_newbee_mall_order",
+      "target": "table:static-files/newbee_mall_cloud_user_db.sql:tb_newbee_mall_user",
+      "type": "depends_on",
+      "weight": 0.6,
+      "label": "user_id 关联用户"
+    },
+    {
+      "source": "table:static-files/newbee_mall_cloud_order_db.sql:tb_newbee_mall_order_item",
+      "target": "table:static-files/newbee_mall_cloud_order_db.sql:tb_newbee_mall_order",
+      "type": "depends_on",
+      "weight": 0.6,
+      "label": "order_id 关联订单"
+    },
+    {
+      "source": "table:static-files/newbee_mall_cloud_order_db.sql:tb_newbee_mall_order_item",
+      "target": "table:static-files/newbee_mall_cloud_goods_db.sql:tb_newbee_mall_goods_info",
+      "type": "depends_on",
+      "weight": 0.6,
+      "label": "goods_id 关联商品"
+    },
+    {
+      "source": "table:static-files/newbee_mall_cloud_order_db.sql:tb_newbee_mall_order_address",
+      "target": "table:static-files/newbee_mall_cloud_order_db.sql:tb_newbee_mall_order",
+      "type": "depends_on",
+      "weight": 0.6,
+      "label": "order_id 关联订单"
+    },
+    {
+      "source": "table:static-files/newbee_mall_cloud_order_db.sql:tb_newbee_mall_user_address",
+      "target": "table:static-files/newbee_mall_cloud_user_db.sql:tb_newbee_mall_user",
+      "type": "depends_on",
+      "weight": 0.6,
+      "label": "user_id 关联用户"
+    },
+    {
+      "source": "table:static-files/newbee_mall_cloud_recommend_db.sql:tb_newbee_mall_index_config",
+      "target": "table:static-files/newbee_mall_cloud_goods_db.sql:tb_newbee_mall_goods_info",
+      "type": "depends_on",
+      "weight": 0.6,
+      "label": "goods_id 关联商品"
+    }
+  ]
+}

@@ -1,0 +1,1566 @@
+{
+  "batchIndex": 1,
+  "project": "newbee-mall-cloud",
+  "nodes": [
+    {
+      "id": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/ResultGenerator.java",
+      "type": "file",
+      "name": "ResultGenerator.java",
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/ResultGenerator.java",
+      "language": "java",
+      "summary": "统一响应结果生成工具类，提供静态方法快速创建成功/失败/自定义错误码的 Result 对象",
+      "tags": ["utility", "dto", "response"],
+      "sizeLines": 58,
+      "nonEmptyLines": 51
+    },
+    {
+      "id": "class::ResultGenerator",
+      "type": "class",
+      "name": "ResultGenerator",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/ResultGenerator.java",
+      "language": "java",
+      "summary": "响应结果生成工具类，封装了 genSuccessResult、genFailResult、genErrorResult 等静态工厂方法，统一 API 返回格式",
+      "tags": ["utility", "factory", "response"],
+      "languageNotes": "使用静态常量定义成功/失败状态码，利用 Spring 的 StringUtils 进行文本判空",
+      "methods": ["genSuccessResult", "genFailResult", "genErrorResult"],
+      "properties": ["DEFAULT_SUCCESS_MESSAGE", "DEFAULT_FAIL_MESSAGE", "RESULT_CODE_SUCCESS", "RESULT_CODE_SERVER_ERROR"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/AdminUserToken.java",
+      "type": "file",
+      "name": "AdminUserToken.java",
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/AdminUserToken.java",
+      "language": "java",
+      "summary": "管理员用户 Token 数据传输对象，包含管理员ID和认证token，用于网关鉴权和会话管理",
+      "tags": ["pojo", "dto", "token", "auth"],
+      "sizeLines": 19,
+      "nonEmptyLines": 16
+    },
+    {
+      "id": "class::AdminUserToken",
+      "type": "class",
+      "name": "AdminUserToken",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/AdminUserToken.java",
+      "language": "java",
+      "summary": "管理员 Token POJO，使用 Lombok @Data 注解自动生成 getter/setter，实现 Serializable 用于 Redis 序列化存储",
+      "tags": ["pojo", "token", "serializable"],
+      "languageNotes": "Lombok @Data 注解减少样板代码；实现 Serializable 接口以支持 Redis 序列化",
+      "methods": [],
+      "properties": ["adminUserId", "token"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/MallUserToken.java",
+      "type": "file",
+      "name": "MallUserToken.java",
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/MallUserToken.java",
+      "language": "java",
+      "summary": "商城普通用户 Token 数据传输对象，包含用户ID和认证token，用于网关鉴权和会话管理",
+      "tags": ["pojo", "dto", "token", "auth"],
+      "sizeLines": 20,
+      "nonEmptyLines": 16
+    },
+    {
+      "id": "class::MallUserToken",
+      "type": "class",
+      "name": "MallUserToken",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/MallUserToken.java",
+      "language": "java",
+      "summary": "商城用户 Token POJO，使用 Lombok @Data 注解，实现 Serializable 用于 Redis 序列化存储",
+      "tags": ["pojo", "token", "serializable"],
+      "languageNotes": "结构与 AdminUserToken 类似，分别用于管理员和普通商城用户的认证体系",
+      "methods": [],
+      "properties": ["userId", "token"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/MD5Util.java",
+      "type": "file",
+      "name": "MD5Util.java",
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/MD5Util.java",
+      "language": "java",
+      "summary": "MD5 哈希工具类，提供字符串 MD5 加密功能，用于用户密码加密存储",
+      "tags": ["utility", "crypto", "md5"],
+      "sizeLines": 48,
+      "nonEmptyLines": 41
+    },
+    {
+      "id": "class::MD5Util",
+      "type": "class",
+      "name": "MD5Util",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/MD5Util.java",
+      "language": "java",
+      "summary": "MD5 加密工具类，使用 java.security.MessageDigest 实现摘要计算，内部包含字节数组到十六进制字符串的转换方法",
+      "tags": ["utility", "crypto", "hash"],
+      "languageNotes": "使用 MessageDigest.getInstance(\"MD5\") 获取摘要实例，byteArrayToHexString 辅助方法将字节数组转为十六进制表示",
+      "methods": ["byteArrayToHexString", "byteToHexString", "MD5Encode"],
+      "properties": ["hexDigits"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/NumberUtil.java",
+      "type": "file",
+      "name": "NumberUtil.java",
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/NumberUtil.java",
+      "language": "java",
+      "summary": "数字工具类，提供手机号验证、随机数生成和订单流水号生成功能",
+      "tags": ["utility", "number", "validation"],
+      "sizeLines": 59,
+      "nonEmptyLines": 52
+    },
+    {
+      "id": "class::NumberUtil",
+      "type": "class",
+      "name": "NumberUtil",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/NumberUtil.java",
+      "language": "java",
+      "summary": "数字与字符串工具类，isPhone 使用正则验证11位手机号，genRandomNum 生成指定长度随机数，genOrderNo 基于时间戳生成订单号",
+      "tags": ["utility", "validation", "generator"],
+      "languageNotes": "私有构造器防止实例化；isPhone 使用正则表达式匹配中国手机号段",
+      "methods": ["isPhone", "genRandomNum", "genOrderNo"],
+      "properties": []
+    },
+    {
+      "id": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/SystemUtil.java",
+      "type": "file",
+      "name": "SystemUtil.java",
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/SystemUtil.java",
+      "language": "java",
+      "summary": "系统工具类，提供基于 MD5 的 token 生成方法，用于用户登录/注册后生成会话token",
+      "tags": ["utility", "token", "system"],
+      "sizeLines": 42,
+      "nonEmptyLines": 35
+    },
+    {
+      "id": "class::SystemUtil",
+      "type": "class",
+      "name": "SystemUtil",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/SystemUtil.java",
+      "language": "java",
+      "summary": "系统工具类，genToken 方法通过 MD5 摘要生成32位token字符串，输入源为时间戳+用户ID+随机数的组合",
+      "tags": ["utility", "token", "crypto"],
+      "languageNotes": "使用 BigInteger 将 MD5 摘要转为16进制字符串；31位结果会补'-'至32位",
+      "methods": ["genToken"],
+      "properties": []
+    },
+    {
+      "id": "file::newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/filter/ValidTokenGlobalFilter.java",
+      "type": "file",
+      "name": "ValidTokenGlobalFilter.java",
+      "path": "newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/filter/ValidTokenGlobalFilter.java",
+      "language": "java",
+      "summary": "管理端网关全局过滤器，拦截请求验证管理员 token 有效性，无效时返回419无权限错误",
+      "tags": ["gateway", "filter", "security", "auth"],
+      "sizeLines": 90,
+      "nonEmptyLines": 77
+    },
+    {
+      "id": "class::ValidTokenGlobalFilter",
+      "type": "class",
+      "name": "ValidTokenGlobalFilter",
+      "filePath": "newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/filter/ValidTokenGlobalFilter.java",
+      "language": "java",
+      "summary": "Spring Cloud Gateway 全局过滤器，实现 GlobalFilter 和 Ordered 接口，对管理员端所有请求（除登录和swagger）进行 token 校验，从 Redis 中查询 AdminUserToken 进行鉴权",
+      "tags": ["gateway", "filter", "security", "redis"],
+      "languageNotes": "实现 GlobalFilter 接口的 filter 方法处理鉴权逻辑；Order 设为 HIGHEST_PRECEDENCE 保证最高优先级执行；使用 Reactor 的 Mono/Flux 进行响应式处理",
+      "methods": ["filter", "getOrder", "wrapErrorResponse"],
+      "properties": ["redisTemplate"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/filter/ValidMallUserTokenGlobalFilter.java",
+      "type": "file",
+      "name": "ValidMallUserTokenGlobalFilter.java",
+      "path": "newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/filter/ValidMallUserTokenGlobalFilter.java",
+      "language": "java",
+      "summary": "商城端网关全局过滤器，拦截请求验证商城用户 token 有效性，支持白名单URL放行，无效时返回416无权限错误",
+      "tags": ["gateway", "filter", "security", "auth"],
+      "sizeLines": 103,
+      "nonEmptyLines": 87
+    },
+    {
+      "id": "class::ValidMallUserTokenGlobalFilter",
+      "type": "class",
+      "name": "ValidMallUserTokenGlobalFilter",
+      "filePath": "newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/filter/ValidMallUserTokenGlobalFilter.java",
+      "language": "java",
+      "summary": "商城端 Spring Cloud Gateway 全局过滤器，维护 ignoreURLs 白名单（登录/注册/swagger），对非白名单请求从 Redis 验证 MallUserToken",
+      "tags": ["gateway", "filter", "security", "redis"],
+      "languageNotes": "白名单包含登录、注册、分类查询及各服务 swagger 文档路径；与 ValidTokenGlobalFilter 结构类似但面向普通商城用户",
+      "methods": ["filter", "getOrder", "wrapErrorResponse"],
+      "properties": ["redisTemplate", "ignoreURLs"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OrderServiceSwagger3Config.java",
+      "type": "file",
+      "name": "OrderServiceSwagger3Config.java",
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OrderServiceSwagger3Config.java",
+      "language": "java",
+      "summary": "订单服务 Swagger3 (OpenAPI) 配置类，配置 API 文档信息及全局 token 请求头参数",
+      "tags": ["config", "swagger", "openapi", "order-service"],
+      "sizeLines": 65,
+      "nonEmptyLines": 55
+    },
+    {
+      "id": "class::OrderServiceSwagger3Config",
+      "type": "class",
+      "name": "OrderServiceSwagger3Config",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OrderServiceSwagger3Config.java",
+      "language": "java",
+      "summary": "使用 Springfox OAS 3.0 配置订单服务 Swagger 文档，忽略 LoginAdminUser 和 MallUserToken 参数类型，添加全局 token 请求头",
+      "tags": ["config", "swagger", "openapi"],
+      "languageNotes": "@EnableOpenApi 启用 OpenAPI 3.0；ignoredParameterTypes 排除认证相关参数在文档中的展示",
+      "methods": ["api", "getGlobalRequestParameters", "apiInfo"],
+      "properties": []
+    },
+    {
+      "id": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/LoginAdminUser.java",
+      "type": "file",
+      "name": "LoginAdminUser.java",
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/LoginAdminUser.java",
+      "language": "java",
+      "summary": "订单服务中的管理员用户实体类，用于 Swagger 文档中忽略管理员参数",
+      "tags": ["entity", "pojo", "order-service"],
+      "sizeLines": 23,
+      "nonEmptyLines": 18
+    },
+    {
+      "id": "class::LoginAdminUser",
+      "type": "class",
+      "name": "LoginAdminUser",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/LoginAdminUser.java",
+      "language": "java",
+      "summary": "订单服务本地管理员用户 POJO，用于 Swagger ignoredParameterTypes 配置，字段与 user-service 的 AdminUser 对应",
+      "tags": ["entity", "pojo"],
+      "languageNotes": "使用 Lombok @Data 注解；此类是订单服务对管理员信息的本地副本，通过 OpenFeign 从用户服务获取",
+      "methods": [],
+      "properties": ["adminUserId", "loginUserName", "loginPassword", "nickName", "locked"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/ShopCartServiceSwagger3Config.java",
+      "type": "file",
+      "name": "ShopCartServiceSwagger3Config.java",
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/ShopCartServiceSwagger3Config.java",
+      "language": "java",
+      "summary": "购物车服务 Swagger3 (OpenAPI) 配置类，配置 API 文档信息及全局 token 请求头参数",
+      "tags": ["config", "swagger", "openapi", "shopcart-service"],
+      "sizeLines": 64,
+      "nonEmptyLines": 54
+    },
+    {
+      "id": "class::ShopCartServiceSwagger3Config",
+      "type": "class",
+      "name": "ShopCartServiceSwagger3Config",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/ShopCartServiceSwagger3Config.java",
+      "language": "java",
+      "summary": "使用 Springfox OAS 3.0 配置购物车服务 Swagger 文档，忽略 MallUserToken 参数类型，添加全局 token 请求头",
+      "tags": ["config", "swagger", "openapi"],
+      "languageNotes": "与其他微服务的 Swagger 配置类结构一致，形成统一的 API 文档配置模式",
+      "methods": ["api", "getGlobalRequestParameters", "apiInfo"],
+      "properties": []
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/UserServiceWebMvcConfigurer.java",
+      "type": "file",
+      "name": "UserServiceWebMvcConfigurer.java",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/UserServiceWebMvcConfigurer.java",
+      "language": "java",
+      "summary": "用户服务 Web MVC 配置类，注册自定义参数解析器（TokenToAdminUser/TokenToMallUser）和 Sentinel 拦截器",
+      "tags": ["config", "mvc", "web", "sentinel"],
+      "sizeLines": 68,
+      "nonEmptyLines": 57
+    },
+    {
+      "id": "class::UserServiceWebMvcConfigurer",
+      "type": "class",
+      "name": "UserServiceWebMvcConfigurer",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/UserServiceWebMvcConfigurer.java",
+      "language": "java",
+      "summary": "继承 WebMvcConfigurationSupport，注册 TokenToAdminUserMethodArgumentResolver 和 TokenToMallUserMethodArgumentResolver 两个参数解析器，配置 Swagger 静态资源和 Sentinel 流控拦截器",
+      "tags": ["config", "mvc", "argument-resolver", "sentinel"],
+      "languageNotes": "Spring MVC 配置通过 addArgumentResolvers 注册自定义参数解析器实现 @TokenToAdminUser / @TokenToMallUser 注解的自动解析",
+      "methods": ["addArgumentResolvers", "addResourceHandlers", "addInterceptors"],
+      "properties": ["sentinelProperties", "sentinelWebInterceptorOptional", "tokenToAdminUserMethodArgumentResolver", "tokenToMallUserMethodArgumentResolver"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/UserSwagger3Config.java",
+      "type": "file",
+      "name": "UserSwagger3Config.java",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/UserSwagger3Config.java",
+      "language": "java",
+      "summary": "用户服务 Swagger3 (OpenAPI) 配置类，配置 API 文档信息及全局 token 请求头参数",
+      "tags": ["config", "swagger", "openapi", "user-service"],
+      "sizeLines": 57,
+      "nonEmptyLines": 48
+    },
+    {
+      "id": "class::UserSwagger3Config",
+      "type": "class",
+      "name": "UserSwagger3Config",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/UserSwagger3Config.java",
+      "language": "java",
+      "summary": "使用 Springfox OAS 3.0 配置用户服务 Swagger 文档，忽略 AdminUserToken 和 MallUserToken 参数类型",
+      "tags": ["config", "swagger", "openapi"],
+      "languageNotes": "与 OrderServiceSwagger3Config、ShopCartServiceSwagger3Config 结构一致，各微服务独立配置 Swagger",
+      "methods": ["api", "getGlobalRequestParameters", "apiInfo"],
+      "properties": []
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "type": "file",
+      "name": "TokenToAdminUser.java",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "language": "java",
+      "summary": "自定义注解，标注在 Controller 方法参数上，由 TokenToAdminUserMethodArgumentResolver 解析，自动注入当前登录管理员信息",
+      "tags": ["annotation", "auth", "admin"],
+      "sizeLines": 25,
+      "nonEmptyLines": 20
+    },
+    {
+      "id": "annotation::TokenToAdminUser",
+      "type": "class",
+      "name": "TokenToAdminUser",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "language": "java",
+      "summary": "参数级注解 (@Target PARAMETER)，运行时保留，用于标记 Controller 方法参数需要从请求头 token 中解析管理员用户信息",
+      "tags": ["annotation", "auth", "admin"],
+      "languageNotes": "Java 自定义注解，@Target(ElementType.PARAMETER) 限制只能标注在参数上，@Retention(RetentionPolicy.RUNTIME) 确保运行时可通过反射读取",
+      "methods": [],
+      "properties": ["value"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "type": "file",
+      "name": "TokenToMallUser.java",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "language": "java",
+      "summary": "自定义注解，标注在 Controller 方法参数上，由 TokenToMallUserMethodArgumentResolver 解析，自动注入当前登录商城用户信息",
+      "tags": ["annotation", "auth", "mall-user"],
+      "sizeLines": 25,
+      "nonEmptyLines": 20
+    },
+    {
+      "id": "annotation::TokenToMallUser",
+      "type": "class",
+      "name": "TokenToMallUser",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "language": "java",
+      "summary": "参数级注解 (@Target PARAMETER)，运行时保留，用于标记 Controller 方法参数需要从请求头 token 中解析商城用户信息",
+      "tags": ["annotation", "auth", "mall-user"],
+      "languageNotes": "与 @TokenToAdminUser 结构对称，分别服务于管理员和普通商城用户两个角色体系",
+      "methods": [],
+      "properties": ["value"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "type": "file",
+      "name": "TokenToAdminUserMethodArgumentResolver.java",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "language": "java",
+      "summary": "管理员 Token 参数解析器，实现 HandlerMethodArgumentResolver 接口，从请求头提取 token 并从 Redis 获取 AdminUserToken 对象",
+      "tags": ["handler", "argument-resolver", "auth", "admin"],
+      "sizeLines": 58,
+      "nonEmptyLines": 49
+    },
+    {
+      "id": "class::TokenToAdminUserMethodArgumentResolver",
+      "type": "class",
+      "name": "TokenToAdminUserMethodArgumentResolver",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "language": "java",
+      "summary": "实现 HandlerMethodArgumentResolver 接口，supportsParameter 检查 @TokenToAdminUser 注解，resolveArgument 从请求头获取 token 后查 Redis 获取管理员信息，token 无效则抛出 ADMIN_NOT_LOGIN_ERROR 异常",
+      "tags": ["handler", "argument-resolver", "redis", "auth"],
+      "languageNotes": "通过 RedisTemplate.opsForValue().get(token) 查询管理员会话；token 必须为32位长度才视为有效",
+      "methods": ["supportsParameter", "resolveArgument"],
+      "properties": ["redisTemplate"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "type": "file",
+      "name": "TokenToMallUserMethodArgumentResolver.java",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "language": "java",
+      "summary": "商城用户 Token 参数解析器，从请求头提取 token 查 Redis 获取 MallUserToken，并额外校验用户是否存在及是否被锁定",
+      "tags": ["handler", "argument-resolver", "auth", "mall-user"],
+      "sizeLines": 91,
+      "nonEmptyLines": 78
+    },
+    {
+      "id": "class::TokenToMallUserMethodArgumentResolver",
+      "type": "class",
+      "name": "TokenToMallUserMethodArgumentResolver",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "language": "java",
+      "summary": "实现 HandlerMethodArgumentResolver 接口，比管理员解析器多一步：通过 MallUserMapper 查询用户实体并校验锁定状态，还包含 getRequestPostBytes 辅助方法",
+      "tags": ["handler", "argument-resolver", "redis", "auth"],
+      "languageNotes": "在 Redis token 验证后额外查询数据库确认用户存在性及锁定状态(lockedFlag)；比 TokenToAdminUserMethodArgumentResolver 多了数据库查询步骤",
+      "methods": ["supportsParameter", "resolveArgument", "getRequestPostBytes"],
+      "properties": ["redisTemplate", "mallUserMapper"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudAdminUserController.java",
+      "type": "file",
+      "name": "NewBeeMallCloudAdminUserController.java",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudAdminUserController.java",
+      "language": "java",
+      "summary": "管理员操作控制器，提供管理员登录、获取个人信息、修改密码/名称、退出登录、通过 token 获取管理员信息等 REST API",
+      "tags": ["controller", "rest-api", "admin", "user-service"],
+      "sizeLines": 113,
+      "nonEmptyLines": 98
+    },
+    {
+      "id": "class::NewBeeMallCloudAdminUserController",
+      "type": "class",
+      "name": "NewBeeMallCloudAdminUserController",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudAdminUserController.java",
+      "language": "java",
+      "summary": "管理员 REST 控制器，注入 AdminUserService 提供登录(POST /users/admin/login)、获取个人信息、修改密码/名称、登出(DELETE /users/admin/logout)、通过token获取管理员信息(GET /users/admin/{token}) 等接口，使用 @TokenToAdminUser 注解自动注入当前管理员",
+      "tags": ["controller", "rest-api", "swagger", "admin"],
+      "languageNotes": "使用 @Api 和 @ApiOperation 注解生成 Swagger 文档；@TokenToAdminUser 自定义注解注入当前登录管理员信息；login 返回32位 MD5 token",
+      "methods": ["login", "profile", "passwordUpdate", "nameUpdate", "logout", "getAdminUserByToken"],
+      "properties": ["adminUserService"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudPersonalController.java",
+      "type": "file",
+      "name": "NewBeeMallCloudPersonalController.java",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudPersonalController.java",
+      "language": "java",
+      "summary": "商城用户操作控制器，提供用户登录、注册、登出、修改信息、获取用户详情等 REST API",
+      "tags": ["controller", "rest-api", "mall-user", "user-service"],
+      "sizeLines": 134,
+      "nonEmptyLines": 115
+    },
+    {
+      "id": "class::NewBeeMallCloudPersonalController",
+      "type": "class",
+      "name": "NewBeeMallCloudPersonalController",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudPersonalController.java",
+      "language": "java",
+      "summary": "商城用户 REST 控制器，映射 /users/mall 路径前缀，提供登录(POST /login)、注册(POST /register)、登出(POST /logout)、修改信息(PUT /update)、获取详情(GET /detail)、通过token获取详情(GET /getDetailByToken) 等接口",
+      "tags": ["controller", "rest-api", "swagger", "mall-user"],
+      "languageNotes": "登录前使用 NumberUtil.isPhone 验证手机号格式；注册同理；使用 @TokenToMallUser 注解自动注入当前商城用户信息；getUserDetail 使用 BeanUtil.copyProperties 转换为 VO",
+      "methods": ["login", "logout", "register", "updateInfo", "getUserDetail", "getMallUserByToken"],
+      "properties": ["newBeeMallUserService"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/AdminLoginParam.java",
+      "type": "file",
+      "name": "AdminLoginParam.java",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/AdminLoginParam.java",
+      "language": "java",
+      "summary": "管理员登录请求参数，包含登录名和 MD5 加密后的密码，使用 JSR 303 校验",
+      "tags": ["param", "dto", "validation", "admin"],
+      "sizeLines": 27,
+      "nonEmptyLines": 22
+    },
+    {
+      "id": "class::AdminLoginParam",
+      "type": "class",
+      "name": "AdminLoginParam",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/AdminLoginParam.java",
+      "language": "java",
+      "summary": "管理员登录参数 POJO，使用 @NotEmpty 校验登录名和密码非空，@ApiModelProperty 生成 Swagger 字段说明",
+      "tags": ["param", "validation", "swagger"],
+      "languageNotes": "实现 Serializable 接口；密码字段命名为 passwordMd5 表示客户端需先进行 MD5 加密再传输",
+      "methods": [],
+      "properties": ["userName", "passwordMd5"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/MallUserLoginParam.java",
+      "type": "file",
+      "name": "MallUserLoginParam.java",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/MallUserLoginParam.java",
+      "language": "java",
+      "summary": "商城用户登录请求参数，包含登录名(手机号)和 MD5 加密后的密码",
+      "tags": ["param", "dto", "validation", "mall-user"],
+      "sizeLines": 30,
+      "nonEmptyLines": 25
+    },
+    {
+      "id": "class::MallUserLoginParam",
+      "type": "class",
+      "name": "MallUserLoginParam",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/MallUserLoginParam.java",
+      "language": "java",
+      "summary": "商城用户登录参数 POJO，使用 @NotEmpty 校验，loginName 为手机号格式",
+      "tags": ["param", "validation", "swagger"],
+      "languageNotes": "与 AdminLoginParam 结构类似，但 loginName 使用手机号登录",
+      "methods": [],
+      "properties": ["loginName", "passwordMd5"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/MallUserRegisterParam.java",
+      "type": "file",
+      "name": "MallUserRegisterParam.java",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/MallUserRegisterParam.java",
+      "language": "java",
+      "summary": "商城用户注册请求参数，包含登录名(手机号)和密码",
+      "tags": ["param", "dto", "validation", "register"],
+      "sizeLines": 30,
+      "nonEmptyLines": 25
+    },
+    {
+      "id": "class::MallUserRegisterParam",
+      "type": "class",
+      "name": "MallUserRegisterParam",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/MallUserRegisterParam.java",
+      "language": "java",
+      "summary": "商城用户注册参数 POJO，password 字段非 MD5（注册时服务端会进行加密），与登录参数的区别在于密码未经客户端预加密",
+      "tags": ["param", "validation", "register"],
+      "languageNotes": "注意注册的密码字段名为 password 而非 passwordMd5，说明注册时接收的是明文密码，服务端负责加密",
+      "methods": [],
+      "properties": ["loginName", "password"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/MallUserUpdateParam.java",
+      "type": "file",
+      "name": "MallUserUpdateParam.java",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/MallUserUpdateParam.java",
+      "language": "java",
+      "summary": "商城用户信息修改请求参数，包含昵称、MD5密码和个性签名",
+      "tags": ["param", "dto", "update"],
+      "sizeLines": 31,
+      "nonEmptyLines": 26
+    },
+    {
+      "id": "class::MallUserUpdateParam",
+      "type": "class",
+      "name": "MallUserUpdateParam",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/MallUserUpdateParam.java",
+      "language": "java",
+      "summary": "商城用户信息修改参数 POJO，字段均可选（无 @NotEmpty 校验），密码为空字符串时保留原密码",
+      "tags": ["param", "update"],
+      "languageNotes": "所有字段无非空校验注解，允许部分更新；passwordMd5 为空串时服务端会判断不修改密码",
+      "methods": [],
+      "properties": ["nickName", "passwordMd5", "introduceSign"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/UpdateAdminNameParam.java",
+      "type": "file",
+      "name": "UpdateAdminNameParam.java",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/UpdateAdminNameParam.java",
+      "language": "java",
+      "summary": "管理员名称修改请求参数，包含登录用户名和昵称",
+      "tags": ["param", "dto", "update", "admin"],
+      "sizeLines": 23,
+      "nonEmptyLines": 18
+    },
+    {
+      "id": "class::UpdateAdminNameParam",
+      "type": "class",
+      "name": "UpdateAdminNameParam",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/UpdateAdminNameParam.java",
+      "language": "java",
+      "summary": "管理员名称修改参数 POJO，loginUserName 和 nickName 均使用 @NotEmpty 校验非空",
+      "tags": ["param", "validation", "update"],
+      "languageNotes": "使用 @NotEmpty 而非 @NotBlank，空字符串也会通过校验",
+      "methods": [],
+      "properties": ["loginUserName", "nickName"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/UpdateAdminPasswordParam.java",
+      "type": "file",
+      "name": "UpdateAdminPasswordParam.java",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/UpdateAdminPasswordParam.java",
+      "language": "java",
+      "summary": "管理员密码修改请求参数，包含原密码和新密码",
+      "tags": ["param", "dto", "update", "admin"],
+      "sizeLines": 23,
+      "nonEmptyLines": 18
+    },
+    {
+      "id": "class::UpdateAdminPasswordParam",
+      "type": "class",
+      "name": "UpdateAdminPasswordParam",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/UpdateAdminPasswordParam.java",
+      "language": "java",
+      "summary": "管理员密码修改参数 POJO，originalPassword 和 newPassword 均使用 @NotEmpty 校验",
+      "tags": ["param", "validation", "password"],
+      "languageNotes": "密码以明文传输（与登录一致，客户端预加密后的 MD5 值）",
+      "methods": [],
+      "properties": ["originalPassword", "newPassword"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/vo/NewBeeMallUserVO.java",
+      "type": "file",
+      "name": "NewBeeMallUserVO.java",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/vo/NewBeeMallUserVO.java",
+      "language": "java",
+      "summary": "商城用户详情视图对象，仅暴露昵称、登录名和个性签名，避免返回敏感字段",
+      "tags": ["vo", "dto", "mall-user"],
+      "sizeLines": 27,
+      "nonEmptyLines": 22
+    },
+    {
+      "id": "class::NewBeeMallUserVO",
+      "type": "class",
+      "name": "NewBeeMallUserVO",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/vo/NewBeeMallUserVO.java",
+      "language": "java",
+      "summary": "商城用户详情 VO，通过 BeanUtil.copyProperties 从 MallUser 转换而来，仅包含公开信息字段",
+      "tags": ["vo", "api-response"],
+      "languageNotes": "VO(View Object) 模式用于 API 返回时隐藏敏感字段如密码、ID、删除标记等",
+      "methods": [],
+      "properties": ["nickName", "loginName", "introduceSign"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/dao/AdminUserMapper.java",
+      "type": "file",
+      "name": "AdminUserMapper.java",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/dao/AdminUserMapper.java",
+      "language": "java",
+      "summary": "管理员用户 MyBatis Mapper 接口，定义管理员的 CRUD 操作和登录查询方法",
+      "tags": ["dao", "mapper", "mybatis", "admin"],
+      "sizeLines": 33,
+      "nonEmptyLines": 28
+    },
+    {
+      "id": "class::AdminUserMapper",
+      "type": "class",
+      "name": "AdminUserMapper",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/dao/AdminUserMapper.java",
+      "language": "java",
+      "summary": "MyBatis Mapper 接口，提供管理员的 insert、login(用户名密码查询)、selectByPrimaryKey、updateByPrimaryKey 等数据库操作",
+      "tags": ["dao", "mapper", "mybatis"],
+      "languageNotes": "MyBatis Mapper 接口无需实现类，由 MyBatis 框架在运行时通过动态代理生成实现；login 方法使用 @Param 注解绑定 SQL 参数",
+      "methods": ["insert", "insertSelective", "login", "selectByPrimaryKey", "updateByPrimaryKeySelective", "updateByPrimaryKey"],
+      "properties": []
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/dao/MallUserMapper.java",
+      "type": "file",
+      "name": "MallUserMapper.java",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/dao/MallUserMapper.java",
+      "language": "java",
+      "summary": "商城用户 MyBatis Mapper 接口，定义用户 CRUD、登录名查询、密码验证、分页查询和批量锁定操作",
+      "tags": ["dao", "mapper", "mybatis", "mall-user"],
+      "sizeLines": 38,
+      "nonEmptyLines": 33
+    },
+    {
+      "id": "class::MallUserMapper",
+      "type": "class",
+      "name": "MallUserMapper",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/dao/MallUserMapper.java",
+      "language": "java",
+      "summary": "MyBatis Mapper 接口，提供商城用户的 insert、selectByLoginName、selectByLoginNameAndPasswd、findMallUserList(分页)、lockUserBatch(批量锁定) 等操作",
+      "tags": ["dao", "mapper", "mybatis", "crud"],
+      "languageNotes": "findMallUserList 和 getTotalMallUsers 接收 PageQueryUtil 参数用于分页查询；lockUserBatch 使用 @Param 注解绑定批量锁定的ID数组",
+      "methods": ["deleteByPrimaryKey", "insert", "insertSelective", "selectByPrimaryKey", "selectByLoginName", "selectByLoginNameAndPasswd", "updateByPrimaryKeySelective", "updateByPrimaryKey", "findMallUserList", "getTotalMallUsers", "lockUserBatch"],
+      "properties": []
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/entity/AdminUser.java",
+      "type": "file",
+      "name": "AdminUser.java",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/entity/AdminUser.java",
+      "language": "java",
+      "summary": "管理员用户实体类，映射数据库管理员表字段",
+      "tags": ["entity", "pojo", "admin", "database"],
+      "sizeLines": 23,
+      "nonEmptyLines": 18
+    },
+    {
+      "id": "class::AdminUser",
+      "type": "class",
+      "name": "AdminUser",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/entity/AdminUser.java",
+      "language": "java",
+      "summary": "管理员实体 POJO，使用 Lombok @Data，包含 adminUserId、loginUserName、loginPassword、nickName、locked 字段",
+      "tags": ["entity", "pojo", "database"],
+      "languageNotes": "与订单服务的 LoginAdminUser 字段一致，但属于不同微服务模块",
+      "methods": [],
+      "properties": ["adminUserId", "loginUserName", "loginPassword", "nickName", "locked"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/entity/MallUser.java",
+      "type": "file",
+      "name": "MallUser.java",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/entity/MallUser.java",
+      "language": "java",
+      "summary": "商城用户实体类，映射数据库商城用户表字段，包含用户基本信息和状态标记",
+      "tags": ["entity", "pojo", "mall-user", "database"],
+      "sizeLines": 33,
+      "nonEmptyLines": 28
+    },
+    {
+      "id": "class::MallUser",
+      "type": "class",
+      "name": "MallUser",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/entity/MallUser.java",
+      "language": "java",
+      "summary": "商城用户实体 POJO，包含 userId、nickName、loginName、passwordMd5、introduceSign、isDeleted、lockedFlag、createTime 字段，createTime 使用 @JsonFormat 格式化输出",
+      "tags": ["entity", "pojo", "database"],
+      "languageNotes": "@JsonFormat 注解将 Date 类型字段格式化为 \"yyyy-MM-dd HH:mm:ss\" 并指定 GMT+8 时区",
+      "methods": [],
+      "properties": ["userId", "nickName", "loginName", "passwordMd5", "introduceSign", "isDeleted", "lockedFlag", "createTime"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/AdminUserService.java",
+      "type": "file",
+      "name": "AdminUserService.java",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/AdminUserService.java",
+      "language": "java",
+      "summary": "管理员用户服务接口，定义登录、获取用户信息、修改密码、修改名称、登出等业务方法",
+      "tags": ["service", "interface", "admin"],
+      "sizeLines": 67,
+      "nonEmptyLines": 55
+    },
+    {
+      "id": "class::AdminUserService",
+      "type": "class",
+      "name": "AdminUserService",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/AdminUserService.java",
+      "language": "java",
+      "summary": "管理员服务接口，定义 login、getUserDetailById、getUserDetailByToken、updatePassword、updateName、logout 六个业务方法",
+      "tags": ["service", "interface", "admin"],
+      "languageNotes": "Java 接口定义，由 AdminUserServiceImpl 实现；面向接口编程便于 Spring 依赖注入和代理",
+      "methods": ["login", "getUserDetailById", "getUserDetailByToken", "updatePassword", "updateName", "logout"],
+      "properties": []
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/NewBeeMallUserService.java",
+      "type": "file",
+      "name": "NewBeeMallUserService.java",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/NewBeeMallUserService.java",
+      "language": "java",
+      "summary": "商城用户服务接口，定义注册、登录、修改信息、获取详情、登出、用户锁定和分页查询等业务方法",
+      "tags": ["service", "interface", "mall-user"],
+      "sizeLines": 77,
+      "nonEmptyLines": 64
+    },
+    {
+      "id": "class::NewBeeMallUserService",
+      "type": "class",
+      "name": "NewBeeMallUserService",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/NewBeeMallUserService.java",
+      "language": "java",
+      "summary": "商城用户服务接口，定义 register、login、updateUserInfo、getUserDetailByToken、logout、lockUsers、getNewBeeMallUsersPage 七个业务方法",
+      "tags": ["service", "interface", "mall-user"],
+      "languageNotes": "lockUsers 和 getNewBeeMallUsersPage 供后台管理使用；login/register/updateUserInfo 供前台用户使用",
+      "methods": ["register", "login", "updateUserInfo", "getUserDetailByToken", "logout", "lockUsers", "getNewBeeMallUsersPage"],
+      "properties": []
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/AdminUserServiceImpl.java",
+      "type": "file",
+      "name": "AdminUserServiceImpl.java",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/AdminUserServiceImpl.java",
+      "language": "java",
+      "summary": "管理员服务实现类，实现登录认证（token存Redis，48小时过期）、用户信息查询、密码/名称修改和登出功能",
+      "tags": ["service", "impl", "admin", "redis"],
+      "sizeLines": 118,
+      "nonEmptyLines": 100
+    },
+    {
+      "id": "class::AdminUserServiceImpl",
+      "type": "class",
+      "name": "AdminUserServiceImpl",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/AdminUserServiceImpl.java",
+      "language": "java",
+      "summary": "@Service 实现类，login 通过 AdminUserMapper.login 验证用户名密码后生成 token 存入 Redis（48小时TTL），getNewToken 使用 SystemUtil.genToken 生成 MD5 token，updatePassword 比对原密码后更新，logout 直接删除 Redis 中的 token",
+      "tags": ["service", "impl", "redis", "token"],
+      "languageNotes": "使用 RedisTemplate 管理 token 会话；token 生成源 = 时间戳 + 用户ID + 6位随机数；密码比较为明文比较（客户端传入 MD5 值）",
+      "methods": ["login", "getNewToken", "getUserDetailById", "getUserDetailByToken", "updatePassword", "updateName", "logout"],
+      "properties": ["adminUserMapper", "redisTemplate"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/NewBeeMallUserServiceImpl.java",
+      "type": "file",
+      "name": "NewBeeMallUserServiceImpl.java",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/NewBeeMallUserServiceImpl.java",
+      "language": "java",
+      "summary": "商城用户服务实现类，实现注册、登录认证、用户信息修改、详情查询、登出、用户锁定和分页查询功能",
+      "tags": ["service", "impl", "mall-user", "redis"],
+      "sizeLines": 146,
+      "nonEmptyLines": 124
+    },
+    {
+      "id": "class::NewBeeMallUserServiceImpl",
+      "type": "class",
+      "name": "NewBeeMallUserServiceImpl",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/NewBeeMallUserServiceImpl.java",
+      "language": "java",
+      "summary": "@Service 实现类，register 检查登录名唯一性后使用 MD5Util 加密密码并入库；login 验证密码并检查锁定状态后生成 token 存 Redis（7天TTL）；updateUserInfo 支持部分更新；lockUsers 批量锁定/解锁用户",
+      "tags": ["service", "impl", "redis", "token", "crud"],
+      "languageNotes": "注册时密码使用 MD5Util.MD5Encode 加密后存储；token 7天过期（比管理员的48小时更长）；updateUserInfo 通过比较空字符串 MD5 值判断是否修改密码",
+      "methods": ["register", "login", "getNewToken", "updateUserInfo", "getUserDetailByToken", "logout", "getNewBeeMallUsersPage", "lockUsers"],
+      "properties": ["mallUserMapper", "redisTemplate"]
+    }
+  ],
+  "edges": [
+    {
+      "source": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/ResultGenerator.java",
+      "target": "class::ResultGenerator",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/AdminUserToken.java",
+      "target": "class::AdminUserToken",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/MallUserToken.java",
+      "target": "class::MallUserToken",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/MD5Util.java",
+      "target": "class::MD5Util",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/NumberUtil.java",
+      "target": "class::NumberUtil",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/SystemUtil.java",
+      "target": "class::SystemUtil",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/filter/ValidTokenGlobalFilter.java",
+      "target": "class::ValidTokenGlobalFilter",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/filter/ValidMallUserTokenGlobalFilter.java",
+      "target": "class::ValidMallUserTokenGlobalFilter",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OrderServiceSwagger3Config.java",
+      "target": "class::OrderServiceSwagger3Config",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/LoginAdminUser.java",
+      "target": "class::LoginAdminUser",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/ShopCartServiceSwagger3Config.java",
+      "target": "class::ShopCartServiceSwagger3Config",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/UserServiceWebMvcConfigurer.java",
+      "target": "class::UserServiceWebMvcConfigurer",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/UserSwagger3Config.java",
+      "target": "class::UserSwagger3Config",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "target": "annotation::TokenToAdminUser",
+      "type": "contains",
+      "label": "定义注解"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "target": "annotation::TokenToMallUser",
+      "type": "contains",
+      "label": "定义注解"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "target": "class::TokenToAdminUserMethodArgumentResolver",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "target": "class::TokenToMallUserMethodArgumentResolver",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudAdminUserController.java",
+      "target": "class::NewBeeMallCloudAdminUserController",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudPersonalController.java",
+      "target": "class::NewBeeMallCloudPersonalController",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/AdminLoginParam.java",
+      "target": "class::AdminLoginParam",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/MallUserLoginParam.java",
+      "target": "class::MallUserLoginParam",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/MallUserRegisterParam.java",
+      "target": "class::MallUserRegisterParam",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/MallUserUpdateParam.java",
+      "target": "class::MallUserUpdateParam",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/UpdateAdminNameParam.java",
+      "target": "class::UpdateAdminNameParam",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/UpdateAdminPasswordParam.java",
+      "target": "class::UpdateAdminPasswordParam",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/vo/NewBeeMallUserVO.java",
+      "target": "class::NewBeeMallUserVO",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/dao/AdminUserMapper.java",
+      "target": "class::AdminUserMapper",
+      "type": "contains",
+      "label": "定义接口"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/dao/MallUserMapper.java",
+      "target": "class::MallUserMapper",
+      "type": "contains",
+      "label": "定义接口"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/entity/AdminUser.java",
+      "target": "class::AdminUser",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/entity/MallUser.java",
+      "target": "class::MallUser",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/AdminUserService.java",
+      "target": "class::AdminUserService",
+      "type": "contains",
+      "label": "定义接口"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/NewBeeMallUserService.java",
+      "target": "class::NewBeeMallUserService",
+      "type": "contains",
+      "label": "定义接口"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/AdminUserServiceImpl.java",
+      "target": "class::AdminUserServiceImpl",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/NewBeeMallUserServiceImpl.java",
+      "target": "class::NewBeeMallUserServiceImpl",
+      "type": "contains",
+      "label": "定义类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/filter/ValidTokenGlobalFilter.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/ResultGenerator.java",
+      "type": "imports",
+      "label": "导入 ResultGenerator"
+    },
+    {
+      "source": "file::newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/filter/ValidTokenGlobalFilter.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/AdminUserToken.java",
+      "type": "imports",
+      "label": "导入 AdminUserToken"
+    },
+    {
+      "source": "file::newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/filter/ValidMallUserTokenGlobalFilter.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/ResultGenerator.java",
+      "type": "imports",
+      "label": "导入 ResultGenerator"
+    },
+    {
+      "source": "file::newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/filter/ValidMallUserTokenGlobalFilter.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/MallUserToken.java",
+      "type": "imports",
+      "label": "导入 MallUserToken"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OrderServiceSwagger3Config.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/MallUserToken.java",
+      "type": "imports",
+      "label": "导入 MallUserToken"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OrderServiceSwagger3Config.java",
+      "target": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/LoginAdminUser.java",
+      "type": "imports",
+      "label": "导入 LoginAdminUser"
+    },
+    {
+      "source": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/ShopCartServiceSwagger3Config.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/MallUserToken.java",
+      "type": "imports",
+      "label": "导入 MallUserToken"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/UserServiceWebMvcConfigurer.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "type": "imports",
+      "label": "导入 TokenToAdminUserMethodArgumentResolver"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/UserServiceWebMvcConfigurer.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "type": "imports",
+      "label": "导入 TokenToMallUserMethodArgumentResolver"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/UserSwagger3Config.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/AdminUserToken.java",
+      "type": "imports",
+      "label": "导入 AdminUserToken"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/UserSwagger3Config.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/MallUserToken.java",
+      "type": "imports",
+      "label": "导入 MallUserToken"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "type": "imports",
+      "label": "导入 TokenToAdminUser 注解"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/AdminUserToken.java",
+      "type": "imports",
+      "label": "导入 AdminUserToken"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "type": "imports",
+      "label": "导入 TokenToMallUser 注解"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/AdminUserToken.java",
+      "type": "imports",
+      "label": "导入 AdminUserToken"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/MallUserToken.java",
+      "type": "imports",
+      "label": "导入 MallUserToken"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/dao/MallUserMapper.java",
+      "type": "imports",
+      "label": "导入 MallUserMapper"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/entity/MallUser.java",
+      "type": "imports",
+      "label": "导入 MallUser"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudAdminUserController.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/ResultGenerator.java",
+      "type": "imports",
+      "label": "导入 ResultGenerator"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudAdminUserController.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/AdminUserToken.java",
+      "type": "imports",
+      "label": "导入 AdminUserToken"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudAdminUserController.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "type": "imports",
+      "label": "导入 TokenToAdminUser 注解"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudAdminUserController.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/AdminLoginParam.java",
+      "type": "imports",
+      "label": "导入 AdminLoginParam"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudAdminUserController.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/UpdateAdminNameParam.java",
+      "type": "imports",
+      "label": "导入 UpdateAdminNameParam"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudAdminUserController.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/UpdateAdminPasswordParam.java",
+      "type": "imports",
+      "label": "导入 UpdateAdminPasswordParam"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudAdminUserController.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/entity/AdminUser.java",
+      "type": "imports",
+      "label": "导入 AdminUser"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudAdminUserController.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/AdminUserService.java",
+      "type": "imports",
+      "label": "导入 AdminUserService"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudPersonalController.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/ResultGenerator.java",
+      "type": "imports",
+      "label": "导入 ResultGenerator"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudPersonalController.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/MallUserToken.java",
+      "type": "imports",
+      "label": "导入 MallUserToken"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudPersonalController.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/NumberUtil.java",
+      "type": "imports",
+      "label": "导入 NumberUtil"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudPersonalController.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "type": "imports",
+      "label": "导入 TokenToMallUser 注解"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudPersonalController.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/MallUserLoginParam.java",
+      "type": "imports",
+      "label": "导入 MallUserLoginParam"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudPersonalController.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/MallUserRegisterParam.java",
+      "type": "imports",
+      "label": "导入 MallUserRegisterParam"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudPersonalController.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/MallUserUpdateParam.java",
+      "type": "imports",
+      "label": "导入 MallUserUpdateParam"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudPersonalController.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/vo/NewBeeMallUserVO.java",
+      "type": "imports",
+      "label": "导入 NewBeeMallUserVO"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudPersonalController.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/entity/MallUser.java",
+      "type": "imports",
+      "label": "导入 MallUser"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudPersonalController.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/NewBeeMallUserService.java",
+      "type": "imports",
+      "label": "导入 NewBeeMallUserService"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/dao/AdminUserMapper.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/entity/AdminUser.java",
+      "type": "imports",
+      "label": "导入 AdminUser"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/dao/MallUserMapper.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/entity/MallUser.java",
+      "type": "imports",
+      "label": "导入 MallUser"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/AdminUserService.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/entity/AdminUser.java",
+      "type": "imports",
+      "label": "导入 AdminUser"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/NewBeeMallUserService.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/MallUserUpdateParam.java",
+      "type": "imports",
+      "label": "导入 MallUserUpdateParam"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/NewBeeMallUserService.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/entity/AdminUser.java",
+      "type": "imports",
+      "label": "导入 AdminUser"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/NewBeeMallUserService.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/entity/MallUser.java",
+      "type": "imports",
+      "label": "导入 MallUser"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/AdminUserServiceImpl.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/AdminUserToken.java",
+      "type": "imports",
+      "label": "导入 AdminUserToken"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/AdminUserServiceImpl.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/NumberUtil.java",
+      "type": "imports",
+      "label": "导入 NumberUtil"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/AdminUserServiceImpl.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/SystemUtil.java",
+      "type": "imports",
+      "label": "导入 SystemUtil"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/AdminUserServiceImpl.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/dao/AdminUserMapper.java",
+      "type": "imports",
+      "label": "导入 AdminUserMapper"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/AdminUserServiceImpl.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/entity/AdminUser.java",
+      "type": "imports",
+      "label": "导入 AdminUser"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/AdminUserServiceImpl.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/AdminUserService.java",
+      "type": "imports",
+      "label": "导入 AdminUserService"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/NewBeeMallUserServiceImpl.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/MallUserToken.java",
+      "type": "imports",
+      "label": "导入 MallUserToken"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/NewBeeMallUserServiceImpl.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/MD5Util.java",
+      "type": "imports",
+      "label": "导入 MD5Util"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/NewBeeMallUserServiceImpl.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/NumberUtil.java",
+      "type": "imports",
+      "label": "导入 NumberUtil"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/NewBeeMallUserServiceImpl.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/SystemUtil.java",
+      "type": "imports",
+      "label": "导入 SystemUtil"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/NewBeeMallUserServiceImpl.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/MallUserUpdateParam.java",
+      "type": "imports",
+      "label": "导入 MallUserUpdateParam"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/NewBeeMallUserServiceImpl.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/dao/MallUserMapper.java",
+      "type": "imports",
+      "label": "导入 MallUserMapper"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/NewBeeMallUserServiceImpl.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/entity/MallUser.java",
+      "type": "imports",
+      "label": "导入 MallUser"
+    },
+    {
+      "source": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/NewBeeMallUserServiceImpl.java",
+      "target": "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/NewBeeMallUserService.java",
+      "type": "imports",
+      "label": "导入 NewBeeMallUserService"
+    },
+    {
+      "source": "class::AdminUserServiceImpl",
+      "target": "class::AdminUserService",
+      "type": "implements",
+      "label": "实现接口"
+    },
+    {
+      "source": "class::NewBeeMallUserServiceImpl",
+      "target": "class::NewBeeMallUserService",
+      "type": "implements",
+      "label": "实现接口"
+    },
+    {
+      "source": "class::TokenToAdminUserMethodArgumentResolver",
+      "target": "annotation::TokenToAdminUser",
+      "type": "uses",
+      "label": "解析 @TokenToAdminUser 注解"
+    },
+    {
+      "source": "class::TokenToMallUserMethodArgumentResolver",
+      "target": "annotation::TokenToMallUser",
+      "type": "uses",
+      "label": "解析 @TokenToMallUser 注解"
+    },
+    {
+      "source": "class::NewBeeMallCloudAdminUserController",
+      "target": "class::AdminUserService",
+      "type": "calls",
+      "label": "调用管理员服务"
+    },
+    {
+      "source": "class::NewBeeMallCloudAdminUserController",
+      "target": "class::ResultGenerator",
+      "type": "calls",
+      "label": "生成响应结果"
+    },
+    {
+      "source": "class::NewBeeMallCloudPersonalController",
+      "target": "class::NewBeeMallUserService",
+      "type": "calls",
+      "label": "调用商城用户服务"
+    },
+    {
+      "source": "class::NewBeeMallCloudPersonalController",
+      "target": "class::ResultGenerator",
+      "type": "calls",
+      "label": "生成响应结果"
+    },
+    {
+      "source": "class::NewBeeMallCloudPersonalController",
+      "target": "class::NumberUtil",
+      "type": "calls",
+      "label": "验证手机号格式"
+    },
+    {
+      "source": "class::ValidTokenGlobalFilter",
+      "target": "class::ResultGenerator",
+      "type": "calls",
+      "label": "生成错误响应"
+    },
+    {
+      "source": "class::ValidMallUserTokenGlobalFilter",
+      "target": "class::ResultGenerator",
+      "type": "calls",
+      "label": "生成错误响应"
+    },
+    {
+      "source": "class::AdminUserServiceImpl",
+      "target": "class::AdminUserMapper",
+      "type": "calls",
+      "label": "调用管理员数据访问"
+    },
+    {
+      "source": "class::AdminUserServiceImpl",
+      "target": "class::SystemUtil",
+      "type": "calls",
+      "label": "生成 token"
+    },
+    {
+      "source": "class::AdminUserServiceImpl",
+      "target": "class::NumberUtil",
+      "type": "calls",
+      "label": "生成随机数"
+    },
+    {
+      "source": "class::NewBeeMallUserServiceImpl",
+      "target": "class::MallUserMapper",
+      "type": "calls",
+      "label": "调用商城用户数据访问"
+    },
+    {
+      "source": "class::NewBeeMallUserServiceImpl",
+      "target": "class::MD5Util",
+      "type": "calls",
+      "label": "密码 MD5 加密"
+    },
+    {
+      "source": "class::NewBeeMallUserServiceImpl",
+      "target": "class::SystemUtil",
+      "type": "calls",
+      "label": "生成 token"
+    },
+    {
+      "source": "class::NewBeeMallUserServiceImpl",
+      "target": "class::NumberUtil",
+      "type": "calls",
+      "label": "生成随机数"
+    },
+    {
+      "source": "class::TokenToAdminUserMethodArgumentResolver",
+      "target": "class::AdminUserToken",
+      "type": "uses",
+      "label": "返回 AdminUserToken 实例"
+    },
+    {
+      "source": "class::TokenToMallUserMethodArgumentResolver",
+      "target": "class::MallUserToken",
+      "type": "uses",
+      "label": "返回 MallUserToken 实例"
+    },
+    {
+      "source": "class::TokenToMallUserMethodArgumentResolver",
+      "target": "class::MallUserMapper",
+      "type": "calls",
+      "label": "查询用户验证锁定状态"
+    },
+    {
+      "source": "class::ValidTokenGlobalFilter",
+      "target": "class::AdminUserToken",
+      "type": "uses",
+      "label": "从 Redis 验证管理员 Token"
+    },
+    {
+      "source": "class::ValidMallUserTokenGlobalFilter",
+      "target": "class::MallUserToken",
+      "type": "uses",
+      "label": "从 Redis 验证商城用户 Token"
+    },
+    {
+      "source": "class::UserServiceWebMvcConfigurer",
+      "target": "class::TokenToAdminUserMethodArgumentResolver",
+      "type": "uses",
+      "label": "注册管理员参数解析器"
+    },
+    {
+      "source": "class::UserServiceWebMvcConfigurer",
+      "target": "class::TokenToMallUserMethodArgumentResolver",
+      "type": "uses",
+      "label": "注册商城用户参数解析器"
+    },
+    {
+      "source": "class::NewBeeMallCloudAdminUserController",
+      "target": "class::AdminUser",
+      "type": "uses",
+      "label": "使用管理员实体"
+    },
+    {
+      "source": "class::NewBeeMallCloudAdminUserController",
+      "target": "class::AdminUserToken",
+      "type": "uses",
+      "label": "使用 @TokenToAdminUser 注入"
+    },
+    {
+      "source": "class::NewBeeMallCloudPersonalController",
+      "target": "class::MallUser",
+      "type": "uses",
+      "label": "使用商城用户实体"
+    },
+    {
+      "source": "class::NewBeeMallCloudPersonalController",
+      "target": "class::MallUserToken",
+      "type": "uses",
+      "label": "使用 @TokenToMallUser 注入"
+    },
+    {
+      "source": "class::NewBeeMallCloudPersonalController",
+      "target": "class::NewBeeMallUserVO",
+      "type": "uses",
+      "label": "返回用户视图对象"
+    },
+    {
+      "source": "class::AdminUserMapper",
+      "target": "class::AdminUser",
+      "type": "uses",
+      "label": "操作 AdminUser 实体"
+    },
+    {
+      "source": "class::MallUserMapper",
+      "target": "class::MallUser",
+      "type": "uses",
+      "label": "操作 MallUser 实体"
+    },
+    {
+      "source": "class::AdminUserService",
+      "target": "class::AdminUser",
+      "type": "uses",
+      "label": "返回 AdminUser 实体"
+    },
+    {
+      "source": "class::NewBeeMallUserService",
+      "target": "class::MallUser",
+      "type": "uses",
+      "label": "返回 MallUser 实体"
+    },
+    {
+      "source": "class::AdminUserServiceImpl",
+      "target": "class::AdminUser",
+      "type": "uses",
+      "label": "操作管理员实体"
+    },
+    {
+      "source": "class::AdminUserServiceImpl",
+      "target": "class::AdminUserToken",
+      "type": "uses",
+      "label": "创建并存储 Token"
+    },
+    {
+      "source": "class::NewBeeMallUserServiceImpl",
+      "target": "class::MallUser",
+      "type": "uses",
+      "label": "操作商城用户实体"
+    },
+    {
+      "source": "class::NewBeeMallUserServiceImpl",
+      "target": "class::MallUserToken",
+      "type": "uses",
+      "label": "创建并存储 Token"
+    }
+  ],
+  "metadata": {
+    "batchIndex": 1,
+    "totalFiles": 34,
+    "totalNodes": 68,
+    "totalEdges": 128,
+    "language": "java",
+    "modules": ["newbee-mall-cloud-common", "newbee-mall-cloud-gateway-admin", "newbee-mall-cloud-gateway-mall", "newbee-mall-cloud-order-service", "newbee-mall-cloud-shop-cart-service", "newbee-mall-cloud-user-service"]
+  }
+}

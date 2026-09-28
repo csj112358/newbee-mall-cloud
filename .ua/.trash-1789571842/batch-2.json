@@ -1,0 +1,1275 @@
+{
+  "batchIndex": 2,
+  "nodes": [
+    {
+      "id": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/NewBeeMallCategoryLevelEnum.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/NewBeeMallCategoryLevelEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "NewBeeMallCategoryLevelEnum",
+      "summary": "商品分类级别枚举类，定义了一级、二级、三级分类及默认错误状态，提供根据级别值查找枚举实例的方法。",
+      "tags": [
+        "java",
+        "enum",
+        "商品分类",
+        "枚举常量"
+      ],
+      "metrics": {
+        "totalLines": 58,
+        "nonEmptyLines": 48,
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "id": "class:NewBeeMallCategoryLevelEnum",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/NewBeeMallCategoryLevelEnum.java",
+      "language": "java",
+      "className": "NewBeeMallCategoryLevelEnum",
+      "classKind": "enum",
+      "title": "NewBeeMallCategoryLevelEnum - 商品分类级别枚举",
+      "summary": "枚举类，定义了四级分类状态（DEFAULT/LEVEL_ONE/LEVEL_TWO/LEVEL_THREE），每级包含数字标识和中文名称。提供按级别值遍历查找枚举实例的静态方法。",
+      "tags": [
+        "enum",
+        "商品分类级别",
+        "枚举映射"
+      ],
+      "properties": [
+        "level",
+        "name"
+      ],
+      "methods": [
+        "NewBeeMallCategoryLevelEnum",
+        "getNewBeeMallOrderStatusEnumByLevel",
+        "getLevel",
+        "setLevel",
+        "getName",
+        "setName"
+      ],
+      "startLine": 18,
+      "endLine": 58,
+      "languageNotes": "Java枚举可以携带属性和方法，构造函数将int级别和String名称绑定到每个枚举常量。"
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/GoodsServiceSwagger3Config.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/GoodsServiceSwagger3Config.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "GoodsServiceSwagger3Config",
+      "summary": "商品服务的Swagger3/OpenAPI配置类，配置Docket Bean扫描controller包并生成接口文档，定义全局token请求头参数，并忽略管理员/用户Token实体及LoginAdminUser参数。",
+      "tags": [
+        "java",
+        "swagger",
+        "配置类",
+        "OpenAPI",
+        "Spring"
+      ],
+      "metrics": {
+        "totalLines": 67,
+        "nonEmptyLines": 61,
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "id": "class:GoodsServiceSwagger3Config",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/GoodsServiceSwagger3Config.java",
+      "language": "java",
+      "className": "GoodsServiceSwagger3Config",
+      "classKind": "class",
+      "title": "GoodsServiceSwagger3Config - Swagger接口文档配置",
+      "summary": "使用@Configuration和@EnableOpenApi注解，创建OAS 3.0类型的Docket Bean。扫描ltd.goods.cloud.newbee.controller包下的控制器，忽略AdminUserToken、MallUserToken和LoginAdminUser参数类型，并在请求头中添加全局token参数。",
+      "tags": [
+        "Swagger",
+        "OpenAPI",
+        "Spring配置",
+        "Docket"
+      ],
+      "properties": [],
+      "methods": [
+        "api",
+        "getGlobalRequestParameters",
+        "apiInfo"
+      ],
+      "startLine": 31,
+      "endLine": 67,
+      "languageNotes": "使用SpringFox 3.x的@EnableOpenApi注解启用OpenAPI 3.0支持，通过ignoredParameterTypes隐藏认证相关参数。"
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "TokenToAdminUser",
+      "summary": "自定义参数级注解，用于标记Controller方法参数，配合TokenToAdminUserMethodArgumentResolver自动将请求中的token解析为LoginAdminUser对象注入。",
+      "tags": [
+        "java",
+        "annotation",
+        "认证",
+        "自定义注解",
+        "参数注入"
+      ],
+      "metrics": {
+        "totalLines": 25,
+        "nonEmptyLines": 21,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "TokenToMallUser",
+      "summary": "自定义参数级注解，用于标记Controller方法参数，配合TokenToMallUserMethodArgumentResolver自动将请求中的token解析为MallUserToken对象注入。",
+      "tags": [
+        "java",
+        "annotation",
+        "认证",
+        "自定义注解",
+        "参数注入"
+      ],
+      "metrics": {
+        "totalLines": 25,
+        "nonEmptyLines": 21,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsCategoryController.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsCategoryController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "NewBeeAdminGoodsCategoryController",
+      "summary": "后台管理系统商品分类控制器，提供分类列表查询（支持分页和级别筛选）、三级联动分类选择、新增/修改/详情/批量删除分类等REST接口。",
+      "tags": [
+        "java",
+        "controller",
+        "REST API",
+        "商品分类",
+        "后台管理",
+        "Spring"
+      ],
+      "metrics": {
+        "totalLines": 177,
+        "nonEmptyLines": 165,
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "id": "class:NewBeeAdminGoodsCategoryController",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsCategoryController.java",
+      "language": "java",
+      "className": "NewBeeAdminGoodsCategoryController",
+      "classKind": "class",
+      "title": "NewBeeAdminGoodsCategoryController - 后台分类管理控制器",
+      "summary": "使用@RestController注解的分类管理控制器，映射到/categories/admin路径。注入NewBeeMallCategoryService实现CRUD操作。listForSelect方法实现三级分类联动逻辑，save/update方法通过BeanUtil将参数对象转换为实体。所有接口均需@TokenToAdminUser认证。",
+      "tags": [
+        "RestController",
+        "分类管理",
+        "三级联动",
+        "CRUD"
+      ],
+      "properties": [
+        "logger",
+        "newBeeMallCategoryService"
+      ],
+      "methods": [
+        "list",
+        "listForSelect",
+        "save",
+        "update",
+        "info",
+        "delete"
+      ],
+      "startLine": 45,
+      "endLine": 177,
+      "languageNotes": "使用@TokenToAdminUser自定义注解注入登录用户信息，通过@Api和@ApiOperation标注Swagger文档。"
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsInfoController.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsInfoController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "NewBeeAdminGoodsInfoController",
+      "summary": "后台管理系统商品信息控制器，提供商品列表查询、新增/修改商品、商品详情（含三级分类信息回溯）、批量修改上下架状态、按ID查询和批量ID查询、库存修改等REST接口。库存修改接口使用Seata分布式事务。",
+      "tags": [
+        "java",
+        "controller",
+        "REST API",
+        "商品管理",
+        "后台管理",
+        "Seata",
+        "分布式事务"
+      ],
+      "metrics": {
+        "totalLines": 201,
+        "nonEmptyLines": 186,
+        "importCount": 0,
+        "exportCount": 9,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "id": "class:NewBeeAdminGoodsInfoController",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsInfoController.java",
+      "language": "java",
+      "className": "NewBeeAdminGoodsInfoController",
+      "classKind": "class",
+      "title": "NewBeeAdminGoodsInfoController - 后台商品信息管理控制器",
+      "summary": "映射到/goods/admin的REST控制器，注入NewBeeMallGoodsService和NewBeeMallCategoryService。info方法实现商品详情查询并向上回溯三级分类链；updateStock方法通过Seata的RootContext获取全局事务ID实现分布式库存更新。",
+      "tags": [
+        "RestController",
+        "商品管理",
+        "Seata分布式事务",
+        "库存管理"
+      ],
+      "properties": [
+        "logger",
+        "newBeeMallGoodsService",
+        "newBeeMallCategoryService"
+      ],
+      "methods": [
+        "list",
+        "save",
+        "update",
+        "info",
+        "delete",
+        "goodsDetail",
+        "getNewBeeMallGoodsByIds",
+        "updateStock"
+      ],
+      "startLine": 47,
+      "endLine": 201,
+      "languageNotes": "引入io.seata.core.context.RootContext用于分布式事务XID追踪，updateStock接口支持跨服务库存扣减。"
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeMallGoodsController.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeMallGoodsController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "NewBeeMallGoodsController",
+      "summary": "新蜂商城前台商品控制器，面向商城用户端，提供商品搜索（支持关键字和分类ID筛选、排序）和商品详情查看接口。包含3个异常测试接口用于验证全局异常处理。",
+      "tags": [
+        "java",
+        "controller",
+        "REST API",
+        "商品搜索",
+        "前台商城"
+      ],
+      "metrics": {
+        "totalLines": 117,
+        "nonEmptyLines": 104,
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "id": "class:NewBeeMallGoodsController",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeMallGoodsController.java",
+      "language": "java",
+      "className": "NewBeeMallGoodsController",
+      "classKind": "class",
+      "title": "NewBeeMallGoodsController - 前台商品控制器",
+      "summary": "映射到/goods/mall的前台商品控制器。search方法构建分页查询参数调用搜索服务；goodsDetail方法获取商品详情并校验上架状态，将goodsCarousel按逗号拆分为图片数组。test1/test2/test3接口分别触发BindException、自定义异常和算术异常用于测试。",
+      "tags": [
+        "RestController",
+        "商品搜索",
+        "商品详情",
+        "异常测试"
+      ],
+      "properties": [
+        "logger",
+        "newBeeMallGoodsService"
+      ],
+      "methods": [
+        "test1",
+        "test2",
+        "test3",
+        "search",
+        "goodsDetail"
+      ],
+      "startLine": 38,
+      "endLine": 117,
+      "languageNotes": "使用@TokenToMallUser注解注入商城用户Token，search方法对搜索结果的名称和简介进行长度截断处理。"
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/param/BatchIdParam.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/param/BatchIdParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "BatchIdParam",
+      "summary": "批量操作请求参数类，封装Long类型的ID数组，用于批量删除/修改等操作。",
+      "tags": [
+        "java",
+        "param",
+        "请求参数",
+        "Lombok"
+      ],
+      "metrics": {
+        "totalLines": 19,
+        "nonEmptyLines": 15,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/param/GoodsAddParam.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/param/GoodsAddParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "GoodsAddParam",
+      "summary": "新增商品请求参数类，使用JSR 303/380校验注解（@NotEmpty、@NotNull、@Min、@Max、@Length）对商品名称、简介、分类ID、主图、原价、售价、库存、标签、详情等字段进行校验。",
+      "tags": [
+        "java",
+        "param",
+        "请求参数",
+        "参数校验",
+        "Lombok"
+      ],
+      "metrics": {
+        "totalLines": 69,
+        "nonEmptyLines": 65,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/param/GoodsCategoryAddParam.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/param/GoodsCategoryAddParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "GoodsCategoryAddParam",
+      "summary": "新增分类请求参数类，校验分类层级(1-3)、父类ID、分类名称和排序值。",
+      "tags": [
+        "java",
+        "param",
+        "请求参数",
+        "参数校验",
+        "Lombok"
+      ],
+      "metrics": {
+        "totalLines": 43,
+        "nonEmptyLines": 39,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/param/GoodsCategoryEditParam.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/param/GoodsCategoryEditParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "GoodsCategoryEditParam",
+      "summary": "修改分类请求参数类，比新增参数多一个categoryId字段，同样使用校验注解约束分类层级、父类ID、名称和排序值。",
+      "tags": [
+        "java",
+        "param",
+        "请求参数",
+        "参数校验",
+        "Lombok"
+      ],
+      "metrics": {
+        "totalLines": 48,
+        "nonEmptyLines": 44,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/param/GoodsEditParam.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/param/GoodsEditParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "GoodsEditParam",
+      "summary": "修改商品请求参数类，比新增参数多一个goodsId字段，包含商品全量字段的校验规则。",
+      "tags": [
+        "java",
+        "param",
+        "请求参数",
+        "参数校验",
+        "Lombok"
+      ],
+      "metrics": {
+        "totalLines": 74,
+        "nonEmptyLines": 70,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/NewBeeMallGoodsDetailVO.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/NewBeeMallGoodsDetailVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "NewBeeMallGoodsDetailVO",
+      "summary": "商品详情页视图对象，包含商品ID、名称、简介、封面图、售价、标签、轮播图数组、原价和详情内容。",
+      "tags": [
+        "java",
+        "VO",
+        "视图对象",
+        "商品详情",
+        "Lombok"
+      ],
+      "metrics": {
+        "totalLines": 48,
+        "nonEmptyLines": 44,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/NewBeeMallIndexCategoryVO.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/NewBeeMallIndexCategoryVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "NewBeeMallIndexCategoryVO",
+      "summary": "首页分类数据视图对象，表示一级分类信息，内嵌二级分类列表（SecondLevelCategoryVO），形成三级分类树形结构。",
+      "tags": [
+        "java",
+        "VO",
+        "视图对象",
+        "首页分类",
+        "树形结构",
+        "Lombok"
+      ],
+      "metrics": {
+        "totalLines": 34,
+        "nonEmptyLines": 30,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/NewBeeMallSearchGoodsVO.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/NewBeeMallSearchGoodsVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "NewBeeMallSearchGoodsVO",
+      "summary": "搜索列表页商品视图对象，精简展示商品ID、名称、简介、封面图和售价，用于搜索结果列表渲染。",
+      "tags": [
+        "java",
+        "VO",
+        "视图对象",
+        "商品搜索",
+        "Lombok"
+      ],
+      "metrics": {
+        "totalLines": 37,
+        "nonEmptyLines": 33,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/SecondLevelCategoryVO.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/SecondLevelCategoryVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "SecondLevelCategoryVO",
+      "summary": "首页二级分类视图对象，包含分类ID、父ID、级别、名称和三级分类列表，形成二级到三级的嵌套结构。",
+      "tags": [
+        "java",
+        "VO",
+        "视图对象",
+        "二级分类",
+        "树形结构",
+        "Lombok"
+      ],
+      "metrics": {
+        "totalLines": 37,
+        "nonEmptyLines": 33,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/ThirdLevelCategoryVO.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/ThirdLevelCategoryVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "ThirdLevelCategoryVO",
+      "summary": "首页三级分类视图对象，包含分类ID、级别和名称，为分类树的叶子节点。",
+      "tags": [
+        "java",
+        "VO",
+        "视图对象",
+        "三级分类",
+        "树形结构",
+        "Lombok"
+      ],
+      "metrics": {
+        "totalLines": 30,
+        "nonEmptyLines": 26,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/dao/GoodsCategoryMapper.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/dao/GoodsCategoryMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "GoodsCategoryMapper",
+      "summary": "商品分类MyBatis Mapper接口，定义分类表的CRUD操作，支持按主键增删改查、按级别和名称查询、分页列表、批量删除及按父级ID和级别查询子分类。",
+      "tags": [
+        "java",
+        "mapper",
+        "MyBatis",
+        "数据访问",
+        "商品分类"
+      ],
+      "metrics": {
+        "totalLines": 38,
+        "nonEmptyLines": 34,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/dao/NewBeeMallGoodsMapper.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/dao/NewBeeMallGoodsMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "NewBeeMallGoodsMapper",
+      "summary": "商品MyBatis Mapper接口，定义商品表的完整CRUD操作，支持分页查询、搜索、按ID批量查询、批量插入、库存修改和批量修改上下架状态。",
+      "tags": [
+        "java",
+        "mapper",
+        "MyBatis",
+        "数据访问",
+        "商品管理"
+      ],
+      "metrics": {
+        "totalLines": 50,
+        "nonEmptyLines": 46,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/GoodsCategory.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/GoodsCategory.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "GoodsCategory",
+      "summary": "商品分类实体类，映射分类数据表，包含分类ID、级别、父ID、名称、排序值、删除标记、创建/更新时间和操作人。使用@JsonFormat格式化日期字段。",
+      "tags": [
+        "java",
+        "entity",
+        "实体类",
+        "商品分类",
+        "Lombok",
+        "MyBatis"
+      ],
+      "metrics": {
+        "totalLines": 38,
+        "nonEmptyLines": 34,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/LoginAdminUser.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/LoginAdminUser.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "LoginAdminUser",
+      "summary": "后台管理员登录用户实体类，包含管理员ID、登录用户名、密码、昵称和锁定状态。用于Controller层接收@TokenToAdminUser注解解析的当前登录用户信息。",
+      "tags": [
+        "java",
+        "entity",
+        "实体类",
+        "管理员",
+        "登录用户",
+        "Lombok"
+      ],
+      "metrics": {
+        "totalLines": 23,
+        "nonEmptyLines": 19,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/NewBeeMallGoods.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/NewBeeMallGoods.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "NewBeeMallGoods",
+      "summary": "商品实体类，映射商品数据表，包含商品ID、名称、简介、分类ID、封面图、轮播图、原价、售价、库存、标签、上下架状态、创建/更新信息和商品详情内容。",
+      "tags": [
+        "java",
+        "entity",
+        "实体类",
+        "商品",
+        "Lombok",
+        "MyBatis"
+      ],
+      "metrics": {
+        "totalLines": 50,
+        "nonEmptyLines": 46,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/StockNumDTO.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/StockNumDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "StockNumDTO",
+      "summary": "库存修改数据传输对象，包含商品ID和库存变更数量，用于批量库存更新操作。",
+      "tags": [
+        "java",
+        "DTO",
+        "数据传输对象",
+        "库存管理",
+        "Lombok"
+      ],
+      "metrics": {
+        "totalLines": 22,
+        "nonEmptyLines": 18,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/UpdateStockNumDTO.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/UpdateStockNumDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "UpdateStockNumDTO",
+      "summary": "批量库存更新请求包装对象，封装StockNumDTO列表，作为库存修改接口的请求体。",
+      "tags": [
+        "java",
+        "DTO",
+        "数据传输对象",
+        "库存管理",
+        "Lombok"
+      ],
+      "metrics": {
+        "totalLines": 26,
+        "nonEmptyLines": 22,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/NewBeeMallCategoryService.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/NewBeeMallCategoryService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "NewBeeMallCategoryService",
+      "summary": "商品分类服务接口，定义分类的增删改查、分页查询、按级别和父ID查询子分类列表以及获取首页分类树形数据等业务方法。",
+      "tags": [
+        "java",
+        "service",
+        "接口",
+        "商品分类",
+        "业务逻辑"
+      ],
+      "metrics": {
+        "totalLines": 52,
+        "nonEmptyLines": 48,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/NewBeeMallGoodsService.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/NewBeeMallGoodsService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "NewBeeMallGoodsService",
+      "summary": "商品服务接口，定义商品的分页查询、新增、批量新增、修改、批量修改销售状态、按ID查询、按ID批量查询、搜索和库存更新等业务方法。",
+      "tags": [
+        "java",
+        "service",
+        "接口",
+        "商品管理",
+        "业务逻辑"
+      ],
+      "metrics": {
+        "totalLines": 85,
+        "nonEmptyLines": 81,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallCategoryServiceImpl.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallCategoryServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "NewBeeMallCategoryServiceImpl",
+      "summary": "商品分类服务实现类，实现分类的增删改查业务逻辑。getCategoriesForIndex方法使用流式处理构建三级分类树形结构（一级->二级->三级VO），通过parentId分组聚合实现树形数据组装。",
+      "tags": [
+        "java",
+        "service",
+        "实现类",
+        "商品分类",
+        "树形结构",
+        "Stream API"
+      ],
+      "metrics": {
+        "totalLines": 148,
+        "nonEmptyLines": 144,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "class:NewBeeMallCategoryServiceImpl",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallCategoryServiceImpl.java",
+      "language": "java",
+      "className": "NewBeeMallCategoryServiceImpl",
+      "classKind": "class",
+      "title": "NewBeeMallCategoryServiceImpl - 分类服务实现",
+      "summary": "实现NewBeeMallCategoryService接口，注入GoodsCategoryMapper。saveCategory和updateGoodsCategory方法校验同名分类防重复。getCategoriesForIndex方法查询三级分类数据后通过Stream API的groupingBy进行分组聚合，逐级构建SecondLevelCategoryVO和NewBeeMallIndexCategoryVO树形结构。",
+      "tags": [
+        "Service实现",
+        "分类管理",
+        "Stream聚合",
+        "树形构建"
+      ],
+      "properties": [
+        "goodsCategoryMapper"
+      ],
+      "methods": [
+        "saveCategory",
+        "updateGoodsCategory",
+        "getGoodsCategoryById",
+        "deleteBatch",
+        "getCategorisPage",
+        "selectByLevelAndParentIdsAndNumber",
+        "getCategoriesForIndex"
+      ],
+      "startLine": 32,
+      "endLine": 148,
+      "languageNotes": "大量使用Java Stream API和Collectors.groupingBy进行数据分组，使用BeanUtil.copyProperties和copyList进行对象属性拷贝。"
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallGoodsServiceImpl.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallGoodsServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "title": "NewBeeMallGoodsServiceImpl",
+      "summary": "商品服务实现类，实现商品CRUD和搜索业务。新增/修改商品时校验分类必须为三级分类且同名商品不重复。searchNewBeeMallGoods方法在搜索结果中截断过长的商品名称和简介。",
+      "tags": [
+        "java",
+        "service",
+        "实现类",
+        "商品管理",
+        "搜索",
+        "业务校验"
+      ],
+      "metrics": {
+        "totalLines": 143,
+        "nonEmptyLines": 139,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "id": "class:NewBeeMallGoodsServiceImpl",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallGoodsServiceImpl.java",
+      "language": "java",
+      "className": "NewBeeMallGoodsServiceImpl",
+      "classKind": "class",
+      "title": "NewBeeMallGoodsServiceImpl - 商品服务实现",
+      "summary": "实现NewBeeMallGoodsService接口，注入NewBeeMallGoodsMapper和GoodsCategoryMapper。saveNewBeeMallGoods和updateNewBeeMallGoods方法校验商品必须归属三级分类且名称唯一。getNewBeeMallGoodsById商品不存在时抛出异常。searchNewBeeMallGoods将搜索结果转为VO并对名称(>28字)和简介(>30字)截断。",
+      "tags": [
+        "Service实现",
+        "商品管理",
+        "业务校验",
+        "搜索截断"
+      ],
+      "properties": [
+        "goodsMapper",
+        "goodsCategoryMapper"
+      ],
+      "methods": [
+        "getNewBeeMallGoodsPage",
+        "saveNewBeeMallGoods",
+        "batchSaveNewBeeMallGoods",
+        "updateNewBeeMallGoods",
+        "getNewBeeMallGoodsById",
+        "getNewBeeMallGoodsByIds",
+        "batchUpdateSellStatus",
+        "searchNewBeeMallGoods",
+        "updateStockNum"
+      ],
+      "startLine": 33,
+      "endLine": 143,
+      "languageNotes": "save/update方法使用三级分类校验逻辑（LEVEL_THREE.getLevel()），getNewBeeMallGoodsById使用NewBeeMallException.fail进行异常处理。"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/GoodsServiceSwagger3Config.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/LoginAdminUser.java",
+      "type": "imports",
+      "label": "忽略参数类型"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/GoodsServiceSwagger3Config.java",
+      "target": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/AdminUserToken.java",
+      "type": "imports",
+      "label": "忽略参数类型"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/GoodsServiceSwagger3Config.java",
+      "target": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/MallUserToken.java",
+      "type": "imports",
+      "label": "忽略参数类型"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "target": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "type": "usedBy",
+      "label": "被参数解析器使用"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "target": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "type": "usedBy",
+      "label": "被参数解析器使用"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsCategoryController.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/NewBeeMallCategoryService.java",
+      "type": "calls",
+      "label": "注入并调用分类服务"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsCategoryController.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "type": "imports",
+      "label": "使用Token认证注解"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsCategoryController.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/LoginAdminUser.java",
+      "type": "imports",
+      "label": "使用登录用户实体"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsCategoryController.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/GoodsCategory.java",
+      "type": "imports",
+      "label": "使用分类实体"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsCategoryController.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/param/BatchIdParam.java",
+      "type": "imports",
+      "label": "使用批量ID参数"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsCategoryController.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/param/GoodsCategoryAddParam.java",
+      "type": "imports",
+      "label": "使用新增分类参数"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsCategoryController.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/param/GoodsCategoryEditParam.java",
+      "type": "imports",
+      "label": "使用编辑分类参数"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsCategoryController.java",
+      "target": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/NewBeeMallCategoryLevelEnum.java",
+      "type": "imports",
+      "label": "使用分类级别枚举"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsInfoController.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/NewBeeMallGoodsService.java",
+      "type": "calls",
+      "label": "注入并调用商品服务"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsInfoController.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/NewBeeMallCategoryService.java",
+      "type": "calls",
+      "label": "注入并调用分类服务"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsInfoController.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "type": "imports",
+      "label": "使用Token认证注解"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsInfoController.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/LoginAdminUser.java",
+      "type": "imports",
+      "label": "使用登录用户实体"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsInfoController.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/NewBeeMallGoods.java",
+      "type": "imports",
+      "label": "使用商品实体"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsInfoController.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/GoodsCategory.java",
+      "type": "imports",
+      "label": "使用分类实体"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsInfoController.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/UpdateStockNumDTO.java",
+      "type": "imports",
+      "label": "使用库存更新DTO"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsInfoController.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/param/BatchIdParam.java",
+      "type": "imports",
+      "label": "使用批量ID参数"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsInfoController.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/param/GoodsAddParam.java",
+      "type": "imports",
+      "label": "使用新增商品参数"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsInfoController.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/param/GoodsEditParam.java",
+      "type": "imports",
+      "label": "使用编辑商品参数"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeMallGoodsController.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/NewBeeMallGoodsService.java",
+      "type": "calls",
+      "label": "注入并调用商品服务"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeMallGoodsController.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "type": "imports",
+      "label": "使用商城用户Token注解"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeMallGoodsController.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/NewBeeMallGoods.java",
+      "type": "imports",
+      "label": "使用商品实体"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeMallGoodsController.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/NewBeeMallGoodsDetailVO.java",
+      "type": "imports",
+      "label": "使用商品详情VO"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeMallGoodsController.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/NewBeeMallSearchGoodsVO.java",
+      "type": "imports",
+      "label": "使用搜索商品VO"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/dao/GoodsCategoryMapper.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/GoodsCategory.java",
+      "type": "imports",
+      "label": "操作分类实体"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/dao/NewBeeMallGoodsMapper.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/NewBeeMallGoods.java",
+      "type": "imports",
+      "label": "操作商品实体"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/dao/NewBeeMallGoodsMapper.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/StockNumDTO.java",
+      "type": "imports",
+      "label": "使用库存DTO"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/UpdateStockNumDTO.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/StockNumDTO.java",
+      "type": "imports",
+      "label": "包含StockNumDTO列表"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/NewBeeMallCategoryService.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/GoodsCategory.java",
+      "type": "imports",
+      "label": "使用分类实体"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/NewBeeMallCategoryService.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/NewBeeMallIndexCategoryVO.java",
+      "type": "imports",
+      "label": "返回首页分类VO"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/NewBeeMallGoodsService.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/NewBeeMallGoods.java",
+      "type": "imports",
+      "label": "使用商品实体"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/NewBeeMallGoodsService.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/StockNumDTO.java",
+      "type": "imports",
+      "label": "使用库存DTO"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallCategoryServiceImpl.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/NewBeeMallCategoryService.java",
+      "type": "implements",
+      "label": "实现分类服务接口"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallCategoryServiceImpl.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/dao/GoodsCategoryMapper.java",
+      "type": "calls",
+      "label": "注入并调用分类Mapper"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallCategoryServiceImpl.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/GoodsCategory.java",
+      "type": "imports",
+      "label": "使用分类实体"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallCategoryServiceImpl.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/NewBeeMallIndexCategoryVO.java",
+      "type": "imports",
+      "label": "构建首页分类VO"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallCategoryServiceImpl.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/SecondLevelCategoryVO.java",
+      "type": "imports",
+      "label": "构建二级分类VO"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallCategoryServiceImpl.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/ThirdLevelCategoryVO.java",
+      "type": "imports",
+      "label": "构建三级分类VO"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallCategoryServiceImpl.java",
+      "target": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/NewBeeMallCategoryLevelEnum.java",
+      "type": "imports",
+      "label": "使用分类级别枚举"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallGoodsServiceImpl.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/NewBeeMallGoodsService.java",
+      "type": "implements",
+      "label": "实现商品服务接口"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallGoodsServiceImpl.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/dao/NewBeeMallGoodsMapper.java",
+      "type": "calls",
+      "label": "注入并调用商品Mapper"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallGoodsServiceImpl.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/dao/GoodsCategoryMapper.java",
+      "type": "calls",
+      "label": "注入并调用分类Mapper校验"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallGoodsServiceImpl.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/NewBeeMallGoods.java",
+      "type": "imports",
+      "label": "使用商品实体"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallGoodsServiceImpl.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/GoodsCategory.java",
+      "type": "imports",
+      "label": "使用分类实体校验"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallGoodsServiceImpl.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/StockNumDTO.java",
+      "type": "imports",
+      "label": "使用库存DTO"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallGoodsServiceImpl.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/NewBeeMallSearchGoodsVO.java",
+      "type": "imports",
+      "label": "转换为搜索VO"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallGoodsServiceImpl.java",
+      "target": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/NewBeeMallCategoryLevelEnum.java",
+      "type": "imports",
+      "label": "使用分类级别枚举校验"
+    },
+    {
+      "source": "class:NewBeeAdminGoodsCategoryController",
+      "target": "class:NewBeeMallCategoryServiceImpl",
+      "type": "calls",
+      "label": "通过服务接口调用实现"
+    },
+    {
+      "source": "class:NewBeeAdminGoodsInfoController",
+      "target": "class:NewBeeMallGoodsServiceImpl",
+      "type": "calls",
+      "label": "通过服务接口调用商品服务"
+    },
+    {
+      "source": "class:NewBeeAdminGoodsInfoController",
+      "target": "class:NewBeeMallCategoryServiceImpl",
+      "type": "calls",
+      "label": "通过服务接口调用分类服务"
+    },
+    {
+      "source": "class:NewBeeMallGoodsController",
+      "target": "class:NewBeeMallGoodsServiceImpl",
+      "type": "calls",
+      "label": "通过服务接口调用商品服务"
+    },
+    {
+      "source": "class:NewBeeMallCategoryServiceImpl",
+      "target": "class:NewBeeMallCategoryLevelEnum",
+      "type": "imports",
+      "label": "使用分类级别枚举判断级别"
+    },
+    {
+      "source": "class:NewBeeMallGoodsServiceImpl",
+      "target": "class:NewBeeMallCategoryLevelEnum",
+      "type": "imports",
+      "label": "使用分类级别枚举校验三级分类"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/NewBeeMallIndexCategoryVO.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/SecondLevelCategoryVO.java",
+      "type": "imports",
+      "label": "包含二级分类VO列表"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/SecondLevelCategoryVO.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/ThirdLevelCategoryVO.java",
+      "type": "imports",
+      "label": "包含三级分类VO列表"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/NewBeeMallIndexCategoryVO.java",
+      "target": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeMallGoodsCategoryController.java",
+      "type": "usedBy",
+      "label": "被分类控制器返回"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/NewBeeMallCategoryService.java",
+      "target": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeMallGoodsCategoryController.java",
+      "type": "usedBy",
+      "label": "被分类控制器注入使用"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/LoginAdminUser.java",
+      "target": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "type": "usedBy",
+      "label": "被Token解析器构造实例"
+    }
+  ]
+}

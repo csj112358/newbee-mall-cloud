@@ -1,0 +1,2480 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 24,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 24,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 24,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 45,
+      "functions": [
+        {
+          "name": "PageQueryUtil",
+          "startLine": 20,
+          "endLine": 29,
+          "params": [
+            "params"
+          ]
+        },
+        {
+          "name": "getPage",
+          "startLine": 32,
+          "endLine": 34,
+          "params": []
+        },
+        {
+          "name": "setPage",
+          "startLine": 36,
+          "endLine": 38,
+          "params": [
+            "page"
+          ]
+        },
+        {
+          "name": "getLimit",
+          "startLine": 40,
+          "endLine": 42,
+          "params": []
+        },
+        {
+          "name": "setLimit",
+          "startLine": 44,
+          "endLine": 46,
+          "params": [
+            "limit"
+          ]
+        },
+        {
+          "name": "toString",
+          "startLine": 48,
+          "endLine": 54,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "PageQueryUtil",
+          "startLine": 14,
+          "endLine": 55,
+          "methods": [
+            "PageQueryUtil",
+            "getPage",
+            "setPage",
+            "getLimit",
+            "setLimit",
+            "toString"
+          ],
+          "properties": [
+            "page",
+            "limit"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PageQueryUtil",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "getPage",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "setPage",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "getLimit",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "setLimit",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "toString",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "PageQueryUtil",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "PageQueryUtil",
+          "callee": "this.putAll",
+          "lineNumber": 21
+        },
+        {
+          "caller": "PageQueryUtil",
+          "callee": "Integer.parseInt",
+          "lineNumber": 24
+        },
+        {
+          "caller": "PageQueryUtil",
+          "callee": "params.get(\"page\").toString",
+          "lineNumber": 24
+        },
+        {
+          "caller": "PageQueryUtil",
+          "callee": "params.get",
+          "lineNumber": 24
+        },
+        {
+          "caller": "PageQueryUtil",
+          "callee": "Integer.parseInt",
+          "lineNumber": 25
+        },
+        {
+          "caller": "PageQueryUtil",
+          "callee": "params.get(\"limit\").toString",
+          "lineNumber": 25
+        },
+        {
+          "caller": "PageQueryUtil",
+          "callee": "params.get",
+          "lineNumber": 25
+        },
+        {
+          "caller": "PageQueryUtil",
+          "callee": "this.put",
+          "lineNumber": 26
+        },
+        {
+          "caller": "PageQueryUtil",
+          "callee": "this.put",
+          "lineNumber": 27
+        },
+        {
+          "caller": "PageQueryUtil",
+          "callee": "this.put",
+          "lineNumber": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/IndexConfigTypeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 50,
+      "functions": [
+        {
+          "name": "IndexConfigTypeEnum",
+          "startLine": 31,
+          "endLine": 34,
+          "params": [
+            "type",
+            "name"
+          ]
+        },
+        {
+          "name": "getIndexConfigTypeEnumByType",
+          "startLine": 36,
+          "endLine": 43,
+          "params": [
+            "type"
+          ]
+        },
+        {
+          "name": "getType",
+          "startLine": 45,
+          "endLine": 47,
+          "params": []
+        },
+        {
+          "name": "setType",
+          "startLine": 49,
+          "endLine": 51,
+          "params": [
+            "type"
+          ]
+        },
+        {
+          "name": "getName",
+          "startLine": 53,
+          "endLine": 55,
+          "params": []
+        },
+        {
+          "name": "setName",
+          "startLine": 57,
+          "endLine": 59,
+          "params": [
+            "name"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "IndexConfigTypeEnum",
+          "startLine": 18,
+          "endLine": 60,
+          "methods": [
+            "IndexConfigTypeEnum",
+            "getIndexConfigTypeEnumByType",
+            "getType",
+            "setType",
+            "getName",
+            "setName"
+          ],
+          "properties": [
+            "type",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getIndexConfigTypeEnumByType",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "getType",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "setType",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "getName",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "setName",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "IndexConfigTypeEnum",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getIndexConfigTypeEnumByType",
+          "callee": "IndexConfigTypeEnum.values",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getIndexConfigTypeEnumByType",
+          "callee": "indexConfigTypeEnum.getType",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/RecommendServiceSwagger3Config.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 66,
+      "nonEmptyLines": 60,
+      "functions": [
+        {
+          "name": "api",
+          "startLine": 34,
+          "endLine": 44,
+          "params": []
+        },
+        {
+          "name": "getGlobalRequestParameters",
+          "startLine": 47,
+          "endLine": 57,
+          "params": []
+        },
+        {
+          "name": "apiInfo",
+          "startLine": 59,
+          "endLine": 65,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "RecommendServiceSwagger3Config",
+          "startLine": 30,
+          "endLine": 66,
+          "methods": [
+            "api",
+            "getGlobalRequestParameters",
+            "apiInfo"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "api",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "RecommendServiceSwagger3Config",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo())\r\n                .ignoredParameterTypes(AdminUserToken.class, LoginAdminUser.class)\r\n                .select()\r\n                .apis(RequestHandlerSelectors.basePackage(\"ltd.recommend.cloud.newbee.controller\"))\r\n                .paths(PathSelectors.any())\r\n                .build().globalRequestParameters",
+          "lineNumber": 36
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo())\r\n                .ignoredParameterTypes(AdminUserToken.class, LoginAdminUser.class)\r\n                .select()\r\n                .apis(RequestHandlerSelectors.basePackage(\"ltd.recommend.cloud.newbee.controller\"))\r\n                .paths(PathSelectors.any()).build",
+          "lineNumber": 36
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo())\r\n                .ignoredParameterTypes(AdminUserToken.class, LoginAdminUser.class)\r\n                .select()\r\n                .apis(RequestHandlerSelectors.basePackage(\"ltd.recommend.cloud.newbee.controller\")).paths",
+          "lineNumber": 36
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo())\r\n                .ignoredParameterTypes(AdminUserToken.class, LoginAdminUser.class)\r\n                .select().apis",
+          "lineNumber": 36
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo())\r\n                .ignoredParameterTypes(AdminUserToken.class, LoginAdminUser.class).select",
+          "lineNumber": 36
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo()).ignoredParameterTypes",
+          "lineNumber": 36
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30).apiInfo",
+          "lineNumber": 36
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket",
+          "lineNumber": 36
+        },
+        {
+          "caller": "api",
+          "callee": "apiInfo",
+          "lineNumber": 37
+        },
+        {
+          "caller": "api",
+          "callee": "RequestHandlerSelectors.basePackage",
+          "lineNumber": 40
+        },
+        {
+          "caller": "api",
+          "callee": "PathSelectors.any",
+          "lineNumber": 41
+        },
+        {
+          "caller": "api",
+          "callee": "getGlobalRequestParameters",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new ArrayList<>",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "parameters.add",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder()\r\n                .name(\"token\")\r\n                .description(\"登录认证token\")\r\n                .required(false) // 非必传\r\n                .in(ParameterType.HEADER) //请求头中的参数，其它类型可以点进ParameterType类中查看\r\n                .query(q -> q.model(m -> m.scalarModel(ScalarType.STRING))).build",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder()\r\n                .name(\"token\")\r\n                .description(\"登录认证token\")\r\n                .required(false) // 非必传\r\n                .in(ParameterType.HEADER).query",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder()\r\n                .name(\"token\")\r\n                .description(\"登录认证token\")\r\n                .required(false).in",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder()\r\n                .name(\"token\")\r\n                .description(\"登录认证token\").required",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder()\r\n                .name(\"token\").description",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder().name",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "q.model",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "m.scalarModel",
+          "lineNumber": 54
+        },
+        {
+          "caller": "apiInfo",
+          "callee": "new ApiInfoBuilder()\r\n                .title(\"newbee-mall-cloud-recommend-service接口文档\")\r\n                .description(\"swagger接口文档\")\r\n                .version(\"2.0\").build",
+          "lineNumber": 60
+        },
+        {
+          "caller": "apiInfo",
+          "callee": "new ApiInfoBuilder()\r\n                .title(\"newbee-mall-cloud-recommend-service接口文档\")\r\n                .description(\"swagger接口文档\").version",
+          "lineNumber": 60
+        },
+        {
+          "caller": "apiInfo",
+          "callee": "new ApiInfoBuilder()\r\n                .title(\"newbee-mall-cloud-recommend-service接口文档\").description",
+          "lineNumber": 60
+        },
+        {
+          "caller": "apiInfo",
+          "callee": "new ApiInfoBuilder().title",
+          "lineNumber": 60
+        },
+        {
+          "caller": "apiInfo",
+          "callee": "new ApiInfoBuilder",
+          "lineNumber": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 21,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminCarouselController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 135,
+      "nonEmptyLines": 123,
+      "functions": [
+        {
+          "name": "list",
+          "startLine": 54,
+          "endLine": 67,
+          "params": [
+            "pageNumber",
+            "pageSize",
+            "adminUser"
+          ]
+        },
+        {
+          "name": "save",
+          "startLine": 72,
+          "endLine": 84,
+          "params": [
+            "carouselAddParam",
+            "adminUser"
+          ]
+        },
+        {
+          "name": "update",
+          "startLine": 90,
+          "endLine": 102,
+          "params": [
+            "carouselEditParam",
+            "adminUser"
+          ]
+        },
+        {
+          "name": "info",
+          "startLine": 107,
+          "endLine": 116,
+          "params": [
+            "id",
+            "adminUser"
+          ]
+        },
+        {
+          "name": "delete",
+          "startLine": 121,
+          "endLine": 133,
+          "params": [
+            "batchIdParam",
+            "adminUser"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeAdminCarouselController",
+          "startLine": 41,
+          "endLine": 135,
+          "methods": [
+            "list",
+            "save",
+            "update",
+            "info",
+            "delete"
+          ],
+          "properties": [
+            "logger",
+            "newBeeMallCarouselService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "list",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "save",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "update",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "info",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "delete",
+          "line": 121,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeAdminCarouselController",
+          "line": 41,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "list",
+          "callee": "logger.info",
+          "lineNumber": 58
+        },
+        {
+          "caller": "list",
+          "callee": "adminUser.toString",
+          "lineNumber": 58
+        },
+        {
+          "caller": "list",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 60
+        },
+        {
+          "caller": "list",
+          "callee": "new HashMap",
+          "lineNumber": 62
+        },
+        {
+          "caller": "list",
+          "callee": "params.put",
+          "lineNumber": 63
+        },
+        {
+          "caller": "list",
+          "callee": "params.put",
+          "lineNumber": 64
+        },
+        {
+          "caller": "list",
+          "callee": "new PageQueryUtil",
+          "lineNumber": 65
+        },
+        {
+          "caller": "list",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 66
+        },
+        {
+          "caller": "list",
+          "callee": "newBeeMallCarouselService.getCarouselPage",
+          "lineNumber": 66
+        },
+        {
+          "caller": "save",
+          "callee": "logger.info",
+          "lineNumber": 75
+        },
+        {
+          "caller": "save",
+          "callee": "adminUser.toString",
+          "lineNumber": 75
+        },
+        {
+          "caller": "save",
+          "callee": "new Carousel",
+          "lineNumber": 76
+        },
+        {
+          "caller": "save",
+          "callee": "BeanUtil.copyProperties",
+          "lineNumber": 77
+        },
+        {
+          "caller": "save",
+          "callee": "newBeeMallCarouselService.saveCarousel",
+          "lineNumber": 78
+        },
+        {
+          "caller": "save",
+          "callee": "ServiceResultEnum.SUCCESS.getResult().equals",
+          "lineNumber": 79
+        },
+        {
+          "caller": "save",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 79
+        },
+        {
+          "caller": "save",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 80
+        },
+        {
+          "caller": "save",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 82
+        },
+        {
+          "caller": "update",
+          "callee": "logger.info",
+          "lineNumber": 93
+        },
+        {
+          "caller": "update",
+          "callee": "adminUser.toString",
+          "lineNumber": 93
+        },
+        {
+          "caller": "update",
+          "callee": "new Carousel",
+          "lineNumber": 94
+        },
+        {
+          "caller": "update",
+          "callee": "BeanUtil.copyProperties",
+          "lineNumber": 95
+        },
+        {
+          "caller": "update",
+          "callee": "newBeeMallCarouselService.updateCarousel",
+          "lineNumber": 96
+        },
+        {
+          "caller": "update",
+          "callee": "ServiceResultEnum.SUCCESS.getResult().equals",
+          "lineNumber": 97
+        },
+        {
+          "caller": "update",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 97
+        },
+        {
+          "caller": "update",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 98
+        },
+        {
+          "caller": "update",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 100
+        },
+        {
+          "caller": "info",
+          "callee": "logger.info",
+          "lineNumber": 110
+        },
+        {
+          "caller": "info",
+          "callee": "adminUser.toString",
+          "lineNumber": 110
+        },
+        {
+          "caller": "info",
+          "callee": "newBeeMallCarouselService.getCarouselById",
+          "lineNumber": 111
+        },
+        {
+          "caller": "info",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 113
+        },
+        {
+          "caller": "info",
+          "callee": "ServiceResultEnum.DATA_NOT_EXIST.getResult",
+          "lineNumber": 113
+        },
+        {
+          "caller": "info",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 115
+        },
+        {
+          "caller": "delete",
+          "callee": "logger.info",
+          "lineNumber": 124
+        },
+        {
+          "caller": "delete",
+          "callee": "adminUser.toString",
+          "lineNumber": 124
+        },
+        {
+          "caller": "delete",
+          "callee": "batchIdParam.getIds",
+          "lineNumber": 125
+        },
+        {
+          "caller": "delete",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 126
+        },
+        {
+          "caller": "delete",
+          "callee": "newBeeMallCarouselService.deleteBatch",
+          "lineNumber": 128
+        },
+        {
+          "caller": "delete",
+          "callee": "batchIdParam.getIds",
+          "lineNumber": 128
+        },
+        {
+          "caller": "delete",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 129
+        },
+        {
+          "caller": "delete",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 131
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminIndexConfigController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 142,
+      "nonEmptyLines": 130,
+      "functions": [
+        {
+          "name": "list",
+          "startLine": 55,
+          "endLine": 74,
+          "params": [
+            "pageNumber",
+            "pageSize",
+            "configType",
+            "adminUser"
+          ]
+        },
+        {
+          "name": "save",
+          "startLine": 79,
+          "endLine": 91,
+          "params": [
+            "indexConfigAddParam",
+            "adminUser"
+          ]
+        },
+        {
+          "name": "update",
+          "startLine": 97,
+          "endLine": 109,
+          "params": [
+            "indexConfigEditParam",
+            "adminUser"
+          ]
+        },
+        {
+          "name": "info",
+          "startLine": 114,
+          "endLine": 123,
+          "params": [
+            "id",
+            "adminUser"
+          ]
+        },
+        {
+          "name": "delete",
+          "startLine": 128,
+          "endLine": 140,
+          "params": [
+            "batchIdParam",
+            "adminUser"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeAdminIndexConfigController",
+          "startLine": 42,
+          "endLine": 142,
+          "methods": [
+            "list",
+            "save",
+            "update",
+            "info",
+            "delete"
+          ],
+          "properties": [
+            "logger",
+            "newBeeMallIndexConfigService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "list",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "save",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "update",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "info",
+          "line": 114,
+          "isDefault": false
+        },
+        {
+          "name": "delete",
+          "line": 128,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeAdminIndexConfigController",
+          "line": 42,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "list",
+          "callee": "logger.info",
+          "lineNumber": 60
+        },
+        {
+          "caller": "list",
+          "callee": "adminUser.toString",
+          "lineNumber": 60
+        },
+        {
+          "caller": "list",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 62
+        },
+        {
+          "caller": "list",
+          "callee": "IndexConfigTypeEnum.getIndexConfigTypeEnumByType",
+          "lineNumber": 64
+        },
+        {
+          "caller": "list",
+          "callee": "indexConfigTypeEnum.equals",
+          "lineNumber": 65
+        },
+        {
+          "caller": "list",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 66
+        },
+        {
+          "caller": "list",
+          "callee": "new HashMap",
+          "lineNumber": 68
+        },
+        {
+          "caller": "list",
+          "callee": "params.put",
+          "lineNumber": 69
+        },
+        {
+          "caller": "list",
+          "callee": "params.put",
+          "lineNumber": 70
+        },
+        {
+          "caller": "list",
+          "callee": "params.put",
+          "lineNumber": 71
+        },
+        {
+          "caller": "list",
+          "callee": "new PageQueryUtil",
+          "lineNumber": 72
+        },
+        {
+          "caller": "list",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 73
+        },
+        {
+          "caller": "list",
+          "callee": "newBeeMallIndexConfigService.getConfigsPage",
+          "lineNumber": 73
+        },
+        {
+          "caller": "save",
+          "callee": "logger.info",
+          "lineNumber": 82
+        },
+        {
+          "caller": "save",
+          "callee": "adminUser.toString",
+          "lineNumber": 82
+        },
+        {
+          "caller": "save",
+          "callee": "new IndexConfig",
+          "lineNumber": 83
+        },
+        {
+          "caller": "save",
+          "callee": "BeanUtil.copyProperties",
+          "lineNumber": 84
+        },
+        {
+          "caller": "save",
+          "callee": "newBeeMallIndexConfigService.saveIndexConfig",
+          "lineNumber": 85
+        },
+        {
+          "caller": "save",
+          "callee": "ServiceResultEnum.SUCCESS.getResult().equals",
+          "lineNumber": 86
+        },
+        {
+          "caller": "save",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 86
+        },
+        {
+          "caller": "save",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 87
+        },
+        {
+          "caller": "save",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 89
+        },
+        {
+          "caller": "update",
+          "callee": "logger.info",
+          "lineNumber": 100
+        },
+        {
+          "caller": "update",
+          "callee": "adminUser.toString",
+          "lineNumber": 100
+        },
+        {
+          "caller": "update",
+          "callee": "new IndexConfig",
+          "lineNumber": 101
+        },
+        {
+          "caller": "update",
+          "callee": "BeanUtil.copyProperties",
+          "lineNumber": 102
+        },
+        {
+          "caller": "update",
+          "callee": "newBeeMallIndexConfigService.updateIndexConfig",
+          "lineNumber": 103
+        },
+        {
+          "caller": "update",
+          "callee": "ServiceResultEnum.SUCCESS.getResult().equals",
+          "lineNumber": 104
+        },
+        {
+          "caller": "update",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 104
+        },
+        {
+          "caller": "update",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 105
+        },
+        {
+          "caller": "update",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 107
+        },
+        {
+          "caller": "info",
+          "callee": "logger.info",
+          "lineNumber": 117
+        },
+        {
+          "caller": "info",
+          "callee": "adminUser.toString",
+          "lineNumber": 117
+        },
+        {
+          "caller": "info",
+          "callee": "newBeeMallIndexConfigService.getIndexConfigById",
+          "lineNumber": 118
+        },
+        {
+          "caller": "info",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 120
+        },
+        {
+          "caller": "info",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 122
+        },
+        {
+          "caller": "delete",
+          "callee": "logger.info",
+          "lineNumber": 131
+        },
+        {
+          "caller": "delete",
+          "callee": "adminUser.toString",
+          "lineNumber": 131
+        },
+        {
+          "caller": "delete",
+          "callee": "batchIdParam.getIds",
+          "lineNumber": 132
+        },
+        {
+          "caller": "delete",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 133
+        },
+        {
+          "caller": "delete",
+          "callee": "newBeeMallIndexConfigService.deleteBatch",
+          "lineNumber": 135
+        },
+        {
+          "caller": "delete",
+          "callee": "batchIdParam.getIds",
+          "lineNumber": 135
+        },
+        {
+          "caller": "delete",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 136
+        },
+        {
+          "caller": "delete",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 138
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeMallIndexController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "indexInfo",
+          "startLine": 39,
+          "endLine": 52,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeMallIndexController",
+          "startLine": 28,
+          "endLine": 53,
+          "methods": [
+            "indexInfo"
+          ],
+          "properties": [
+            "newBeeMallCarouselService",
+            "newBeeMallIndexConfigService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "indexInfo",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeMallIndexController",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "indexInfo",
+          "callee": "new IndexInfoVO",
+          "lineNumber": 42
+        },
+        {
+          "caller": "indexInfo",
+          "callee": "newBeeMallCarouselService.getCarouselsForIndex",
+          "lineNumber": 43
+        },
+        {
+          "caller": "indexInfo",
+          "callee": "newBeeMallIndexConfigService.getConfigGoodsesForIndex",
+          "lineNumber": 44
+        },
+        {
+          "caller": "indexInfo",
+          "callee": "IndexConfigTypeEnum.INDEX_GOODS_HOT.getType",
+          "lineNumber": 44
+        },
+        {
+          "caller": "indexInfo",
+          "callee": "newBeeMallIndexConfigService.getConfigGoodsesForIndex",
+          "lineNumber": 45
+        },
+        {
+          "caller": "indexInfo",
+          "callee": "IndexConfigTypeEnum.INDEX_GOODS_NEW.getType",
+          "lineNumber": 45
+        },
+        {
+          "caller": "indexInfo",
+          "callee": "newBeeMallIndexConfigService.getConfigGoodsesForIndex",
+          "lineNumber": 46
+        },
+        {
+          "caller": "indexInfo",
+          "callee": "IndexConfigTypeEnum.INDEX_GOODS_RECOMMOND.getType",
+          "lineNumber": 46
+        },
+        {
+          "caller": "indexInfo",
+          "callee": "indexInfoVO.setCarousels",
+          "lineNumber": 47
+        },
+        {
+          "caller": "indexInfo",
+          "callee": "indexInfoVO.setHotGoodses",
+          "lineNumber": 48
+        },
+        {
+          "caller": "indexInfo",
+          "callee": "indexInfoVO.setNewGoodses",
+          "lineNumber": 49
+        },
+        {
+          "caller": "indexInfo",
+          "callee": "indexInfoVO.setRecommendGoodses",
+          "lineNumber": 50
+        },
+        {
+          "caller": "indexInfo",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/BatchIdParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "BatchIdParam",
+          "startLine": 15,
+          "endLine": 19,
+          "methods": [],
+          "properties": [
+            "ids"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BatchIdParam",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/CarouselAddParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "CarouselAddParam",
+          "startLine": 19,
+          "endLine": 35,
+          "methods": [],
+          "properties": [
+            "carouselUrl",
+            "redirectUrl",
+            "carouselRank"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CarouselAddParam",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/CarouselEditParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 33,
+      "classes": [
+        {
+          "name": "CarouselEditParam",
+          "startLine": 19,
+          "endLine": 40,
+          "methods": [],
+          "properties": [
+            "carouselId",
+            "carouselUrl",
+            "redirectUrl",
+            "carouselRank"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CarouselEditParam",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/IndexConfigAddParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 35,
+      "classes": [
+        {
+          "name": "IndexConfigAddParam",
+          "startLine": 19,
+          "endLine": 42,
+          "methods": [],
+          "properties": [
+            "configName",
+            "configType",
+            "goodsId",
+            "configRank"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IndexConfigAddParam",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/IndexConfigEditParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 39,
+      "classes": [
+        {
+          "name": "IndexConfigEditParam",
+          "startLine": 19,
+          "endLine": 47,
+          "methods": [],
+          "properties": [
+            "configId",
+            "configName",
+            "configType",
+            "goodsId",
+            "configRank"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IndexConfigEditParam",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/IndexInfoVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "IndexInfoVO",
+          "startLine": 17,
+          "endLine": 31,
+          "methods": [],
+          "properties": [
+            "carousels",
+            "hotGoodses",
+            "newGoodses",
+            "recommendGoodses"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IndexInfoVO",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexCarouselVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "NewBeeMallIndexCarouselVO",
+          "startLine": 19,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "carouselUrl",
+            "redirectUrl"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewBeeMallIndexCarouselVO",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexConfigGoodsVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 30,
+      "classes": [
+        {
+          "name": "NewBeeMallIndexConfigGoodsVO",
+          "startLine": 19,
+          "endLine": 34,
+          "methods": [],
+          "properties": [
+            "goodsId",
+            "goodsName",
+            "goodsIntro",
+            "goodsCoverImg",
+            "sellingPrice",
+            "tag"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewBeeMallIndexConfigGoodsVO",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/dao/CarouselMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "CarouselMapper",
+          "startLine": 17,
+          "endLine": 37,
+          "methods": [
+            "deleteByPrimaryKey",
+            "insert",
+            "insertSelective",
+            "selectByPrimaryKey",
+            "updateByPrimaryKeySelective",
+            "updateByPrimaryKey",
+            "findCarouselList",
+            "getTotalCarousels",
+            "deleteBatch",
+            "findCarouselsByNum"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CarouselMapper",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/dao/IndexConfigMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "IndexConfigMapper",
+          "startLine": 17,
+          "endLine": 39,
+          "methods": [
+            "deleteByPrimaryKey",
+            "insert",
+            "insertSelective",
+            "selectByPrimaryKey",
+            "selectByTypeAndGoodsId",
+            "updateByPrimaryKeySelective",
+            "updateByPrimaryKey",
+            "findIndexConfigList",
+            "getTotalIndexConfigs",
+            "deleteBatch",
+            "findIndexConfigsByTypeAndNum"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IndexConfigMapper",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/Carousel.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "Carousel",
+          "startLine": 16,
+          "endLine": 37,
+          "methods": [],
+          "properties": [
+            "carouselId",
+            "carouselUrl",
+            "redirectUrl",
+            "carouselRank",
+            "isDeleted",
+            "createTime",
+            "createUser",
+            "updateTime",
+            "updateUser"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Carousel",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/IndexConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "IndexConfig",
+          "startLine": 16,
+          "endLine": 41,
+          "methods": [],
+          "properties": [
+            "configId",
+            "configName",
+            "configType",
+            "goodsId",
+            "redirectUrl",
+            "configRank",
+            "isDeleted",
+            "createTime",
+            "createUser",
+            "updateTime",
+            "updateUser"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IndexConfig",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/LoginAdminUser.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "LoginAdminUser",
+          "startLine": 13,
+          "endLine": 24,
+          "methods": [],
+          "properties": [
+            "adminUserId",
+            "loginUserName",
+            "loginPassword",
+            "nickName",
+            "locked"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LoginAdminUser",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallCarouselService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 34,
+      "classes": [
+        {
+          "name": "NewBeeMallCarouselService",
+          "startLine": 18,
+          "endLine": 43,
+          "methods": [
+            "getCarouselPage",
+            "saveCarousel",
+            "updateCarousel",
+            "getCarouselById",
+            "deleteBatch",
+            "getCarouselsForIndex"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewBeeMallCarouselService",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallIndexConfigService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 34,
+      "classes": [
+        {
+          "name": "NewBeeMallIndexConfigService",
+          "startLine": 18,
+          "endLine": 42,
+          "methods": [
+            "getConfigsPage",
+            "saveIndexConfig",
+            "updateIndexConfig",
+            "getIndexConfigById",
+            "deleteBatch",
+            "getConfigGoodsesForIndex"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewBeeMallIndexConfigService",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallCarouselServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 90,
+      "nonEmptyLines": 78,
+      "functions": [
+        {
+          "name": "getCarouselPage",
+          "startLine": 34,
+          "endLine": 40,
+          "params": [
+            "pageUtil"
+          ]
+        },
+        {
+          "name": "saveCarousel",
+          "startLine": 42,
+          "endLine": 48,
+          "params": [
+            "carousel"
+          ]
+        },
+        {
+          "name": "updateCarousel",
+          "startLine": 50,
+          "endLine": 64,
+          "params": [
+            "carousel"
+          ]
+        },
+        {
+          "name": "getCarouselById",
+          "startLine": 66,
+          "endLine": 69,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteBatch",
+          "startLine": 71,
+          "endLine": 78,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getCarouselsForIndex",
+          "startLine": 80,
+          "endLine": 88,
+          "params": [
+            "number"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeMallCarouselServiceImpl",
+          "startLine": 27,
+          "endLine": 90,
+          "methods": [
+            "getCarouselPage",
+            "saveCarousel",
+            "updateCarousel",
+            "getCarouselById",
+            "deleteBatch",
+            "getCarouselsForIndex"
+          ],
+          "properties": [
+            "carouselMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getCarouselPage",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "saveCarousel",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "updateCarousel",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "getCarouselById",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "deleteBatch",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "getCarouselsForIndex",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeMallCarouselServiceImpl",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getCarouselPage",
+          "callee": "carouselMapper.findCarouselList",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getCarouselPage",
+          "callee": "carouselMapper.getTotalCarousels",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getCarouselPage",
+          "callee": "new PageResult",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getCarouselPage",
+          "callee": "pageUtil.getLimit",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getCarouselPage",
+          "callee": "pageUtil.getPage",
+          "lineNumber": 38
+        },
+        {
+          "caller": "saveCarousel",
+          "callee": "carouselMapper.insertSelective",
+          "lineNumber": 44
+        },
+        {
+          "caller": "saveCarousel",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 45
+        },
+        {
+          "caller": "saveCarousel",
+          "callee": "ServiceResultEnum.DB_ERROR.getResult",
+          "lineNumber": 47
+        },
+        {
+          "caller": "updateCarousel",
+          "callee": "carouselMapper.selectByPrimaryKey",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateCarousel",
+          "callee": "carousel.getCarouselId",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateCarousel",
+          "callee": "ServiceResultEnum.DATA_NOT_EXIST.getResult",
+          "lineNumber": 54
+        },
+        {
+          "caller": "updateCarousel",
+          "callee": "temp.setCarouselRank",
+          "lineNumber": 56
+        },
+        {
+          "caller": "updateCarousel",
+          "callee": "carousel.getCarouselRank",
+          "lineNumber": 56
+        },
+        {
+          "caller": "updateCarousel",
+          "callee": "temp.setRedirectUrl",
+          "lineNumber": 57
+        },
+        {
+          "caller": "updateCarousel",
+          "callee": "carousel.getRedirectUrl",
+          "lineNumber": 57
+        },
+        {
+          "caller": "updateCarousel",
+          "callee": "temp.setCarouselUrl",
+          "lineNumber": 58
+        },
+        {
+          "caller": "updateCarousel",
+          "callee": "carousel.getCarouselUrl",
+          "lineNumber": 58
+        },
+        {
+          "caller": "updateCarousel",
+          "callee": "temp.setUpdateTime",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateCarousel",
+          "callee": "new Date",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateCarousel",
+          "callee": "carouselMapper.updateByPrimaryKeySelective",
+          "lineNumber": 60
+        },
+        {
+          "caller": "updateCarousel",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 61
+        },
+        {
+          "caller": "updateCarousel",
+          "callee": "ServiceResultEnum.DB_ERROR.getResult",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getCarouselById",
+          "callee": "carouselMapper.selectByPrimaryKey",
+          "lineNumber": 68
+        },
+        {
+          "caller": "deleteBatch",
+          "callee": "carouselMapper.deleteBatch",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getCarouselsForIndex",
+          "callee": "new ArrayList<>",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getCarouselsForIndex",
+          "callee": "carouselMapper.findCarouselsByNum",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getCarouselsForIndex",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getCarouselsForIndex",
+          "callee": "BeanUtil.copyList",
+          "lineNumber": 85
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallIndexConfigServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 125,
+      "nonEmptyLines": 113,
+      "functions": [
+        {
+          "name": "getConfigsPage",
+          "startLine": 40,
+          "endLine": 46,
+          "params": [
+            "pageUtil"
+          ]
+        },
+        {
+          "name": "saveIndexConfig",
+          "startLine": 48,
+          "endLine": 61,
+          "params": [
+            "indexConfig"
+          ]
+        },
+        {
+          "name": "updateIndexConfig",
+          "startLine": 63,
+          "endLine": 83,
+          "params": [
+            "indexConfig"
+          ]
+        },
+        {
+          "name": "getIndexConfigById",
+          "startLine": 85,
+          "endLine": 88,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteBatch",
+          "startLine": 90,
+          "endLine": 97,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getConfigGoodsesForIndex",
+          "startLine": 100,
+          "endLine": 124,
+          "params": [
+            "configType",
+            "number"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeMallIndexConfigServiceImpl",
+          "startLine": 31,
+          "endLine": 125,
+          "methods": [
+            "getConfigsPage",
+            "saveIndexConfig",
+            "updateIndexConfig",
+            "getIndexConfigById",
+            "deleteBatch",
+            "getConfigGoodsesForIndex"
+          ],
+          "properties": [
+            "indexConfigMapper",
+            "goodsService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getConfigsPage",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "saveIndexConfig",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "updateIndexConfig",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "getIndexConfigById",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "deleteBatch",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "getConfigGoodsesForIndex",
+          "line": 100,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeMallIndexConfigServiceImpl",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getConfigsPage",
+          "callee": "indexConfigMapper.findIndexConfigList",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getConfigsPage",
+          "callee": "indexConfigMapper.getTotalIndexConfigs",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getConfigsPage",
+          "callee": "new PageResult",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getConfigsPage",
+          "callee": "pageUtil.getLimit",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getConfigsPage",
+          "callee": "pageUtil.getPage",
+          "lineNumber": 44
+        },
+        {
+          "caller": "saveIndexConfig",
+          "callee": "goodsService.getGoodsDetail",
+          "lineNumber": 50
+        },
+        {
+          "caller": "saveIndexConfig",
+          "callee": "indexConfig.getGoodsId",
+          "lineNumber": 50
+        },
+        {
+          "caller": "saveIndexConfig",
+          "callee": "goodsDetailResult.getResultCode",
+          "lineNumber": 51
+        },
+        {
+          "caller": "saveIndexConfig",
+          "callee": "ServiceResultEnum.GOODS_NOT_EXIST.getResult",
+          "lineNumber": 52
+        },
+        {
+          "caller": "saveIndexConfig",
+          "callee": "indexConfigMapper.selectByTypeAndGoodsId",
+          "lineNumber": 54
+        },
+        {
+          "caller": "saveIndexConfig",
+          "callee": "indexConfig.getConfigType",
+          "lineNumber": 54
+        },
+        {
+          "caller": "saveIndexConfig",
+          "callee": "indexConfig.getGoodsId",
+          "lineNumber": 54
+        },
+        {
+          "caller": "saveIndexConfig",
+          "callee": "ServiceResultEnum.SAME_INDEX_CONFIG_EXIST.getResult",
+          "lineNumber": 55
+        },
+        {
+          "caller": "saveIndexConfig",
+          "callee": "indexConfigMapper.insertSelective",
+          "lineNumber": 57
+        },
+        {
+          "caller": "saveIndexConfig",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 58
+        },
+        {
+          "caller": "saveIndexConfig",
+          "callee": "ServiceResultEnum.DB_ERROR.getResult",
+          "lineNumber": 60
+        },
+        {
+          "caller": "updateIndexConfig",
+          "callee": "goodsService.getGoodsDetail",
+          "lineNumber": 65
+        },
+        {
+          "caller": "updateIndexConfig",
+          "callee": "indexConfig.getGoodsId",
+          "lineNumber": 65
+        },
+        {
+          "caller": "updateIndexConfig",
+          "callee": "goodsDetailResult.getResultCode",
+          "lineNumber": 66
+        },
+        {
+          "caller": "updateIndexConfig",
+          "callee": "ServiceResultEnum.GOODS_NOT_EXIST.getResult",
+          "lineNumber": 67
+        },
+        {
+          "caller": "updateIndexConfig",
+          "callee": "indexConfigMapper.selectByPrimaryKey",
+          "lineNumber": 69
+        },
+        {
+          "caller": "updateIndexConfig",
+          "callee": "indexConfig.getConfigId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "updateIndexConfig",
+          "callee": "ServiceResultEnum.DATA_NOT_EXIST.getResult",
+          "lineNumber": 71
+        },
+        {
+          "caller": "updateIndexConfig",
+          "callee": "indexConfigMapper.selectByTypeAndGoodsId",
+          "lineNumber": 73
+        },
+        {
+          "caller": "updateIndexConfig",
+          "callee": "indexConfig.getConfigType",
+          "lineNumber": 73
+        },
+        {
+          "caller": "updateIndexConfig",
+          "callee": "indexConfig.getGoodsId",
+          "lineNumber": 73
+        },
+        {
+          "caller": "updateIndexConfig",
+          "callee": "temp2.getConfigId().equals",
+          "lineNumber": 74
+        },
+        {
+          "caller": "updateIndexConfig",
+          "callee": "temp2.getConfigId",
+          "lineNumber": 74
+        },
+        {
+          "caller": "updateIndexConfig",
+          "callee": "indexConfig.getConfigId",
+          "lineNumber": 74
+        },
+        {
+          "caller": "updateIndexConfig",
+          "callee": "ServiceResultEnum.SAME_INDEX_CONFIG_EXIST.getResult",
+          "lineNumber": 76
+        },
+        {
+          "caller": "updateIndexConfig",
+          "callee": "indexConfig.setUpdateTime",
+          "lineNumber": 78
+        },
+        {
+          "caller": "updateIndexConfig",
+          "callee": "new Date",
+          "lineNumber": 78
+        },
+        {
+          "caller": "updateIndexConfig",
+          "callee": "indexConfigMapper.updateByPrimaryKeySelective",
+          "lineNumber": 79
+        },
+        {
+          "caller": "updateIndexConfig",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 80
+        },
+        {
+          "caller": "updateIndexConfig",
+          "callee": "ServiceResultEnum.DB_ERROR.getResult",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getIndexConfigById",
+          "callee": "indexConfigMapper.selectByPrimaryKey",
+          "lineNumber": 87
+        },
+        {
+          "caller": "deleteBatch",
+          "callee": "indexConfigMapper.deleteBatch",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getConfigGoodsesForIndex",
+          "callee": "new ArrayList<>",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getConfigGoodsesForIndex",
+          "callee": "indexConfigMapper.findIndexConfigsByTypeAndNum",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getConfigGoodsesForIndex",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getConfigGoodsesForIndex",
+          "callee": "indexConfigs.stream().map(IndexConfig::getGoodsId).collect",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getConfigGoodsesForIndex",
+          "callee": "indexConfigs.stream().map",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getConfigGoodsesForIndex",
+          "callee": "indexConfigs.stream",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getConfigGoodsesForIndex",
+          "callee": "Collectors.toList",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getConfigGoodsesForIndex",
+          "callee": "goodsService.listByGoodsIds",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getConfigGoodsesForIndex",
+          "callee": "BeanUtil.copyList",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getConfigGoodsesForIndex",
+          "callee": "newBeeMallGoodsDTOResult.getData",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getConfigGoodsesForIndex",
+          "callee": "newBeeMallIndexConfigGoodsVO.getGoodsName",
+          "lineNumber": 110
+        },
+        {
+          "caller": "getConfigGoodsesForIndex",
+          "callee": "newBeeMallIndexConfigGoodsVO.getGoodsIntro",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getConfigGoodsesForIndex",
+          "callee": "goodsName.length",
+          "lineNumber": 113
+        },
+        {
+          "caller": "getConfigGoodsesForIndex",
+          "callee": "goodsName.substring",
+          "lineNumber": 114
+        },
+        {
+          "caller": "getConfigGoodsesForIndex",
+          "callee": "newBeeMallIndexConfigGoodsVO.setGoodsName",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getConfigGoodsesForIndex",
+          "callee": "goodsIntro.length",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getConfigGoodsesForIndex",
+          "callee": "goodsIntro.substring",
+          "lineNumber": 118
+        },
+        {
+          "caller": "getConfigGoodsesForIndex",
+          "callee": "newBeeMallIndexConfigGoodsVO.setGoodsIntro",
+          "lineNumber": 119
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    }
+  ]
+}

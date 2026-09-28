@@ -1,0 +1,3698 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 23,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 23,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 23,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 66,
+      "nonEmptyLines": 53,
+      "functions": [
+        {
+          "name": "Result",
+          "startLine": 26,
+          "endLine": 27,
+          "params": []
+        },
+        {
+          "name": "Result",
+          "startLine": 29,
+          "endLine": 32,
+          "params": [
+            "resultCode",
+            "message"
+          ]
+        },
+        {
+          "name": "getResultCode",
+          "startLine": 34,
+          "endLine": 36,
+          "params": []
+        },
+        {
+          "name": "setResultCode",
+          "startLine": 38,
+          "endLine": 40,
+          "params": [
+            "resultCode"
+          ]
+        },
+        {
+          "name": "getMessage",
+          "startLine": 42,
+          "endLine": 44,
+          "params": []
+        },
+        {
+          "name": "setMessage",
+          "startLine": 46,
+          "endLine": 48,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "getData",
+          "startLine": 50,
+          "endLine": 52,
+          "params": []
+        },
+        {
+          "name": "setData",
+          "startLine": 54,
+          "endLine": 56,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "toString",
+          "startLine": 58,
+          "endLine": 65,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "Result",
+          "startLine": 13,
+          "endLine": 66,
+          "methods": [
+            "Result",
+            "Result",
+            "getResultCode",
+            "setResultCode",
+            "getMessage",
+            "setMessage",
+            "getData",
+            "setData",
+            "toString"
+          ],
+          "properties": [
+            "serialVersionUID",
+            "resultCode",
+            "message",
+            "data"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Result",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "Result",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "getResultCode",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "setResultCode",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "getMessage",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "setMessage",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "getData",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "setData",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "toString",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "Result",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 105,
+      "nonEmptyLines": 61,
+      "functions": [
+        {
+          "name": "ServiceResultEnum",
+          "startLine": 94,
+          "endLine": 96,
+          "params": [
+            "result"
+          ]
+        },
+        {
+          "name": "getResult",
+          "startLine": 98,
+          "endLine": 100,
+          "params": []
+        },
+        {
+          "name": "setResult",
+          "startLine": 102,
+          "endLine": 104,
+          "params": [
+            "result"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ServiceResultEnum",
+          "startLine": 11,
+          "endLine": 105,
+          "methods": [
+            "ServiceResultEnum",
+            "getResult",
+            "setResult"
+          ],
+          "properties": [
+            "result"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getResult",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "setResult",
+          "line": 102,
+          "isDefault": false
+        },
+        {
+          "name": "ServiceResultEnum",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/exception/NewBeeMallException.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "NewBeeMallException",
+          "startLine": 13,
+          "endLine": 14,
+          "params": []
+        },
+        {
+          "name": "NewBeeMallException",
+          "startLine": 16,
+          "endLine": 18,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "fail",
+          "startLine": 25,
+          "endLine": 27,
+          "params": [
+            "message"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeMallException",
+          "startLine": 11,
+          "endLine": 29,
+          "methods": [
+            "NewBeeMallException",
+            "NewBeeMallException",
+            "fail"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewBeeMallException",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeMallException",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "fail",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeMallException",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fail",
+          "callee": "new NewBeeMallException",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/NewBeeMallCloudGoodsServiceApplication.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 30,
+          "endLine": 33,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeMallCloudGoodsServiceApplication",
+          "startLine": 24,
+          "endLine": 35,
+          "methods": [
+            "main"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeMallCloudGoodsServiceApplication",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "System.setProperty",
+          "lineNumber": 31
+        },
+        {
+          "caller": "main",
+          "callee": "SpringApplication.run",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/GoodsServiceExceptionHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 66,
+      "functions": [
+        {
+          "name": "bindException",
+          "startLine": 33,
+          "endLine": 41,
+          "params": [
+            "e"
+          ]
+        },
+        {
+          "name": "bindException",
+          "startLine": 43,
+          "endLine": 51,
+          "params": [
+            "e"
+          ]
+        },
+        {
+          "name": "handleException",
+          "startLine": 53,
+          "endLine": 73,
+          "params": [
+            "e",
+            "req"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "GoodsServiceExceptionHandler",
+          "startLine": 28,
+          "endLine": 74,
+          "methods": [
+            "bindException",
+            "bindException",
+            "handleException"
+          ],
+          "properties": [
+            "log"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "bindException",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "bindException",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "handleException",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "GoodsServiceExceptionHandler",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "bindException",
+          "callee": "log.error",
+          "lineNumber": 35
+        },
+        {
+          "caller": "bindException",
+          "callee": "new Result",
+          "lineNumber": 36
+        },
+        {
+          "caller": "bindException",
+          "callee": "result.setResultCode",
+          "lineNumber": 37
+        },
+        {
+          "caller": "bindException",
+          "callee": "e.getBindingResult",
+          "lineNumber": 38
+        },
+        {
+          "caller": "bindException",
+          "callee": "result.setMessage",
+          "lineNumber": 39
+        },
+        {
+          "caller": "bindException",
+          "callee": "Objects.requireNonNull(bindingResult.getFieldError()).getDefaultMessage",
+          "lineNumber": 39
+        },
+        {
+          "caller": "bindException",
+          "callee": "Objects.requireNonNull",
+          "lineNumber": 39
+        },
+        {
+          "caller": "bindException",
+          "callee": "bindingResult.getFieldError",
+          "lineNumber": 39
+        },
+        {
+          "caller": "bindException",
+          "callee": "log.error",
+          "lineNumber": 45
+        },
+        {
+          "caller": "bindException",
+          "callee": "new Result",
+          "lineNumber": 46
+        },
+        {
+          "caller": "bindException",
+          "callee": "result.setResultCode",
+          "lineNumber": 47
+        },
+        {
+          "caller": "bindException",
+          "callee": "e.getBindingResult",
+          "lineNumber": 48
+        },
+        {
+          "caller": "bindException",
+          "callee": "result.setMessage",
+          "lineNumber": 49
+        },
+        {
+          "caller": "bindException",
+          "callee": "Objects.requireNonNull(bindingResult.getFieldError()).getDefaultMessage",
+          "lineNumber": 49
+        },
+        {
+          "caller": "bindException",
+          "callee": "Objects.requireNonNull",
+          "lineNumber": 49
+        },
+        {
+          "caller": "bindException",
+          "callee": "bindingResult.getFieldError",
+          "lineNumber": 49
+        },
+        {
+          "caller": "handleException",
+          "callee": "log.error",
+          "lineNumber": 55
+        },
+        {
+          "caller": "handleException",
+          "callee": "new Result",
+          "lineNumber": 56
+        },
+        {
+          "caller": "handleException",
+          "callee": "result.setResultCode",
+          "lineNumber": 57
+        },
+        {
+          "caller": "handleException",
+          "callee": "result.setMessage",
+          "lineNumber": 60
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage",
+          "lineNumber": 60
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage().equals",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "ServiceResultEnum.ADMIN_NOT_LOGIN_ERROR.getResult",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage().equals",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "ServiceResultEnum.ADMIN_TOKEN_EXPIRE_ERROR.getResult",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "result.setResultCode",
+          "lineNumber": 62
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage().equals",
+          "lineNumber": 64
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage",
+          "lineNumber": 64
+        },
+        {
+          "caller": "handleException",
+          "callee": "ServiceResultEnum.NOT_LOGIN_ERROR.getResult",
+          "lineNumber": 64
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage().equals",
+          "lineNumber": 64
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage",
+          "lineNumber": 64
+        },
+        {
+          "caller": "handleException",
+          "callee": "ServiceResultEnum.TOKEN_EXPIRE_ERROR.getResult",
+          "lineNumber": 64
+        },
+        {
+          "caller": "handleException",
+          "callee": "result.setResultCode",
+          "lineNumber": 65
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.printStackTrace",
+          "lineNumber": 68
+        },
+        {
+          "caller": "handleException",
+          "callee": "result.setMessage",
+          "lineNumber": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/GoodsServiceWebMvcConfigurer.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "addArgumentResolvers",
+          "startLine": 52,
+          "endLine": 55,
+          "params": [
+            "argumentResolvers"
+          ]
+        },
+        {
+          "name": "addResourceHandlers",
+          "startLine": 57,
+          "endLine": 63,
+          "params": [
+            "registry"
+          ]
+        },
+        {
+          "name": "addInterceptors",
+          "startLine": 65,
+          "endLine": 72,
+          "params": [
+            "registry"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "GoodsServiceWebMvcConfigurer",
+          "startLine": 30,
+          "endLine": 74,
+          "methods": [
+            "addArgumentResolvers",
+            "addResourceHandlers",
+            "addInterceptors"
+          ],
+          "properties": [
+            "log",
+            "sentinelProperties",
+            "sentinelWebInterceptorOptional",
+            "tokenToAdminUserMethodArgumentResolver",
+            "tokenToMallUserMethodArgumentResolver"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "addArgumentResolvers",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "addResourceHandlers",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "addInterceptors",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "GoodsServiceWebMvcConfigurer",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "addArgumentResolvers",
+          "callee": "argumentResolvers.add",
+          "lineNumber": 53
+        },
+        {
+          "caller": "addArgumentResolvers",
+          "callee": "argumentResolvers.add",
+          "lineNumber": 54
+        },
+        {
+          "caller": "addResourceHandlers",
+          "callee": "registry.\r\n                addResourceHandler(\"/swagger-ui/**\")\r\n                .addResourceLocations(\"classpath:/META-INF/resources/webjars/springfox-swagger-ui/\").resourceChain",
+          "lineNumber": 59
+        },
+        {
+          "caller": "addResourceHandlers",
+          "callee": "registry.\r\n                addResourceHandler(\"/swagger-ui/**\").addResourceLocations",
+          "lineNumber": 59
+        },
+        {
+          "caller": "addResourceHandlers",
+          "callee": "registry.addResourceHandler",
+          "lineNumber": 59
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "registry.addInterceptor(new SeataHandlerInterceptor()).addPathPatterns",
+          "lineNumber": 66
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "registry.addInterceptor",
+          "lineNumber": 66
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "new SeataHandlerInterceptor",
+          "lineNumber": 66
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "this.sentinelWebInterceptorOptional.isPresent",
+          "lineNumber": 67
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "this.sentinelProperties.getFilter",
+          "lineNumber": 68
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "registry.addInterceptor((HandlerInterceptor) this.sentinelWebInterceptorOptional.get()).order(filterConfig.getOrder()).addPathPatterns",
+          "lineNumber": 69
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "registry.addInterceptor((HandlerInterceptor) this.sentinelWebInterceptorOptional.get()).order",
+          "lineNumber": 69
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "registry.addInterceptor",
+          "lineNumber": 69
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "this.sentinelWebInterceptorOptional.get",
+          "lineNumber": 69
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "filterConfig.getOrder",
+          "lineNumber": 69
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "filterConfig.getUrlPatterns",
+          "lineNumber": 69
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "log.info",
+          "lineNumber": 70
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "filterConfig.getUrlPatterns",
+          "lineNumber": 70
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 59,
+      "functions": [
+        {
+          "name": "TokenToAdminUserMethodArgumentResolver",
+          "startLine": 33,
+          "endLine": 34,
+          "params": []
+        },
+        {
+          "name": "supportsParameter",
+          "startLine": 36,
+          "endLine": 41,
+          "params": [
+            "parameter"
+          ]
+        },
+        {
+          "name": "resolveArgument",
+          "startLine": 43,
+          "endLine": 68,
+          "params": [
+            "parameter",
+            "mavContainer",
+            "webRequest",
+            "binderFactory"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TokenToAdminUserMethodArgumentResolver",
+          "startLine": 27,
+          "endLine": 70,
+          "methods": [
+            "TokenToAdminUserMethodArgumentResolver",
+            "supportsParameter",
+            "resolveArgument"
+          ],
+          "properties": [
+            "newBeeCloudUserService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TokenToAdminUserMethodArgumentResolver",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "supportsParameter",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "resolveArgument",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "TokenToAdminUserMethodArgumentResolver",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "supportsParameter",
+          "callee": "parameter.hasParameterAnnotation",
+          "lineNumber": 37
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "parameter.getParameterAnnotation",
+          "lineNumber": 44
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "webRequest.getHeader",
+          "lineNumber": 45
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "\"\".equals",
+          "lineNumber": 46
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "token.length",
+          "lineNumber": 46
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "newBeeCloudUserService.getAdminUserByToken",
+          "lineNumber": 48
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "result.getResultCode",
+          "lineNumber": 50
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "result.getData",
+          "lineNumber": 50
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 51
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "ServiceResultEnum.ADMIN_NOT_LOGIN_ERROR.getResult",
+          "lineNumber": 51
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "result.getData",
+          "lineNumber": 54
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "new LoginAdminUser",
+          "lineNumber": 57
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "loginAdminUser.setAdminUserId",
+          "lineNumber": 58
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "Long.valueOf",
+          "lineNumber": 58
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "resultData.get(\"adminUserId\").toString",
+          "lineNumber": 58
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "resultData.get",
+          "lineNumber": 58
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "loginAdminUser.setLoginUserName",
+          "lineNumber": 59
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "resultData.get",
+          "lineNumber": 59
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "loginAdminUser.setNickName",
+          "lineNumber": 60
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "resultData.get",
+          "lineNumber": 60
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "loginAdminUser.setLocked",
+          "lineNumber": 61
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "Byte.valueOf",
+          "lineNumber": 61
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "resultData.get(\"locked\").toString",
+          "lineNumber": 61
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "resultData.get",
+          "lineNumber": 61
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 64
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "ServiceResultEnum.ADMIN_NOT_LOGIN_ERROR.getResult",
+          "lineNumber": 64
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 54,
+      "functions": [
+        {
+          "name": "TokenToMallUserMethodArgumentResolver",
+          "startLine": 32,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "supportsParameter",
+          "startLine": 35,
+          "endLine": 40,
+          "params": [
+            "parameter"
+          ]
+        },
+        {
+          "name": "resolveArgument",
+          "startLine": 42,
+          "endLine": 59,
+          "params": [
+            "parameter",
+            "mavContainer",
+            "webRequest",
+            "binderFactory"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TokenToMallUserMethodArgumentResolver",
+          "startLine": 26,
+          "endLine": 61,
+          "methods": [
+            "TokenToMallUserMethodArgumentResolver",
+            "supportsParameter",
+            "resolveArgument"
+          ],
+          "properties": [
+            "newBeeCloudUserService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TokenToMallUserMethodArgumentResolver",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "supportsParameter",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "resolveArgument",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "TokenToMallUserMethodArgumentResolver",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "supportsParameter",
+          "callee": "parameter.hasParameterAnnotation",
+          "lineNumber": 36
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "parameter.getParameterAnnotation",
+          "lineNumber": 43
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "webRequest.getHeader",
+          "lineNumber": 44
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "\"\".equals",
+          "lineNumber": 45
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "token.length",
+          "lineNumber": 45
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "newBeeCloudUserService.getMallUserByToken",
+          "lineNumber": 46
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "result.getResultCode",
+          "lineNumber": 47
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "result.getData",
+          "lineNumber": 47
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 48
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "ServiceResultEnum.TOKEN_EXPIRE_ERROR.getResult",
+          "lineNumber": 48
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "new MallUserToken",
+          "lineNumber": 50
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "mallUserToken.setToken",
+          "lineNumber": 51
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "mallUserToken.setUserId",
+          "lineNumber": 52
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "result.getData().getUserId",
+          "lineNumber": 52
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "result.getData",
+          "lineNumber": 52
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 55
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "ServiceResultEnum.NOT_LOGIN_ERROR.getResult",
+          "lineNumber": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeMallGoodsCategoryController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "getCategories",
+          "startLine": 35,
+          "endLine": 43,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeMallGoodsCategoryController",
+          "startLine": 27,
+          "endLine": 44,
+          "methods": [
+            "getCategories"
+          ],
+          "properties": [
+            "newBeeMallCategoryService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getCategories",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeMallGoodsCategoryController",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getCategories",
+          "callee": "newBeeMallCategoryService.getCategoriesForIndex",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getCategories",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 39
+        },
+        {
+          "caller": "getCategories",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getCategories",
+          "callee": "ServiceResultEnum.DATA_NOT_EXIST.getResult",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getCategories",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 42
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OrderServiceExceptionHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 66,
+      "functions": [
+        {
+          "name": "bindException",
+          "startLine": 33,
+          "endLine": 41,
+          "params": [
+            "e"
+          ]
+        },
+        {
+          "name": "bindException",
+          "startLine": 43,
+          "endLine": 51,
+          "params": [
+            "e"
+          ]
+        },
+        {
+          "name": "handleException",
+          "startLine": 53,
+          "endLine": 73,
+          "params": [
+            "e",
+            "req"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "OrderServiceExceptionHandler",
+          "startLine": 28,
+          "endLine": 74,
+          "methods": [
+            "bindException",
+            "bindException",
+            "handleException"
+          ],
+          "properties": [
+            "log"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "bindException",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "bindException",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "handleException",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "OrderServiceExceptionHandler",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "bindException",
+          "callee": "log.error",
+          "lineNumber": 35
+        },
+        {
+          "caller": "bindException",
+          "callee": "new Result",
+          "lineNumber": 36
+        },
+        {
+          "caller": "bindException",
+          "callee": "result.setResultCode",
+          "lineNumber": 37
+        },
+        {
+          "caller": "bindException",
+          "callee": "e.getBindingResult",
+          "lineNumber": 38
+        },
+        {
+          "caller": "bindException",
+          "callee": "result.setMessage",
+          "lineNumber": 39
+        },
+        {
+          "caller": "bindException",
+          "callee": "Objects.requireNonNull(bindingResult.getFieldError()).getDefaultMessage",
+          "lineNumber": 39
+        },
+        {
+          "caller": "bindException",
+          "callee": "Objects.requireNonNull",
+          "lineNumber": 39
+        },
+        {
+          "caller": "bindException",
+          "callee": "bindingResult.getFieldError",
+          "lineNumber": 39
+        },
+        {
+          "caller": "bindException",
+          "callee": "log.error",
+          "lineNumber": 45
+        },
+        {
+          "caller": "bindException",
+          "callee": "new Result",
+          "lineNumber": 46
+        },
+        {
+          "caller": "bindException",
+          "callee": "result.setResultCode",
+          "lineNumber": 47
+        },
+        {
+          "caller": "bindException",
+          "callee": "e.getBindingResult",
+          "lineNumber": 48
+        },
+        {
+          "caller": "bindException",
+          "callee": "result.setMessage",
+          "lineNumber": 49
+        },
+        {
+          "caller": "bindException",
+          "callee": "Objects.requireNonNull(bindingResult.getFieldError()).getDefaultMessage",
+          "lineNumber": 49
+        },
+        {
+          "caller": "bindException",
+          "callee": "Objects.requireNonNull",
+          "lineNumber": 49
+        },
+        {
+          "caller": "bindException",
+          "callee": "bindingResult.getFieldError",
+          "lineNumber": 49
+        },
+        {
+          "caller": "handleException",
+          "callee": "log.error",
+          "lineNumber": 55
+        },
+        {
+          "caller": "handleException",
+          "callee": "new Result",
+          "lineNumber": 56
+        },
+        {
+          "caller": "handleException",
+          "callee": "result.setResultCode",
+          "lineNumber": 57
+        },
+        {
+          "caller": "handleException",
+          "callee": "result.setMessage",
+          "lineNumber": 60
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage",
+          "lineNumber": 60
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage().equals",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "ServiceResultEnum.ADMIN_NOT_LOGIN_ERROR.getResult",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage().equals",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "ServiceResultEnum.ADMIN_TOKEN_EXPIRE_ERROR.getResult",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "result.setResultCode",
+          "lineNumber": 62
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage().equals",
+          "lineNumber": 64
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage",
+          "lineNumber": 64
+        },
+        {
+          "caller": "handleException",
+          "callee": "ServiceResultEnum.NOT_LOGIN_ERROR.getResult",
+          "lineNumber": 64
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage().equals",
+          "lineNumber": 64
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage",
+          "lineNumber": 64
+        },
+        {
+          "caller": "handleException",
+          "callee": "ServiceResultEnum.TOKEN_EXPIRE_ERROR.getResult",
+          "lineNumber": 64
+        },
+        {
+          "caller": "handleException",
+          "callee": "result.setResultCode",
+          "lineNumber": 65
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.printStackTrace",
+          "lineNumber": 68
+        },
+        {
+          "caller": "handleException",
+          "callee": "result.setMessage",
+          "lineNumber": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OrderServiceWebMvcConfigurer.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 71,
+      "nonEmptyLines": 61,
+      "functions": [
+        {
+          "name": "addArgumentResolvers",
+          "startLine": 51,
+          "endLine": 54,
+          "params": [
+            "argumentResolvers"
+          ]
+        },
+        {
+          "name": "addResourceHandlers",
+          "startLine": 56,
+          "endLine": 62,
+          "params": [
+            "registry"
+          ]
+        },
+        {
+          "name": "addInterceptors",
+          "startLine": 64,
+          "endLine": 70,
+          "params": [
+            "registry"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "OrderServiceWebMvcConfigurer",
+          "startLine": 29,
+          "endLine": 71,
+          "methods": [
+            "addArgumentResolvers",
+            "addResourceHandlers",
+            "addInterceptors"
+          ],
+          "properties": [
+            "log",
+            "sentinelProperties",
+            "sentinelWebInterceptorOptional",
+            "tokenToAdminUserMethodArgumentResolver",
+            "tokenToMallUserMethodArgumentResolver"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "addArgumentResolvers",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "addResourceHandlers",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "addInterceptors",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "OrderServiceWebMvcConfigurer",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "addArgumentResolvers",
+          "callee": "argumentResolvers.add",
+          "lineNumber": 52
+        },
+        {
+          "caller": "addArgumentResolvers",
+          "callee": "argumentResolvers.add",
+          "lineNumber": 53
+        },
+        {
+          "caller": "addResourceHandlers",
+          "callee": "registry.\r\n                addResourceHandler(\"/swagger-ui/**\")\r\n                .addResourceLocations(\"classpath:/META-INF/resources/webjars/springfox-swagger-ui/\").resourceChain",
+          "lineNumber": 58
+        },
+        {
+          "caller": "addResourceHandlers",
+          "callee": "registry.\r\n                addResourceHandler(\"/swagger-ui/**\").addResourceLocations",
+          "lineNumber": 58
+        },
+        {
+          "caller": "addResourceHandlers",
+          "callee": "registry.addResourceHandler",
+          "lineNumber": 58
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "this.sentinelWebInterceptorOptional.isPresent",
+          "lineNumber": 65
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "this.sentinelProperties.getFilter",
+          "lineNumber": 66
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "registry.addInterceptor((HandlerInterceptor) this.sentinelWebInterceptorOptional.get()).order(filterConfig.getOrder()).addPathPatterns",
+          "lineNumber": 67
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "registry.addInterceptor((HandlerInterceptor) this.sentinelWebInterceptorOptional.get()).order",
+          "lineNumber": 67
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "registry.addInterceptor",
+          "lineNumber": 67
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "this.sentinelWebInterceptorOptional.get",
+          "lineNumber": 67
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "filterConfig.getOrder",
+          "lineNumber": 67
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "filterConfig.getUrlPatterns",
+          "lineNumber": 67
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "log.info",
+          "lineNumber": 68
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "filterConfig.getUrlPatterns",
+          "lineNumber": 68
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 71,
+      "nonEmptyLines": 59,
+      "functions": [
+        {
+          "name": "TokenToAdminUserMethodArgumentResolver",
+          "startLine": 34,
+          "endLine": 35,
+          "params": []
+        },
+        {
+          "name": "supportsParameter",
+          "startLine": 37,
+          "endLine": 42,
+          "params": [
+            "parameter"
+          ]
+        },
+        {
+          "name": "resolveArgument",
+          "startLine": 44,
+          "endLine": 69,
+          "params": [
+            "parameter",
+            "mavContainer",
+            "webRequest",
+            "binderFactory"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TokenToAdminUserMethodArgumentResolver",
+          "startLine": 28,
+          "endLine": 71,
+          "methods": [
+            "TokenToAdminUserMethodArgumentResolver",
+            "supportsParameter",
+            "resolveArgument"
+          ],
+          "properties": [
+            "newBeeCloudUserService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TokenToAdminUserMethodArgumentResolver",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "supportsParameter",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "resolveArgument",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "TokenToAdminUserMethodArgumentResolver",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "supportsParameter",
+          "callee": "parameter.hasParameterAnnotation",
+          "lineNumber": 38
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "parameter.getParameterAnnotation",
+          "lineNumber": 45
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "webRequest.getHeader",
+          "lineNumber": 46
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "\"\".equals",
+          "lineNumber": 47
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "token.length",
+          "lineNumber": 47
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "newBeeCloudUserService.getAdminUserByToken",
+          "lineNumber": 49
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "result.getResultCode",
+          "lineNumber": 51
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "result.getData",
+          "lineNumber": 51
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 52
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "ServiceResultEnum.ADMIN_NOT_LOGIN_ERROR.getResult",
+          "lineNumber": 52
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "result.getData",
+          "lineNumber": 55
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "new LoginAdminUser",
+          "lineNumber": 58
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "loginAdminUser.setAdminUserId",
+          "lineNumber": 59
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "Long.valueOf",
+          "lineNumber": 59
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "resultData.get(\"adminUserId\").toString",
+          "lineNumber": 59
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "resultData.get",
+          "lineNumber": 59
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "loginAdminUser.setLoginUserName",
+          "lineNumber": 60
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "resultData.get",
+          "lineNumber": 60
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "loginAdminUser.setNickName",
+          "lineNumber": 61
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "resultData.get",
+          "lineNumber": 61
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "loginAdminUser.setLocked",
+          "lineNumber": 62
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "Byte.valueOf",
+          "lineNumber": 62
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "resultData.get(\"locked\").toString",
+          "lineNumber": 62
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "resultData.get",
+          "lineNumber": 62
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 65
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "ServiceResultEnum.ADMIN_NOT_LOGIN_ERROR.getResult",
+          "lineNumber": 65
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 54,
+      "functions": [
+        {
+          "name": "TokenToMallUserMethodArgumentResolver",
+          "startLine": 32,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "supportsParameter",
+          "startLine": 35,
+          "endLine": 40,
+          "params": [
+            "parameter"
+          ]
+        },
+        {
+          "name": "resolveArgument",
+          "startLine": 42,
+          "endLine": 59,
+          "params": [
+            "parameter",
+            "mavContainer",
+            "webRequest",
+            "binderFactory"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TokenToMallUserMethodArgumentResolver",
+          "startLine": 26,
+          "endLine": 61,
+          "methods": [
+            "TokenToMallUserMethodArgumentResolver",
+            "supportsParameter",
+            "resolveArgument"
+          ],
+          "properties": [
+            "newBeeCloudUserService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TokenToMallUserMethodArgumentResolver",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "supportsParameter",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "resolveArgument",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "TokenToMallUserMethodArgumentResolver",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "supportsParameter",
+          "callee": "parameter.hasParameterAnnotation",
+          "lineNumber": 36
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "parameter.getParameterAnnotation",
+          "lineNumber": 43
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "webRequest.getHeader",
+          "lineNumber": 44
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "\"\".equals",
+          "lineNumber": 45
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "token.length",
+          "lineNumber": 45
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "newBeeCloudUserService.getMallUserByToken",
+          "lineNumber": 46
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "result.getResultCode",
+          "lineNumber": 47
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "result.getData",
+          "lineNumber": 47
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 48
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "ServiceResultEnum.TOKEN_EXPIRE_ERROR.getResult",
+          "lineNumber": 48
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "new MallUserToken",
+          "lineNumber": 50
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "mallUserToken.setToken",
+          "lineNumber": 51
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "mallUserToken.setUserId",
+          "lineNumber": 52
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "result.getData().getUserId",
+          "lineNumber": 52
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "result.getData",
+          "lineNumber": 52
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 55
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "ServiceResultEnum.NOT_LOGIN_ERROR.getResult",
+          "lineNumber": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/NewBeeMallCloudRecommendServiceApplication.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 32,
+          "endLine": 35,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeMallCloudRecommendServiceApplication",
+          "startLine": 24,
+          "endLine": 37,
+          "methods": [
+            "main"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeMallCloudRecommendServiceApplication",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "System.setProperty",
+          "lineNumber": 33
+        },
+        {
+          "caller": "main",
+          "callee": "SpringApplication.run",
+          "lineNumber": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/RecommendServiceExceptionHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 71,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "bindException",
+          "startLine": 33,
+          "endLine": 41,
+          "params": [
+            "e"
+          ]
+        },
+        {
+          "name": "bindException",
+          "startLine": 43,
+          "endLine": 51,
+          "params": [
+            "e"
+          ]
+        },
+        {
+          "name": "handleException",
+          "startLine": 53,
+          "endLine": 70,
+          "params": [
+            "e",
+            "req"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RecommendServiceExceptionHandler",
+          "startLine": 28,
+          "endLine": 71,
+          "methods": [
+            "bindException",
+            "bindException",
+            "handleException"
+          ],
+          "properties": [
+            "log"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "bindException",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "bindException",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "handleException",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "RecommendServiceExceptionHandler",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "bindException",
+          "callee": "log.error",
+          "lineNumber": 35
+        },
+        {
+          "caller": "bindException",
+          "callee": "new Result",
+          "lineNumber": 36
+        },
+        {
+          "caller": "bindException",
+          "callee": "result.setResultCode",
+          "lineNumber": 37
+        },
+        {
+          "caller": "bindException",
+          "callee": "e.getBindingResult",
+          "lineNumber": 38
+        },
+        {
+          "caller": "bindException",
+          "callee": "result.setMessage",
+          "lineNumber": 39
+        },
+        {
+          "caller": "bindException",
+          "callee": "Objects.requireNonNull(bindingResult.getFieldError()).getDefaultMessage",
+          "lineNumber": 39
+        },
+        {
+          "caller": "bindException",
+          "callee": "Objects.requireNonNull",
+          "lineNumber": 39
+        },
+        {
+          "caller": "bindException",
+          "callee": "bindingResult.getFieldError",
+          "lineNumber": 39
+        },
+        {
+          "caller": "bindException",
+          "callee": "log.error",
+          "lineNumber": 45
+        },
+        {
+          "caller": "bindException",
+          "callee": "new Result",
+          "lineNumber": 46
+        },
+        {
+          "caller": "bindException",
+          "callee": "result.setResultCode",
+          "lineNumber": 47
+        },
+        {
+          "caller": "bindException",
+          "callee": "e.getBindingResult",
+          "lineNumber": 48
+        },
+        {
+          "caller": "bindException",
+          "callee": "result.setMessage",
+          "lineNumber": 49
+        },
+        {
+          "caller": "bindException",
+          "callee": "Objects.requireNonNull(bindingResult.getFieldError()).getDefaultMessage",
+          "lineNumber": 49
+        },
+        {
+          "caller": "bindException",
+          "callee": "Objects.requireNonNull",
+          "lineNumber": 49
+        },
+        {
+          "caller": "bindException",
+          "callee": "bindingResult.getFieldError",
+          "lineNumber": 49
+        },
+        {
+          "caller": "handleException",
+          "callee": "log.error",
+          "lineNumber": 55
+        },
+        {
+          "caller": "handleException",
+          "callee": "new Result",
+          "lineNumber": 56
+        },
+        {
+          "caller": "handleException",
+          "callee": "result.setResultCode",
+          "lineNumber": 57
+        },
+        {
+          "caller": "handleException",
+          "callee": "result.setMessage",
+          "lineNumber": 60
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage",
+          "lineNumber": 60
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage().equals",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "ServiceResultEnum.ADMIN_NOT_LOGIN_ERROR.getResult",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage().equals",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "ServiceResultEnum.ADMIN_TOKEN_EXPIRE_ERROR.getResult",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "result.setResultCode",
+          "lineNumber": 62
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.printStackTrace",
+          "lineNumber": 65
+        },
+        {
+          "caller": "handleException",
+          "callee": "result.setMessage",
+          "lineNumber": 66
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/RecommendServiceWebMvcConfigurer.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 56,
+      "functions": [
+        {
+          "name": "addArgumentResolvers",
+          "startLine": 45,
+          "endLine": 47,
+          "params": [
+            "argumentResolvers"
+          ]
+        },
+        {
+          "name": "addResourceHandlers",
+          "startLine": 49,
+          "endLine": 55,
+          "params": [
+            "registry"
+          ]
+        },
+        {
+          "name": "addInterceptors",
+          "startLine": 57,
+          "endLine": 63,
+          "params": [
+            "registry"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RecommendServiceWebMvcConfigurer",
+          "startLine": 28,
+          "endLine": 64,
+          "methods": [
+            "addArgumentResolvers",
+            "addResourceHandlers",
+            "addInterceptors"
+          ],
+          "properties": [
+            "log",
+            "sentinelProperties",
+            "sentinelWebInterceptorOptional",
+            "tokenToAdminUserMethodArgumentResolver"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "addArgumentResolvers",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "addResourceHandlers",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "addInterceptors",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "RecommendServiceWebMvcConfigurer",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "addArgumentResolvers",
+          "callee": "argumentResolvers.add",
+          "lineNumber": 46
+        },
+        {
+          "caller": "addResourceHandlers",
+          "callee": "registry.\r\n                addResourceHandler(\"/swagger-ui/**\")\r\n                .addResourceLocations(\"classpath:/META-INF/resources/webjars/springfox-swagger-ui/\").resourceChain",
+          "lineNumber": 51
+        },
+        {
+          "caller": "addResourceHandlers",
+          "callee": "registry.\r\n                addResourceHandler(\"/swagger-ui/**\").addResourceLocations",
+          "lineNumber": 51
+        },
+        {
+          "caller": "addResourceHandlers",
+          "callee": "registry.addResourceHandler",
+          "lineNumber": 51
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "this.sentinelWebInterceptorOptional.isPresent",
+          "lineNumber": 58
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "this.sentinelProperties.getFilter",
+          "lineNumber": 59
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "registry.addInterceptor((HandlerInterceptor) this.sentinelWebInterceptorOptional.get()).order(filterConfig.getOrder()).addPathPatterns",
+          "lineNumber": 60
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "registry.addInterceptor((HandlerInterceptor) this.sentinelWebInterceptorOptional.get()).order",
+          "lineNumber": 60
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "registry.addInterceptor",
+          "lineNumber": 60
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "this.sentinelWebInterceptorOptional.get",
+          "lineNumber": 60
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "filterConfig.getOrder",
+          "lineNumber": 60
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "filterConfig.getUrlPatterns",
+          "lineNumber": 60
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "log.info",
+          "lineNumber": 61
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "filterConfig.getUrlPatterns",
+          "lineNumber": 61
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 59,
+      "functions": [
+        {
+          "name": "TokenToAdminUserMethodArgumentResolver",
+          "startLine": 33,
+          "endLine": 34,
+          "params": []
+        },
+        {
+          "name": "supportsParameter",
+          "startLine": 36,
+          "endLine": 41,
+          "params": [
+            "parameter"
+          ]
+        },
+        {
+          "name": "resolveArgument",
+          "startLine": 43,
+          "endLine": 68,
+          "params": [
+            "parameter",
+            "mavContainer",
+            "webRequest",
+            "binderFactory"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TokenToAdminUserMethodArgumentResolver",
+          "startLine": 27,
+          "endLine": 70,
+          "methods": [
+            "TokenToAdminUserMethodArgumentResolver",
+            "supportsParameter",
+            "resolveArgument"
+          ],
+          "properties": [
+            "newBeeCloudUserService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TokenToAdminUserMethodArgumentResolver",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "supportsParameter",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "resolveArgument",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "TokenToAdminUserMethodArgumentResolver",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "supportsParameter",
+          "callee": "parameter.hasParameterAnnotation",
+          "lineNumber": 37
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "parameter.getParameterAnnotation",
+          "lineNumber": 44
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "webRequest.getHeader",
+          "lineNumber": 45
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "\"\".equals",
+          "lineNumber": 46
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "token.length",
+          "lineNumber": 46
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "newBeeCloudUserService.getAdminUserByToken",
+          "lineNumber": 48
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "result.getResultCode",
+          "lineNumber": 50
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "result.getData",
+          "lineNumber": 50
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 51
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "ServiceResultEnum.ADMIN_NOT_LOGIN_ERROR.getResult",
+          "lineNumber": 51
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "result.getData",
+          "lineNumber": 54
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "new LoginAdminUser",
+          "lineNumber": 57
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "loginAdminUser.setAdminUserId",
+          "lineNumber": 58
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "Long.valueOf",
+          "lineNumber": 58
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "resultData.get(\"adminUserId\").toString",
+          "lineNumber": 58
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "resultData.get",
+          "lineNumber": 58
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "loginAdminUser.setLoginUserName",
+          "lineNumber": 59
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "resultData.get",
+          "lineNumber": 59
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "loginAdminUser.setNickName",
+          "lineNumber": 60
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "resultData.get",
+          "lineNumber": 60
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "loginAdminUser.setLocked",
+          "lineNumber": 61
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "Byte.valueOf",
+          "lineNumber": 61
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "resultData.get(\"locked\").toString",
+          "lineNumber": 61
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "resultData.get",
+          "lineNumber": 61
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 64
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "ServiceResultEnum.ADMIN_NOT_LOGIN_ERROR.getResult",
+          "lineNumber": 64
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/ShopCartServiceExceptionHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 71,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "bindException",
+          "startLine": 33,
+          "endLine": 41,
+          "params": [
+            "e"
+          ]
+        },
+        {
+          "name": "bindException",
+          "startLine": 43,
+          "endLine": 51,
+          "params": [
+            "e"
+          ]
+        },
+        {
+          "name": "handleException",
+          "startLine": 53,
+          "endLine": 70,
+          "params": [
+            "e",
+            "req"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ShopCartServiceExceptionHandler",
+          "startLine": 28,
+          "endLine": 71,
+          "methods": [
+            "bindException",
+            "bindException",
+            "handleException"
+          ],
+          "properties": [
+            "log"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "bindException",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "bindException",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "handleException",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ShopCartServiceExceptionHandler",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "bindException",
+          "callee": "log.error",
+          "lineNumber": 35
+        },
+        {
+          "caller": "bindException",
+          "callee": "new Result",
+          "lineNumber": 36
+        },
+        {
+          "caller": "bindException",
+          "callee": "result.setResultCode",
+          "lineNumber": 37
+        },
+        {
+          "caller": "bindException",
+          "callee": "e.getBindingResult",
+          "lineNumber": 38
+        },
+        {
+          "caller": "bindException",
+          "callee": "result.setMessage",
+          "lineNumber": 39
+        },
+        {
+          "caller": "bindException",
+          "callee": "Objects.requireNonNull(bindingResult.getFieldError()).getDefaultMessage",
+          "lineNumber": 39
+        },
+        {
+          "caller": "bindException",
+          "callee": "Objects.requireNonNull",
+          "lineNumber": 39
+        },
+        {
+          "caller": "bindException",
+          "callee": "bindingResult.getFieldError",
+          "lineNumber": 39
+        },
+        {
+          "caller": "bindException",
+          "callee": "log.error",
+          "lineNumber": 45
+        },
+        {
+          "caller": "bindException",
+          "callee": "new Result",
+          "lineNumber": 46
+        },
+        {
+          "caller": "bindException",
+          "callee": "result.setResultCode",
+          "lineNumber": 47
+        },
+        {
+          "caller": "bindException",
+          "callee": "e.getBindingResult",
+          "lineNumber": 48
+        },
+        {
+          "caller": "bindException",
+          "callee": "result.setMessage",
+          "lineNumber": 49
+        },
+        {
+          "caller": "bindException",
+          "callee": "Objects.requireNonNull(bindingResult.getFieldError()).getDefaultMessage",
+          "lineNumber": 49
+        },
+        {
+          "caller": "bindException",
+          "callee": "Objects.requireNonNull",
+          "lineNumber": 49
+        },
+        {
+          "caller": "bindException",
+          "callee": "bindingResult.getFieldError",
+          "lineNumber": 49
+        },
+        {
+          "caller": "handleException",
+          "callee": "log.error",
+          "lineNumber": 55
+        },
+        {
+          "caller": "handleException",
+          "callee": "new Result",
+          "lineNumber": 56
+        },
+        {
+          "caller": "handleException",
+          "callee": "result.setResultCode",
+          "lineNumber": 57
+        },
+        {
+          "caller": "handleException",
+          "callee": "result.setMessage",
+          "lineNumber": 60
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage",
+          "lineNumber": 60
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage().equals",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "ServiceResultEnum.NOT_LOGIN_ERROR.getResult",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage().equals",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "ServiceResultEnum.TOKEN_EXPIRE_ERROR.getResult",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "result.setResultCode",
+          "lineNumber": 62
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.printStackTrace",
+          "lineNumber": 65
+        },
+        {
+          "caller": "handleException",
+          "callee": "result.setMessage",
+          "lineNumber": 66
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/ShopCartServiceWebMvcConfigurer.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 59,
+      "functions": [
+        {
+          "name": "addArgumentResolvers",
+          "startLine": 47,
+          "endLine": 49,
+          "params": [
+            "argumentResolvers"
+          ]
+        },
+        {
+          "name": "addResourceHandlers",
+          "startLine": 51,
+          "endLine": 57,
+          "params": [
+            "registry"
+          ]
+        },
+        {
+          "name": "addInterceptors",
+          "startLine": 59,
+          "endLine": 66,
+          "params": [
+            "registry"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ShopCartServiceWebMvcConfigurer",
+          "startLine": 30,
+          "endLine": 67,
+          "methods": [
+            "addArgumentResolvers",
+            "addResourceHandlers",
+            "addInterceptors"
+          ],
+          "properties": [
+            "log",
+            "sentinelProperties",
+            "sentinelWebInterceptorOptional",
+            "tokenToMallUserMethodArgumentResolver"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "addArgumentResolvers",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "addResourceHandlers",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "addInterceptors",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "ShopCartServiceWebMvcConfigurer",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "addArgumentResolvers",
+          "callee": "argumentResolvers.add",
+          "lineNumber": 48
+        },
+        {
+          "caller": "addResourceHandlers",
+          "callee": "registry.\r\n                addResourceHandler(\"/swagger-ui/**\")\r\n                .addResourceLocations(\"classpath:/META-INF/resources/webjars/springfox-swagger-ui/\").resourceChain",
+          "lineNumber": 53
+        },
+        {
+          "caller": "addResourceHandlers",
+          "callee": "registry.\r\n                addResourceHandler(\"/swagger-ui/**\").addResourceLocations",
+          "lineNumber": 53
+        },
+        {
+          "caller": "addResourceHandlers",
+          "callee": "registry.addResourceHandler",
+          "lineNumber": 53
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "registry.addInterceptor(new SeataHandlerInterceptor()).addPathPatterns",
+          "lineNumber": 60
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "registry.addInterceptor",
+          "lineNumber": 60
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "new SeataHandlerInterceptor",
+          "lineNumber": 60
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "this.sentinelWebInterceptorOptional.isPresent",
+          "lineNumber": 61
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "this.sentinelProperties.getFilter",
+          "lineNumber": 62
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "registry.addInterceptor((HandlerInterceptor) this.sentinelWebInterceptorOptional.get()).order(filterConfig.getOrder()).addPathPatterns",
+          "lineNumber": 63
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "registry.addInterceptor((HandlerInterceptor) this.sentinelWebInterceptorOptional.get()).order",
+          "lineNumber": 63
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "registry.addInterceptor",
+          "lineNumber": 63
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "this.sentinelWebInterceptorOptional.get",
+          "lineNumber": 63
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "filterConfig.getOrder",
+          "lineNumber": 63
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "filterConfig.getUrlPatterns",
+          "lineNumber": 63
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "log.info",
+          "lineNumber": 64
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "filterConfig.getUrlPatterns",
+          "lineNumber": 64
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 54,
+      "functions": [
+        {
+          "name": "TokenToMallUserMethodArgumentResolver",
+          "startLine": 32,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "supportsParameter",
+          "startLine": 35,
+          "endLine": 40,
+          "params": [
+            "parameter"
+          ]
+        },
+        {
+          "name": "resolveArgument",
+          "startLine": 42,
+          "endLine": 59,
+          "params": [
+            "parameter",
+            "mavContainer",
+            "webRequest",
+            "binderFactory"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TokenToMallUserMethodArgumentResolver",
+          "startLine": 26,
+          "endLine": 61,
+          "methods": [
+            "TokenToMallUserMethodArgumentResolver",
+            "supportsParameter",
+            "resolveArgument"
+          ],
+          "properties": [
+            "newBeeCloudUserService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TokenToMallUserMethodArgumentResolver",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "supportsParameter",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "resolveArgument",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "TokenToMallUserMethodArgumentResolver",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "supportsParameter",
+          "callee": "parameter.hasParameterAnnotation",
+          "lineNumber": 36
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "parameter.getParameterAnnotation",
+          "lineNumber": 43
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "webRequest.getHeader",
+          "lineNumber": 44
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "\"\".equals",
+          "lineNumber": 45
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "token.length",
+          "lineNumber": 45
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "newBeeCloudUserService.getMallUserByToken",
+          "lineNumber": 46
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "result.getResultCode",
+          "lineNumber": 47
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "result.getData",
+          "lineNumber": 47
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 48
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "ServiceResultEnum.TOKEN_EXPIRE_ERROR.getResult",
+          "lineNumber": 48
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "new MallUserToken",
+          "lineNumber": 50
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "mallUserToken.setToken",
+          "lineNumber": 51
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "mallUserToken.setUserId",
+          "lineNumber": 52
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "result.getData().getUserId",
+          "lineNumber": 52
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "result.getData",
+          "lineNumber": 52
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 55
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "ServiceResultEnum.NOT_LOGIN_ERROR.getResult",
+          "lineNumber": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/dto/MallUserDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "getUserId",
+          "startLine": 14,
+          "endLine": 16,
+          "params": []
+        },
+        {
+          "name": "setUserId",
+          "startLine": 18,
+          "endLine": 20,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "getNickName",
+          "startLine": 22,
+          "endLine": 24,
+          "params": []
+        },
+        {
+          "name": "setNickName",
+          "startLine": 26,
+          "endLine": 28,
+          "params": [
+            "nickName"
+          ]
+        },
+        {
+          "name": "getLoginName",
+          "startLine": 30,
+          "endLine": 32,
+          "params": []
+        },
+        {
+          "name": "setLoginName",
+          "startLine": 34,
+          "endLine": 36,
+          "params": [
+            "loginName"
+          ]
+        },
+        {
+          "name": "getIntroduceSign",
+          "startLine": 38,
+          "endLine": 40,
+          "params": []
+        },
+        {
+          "name": "setIntroduceSign",
+          "startLine": 42,
+          "endLine": 44,
+          "params": [
+            "introduceSign"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MallUserDTO",
+          "startLine": 5,
+          "endLine": 45,
+          "methods": [
+            "getUserId",
+            "setUserId",
+            "getNickName",
+            "setNickName",
+            "getLoginName",
+            "setLoginName",
+            "getIntroduceSign",
+            "setIntroduceSign"
+          ],
+          "properties": [
+            "userId",
+            "nickName",
+            "loginName",
+            "introduceSign"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getUserId",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "setUserId",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "getNickName",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "setNickName",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "getLoginName",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "setLoginName",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "getIntroduceSign",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "setIntroduceSign",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "MallUserDTO",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 9,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/openfeign/NewBeeCloudUserServiceFeign.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "NewBeeCloudUserServiceFeign",
+          "startLine": 18,
+          "endLine": 26,
+          "methods": [
+            "getAdminUserByToken",
+            "getMallUserByToken"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewBeeCloudUserServiceFeign",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/UserServiceExceptionHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 66,
+      "functions": [
+        {
+          "name": "bindException",
+          "startLine": 33,
+          "endLine": 41,
+          "params": [
+            "e"
+          ]
+        },
+        {
+          "name": "bindException",
+          "startLine": 43,
+          "endLine": 51,
+          "params": [
+            "e"
+          ]
+        },
+        {
+          "name": "handleException",
+          "startLine": 53,
+          "endLine": 73,
+          "params": [
+            "e",
+            "req"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "UserServiceExceptionHandler",
+          "startLine": 28,
+          "endLine": 74,
+          "methods": [
+            "bindException",
+            "bindException",
+            "handleException"
+          ],
+          "properties": [
+            "log"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "bindException",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "bindException",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "handleException",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "UserServiceExceptionHandler",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "bindException",
+          "callee": "log.error",
+          "lineNumber": 35
+        },
+        {
+          "caller": "bindException",
+          "callee": "new Result",
+          "lineNumber": 36
+        },
+        {
+          "caller": "bindException",
+          "callee": "result.setResultCode",
+          "lineNumber": 37
+        },
+        {
+          "caller": "bindException",
+          "callee": "e.getBindingResult",
+          "lineNumber": 38
+        },
+        {
+          "caller": "bindException",
+          "callee": "result.setMessage",
+          "lineNumber": 39
+        },
+        {
+          "caller": "bindException",
+          "callee": "Objects.requireNonNull(bindingResult.getFieldError()).getDefaultMessage",
+          "lineNumber": 39
+        },
+        {
+          "caller": "bindException",
+          "callee": "Objects.requireNonNull",
+          "lineNumber": 39
+        },
+        {
+          "caller": "bindException",
+          "callee": "bindingResult.getFieldError",
+          "lineNumber": 39
+        },
+        {
+          "caller": "bindException",
+          "callee": "log.error",
+          "lineNumber": 45
+        },
+        {
+          "caller": "bindException",
+          "callee": "new Result",
+          "lineNumber": 46
+        },
+        {
+          "caller": "bindException",
+          "callee": "result.setResultCode",
+          "lineNumber": 47
+        },
+        {
+          "caller": "bindException",
+          "callee": "e.getBindingResult",
+          "lineNumber": 48
+        },
+        {
+          "caller": "bindException",
+          "callee": "result.setMessage",
+          "lineNumber": 49
+        },
+        {
+          "caller": "bindException",
+          "callee": "Objects.requireNonNull(bindingResult.getFieldError()).getDefaultMessage",
+          "lineNumber": 49
+        },
+        {
+          "caller": "bindException",
+          "callee": "Objects.requireNonNull",
+          "lineNumber": 49
+        },
+        {
+          "caller": "bindException",
+          "callee": "bindingResult.getFieldError",
+          "lineNumber": 49
+        },
+        {
+          "caller": "handleException",
+          "callee": "log.error",
+          "lineNumber": 55
+        },
+        {
+          "caller": "handleException",
+          "callee": "new Result",
+          "lineNumber": 56
+        },
+        {
+          "caller": "handleException",
+          "callee": "result.setResultCode",
+          "lineNumber": 57
+        },
+        {
+          "caller": "handleException",
+          "callee": "result.setMessage",
+          "lineNumber": 60
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage",
+          "lineNumber": 60
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage().equals",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "ServiceResultEnum.ADMIN_NOT_LOGIN_ERROR.getResult",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage().equals",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "ServiceResultEnum.ADMIN_TOKEN_EXPIRE_ERROR.getResult",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleException",
+          "callee": "result.setResultCode",
+          "lineNumber": 62
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage().equals",
+          "lineNumber": 64
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage",
+          "lineNumber": 64
+        },
+        {
+          "caller": "handleException",
+          "callee": "ServiceResultEnum.NOT_LOGIN_ERROR.getResult",
+          "lineNumber": 64
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage().equals",
+          "lineNumber": 64
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage",
+          "lineNumber": 64
+        },
+        {
+          "caller": "handleException",
+          "callee": "ServiceResultEnum.TOKEN_EXPIRE_ERROR.getResult",
+          "lineNumber": 64
+        },
+        {
+          "caller": "handleException",
+          "callee": "result.setResultCode",
+          "lineNumber": 65
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.printStackTrace",
+          "lineNumber": 68
+        },
+        {
+          "caller": "handleException",
+          "callee": "result.setMessage",
+          "lineNumber": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    }
+  ]
+}

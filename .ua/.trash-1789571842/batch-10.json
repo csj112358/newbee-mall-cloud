@@ -1,0 +1,623 @@
+{
+  "nodes": [
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "新蜂商城微服务版本的项目文档，介绍了基于 Spring Cloud Alibaba 的微服务架构技术选型（Nacos、Sentinel、Seata、Gateway、OpenFeign、Sleuth、Zipkin、ELK 等），包含版本分支信息、架构图、开发部署教程目录以及项目系列链接。",
+      "tags": ["documentation", "spring-cloud-alibaba", "microservices", "readme"],
+      "complexity": "simple",
+      "language": "markdown",
+      "languageNotes": "Markdown 项目文档，涵盖技术选型表、架构图、50+ 篇教程链接。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-common/pom.xml",
+      "type": "config",
+      "name": "newbee-mall-cloud-common/pom.xml",
+      "filePath": "newbee-mall-cloud-common/pom.xml",
+      "summary": "公共模块的 Maven POM 文件，定义 groupId 为 ltd.newbee.cloud 的 newbee-mall-cloud-common 模块，依赖 lombok、spring-beans 和 swagger-annotations，供其他微服务模块共享使用。",
+      "tags": ["maven", "pom", "common-module", "shared-dependencies"],
+      "complexity": "simple",
+      "language": "xml",
+      "languageNotes": "Maven POM 配置文件，定义公共模块的构建和依赖。"
+    },
+    {
+      "id": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/NewBeeMallUtils.java",
+      "type": "file",
+      "name": "NewBeeMallUtils.java",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/NewBeeMallUtils.java",
+      "summary": "公共工具类，提供 getHost() 方法用于从 URI 提取主机信息，以及 cleanString() 方法用于 XSS 和 SQL 注入防护，通过字符替换对输入进行安全过滤。",
+      "tags": ["utility", "security", "xss-protection", "sql-injection-prevention"],
+      "complexity": "moderate",
+      "language": "java",
+      "languageNotes": "Java 工具类，包含 URI 解析和字符串安全过滤功能。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-gateway-admin/pom.xml",
+      "type": "config",
+      "name": "newbee-mall-cloud-gateway-admin/pom.xml",
+      "filePath": "newbee-mall-cloud-gateway-admin/pom.xml",
+      "summary": "管理端网关模块的 Maven POM 文件，依赖 Spring Cloud Gateway、Loadbalancer、Nacos Discovery、Springfox、Redis、user-api 和 common 模块，构建管理端 API 网关服务。",
+      "tags": ["maven", "pom", "gateway", "admin-module"],
+      "complexity": "simple",
+      "language": "xml",
+      "languageNotes": "Maven POM 配置文件，定义管理端网关模块的依赖。"
+    },
+    {
+      "id": "file:newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/NewBeeMallCloudAdminGatewayApplication.java",
+      "type": "file",
+      "name": "NewBeeMallCloudAdminGatewayApplication.java",
+      "filePath": "newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/NewBeeMallCloudAdminGatewayApplication.java",
+      "summary": "管理端网关服务的 Spring Boot 启动入口类，使用 @SpringBootApplication 和 @EnableDiscoveryClient 注解启用服务发现，通过 SpringApplication.run() 启动网关应用。",
+      "tags": ["spring-boot", "gateway", "entry-point", "service-discovery"],
+      "complexity": "simple",
+      "language": "java",
+      "languageNotes": "Spring Boot 应用启动类，管理端网关的主入口。"
+    },
+    {
+      "id": "file:newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/config/PolymerizeSwaggerProvider.java",
+      "type": "file",
+      "name": "PolymerizeSwaggerProvider.java (Admin Gateway)",
+      "filePath": "newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/config/PolymerizeSwaggerProvider.java",
+      "summary": "管理端网关的 Swagger 聚合配置类，实现 SwaggerResourcesProvider 接口，从 GatewayProperties 中提取路由配置，聚合用户、商品、推荐、订单四个微服务的 Swagger 文档资源。",
+      "tags": ["swagger", "api-docs", "gateway", "configuration"],
+      "complexity": "moderate",
+      "language": "java",
+      "languageNotes": "Java 配置类，聚合网关下层微服务的 Swagger 文档。"
+    },
+    {
+      "id": "file:newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/config/RedisConfig.java",
+      "type": "file",
+      "name": "RedisConfig.java (Admin Gateway)",
+      "filePath": "newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/config/RedisConfig.java",
+      "summary": "管理端网关的 Redis 缓存配置类，配置 RedisTemplate 使用 Jackson2 JSON 序列化，定义 CacheManager 和自定义 KeyGenerator，基于 Lettuce 连接工厂。",
+      "tags": ["redis", "cache", "configuration", "lettuce"],
+      "complexity": "moderate",
+      "language": "java",
+      "languageNotes": "Java 配置类，定义 Redis 缓存模板和缓存管理器。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-gateway-admin/src/main/resources/application.properties",
+      "type": "config",
+      "name": "application.properties (Admin Gateway)",
+      "filePath": "newbee-mall-cloud-gateway-admin/src/main/resources/application.properties",
+      "summary": "管理端网关的应用配置文件，配置端口 29100，Nacos 服务发现地址，以及 10 条路由规则将 /users/admin/**、/categories/admin/**、/goods/admin/**、/carousels/admin/**、/indexConfigs/admin/**、/orders/admin/** 等路径路由到对应的微服务，同时配置 Swagger 路由和 Redis 连接参数。",
+      "tags": ["spring-boot", "gateway-routes", "nacos", "redis", "swagger"],
+      "complexity": "moderate",
+      "language": "properties",
+      "languageNotes": "Spring Boot 属性配置，定义网关路由规则和服务连接参数。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-gateway-mall/pom.xml",
+      "type": "config",
+      "name": "newbee-mall-cloud-gateway-mall/pom.xml",
+      "filePath": "newbee-mall-cloud-gateway-mall/pom.xml",
+      "summary": "商城端网关模块的 Maven POM 文件，依赖 Spring Cloud Gateway、Loadbalancer、Nacos Discovery、Redis、Springfox、user-api 和 common 模块，构建面向 C 端用户的 API 网关服务。",
+      "tags": ["maven", "pom", "gateway", "mall-module"],
+      "complexity": "simple",
+      "language": "xml",
+      "languageNotes": "Maven POM 配置文件，定义商城端网关模块的依赖。"
+    },
+    {
+      "id": "file:newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/NewBeeMallCloudMallGatewayApplication.java",
+      "type": "file",
+      "name": "NewBeeMallCloudMallGatewayApplication.java",
+      "filePath": "newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/NewBeeMallCloudMallGatewayApplication.java",
+      "summary": "商城端网关服务的 Spring Boot 启动入口类，使用 @SpringBootApplication 和 @EnableDiscoveryClient 注解启用服务发现，启动面向商城 C 端的网关应用。",
+      "tags": ["spring-boot", "gateway", "entry-point", "service-discovery"],
+      "complexity": "simple",
+      "language": "java",
+      "languageNotes": "Spring Boot 应用启动类，商城端网关的主入口。"
+    },
+    {
+      "id": "file:newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/config/PolymerizeSwaggerProvider.java",
+      "type": "file",
+      "name": "PolymerizeSwaggerProvider.java (Mall Gateway)",
+      "filePath": "newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/config/PolymerizeSwaggerProvider.java",
+      "summary": "商城端网关的 Swagger 聚合配置类，实现 SwaggerResourcesProvider 接口，聚合用户、推荐、商品、订单、购物车五个微服务的 Swagger 文档资源。",
+      "tags": ["swagger", "api-docs", "gateway", "configuration"],
+      "complexity": "moderate",
+      "language": "java",
+      "languageNotes": "Java 配置类，聚合商城端网关下层微服务的 Swagger 文档。"
+    },
+    {
+      "id": "file:newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/config/RedisConfig.java",
+      "type": "file",
+      "name": "RedisConfig.java (Mall Gateway)",
+      "filePath": "newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/config/RedisConfig.java",
+      "summary": "商城端网关的 Redis 缓存配置类，配置 RedisTemplate 使用 Jackson2 JSON 序列化，定义 CacheManager 和自定义 KeyGenerator，与管理端网关配置结构一致。",
+      "tags": ["redis", "cache", "configuration", "lettuce"],
+      "complexity": "moderate",
+      "language": "java",
+      "languageNotes": "Java 配置类，定义商城端网关的 Redis 缓存模板和缓存管理器。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-gateway-mall/src/main/resources/application.properties",
+      "type": "config",
+      "name": "application.properties (Mall Gateway)",
+      "filePath": "newbee-mall-cloud-gateway-mall/src/main/resources/application.properties",
+      "summary": "商城端网关的应用配置文件，配置端口 29110，Nacos 服务发现地址，以及 12 条路由规则将 /users/mall/**、/mall/index/**、/categories/mall/**、/goods/mall/**、/shop-cart/**、/orders/mall/**、/mall/address/** 等路径路由到对应微服务，同时配置 Swagger 路由和 Redis 连接参数。",
+      "tags": ["spring-boot", "gateway-routes", "nacos", "redis", "swagger"],
+      "complexity": "moderate",
+      "language": "properties",
+      "languageNotes": "Spring Boot 属性配置，定义商城端网关的路由规则和连接参数。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/pom.xml",
+      "type": "config",
+      "name": "newbee-mall-cloud-goods-api/pom.xml",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/pom.xml",
+      "summary": "商品服务 OpenFeign API 模块的 Maven POM 文件，定义依赖 Spring Cloud OpenFeign 和 common 模块，提供商品服务的 Feign 客户端接口供其他服务调用。",
+      "tags": ["maven", "pom", "openfeign", "api-module"],
+      "complexity": "simple",
+      "language": "xml",
+      "languageNotes": "Maven POM 配置文件，定义商品服务的 Feign API 接口模块。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/pom.xml",
+      "type": "config",
+      "name": "newbee-mall-cloud-goods-web/pom.xml",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/pom.xml",
+      "summary": "商品服务 Web 模块的 Maven POM 文件，依赖 Spring Boot Web、MyBatis、Nacos、Seata、Swagger、MySQL、Sentinel、Sleuth/Zipkin、Logstash、Loadbalancer 以及 common 和 user-api 模块，是商品微服务的核心实现模块。",
+      "tags": ["maven", "pom", "goods-service", "mybatis", "seata"],
+      "complexity": "moderate",
+      "language": "xml",
+      "languageNotes": "Maven POM 配置文件，定义商品服务 Web 模块的完整依赖栈。"
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/OpenFeignConfiguration.java",
+      "type": "file",
+      "name": "OpenFeignConfiguration.java (Goods)",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/OpenFeignConfiguration.java",
+      "summary": "商品服务的 OpenFeign 配置类，设置 Feign 客户端日志级别为 FULL，用于调试时查看完整的请求和响应详情。",
+      "tags": ["openfeign", "configuration", "logging"],
+      "complexity": "simple",
+      "language": "java",
+      "languageNotes": "Java 配置类，设置 OpenFeign 日志级别。"
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/SeataProxyConfiguration.java",
+      "type": "file",
+      "name": "SeataProxyConfiguration.java",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/SeataProxyConfiguration.java",
+      "summary": "Seata 分布式事务数据源代理配置类，创建 Druid 数据源并通过 DataSourceProxy 包装以支持 Seata 的全局事务管理，同时设置 Druid 的 MySQL ping 方法属性避免日志报错。",
+      "tags": ["seata", "distributed-transaction", "druid", "datasource", "configuration"],
+      "complexity": "moderate",
+      "language": "java",
+      "languageNotes": "Java 配置类，配置 Seata 数据源代理实现分布式事务。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/application.properties",
+      "type": "config",
+      "name": "application.properties (Goods Service)",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/application.properties",
+      "summary": "商品服务的应用配置文件，配置端口 29010，Nacos 服务发现，MySQL 数据库连接（Druid 连接池），MyBatis mapper 路径，OpenFeign 超时和压缩设置，Sentinel 熔断配置，Sleuth/Zipkin 链路追踪采样率，以及 Seata 分布式事务分组和注册中心配置。",
+      "tags": ["spring-boot", "nacos", "mysql", "druid", "mybatis", "openfeign", "sentinel", "sleuth", "zipkin", "seata"],
+      "complexity": "complex",
+      "language": "properties",
+      "languageNotes": "Spring Boot 属性配置，包含数据库、微服务治理、分布式事务等完整配置。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/logback.xml",
+      "type": "config",
+      "name": "logback.xml (Goods Service)",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/logback.xml",
+      "summary": "商品服务的 Logback 日志配置文件，定义控制台输出和 Logstash TCP 追加器，日志输出到 192.168.110.57:4560 的 Logstash 收集端，根日志级别为 INFO。",
+      "tags": ["logging", "logback", "logstash", "elk"],
+      "complexity": "simple",
+      "language": "xml",
+      "languageNotes": "Logback XML 配置文件，定义日志输出格式和 Logstash 追加器。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/mapper/GoodsCategoryMapper.xml",
+      "type": "config",
+      "name": "GoodsCategoryMapper.xml",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/mapper/GoodsCategoryMapper.xml",
+      "summary": "商品分类表的 MyBatis Mapper XML 文件，映射到 tb_newbee_mall_goods_category 表，定义分页查询、主键查询、按级别和名称查询、批量删除、插入及更新等 CRUD 操作，支持多级分类和软删除。",
+      "tags": ["mybatis", "mapper", "sql", "goods-category", "crud"],
+      "complexity": "moderate",
+      "language": "xml",
+      "languageNotes": "MyBatis Mapper XML 文件，定义商品分类表的数据库操作映射。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/mapper/NewBeeMallGoodsMapper.xml",
+      "type": "config",
+      "name": "NewBeeMallGoodsMapper.xml",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/mapper/NewBeeMallGoodsMapper.xml",
+      "summary": "商品信息表的 MyBatis Mapper XML 文件，映射到 tb_newbee_mall_goods_info 表，定义批量插入、主键查询、按分类和名称查询、库存扣减、批量上下架、分页搜索（支持关键词、分类、排序）、插入及更新等操作。",
+      "tags": ["mybatis", "mapper", "sql", "goods-info", "crud", "inventory"],
+      "complexity": "complex",
+      "language": "xml",
+      "languageNotes": "MyBatis Mapper XML 文件，定义商品信息表的完整数据库操作映射。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-goods-service/pom.xml",
+      "type": "config",
+      "name": "newbee-mall-cloud-goods-service/pom.xml",
+      "filePath": "newbee-mall-cloud-goods-service/pom.xml",
+      "summary": "商品模块的父级 Maven POM 文件，packaging 类型为 pom，聚合 goods-web 和 goods-api 两个子模块，作为商品微服务模块的顶层构建入口。",
+      "tags": ["maven", "pom", "parent-module", "goods-service"],
+      "complexity": "simple",
+      "language": "xml",
+      "languageNotes": "Maven 父级 POM 配置文件，聚合商品服务的子模块。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-order-service/newbee-mall-cloud-order-api/pom.xml",
+      "type": "config",
+      "name": "newbee-mall-cloud-order-api/pom.xml",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-api/pom.xml",
+      "summary": "订单服务 OpenFeign API 模块的 Maven POM 文件，定义依赖 Spring Cloud OpenFeign 和 common 模块，提供订单服务的 Feign 客户端接口供其他服务调用。",
+      "tags": ["maven", "pom", "openfeign", "api-module"],
+      "complexity": "simple",
+      "language": "xml",
+      "languageNotes": "Maven POM 配置文件，定义订单服务的 Feign API 接口模块。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/pom.xml",
+      "type": "config",
+      "name": "newbee-mall-cloud-order-web/pom.xml",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/pom.xml",
+      "summary": "订单服务 Web 模块的 Maven POM 文件，依赖 Spring Boot Web、MyBatis、Nacos、Seata、Swagger、MySQL、Sentinel、Sleuth/Zipkin、OpenFeign、Loadbalancer、Logstash 以及 common、user-api、goods-api、shop-cart-api 模块，是依赖最广泛的订单微服务实现模块。",
+      "tags": ["maven", "pom", "order-service", "mybatis", "seata", "openfeign"],
+      "complexity": "moderate",
+      "language": "xml",
+      "languageNotes": "Maven POM 配置文件，定义订单服务 Web 模块的完整依赖栈。"
+    },
+    {
+      "id": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OpenFeignConfiguration.java",
+      "type": "file",
+      "name": "OpenFeignConfiguration.java (Order)",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OpenFeignConfiguration.java",
+      "summary": "订单服务的 OpenFeign 配置类，设置 Feign 客户端日志级别为 FULL，用于调试时查看完整的请求和响应详情，与商品服务的配置结构一致。",
+      "tags": ["openfeign", "configuration", "logging"],
+      "complexity": "simple",
+      "language": "java",
+      "languageNotes": "Java 配置类，设置订单服务的 OpenFeign 日志级别。"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:README.md",
+      "target": "config:newbee-mall-cloud-common/pom.xml",
+      "type": "documents",
+      "weight": 0.5,
+      "label": "项目文档描述公共模块"
+    },
+    {
+      "source": "document:README.md",
+      "target": "config:newbee-mall-cloud-gateway-admin/pom.xml",
+      "type": "documents",
+      "weight": 0.5,
+      "label": "项目文档描述管理端网关模块"
+    },
+    {
+      "source": "document:README.md",
+      "target": "config:newbee-mall-cloud-gateway-mall/pom.xml",
+      "type": "documents",
+      "weight": 0.5,
+      "label": "项目文档描述商城端网关模块"
+    },
+    {
+      "source": "document:README.md",
+      "target": "config:newbee-mall-cloud-goods-service/pom.xml",
+      "type": "documents",
+      "weight": 0.5,
+      "label": "项目文档描述商品服务模块"
+    },
+    {
+      "source": "document:README.md",
+      "target": "config:newbee-mall-cloud-order-service/newbee-mall-cloud-order-api/pom.xml",
+      "type": "documents",
+      "weight": 0.5,
+      "label": "项目文档描述订单服务模块"
+    },
+    {
+      "source": "config:newbee-mall-cloud-common/pom.xml",
+      "target": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/NewBeeMallUtils.java",
+      "type": "configures",
+      "weight": 0.6,
+      "label": "POM 定义公共模块构建"
+    },
+    {
+      "source": "config:newbee-mall-cloud-gateway-admin/pom.xml",
+      "target": "file:newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/NewBeeMallCloudAdminGatewayApplication.java",
+      "type": "configures",
+      "weight": 0.6,
+      "label": "POM 定义管理端网关构建"
+    },
+    {
+      "source": "config:newbee-mall-cloud-gateway-admin/pom.xml",
+      "target": "file:newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/config/PolymerizeSwaggerProvider.java",
+      "type": "configures",
+      "weight": 0.6,
+      "label": "POM 为 Swagger 聚合提供依赖"
+    },
+    {
+      "source": "config:newbee-mall-cloud-gateway-admin/pom.xml",
+      "target": "file:newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/config/RedisConfig.java",
+      "type": "configures",
+      "weight": 0.6,
+      "label": "POM 为 Redis 配置提供依赖"
+    },
+    {
+      "source": "config:newbee-mall-cloud-gateway-admin/src/main/resources/application.properties",
+      "target": "file:newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/NewBeeMallCloudAdminGatewayApplication.java",
+      "type": "configures",
+      "weight": 0.6,
+      "label": "属性文件配置管理端网关运行参数"
+    },
+    {
+      "source": "config:newbee-mall-cloud-gateway-admin/src/main/resources/application.properties",
+      "target": "file:newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/config/PolymerizeSwaggerProvider.java",
+      "type": "configures",
+      "weight": 0.6,
+      "label": "属性文件定义路由规则供 Swagger 聚合使用"
+    },
+    {
+      "source": "config:newbee-mall-cloud-gateway-admin/src/main/resources/application.properties",
+      "target": "file:newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/config/RedisConfig.java",
+      "type": "configures",
+      "weight": 0.6,
+      "label": "属性文件配置 Redis 连接参数"
+    },
+    {
+      "source": "config:newbee-mall-cloud-gateway-mall/pom.xml",
+      "target": "file:newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/NewBeeMallCloudMallGatewayApplication.java",
+      "type": "configures",
+      "weight": 0.6,
+      "label": "POM 定义商城端网关构建"
+    },
+    {
+      "source": "config:newbee-mall-cloud-gateway-mall/pom.xml",
+      "target": "file:newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/config/PolymerizeSwaggerProvider.java",
+      "type": "configures",
+      "weight": 0.6,
+      "label": "POM 为 Swagger 聚合提供依赖"
+    },
+    {
+      "source": "config:newbee-mall-cloud-gateway-mall/pom.xml",
+      "target": "file:newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/config/RedisConfig.java",
+      "type": "configures",
+      "weight": 0.6,
+      "label": "POM 为 Redis 配置提供依赖"
+    },
+    {
+      "source": "config:newbee-mall-cloud-gateway-mall/src/main/resources/application.properties",
+      "target": "file:newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/NewBeeMallCloudMallGatewayApplication.java",
+      "type": "configures",
+      "weight": 0.6,
+      "label": "属性文件配置商城端网关运行参数"
+    },
+    {
+      "source": "config:newbee-mall-cloud-gateway-mall/src/main/resources/application.properties",
+      "target": "file:newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/config/PolymerizeSwaggerProvider.java",
+      "type": "configures",
+      "weight": 0.6,
+      "label": "属性文件定义路由规则供 Swagger 聚合使用"
+    },
+    {
+      "source": "config:newbee-mall-cloud-gateway-mall/src/main/resources/application.properties",
+      "target": "file:newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/config/RedisConfig.java",
+      "type": "configures",
+      "weight": 0.6,
+      "label": "属性文件配置 Redis 连接参数"
+    },
+    {
+      "source": "config:newbee-mall-cloud-goods-service/pom.xml",
+      "target": "config:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/pom.xml",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "父 POM 聚合 goods-api 子模块"
+    },
+    {
+      "source": "config:newbee-mall-cloud-goods-service/pom.xml",
+      "target": "config:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/pom.xml",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "父 POM 聚合 goods-web 子模块"
+    },
+    {
+      "source": "config:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/pom.xml",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/OpenFeignConfiguration.java",
+      "type": "configures",
+      "weight": 0.6,
+      "label": "POM 为 OpenFeign 配置提供依赖"
+    },
+    {
+      "source": "config:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/pom.xml",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/SeataProxyConfiguration.java",
+      "type": "configures",
+      "weight": 0.6,
+      "label": "POM 为 Seata 配置提供依赖"
+    },
+    {
+      "source": "config:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/application.properties",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/OpenFeignConfiguration.java",
+      "type": "configures",
+      "weight": 0.6,
+      "label": "属性文件配置 OpenFeign 参数"
+    },
+    {
+      "source": "config:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/application.properties",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/SeataProxyConfiguration.java",
+      "type": "configures",
+      "weight": 0.6,
+      "label": "属性文件配置 Seata 和数据源参数"
+    },
+    {
+      "source": "config:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/logback.xml",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/SeataProxyConfiguration.java",
+      "type": "configures",
+      "weight": 0.5,
+      "label": "日志配置为商品服务提供日志输出"
+    },
+    {
+      "source": "config:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/pom.xml",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OpenFeignConfiguration.java",
+      "type": "configures",
+      "weight": 0.6,
+      "label": "POM 为 OpenFeign 配置提供依赖"
+    },
+    {
+      "source": "file:newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/config/PolymerizeSwaggerProvider.java",
+      "target": "file:newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/NewBeeMallCloudAdminGatewayApplication.java",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Swagger 聚合服务于管理端网关应用"
+    },
+    {
+      "source": "file:newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/config/RedisConfig.java",
+      "target": "file:newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/NewBeeMallCloudAdminGatewayApplication.java",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Redis 配置服务于管理端网关应用"
+    },
+    {
+      "source": "file:newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/config/PolymerizeSwaggerProvider.java",
+      "target": "file:newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/NewBeeMallCloudMallGatewayApplication.java",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Swagger 聚合服务于商城端网关应用"
+    },
+    {
+      "source": "file:newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/config/RedisConfig.java",
+      "target": "file:newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/NewBeeMallCloudMallGatewayApplication.java",
+      "type": "related",
+      "weight": 0.5,
+      "label": "Redis 配置服务于商城端网关应用"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/SeataProxyConfiguration.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/OpenFeignConfiguration.java",
+      "type": "related",
+      "weight": 0.5,
+      "label": "商品服务配置类协同工作"
+    },
+    {
+      "source": "config:newbee-mall-cloud-gateway-admin/pom.xml",
+      "target": "config:newbee-mall-cloud-common/pom.xml",
+      "type": "depends_on",
+      "weight": 0.6,
+      "label": "管理端网关依赖公共模块"
+    },
+    {
+      "source": "config:newbee-mall-cloud-gateway-mall/pom.xml",
+      "target": "config:newbee-mall-cloud-common/pom.xml",
+      "type": "depends_on",
+      "weight": 0.6,
+      "label": "商城端网关依赖公共模块"
+    },
+    {
+      "source": "config:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/pom.xml",
+      "target": "config:newbee-mall-cloud-common/pom.xml",
+      "type": "depends_on",
+      "weight": 0.6,
+      "label": "商品 API 模块依赖公共模块"
+    },
+    {
+      "source": "config:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/pom.xml",
+      "target": "config:newbee-mall-cloud-common/pom.xml",
+      "type": "depends_on",
+      "weight": 0.6,
+      "label": "商品 Web 模块依赖公共模块"
+    },
+    {
+      "source": "config:newbee-mall-cloud-order-service/newbee-mall-cloud-order-api/pom.xml",
+      "target": "config:newbee-mall-cloud-common/pom.xml",
+      "type": "depends_on",
+      "weight": 0.6,
+      "label": "订单 API 模块依赖公共模块"
+    },
+    {
+      "source": "config:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/pom.xml",
+      "target": "config:newbee-mall-cloud-common/pom.xml",
+      "type": "depends_on",
+      "weight": 0.6,
+      "label": "订单 Web 模块依赖公共模块"
+    },
+    {
+      "source": "config:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/pom.xml",
+      "target": "config:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/pom.xml",
+      "type": "depends_on",
+      "weight": 0.6,
+      "label": "订单服务依赖商品服务 API"
+    },
+    {
+      "source": "config:newbee-mall-cloud-gateway-admin/src/main/resources/application.properties",
+      "target": "config:newbee-mall-cloud-gateway-mall/src/main/resources/application.properties",
+      "type": "similar_to",
+      "weight": 0.5,
+      "label": "两个网关使用相似的路由和连接配置模式"
+    },
+    {
+      "source": "file:newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/config/PolymerizeSwaggerProvider.java",
+      "target": "file:newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/config/PolymerizeSwaggerProvider.java",
+      "type": "similar_to",
+      "weight": 0.5,
+      "label": "两个网关的 Swagger 聚合配置结构类似"
+    },
+    {
+      "source": "file:newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/config/RedisConfig.java",
+      "target": "file:newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/config/RedisConfig.java",
+      "type": "similar_to",
+      "weight": 0.5,
+      "label": "两个网关的 Redis 配置完全一致"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/OpenFeignConfiguration.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OpenFeignConfiguration.java",
+      "type": "similar_to",
+      "weight": 0.5,
+      "label": "商品和订单服务的 OpenFeign 配置完全一致"
+    },
+    {
+      "source": "file:newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/NewBeeMallCloudAdminGatewayApplication.java",
+      "target": "file:newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/NewBeeMallCloudMallGatewayApplication.java",
+      "type": "similar_to",
+      "weight": 0.5,
+      "label": "两个网关入口类结构一致"
+    },
+    {
+      "source": "config:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/mapper/GoodsCategoryMapper.xml",
+      "target": "config:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/mapper/NewBeeMallGoodsMapper.xml",
+      "type": "related",
+      "weight": 0.5,
+      "label": "同属商品服务的数据访问层 Mapper"
+    },
+    {
+      "source": "config:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/logback.xml",
+      "target": "config:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/application.properties",
+      "type": "related",
+      "weight": 0.5,
+      "label": "日志配置与应用配置共同定义商品服务运行时行为"
+    }
+  ],
+  "batchFiles": [
+    {"path": "README.md", "language": "markdown", "sizeLines": 157, "fileCategory": "docs"},
+    {"path": "newbee-mall-cloud-common/pom.xml", "language": "xml", "sizeLines": 51, "fileCategory": "config"},
+    {"path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/NewBeeMallUtils.java", "language": "java", "sizeLines": 56, "fileCategory": "code"},
+    {"path": "newbee-mall-cloud-gateway-admin/pom.xml", "language": "xml", "sizeLines": 68, "fileCategory": "config"},
+    {"path": "newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/NewBeeMallCloudAdminGatewayApplication.java", "language": "java", "sizeLines": 29, "fileCategory": "code"},
+    {"path": "newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/config/PolymerizeSwaggerProvider.java", "language": "java", "sizeLines": 67, "fileCategory": "code"},
+    {"path": "newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/config/RedisConfig.java", "language": "java", "sizeLines": 74, "fileCategory": "code"},
+    {"path": "newbee-mall-cloud-gateway-admin/src/main/resources/application.properties", "language": "properties", "sizeLines": 95, "fileCategory": "config"},
+    {"path": "newbee-mall-cloud-gateway-mall/pom.xml", "language": "xml", "sizeLines": 70, "fileCategory": "config"},
+    {"path": "newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/NewBeeMallCloudMallGatewayApplication.java", "language": "java", "sizeLines": 29, "fileCategory": "code"},
+    {"path": "newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/config/PolymerizeSwaggerProvider.java", "language": "java", "sizeLines": 60, "fileCategory": "code"},
+    {"path": "newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/config/RedisConfig.java", "language": "java", "sizeLines": 74, "fileCategory": "code"},
+    {"path": "newbee-mall-cloud-gateway-mall/src/main/resources/application.properties", "language": "properties", "sizeLines": 109, "fileCategory": "config"},
+    {"path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/pom.xml", "language": "xml", "sizeLines": 44, "fileCategory": "config"},
+    {"path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/pom.xml", "language": "xml", "sizeLines": 120, "fileCategory": "config"},
+    {"path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/OpenFeignConfiguration.java", "language": "java", "sizeLines": 14, "fileCategory": "code"},
+    {"path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/SeataProxyConfiguration.java", "language": "java", "sizeLines": 38, "fileCategory": "code"},
+    {"path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/application.properties", "language": "properties", "sizeLines": 78, "fileCategory": "config"},
+    {"path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/logback.xml", "language": "xml", "sizeLines": 39, "fileCategory": "config"},
+    {"path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/mapper/GoodsCategoryMapper.xml", "language": "xml", "sizeLines": 219, "fileCategory": "config"},
+    {"path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/mapper/NewBeeMallGoodsMapper.xml", "language": "xml", "sizeLines": 392, "fileCategory": "config"},
+    {"path": "newbee-mall-cloud-goods-service/pom.xml", "language": "xml", "sizeLines": 38, "fileCategory": "config"},
+    {"path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-api/pom.xml", "language": "xml", "sizeLines": 44, "fileCategory": "config"},
+    {"path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/pom.xml", "language": "xml", "sizeLines": 137, "fileCategory": "config"},
+    {"path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OpenFeignConfiguration.java", "language": "java", "sizeLines": 14, "fileCategory": "code"}
+  ]
+}

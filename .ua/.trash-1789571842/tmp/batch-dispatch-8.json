@@ -1,0 +1,36 @@
+{
+  "batchIndex": 8,
+  "files": [
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/mapper/MallUserAddressMapper.xml",
+      "language": "xml",
+      "sizeLines": 198,
+      "fileCategory": "config"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/mapper/NewBeeMallOrderAddressMapper.xml",
+      "language": "xml",
+      "sizeLines": 124,
+      "fileCategory": "config"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/mapper/NewBeeMallOrderItemMapper.xml",
+      "language": "xml",
+      "sizeLines": 164,
+      "fileCategory": "config"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/mapper/NewBeeMallOrderMapper.xml",
+      "language": "xml",
+      "sizeLines": 283,
+      "fileCategory": "config"
+    }
+  ],
+  "batchImportData": {
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/mapper/MallUserAddressMapper.xml": [],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/mapper/NewBeeMallOrderAddressMapper.xml": [],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/mapper/NewBeeMallOrderItemMapper.xml": [],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/mapper/NewBeeMallOrderMapper.xml": []
+  },
+  "neighborMap": {}
+}

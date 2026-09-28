@@ -1,0 +1,241 @@
+{
+  "projectRoot": "E:/Github/newbee-mall-cloud",
+  "batchFiles": [
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/NewBeeMallOrderStatusEnum.java",
+      "language": "java",
+      "sizeLines": 63,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/PayStatusEnum.java",
+      "language": "java",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/PayTypeEnum.java",
+      "language": "java",
+      "sizeLines": 58,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/NewBeeMallGoodsDTO.java",
+      "language": "java",
+      "sizeLines": 120,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/StockNumDTO.java",
+      "language": "java",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/UpdateStockNumDTO.java",
+      "language": "java",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/openfeign/NewBeeCloudGoodsServiceFeign.java",
+      "language": "java",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/NewBeeMallCloudOrderServiceApplication.java",
+      "language": "java",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "language": "java",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeAdminOrderController.java",
+      "language": "java",
+      "sizeLines": 133,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/BatchIdParam.java",
+      "language": "java",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderDetailVO.java",
+      "language": "java",
+      "sizeLines": 56,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderItemVO.java",
+      "language": "java",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderAddressMapper.java",
+      "language": "java",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderItemMapper.java",
+      "language": "java",
+      "sizeLines": 51,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderMapper.java",
+      "language": "java",
+      "sizeLines": 42,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrder.java",
+      "language": "java",
+      "sizeLines": 41,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrderAddress.java",
+      "language": "java",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrderItem.java",
+      "language": "java",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallOrderService.java",
+      "language": "java",
+      "sizeLines": 116,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "language": "java",
+      "sizeLines": 476,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/src/main/java/ltd/shopcart/cloud/newbee/dto/NewBeeMallShoppingCartItemDTO.java",
+      "language": "java",
+      "sizeLines": 54,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/src/main/java/ltd/shopcart/cloud/newbee/openfeign/NewBeeCloudShopCartServiceFeign.java",
+      "language": "java",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/NewBeeMallCloudShopCartServiceApplication.java",
+      "language": "java",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/NewBeeMallOrderStatusEnum.java": [],
+    "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/PayStatusEnum.java": [],
+    "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/PayTypeEnum.java": [],
+    "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/NewBeeMallGoodsDTO.java": [],
+    "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/StockNumDTO.java": [],
+    "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/UpdateStockNumDTO.java": [],
+    "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/openfeign/NewBeeCloudGoodsServiceFeign.java": [
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/NewBeeMallGoodsDTO.java",
+      "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/UpdateStockNumDTO.java"
+    ],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/NewBeeMallCloudOrderServiceApplication.java": [
+      "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/openfeign/NewBeeCloudGoodsServiceFeign.java",
+      "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/src/main/java/ltd/shopcart/cloud/newbee/openfeign/NewBeeCloudShopCartServiceFeign.java",
+      "newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/openfeign/NewBeeCloudUserServiceFeign.java"
+    ],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/annotation/TokenToAdminUser.java": [],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeAdminOrderController.java": [
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/ResultGenerator.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/BatchIdParam.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderDetailVO.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/LoginAdminUser.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallOrderService.java"
+    ],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/BatchIdParam.java": [],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderDetailVO.java": [],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderItemVO.java": [],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderAddressMapper.java": [
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrderAddress.java"
+    ],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderItemMapper.java": [
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrderItem.java"
+    ],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderMapper.java": [
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrder.java"
+    ],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrder.java": [],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrderAddress.java": [],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrderItem.java": [],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallOrderService.java": [
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageResult.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderDetailVO.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderItemVO.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/MallUserAddress.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrder.java"
+    ],
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java": [
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageResult.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/NewBeeMallOrderStatusEnum.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/PayStatusEnum.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/PayTypeEnum.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/exception/NewBeeMallException.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/BeanUtil.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/NumberUtil.java",
+      "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/NewBeeMallGoodsDTO.java",
+      "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/StockNumDTO.java",
+      "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/UpdateStockNumDTO.java",
+      "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/openfeign/NewBeeCloudGoodsServiceFeign.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderDetailVO.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderItemVO.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderListVO.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderAddressMapper.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderItemMapper.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderMapper.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/MallUserAddress.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrder.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrderAddress.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrderItem.java",
+      "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallOrderService.java",
+      "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/src/main/java/ltd/shopcart/cloud/newbee/dto/NewBeeMallShoppingCartItemDTO.java",
+      "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/src/main/java/ltd/shopcart/cloud/newbee/openfeign/NewBeeCloudShopCartServiceFeign.java"
+    ],
+    "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/src/main/java/ltd/shopcart/cloud/newbee/dto/NewBeeMallShoppingCartItemDTO.java": [],
+    "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/src/main/java/ltd/shopcart/cloud/newbee/openfeign/NewBeeCloudShopCartServiceFeign.java": [
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/src/main/java/ltd/shopcart/cloud/newbee/dto/NewBeeMallShoppingCartItemDTO.java"
+    ],
+    "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/NewBeeMallCloudShopCartServiceApplication.java": [
+      "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/openfeign/NewBeeCloudGoodsServiceFeign.java",
+      "newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/openfeign/NewBeeCloudUserServiceFeign.java"
+    ]
+  }
+}

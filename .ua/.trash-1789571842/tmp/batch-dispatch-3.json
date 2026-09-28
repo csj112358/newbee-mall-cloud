@@ -1,0 +1,828 @@
+{
+  "batchIndex": 3,
+  "files": [
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "language": "java",
+      "sizeLines": 55,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/IndexConfigTypeEnum.java",
+      "language": "java",
+      "sizeLines": 60,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/RecommendServiceSwagger3Config.java",
+      "language": "java",
+      "sizeLines": 65,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "language": "java",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminCarouselController.java",
+      "language": "java",
+      "sizeLines": 134,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminIndexConfigController.java",
+      "language": "java",
+      "sizeLines": 141,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeMallIndexController.java",
+      "language": "java",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/BatchIdParam.java",
+      "language": "java",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/CarouselAddParam.java",
+      "language": "java",
+      "sizeLines": 35,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/CarouselEditParam.java",
+      "language": "java",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/IndexConfigAddParam.java",
+      "language": "java",
+      "sizeLines": 41,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/IndexConfigEditParam.java",
+      "language": "java",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/IndexInfoVO.java",
+      "language": "java",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexCarouselVO.java",
+      "language": "java",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexConfigGoodsVO.java",
+      "language": "java",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/dao/CarouselMapper.java",
+      "language": "java",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/dao/IndexConfigMapper.java",
+      "language": "java",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/Carousel.java",
+      "language": "java",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/IndexConfig.java",
+      "language": "java",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/LoginAdminUser.java",
+      "language": "java",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallCarouselService.java",
+      "language": "java",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallIndexConfigService.java",
+      "language": "java",
+      "sizeLines": 42,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallCarouselServiceImpl.java",
+      "language": "java",
+      "sizeLines": 90,
+      "fileCategory": "code"
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallIndexConfigServiceImpl.java",
+      "language": "java",
+      "sizeLines": 125,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java": [],
+    "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/IndexConfigTypeEnum.java": [],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/RecommendServiceSwagger3Config.java": [
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/AdminUserToken.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/LoginAdminUser.java"
+    ],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/annotation/TokenToAdminUser.java": [],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminCarouselController.java": [
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/ResultGenerator.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/BeanUtil.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/BatchIdParam.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/CarouselAddParam.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/CarouselEditParam.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/Carousel.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/LoginAdminUser.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallCarouselService.java"
+    ],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminIndexConfigController.java": [
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/ResultGenerator.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/IndexConfigTypeEnum.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/BeanUtil.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/BatchIdParam.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/IndexConfigAddParam.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/IndexConfigEditParam.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/IndexConfig.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/LoginAdminUser.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallIndexConfigService.java"
+    ],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeMallIndexController.java": [
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/ResultGenerator.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/IndexConfigTypeEnum.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/IndexInfoVO.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexCarouselVO.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexConfigGoodsVO.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallCarouselService.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallIndexConfigService.java"
+    ],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/BatchIdParam.java": [],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/CarouselAddParam.java": [],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/CarouselEditParam.java": [],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/IndexConfigAddParam.java": [],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/IndexConfigEditParam.java": [],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/IndexInfoVO.java": [],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexCarouselVO.java": [],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexConfigGoodsVO.java": [],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/dao/CarouselMapper.java": [
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/Carousel.java"
+    ],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/dao/IndexConfigMapper.java": [
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/IndexConfig.java"
+    ],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/Carousel.java": [],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/IndexConfig.java": [],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/LoginAdminUser.java": [],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallCarouselService.java": [
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageResult.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexCarouselVO.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/Carousel.java"
+    ],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallIndexConfigService.java": [
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageResult.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexConfigGoodsVO.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/IndexConfig.java"
+    ],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallCarouselServiceImpl.java": [
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageResult.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/BeanUtil.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexCarouselVO.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/dao/CarouselMapper.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/Carousel.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallCarouselService.java"
+    ],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallIndexConfigServiceImpl.java": [
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageResult.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+      "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/BeanUtil.java",
+      "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/NewBeeMallGoodsDTO.java",
+      "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/openfeign/NewBeeCloudGoodsServiceFeign.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexConfigGoodsVO.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/dao/IndexConfigMapper.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/IndexConfig.java",
+      "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallIndexConfigService.java"
+    ]
+  },
+  "neighborMap": {
+    "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java": [
+      {
+        "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsCategoryController.java",
+        "batchIndex": 2,
+        "symbols": [
+          "list",
+          "listForSelect",
+          "save",
+          "update",
+          "info",
+          "delete",
+          "NewBeeAdminGoodsCategoryController"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsInfoController.java",
+        "batchIndex": 2,
+        "symbols": [
+          "list",
+          "save",
+          "update",
+          "info",
+          "delete",
+          "goodsDetail",
+          "getNewBeeMallGoodsByIds",
+          "updateStock",
+          "NewBeeAdminGoodsInfoController"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeMallGoodsController.java",
+        "batchIndex": 2,
+        "symbols": [
+          "test1",
+          "test2",
+          "test3",
+          "search",
+          "goodsDetail",
+          "NewBeeMallGoodsController"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/dao/GoodsCategoryMapper.java",
+        "batchIndex": 2,
+        "symbols": [
+          "GoodsCategoryMapper"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/dao/NewBeeMallGoodsMapper.java",
+        "batchIndex": 2,
+        "symbols": [
+          "NewBeeMallGoodsMapper"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/NewBeeMallCategoryService.java",
+        "batchIndex": 2,
+        "symbols": [
+          "NewBeeMallCategoryService"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/NewBeeMallGoodsService.java",
+        "batchIndex": 2,
+        "symbols": [
+          "NewBeeMallGoodsService"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallCategoryServiceImpl.java",
+        "batchIndex": 2,
+        "symbols": [
+          "saveCategory",
+          "updateGoodsCategory",
+          "getGoodsCategoryById",
+          "deleteBatch",
+          "getCategorisPage",
+          "selectByLevelAndParentIdsAndNumber",
+          "getCategoriesForIndex",
+          "NewBeeMallCategoryServiceImpl"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallGoodsServiceImpl.java",
+        "batchIndex": 2,
+        "symbols": [
+          "getNewBeeMallGoodsPage",
+          "saveNewBeeMallGoods",
+          "batchSaveNewBeeMallGoods",
+          "updateNewBeeMallGoods",
+          "getNewBeeMallGoodsById",
+          "getNewBeeMallGoodsByIds",
+          "batchUpdateSellStatus",
+          "searchNewBeeMallGoods",
+          "updateStockNum",
+          "NewBeeMallGoodsServiceImpl"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeAdminOrderController.java",
+        "batchIndex": 4,
+        "symbols": [
+          "list",
+          "orderDetailPage",
+          "checkDone",
+          "checkOut",
+          "closeOrder",
+          "NewBeeAdminOrderController"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallOrderController.java",
+        "batchIndex": 6,
+        "symbols": [
+          "saveOrder",
+          "orderDetailPage",
+          "orderList",
+          "cancelOrder",
+          "finishOrder",
+          "paySuccess",
+          "NewBeeMallOrderController"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderMapper.java",
+        "batchIndex": 4,
+        "symbols": [
+          "NewBeeMallOrderMapper"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallOrderService.java",
+        "batchIndex": 4,
+        "symbols": [
+          "NewBeeMallOrderService"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+        "batchIndex": 4,
+        "symbols": [
+          "getOrderDetailByOrderId",
+          "getOrderDetailByOrderNo",
+          "getMyOrders",
+          "cancelOrder",
+          "finishOrder",
+          "paySuccess",
+          "saveOrder",
+          "getNewBeeMallOrdersPage",
+          "updateOrderInfo",
+          "checkDone",
+          "checkOut",
+          "closeOrder",
+          "getOrderItems",
+          "NewBeeMallOrderServiceImpl"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/NewBeeMallShoppingCartController.java",
+        "batchIndex": 7,
+        "symbols": [
+          "cartItemPageList",
+          "cartItemList",
+          "saveNewBeeMallShoppingCartItem",
+          "updateNewBeeMallShoppingCartItem",
+          "updateNewBeeMallShoppingCartItem",
+          "toSettle",
+          "cartItemListByIds",
+          "deleteByCartItemIds",
+          "NewBeeMallShoppingCartController"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/dao/NewBeeMallShoppingCartItemMapper.java",
+        "batchIndex": 7,
+        "symbols": [
+          "NewBeeMallShoppingCartItemMapper"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/NewBeeMallShoppingCartService.java",
+        "batchIndex": 7,
+        "symbols": [
+          "NewBeeMallShoppingCartService"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/impl/NewBeeMallShoppingCartServiceImpl.java",
+        "batchIndex": 7,
+        "symbols": [
+          "saveNewBeeMallCartItem",
+          "updateNewBeeMallCartItem",
+          "getNewBeeMallCartItemById",
+          "deleteById",
+          "getMyShoppingCartItems",
+          "getCartItemsForSettle",
+          "getCartItemsByCartIds",
+          "deleteCartItemsByCartIds",
+          "getMyShoppingCartItems",
+          "NewBeeMallShoppingCartServiceImpl"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/dao/MallUserMapper.java",
+        "batchIndex": 1,
+        "symbols": [
+          "MallUserMapper"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/NewBeeMallUserService.java",
+        "batchIndex": 1,
+        "symbols": [
+          "NewBeeMallUserService"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/NewBeeMallUserServiceImpl.java",
+        "batchIndex": 1,
+        "symbols": [
+          "register",
+          "login",
+          "updateUserInfo",
+          "getUserDetailByToken",
+          "logout",
+          "getNewBeeMallUsersPage",
+          "lockUsers",
+          "NewBeeMallUserServiceImpl"
+        ]
+      }
+    ],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/RecommendServiceSwagger3Config.java": [
+      {
+        "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/AdminUserToken.java",
+        "batchIndex": 1,
+        "symbols": [
+          "AdminUserToken"
+        ]
+      }
+    ],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/annotation/TokenToAdminUser.java": [
+      {
+        "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+        "batchIndex": 5,
+        "symbols": [
+          "TokenToAdminUserMethodArgumentResolver",
+          "supportsParameter",
+          "resolveArgument",
+          "TokenToAdminUserMethodArgumentResolver"
+        ]
+      }
+    ],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminCarouselController.java": [
+      {
+        "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+        "batchIndex": 5,
+        "symbols": [
+          "Result",
+          "Result",
+          "getResultCode",
+          "setResultCode",
+          "getMessage",
+          "setMessage",
+          "getData",
+          "setData",
+          "toString",
+          "Result"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/ResultGenerator.java",
+        "batchIndex": 1,
+        "symbols": [
+          "genSuccessResult",
+          "genSuccessResult",
+          "genSuccessResult",
+          "genFailResult",
+          "genErrorResult",
+          "ResultGenerator"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+        "batchIndex": 5,
+        "symbols": [
+          "getResult",
+          "setResult",
+          "ServiceResultEnum"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/BeanUtil.java",
+        "batchIndex": 6,
+        "symbols": [
+          "copyProperties",
+          "copyList",
+          "copyList",
+          "toMap",
+          "toBean",
+          "checkPojoNullField",
+          "BeanUtil"
+        ]
+      }
+    ],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminIndexConfigController.java": [
+      {
+        "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+        "batchIndex": 5,
+        "symbols": [
+          "Result",
+          "Result",
+          "getResultCode",
+          "setResultCode",
+          "getMessage",
+          "setMessage",
+          "getData",
+          "setData",
+          "toString",
+          "Result"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/ResultGenerator.java",
+        "batchIndex": 1,
+        "symbols": [
+          "genSuccessResult",
+          "genSuccessResult",
+          "genSuccessResult",
+          "genFailResult",
+          "genErrorResult",
+          "ResultGenerator"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+        "batchIndex": 5,
+        "symbols": [
+          "getResult",
+          "setResult",
+          "ServiceResultEnum"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/BeanUtil.java",
+        "batchIndex": 6,
+        "symbols": [
+          "copyProperties",
+          "copyList",
+          "copyList",
+          "toMap",
+          "toBean",
+          "checkPojoNullField",
+          "BeanUtil"
+        ]
+      }
+    ],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeMallIndexController.java": [
+      {
+        "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+        "batchIndex": 5,
+        "symbols": [
+          "Result",
+          "Result",
+          "getResultCode",
+          "setResultCode",
+          "getMessage",
+          "setMessage",
+          "getData",
+          "setData",
+          "toString",
+          "Result"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/ResultGenerator.java",
+        "batchIndex": 1,
+        "symbols": [
+          "genSuccessResult",
+          "genSuccessResult",
+          "genSuccessResult",
+          "genFailResult",
+          "genErrorResult",
+          "ResultGenerator"
+        ]
+      }
+    ],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/LoginAdminUser.java": [
+      {
+        "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+        "batchIndex": 5,
+        "symbols": [
+          "TokenToAdminUserMethodArgumentResolver",
+          "supportsParameter",
+          "resolveArgument",
+          "TokenToAdminUserMethodArgumentResolver"
+        ]
+      }
+    ],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallCarouselService.java": [
+      {
+        "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageResult.java",
+        "batchIndex": 7,
+        "symbols": [
+          "PageResult",
+          "getTotalCount",
+          "setTotalCount",
+          "getPageSize",
+          "setPageSize",
+          "getTotalPage",
+          "setTotalPage",
+          "getCurrPage",
+          "setCurrPage",
+          "getList",
+          "setList",
+          "PageResult"
+        ]
+      }
+    ],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallIndexConfigService.java": [
+      {
+        "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageResult.java",
+        "batchIndex": 7,
+        "symbols": [
+          "PageResult",
+          "getTotalCount",
+          "setTotalCount",
+          "getPageSize",
+          "setPageSize",
+          "getTotalPage",
+          "setTotalPage",
+          "getCurrPage",
+          "setCurrPage",
+          "getList",
+          "setList",
+          "PageResult"
+        ]
+      }
+    ],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallCarouselServiceImpl.java": [
+      {
+        "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageResult.java",
+        "batchIndex": 7,
+        "symbols": [
+          "PageResult",
+          "getTotalCount",
+          "setTotalCount",
+          "getPageSize",
+          "setPageSize",
+          "getTotalPage",
+          "setTotalPage",
+          "getCurrPage",
+          "setCurrPage",
+          "getList",
+          "setList",
+          "PageResult"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+        "batchIndex": 5,
+        "symbols": [
+          "getResult",
+          "setResult",
+          "ServiceResultEnum"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/BeanUtil.java",
+        "batchIndex": 6,
+        "symbols": [
+          "copyProperties",
+          "copyList",
+          "copyList",
+          "toMap",
+          "toBean",
+          "checkPojoNullField",
+          "BeanUtil"
+        ]
+      }
+    ],
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallIndexConfigServiceImpl.java": [
+      {
+        "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageResult.java",
+        "batchIndex": 7,
+        "symbols": [
+          "PageResult",
+          "getTotalCount",
+          "setTotalCount",
+          "getPageSize",
+          "setPageSize",
+          "getTotalPage",
+          "setTotalPage",
+          "getCurrPage",
+          "setCurrPage",
+          "getList",
+          "setList",
+          "PageResult"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+        "batchIndex": 5,
+        "symbols": [
+          "Result",
+          "Result",
+          "getResultCode",
+          "setResultCode",
+          "getMessage",
+          "setMessage",
+          "getData",
+          "setData",
+          "toString",
+          "Result"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+        "batchIndex": 5,
+        "symbols": [
+          "getResult",
+          "setResult",
+          "ServiceResultEnum"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/BeanUtil.java",
+        "batchIndex": 6,
+        "symbols": [
+          "copyProperties",
+          "copyList",
+          "copyList",
+          "toMap",
+          "toBean",
+          "checkPojoNullField",
+          "BeanUtil"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/NewBeeMallGoodsDTO.java",
+        "batchIndex": 4,
+        "symbols": [
+          "getGoodsId",
+          "setGoodsId",
+          "getGoodsName",
+          "setGoodsName",
+          "getGoodsIntro",
+          "setGoodsIntro",
+          "getGoodsCategoryId",
+          "setGoodsCategoryId",
+          "getGoodsCoverImg",
+          "setGoodsCoverImg",
+          "getGoodsCarousel",
+          "setGoodsCarousel",
+          "getOriginalPrice",
+          "setOriginalPrice",
+          "getSellingPrice",
+          "setSellingPrice",
+          "getStockNum",
+          "setStockNum",
+          "getTag",
+          "setTag",
+          "getGoodsSellStatus",
+          "setGoodsSellStatus",
+          "NewBeeMallGoodsDTO"
+        ]
+      },
+      {
+        "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/openfeign/NewBeeCloudGoodsServiceFeign.java",
+        "batchIndex": 4,
+        "symbols": [
+          "NewBeeCloudGoodsServiceFeign"
+        ]
+      }
+    ]
+  }
+}

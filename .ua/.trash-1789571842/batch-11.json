@@ -1,0 +1,638 @@
+{
+  "nodes": [
+    {
+      "id": "config:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/application.properties",
+      "type": "config",
+      "name": "application.properties (order-web)",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/application.properties",
+      "summary": "订单服务Web模块的应用配置文件，定义服务端口(29040)、Nacos注册中心地址、MySQL/Druid数据源连接参数、MyBatis映射路径、Sentinel限流、OpenFeign超时与压缩、Sleuth链路追踪采样以及Seata分布式事务分组等配置。",
+      "language": "properties",
+      "complexity": "simple",
+      "tags": ["config", "spring-boot", "nacos", "datasource", "druid", "sentinel", "openfeign", "seata", "sleuth"],
+      "languageNotes": "Spring Boot 的 properties 配置文件，使用点分隔键名组织层次结构。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/logback.xml",
+      "type": "config",
+      "name": "logback.xml (order-web)",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/logback.xml",
+      "summary": "订单服务的日志配置，定义控制台输出(CONSOLE)和Logstash远程日志收集(LOGSTASH)两个appender，日志级别为INFO，Logstash目标地址为192.168.110.57:4560。",
+      "language": "xml",
+      "complexity": "simple",
+      "tags": ["config", "logging", "logback", "logstash"],
+      "languageNotes": "Logback XML配置格式，通过include引入Spring Boot默认日志配置。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-order-service/pom.xml",
+      "type": "config",
+      "name": "pom.xml (order-service)",
+      "filePath": "newbee-mall-cloud-order-service/pom.xml",
+      "summary": "订单服务模块的父POM文件，packaging为pom，继承自newbee-mall-cloud根项目，包含order-web和order-api两个子模块，Java版本为1.8。",
+      "language": "xml",
+      "complexity": "simple",
+      "tags": ["config", "maven", "pom", "parent-module"],
+      "languageNotes": "Maven POM 聚合模块配置，使用 modules 标签定义子模块列表。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-api/pom.xml",
+      "type": "config",
+      "name": "pom.xml (recommend-api)",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-api/pom.xml",
+      "summary": "推荐服务API模块的POM文件，packaging为jar，提供OpenFeign客户端接口定义。依赖spring-cloud-starter-openfeign和newbee-mall-cloud-common公共模块。",
+      "language": "xml",
+      "complexity": "simple",
+      "tags": ["config", "maven", "pom", "openfeign", "api"],
+      "languageNotes": "Maven API模块POM，打包为jar供其他微服务引用。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/pom.xml",
+      "type": "config",
+      "name": "pom.xml (recommend-web)",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/pom.xml",
+      "summary": "推荐服务Web模块的POM文件，包含Spring Boot Web、Nacos注册发现、MyBatis、Lombok、Swagger、MySQL驱动、OpenFeign、Sentinel限流、Sleuth链路追踪、Zipkin、LoadBalancer、Logstash编码器等依赖，并引用user-api和goods-api模块。",
+      "language": "xml",
+      "complexity": "moderate",
+      "tags": ["config", "maven", "pom", "spring-boot", "nacos", "mybatis", "openfeign", "sentinel"],
+      "languageNotes": "Maven Web模块POM，聚合了微服务运行所需的核心依赖。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/resources/application.properties",
+      "type": "config",
+      "name": "application.properties (recommend-web)",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/resources/application.properties",
+      "summary": "推荐服务Web模块的应用配置文件，定义服务端口(29020)、Nacos注册中心、MySQL数据源(使用HikariCP连接池)、MyBatis映射路径、OpenFeign超时与压缩、Sentinel限流以及Sleuth链路追踪等配置。",
+      "language": "properties",
+      "complexity": "simple",
+      "tags": ["config", "spring-boot", "nacos", "datasource", "hikari", "openfeign", "sentinel", "sleuth"],
+      "languageNotes": "Spring Boot properties配置，使用HikariCP而非Druid作为数据源连接池。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/resources/logback.xml",
+      "type": "config",
+      "name": "logback.xml (recommend-web)",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/resources/logback.xml",
+      "summary": "推荐服务的日志配置，定义控制台输出(CONSOLE)和Logstash远程日志收集(LOGSTASH)两个appender，日志级别为INFO。",
+      "language": "xml",
+      "complexity": "simple",
+      "tags": ["config", "logging", "logback", "logstash"],
+      "languageNotes": "Logback XML配置，与其他服务的日志配置结构一致。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/resources/mapper/CarouselMapper.xml",
+      "type": "config",
+      "name": "CarouselMapper.xml",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/resources/mapper/CarouselMapper.xml",
+      "summary": "轮播图数据的MyBatis映射文件，操作tb_newbee_mall_carousel表。包含findCarouselList分页查询、findCarouselsByNum按数量查询、selectByPrimaryKey主键查询，以及insert、insertSelective、updateByPrimaryKeySelective、updateByPrimaryKey和deleteBatch等写操作。",
+      "language": "xml",
+      "complexity": "moderate",
+      "tags": ["config", "mybatis", "mapper", "carousel", "sql"],
+      "languageNotes": "MyBatis Mapper XML，namespace指向DAO接口，使用resultMap进行对象关系映射。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/resources/mapper/IndexConfigMapper.xml",
+      "type": "config",
+      "name": "IndexConfigMapper.xml",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/resources/mapper/IndexConfigMapper.xml",
+      "summary": "首页配置数据的MyBatis映射文件，操作tb_newbee_mall_index_config表。支持按configType筛选的分页查询、按类型和数量查询、按主键查询、按类型和商品ID查询，以及完整的CRUD操作和批量删除。",
+      "language": "xml",
+      "complexity": "moderate",
+      "tags": ["config", "mybatis", "mapper", "index-config", "sql"],
+      "languageNotes": "MyBatis Mapper XML，使用动态SQL（if、where、set、foreach）构建灵活查询。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-recommend-service/pom.xml",
+      "type": "config",
+      "name": "pom.xml (recommend-service)",
+      "filePath": "newbee-mall-cloud-recommend-service/pom.xml",
+      "summary": "推荐服务模块的父POM文件，packaging为pom，继承自newbee-mall-cloud根项目，包含recommend-web和recommend-api两个子模块。",
+      "language": "xml",
+      "complexity": "simple",
+      "tags": ["config", "maven", "pom", "parent-module"],
+      "languageNotes": "Maven POM聚合模块，作为推荐服务子模块的统一父级。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/pom.xml",
+      "type": "config",
+      "name": "pom.xml (shop-cart-api)",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/pom.xml",
+      "summary": "购物车服务API模块的POM文件，packaging为jar，提供OpenFeign客户端接口定义。依赖spring-cloud-starter-openfeign和newbee-mall-cloud-common公共模块。",
+      "language": "xml",
+      "complexity": "simple",
+      "tags": ["config", "maven", "pom", "openfeign", "api"],
+      "languageNotes": "Maven API模块POM，与其他微服务API模块结构一致。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/pom.xml",
+      "type": "config",
+      "name": "pom.xml (shop-cart-web)",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/pom.xml",
+      "summary": "购物车服务Web模块的POM文件，包含Spring Boot Web、Nacos、MyBatis、Seata分布式事务、Lombok、Swagger、MySQL、OpenFeign、LoadBalancer、Sentinel、Sleuth、Zipkin、Logstash等依赖，并引用user-api和goods-api模块。",
+      "language": "xml",
+      "complexity": "moderate",
+      "tags": ["config", "maven", "pom", "spring-boot", "nacos", "mybatis", "seata", "openfeign", "sentinel"],
+      "languageNotes": "Maven Web模块POM，与order-web类似引入了Seata分布式事务支持。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/resources/application.properties",
+      "type": "config",
+      "name": "application.properties (shop-cart-web)",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/resources/application.properties",
+      "summary": "购物车服务Web模块的应用配置文件，定义服务端口(29030)、Nacos注册中心、MySQL/Druid数据源(连接newbee_mall_cloud_cart_db)、MyBatis映射、Sentinel限流、OpenFeign超时与压缩、Sleuth链路追踪以及Seata分布式事务分组配置。",
+      "language": "properties",
+      "complexity": "simple",
+      "tags": ["config", "spring-boot", "nacos", "datasource", "druid", "sentinel", "openfeign", "seata", "sleuth"],
+      "languageNotes": "Spring Boot properties配置，使用Druid连接池并启用allowMultiQueries。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/resources/logback.xml",
+      "type": "config",
+      "name": "logback.xml (shop-cart-web)",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/resources/logback.xml",
+      "summary": "购物车服务的日志配置，定义控制台输出(CONSOLE)和Logstash远程日志收集(LOGSTASH)两个appender，日志级别为INFO。",
+      "language": "xml",
+      "complexity": "simple",
+      "tags": ["config", "logging", "logback", "logstash"],
+      "languageNotes": "Logback XML配置，结构与其他服务一致。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/resources/mapper/NewBeeMallShoppingCartItemMapper.xml",
+      "type": "config",
+      "name": "NewBeeMallShoppingCartItemMapper.xml",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/resources/mapper/NewBeeMallShoppingCartItemMapper.xml",
+      "summary": "购物车条目的MyBatis映射文件，操作tb_newbee_mall_shopping_cart_item表。支持按主键查询、按用户ID和商品ID查询、按用户ID分页查询、按购物车条目ID列表批量查询，以及insert、insertSelective、updateByPrimaryKeySelective、deleteBatch等操作。",
+      "language": "xml",
+      "complexity": "moderate",
+      "tags": ["config", "mybatis", "mapper", "shopping-cart", "sql"],
+      "languageNotes": "MyBatis Mapper XML，使用foreach实现批量查询和批量逻辑删除。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-shop-cart-service/pom.xml",
+      "type": "config",
+      "name": "pom.xml (shop-cart-service)",
+      "filePath": "newbee-mall-cloud-shop-cart-service/pom.xml",
+      "summary": "购物车服务模块的父POM文件，packaging为pom，继承自newbee-mall-cloud根项目，包含shop-cart-web和shop-cart-api两个子模块。",
+      "language": "xml",
+      "complexity": "simple",
+      "tags": ["config", "maven", "pom", "parent-module"],
+      "languageNotes": "Maven POM聚合模块，作为购物车服务子模块的统一父级。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/pom.xml",
+      "type": "config",
+      "name": "pom.xml (user-api)",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/pom.xml",
+      "summary": "用户服务API模块的POM文件，packaging为jar，提供OpenFeign客户端接口定义。依赖spring-cloud-starter-openfeign和newbee-mall-cloud-common公共模块。",
+      "language": "xml",
+      "complexity": "simple",
+      "tags": ["config", "maven", "pom", "openfeign", "api"],
+      "languageNotes": "Maven API模块POM，供其他需要调用用户服务的微服务引用。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/pom.xml",
+      "type": "config",
+      "name": "pom.xml (user-web)",
+      "filePath": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/pom.xml",
+      "summary": "用户服务Web模块的POM文件，包含Spring Boot Web、Nacos、MyBatis、Sentinel、Sleuth、Zipkin、Logstash、Lombok、Swagger、MySQL、Redis等依赖。与其他服务不同的是未引入OpenFeign和LoadBalancer，但额外引入了spring-boot-starter-data-redis用于缓存。",
+      "language": "xml",
+      "complexity": "moderate",
+      "tags": ["config", "maven", "pom", "spring-boot", "nacos", "mybatis", "redis", "sentinel"],
+      "languageNotes": "Maven Web模块POM，用户服务是唯一使用Redis的微服务模块。"
+    },
+    {
+      "id": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/SeataProxyConfiguration.java",
+      "type": "file",
+      "name": "SeataProxyConfiguration",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/SeataProxyConfiguration.java",
+      "summary": "订单服务的Seata数据源代理配置类，通过@Configuration创建Druid数据源并用DataSourceProxy包装以支持Seata分布式事务，同时在@PostConstruct中禁用Druid的MySQL ping方法以消除日志警告。",
+      "language": "java",
+      "complexity": "simple",
+      "tags": ["config", "seata", "druid", "datasource", "distributed-transaction"],
+      "languageNotes": "Java Spring @Configuration 配置类，使用 @Bean 和 @PostConstruct 注解。"
+    },
+    {
+      "id": "class:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/SeataProxyConfiguration.java:SeataProxyConfiguration",
+      "type": "class",
+      "name": "SeataProxyConfiguration",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/SeataProxyConfiguration.java",
+      "summary": "订单服务Seata数据源代理配置类，注册DruidDataSource和DataSourceProxy两个Bean，解决分布式事务下数据源代理问题。",
+      "language": "java",
+      "complexity": "simple",
+      "tags": ["configuration", "seata", "druid"],
+      "languageNotes": "@Configuration 注解标识的 Spring 配置类，@Primary 确保数据源代理优先注入。"
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/OpenFeignConfiguration.java",
+      "type": "file",
+      "name": "OpenFeignConfiguration (recommend)",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/OpenFeignConfiguration.java",
+      "summary": "推荐服务的OpenFeign配置类，将Feign日志级别设置为FULL，用于开发调试时输出完整的请求和响应信息。",
+      "language": "java",
+      "complexity": "simple",
+      "tags": ["config", "openfeign", "logging"],
+      "languageNotes": "Java @Configuration 类，通过 @Bean 注册 Feign Logger.Level。"
+    },
+    {
+      "id": "class:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/OpenFeignConfiguration.java:OpenFeignConfiguration",
+      "type": "class",
+      "name": "OpenFeignConfiguration (recommend)",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/OpenFeignConfiguration.java",
+      "summary": "推荐服务OpenFeign配置类，声明Feign日志级别为FULL的Bean。",
+      "language": "java",
+      "complexity": "simple",
+      "tags": ["configuration", "openfeign"],
+      "languageNotes": "简单的 Spring @Configuration 类，仅注册一个 Bean。"
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexCategoryVO.java",
+      "type": "file",
+      "name": "NewBeeMallIndexCategoryVO",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexCategoryVO.java",
+      "summary": "首页一级分类数据VO，包含分类ID、分类级别、分类名称以及二级分类列表(SecondLevelCategoryVO)。使用Lombok @Data自动生成getter/setter，实现Serializable接口用于序列化传输。",
+      "language": "java",
+      "complexity": "simple",
+      "tags": ["vo", "dto", "category", "swagger"],
+      "languageNotes": "Java VO值对象类，@Data 注解由 Lombok 提供，@ApiModelProperty 由 Swagger 提供。"
+    },
+    {
+      "id": "class:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexCategoryVO.java:NewBeeMallIndexCategoryVO",
+      "type": "class",
+      "name": "NewBeeMallIndexCategoryVO",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexCategoryVO.java",
+      "summary": "首页一级分类VO类，包含categoryId、categoryLevel、categoryName和二级分类列表属性。",
+      "language": "java",
+      "complexity": "simple",
+      "tags": ["vo", "category", "serializable"],
+      "languageNotes": "Lombok @Data 类，聚合了二级分类列表形成树形结构。"
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/SecondLevelCategoryVO.java",
+      "type": "file",
+      "name": "SecondLevelCategoryVO",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/SecondLevelCategoryVO.java",
+      "summary": "首页二级分类数据VO，包含分类ID、父级ID、分类级别、分类名称以及三级分类列表(ThirdLevelCategoryVO)。作为一级分类与三级分类之间的中间层级。",
+      "language": "java",
+      "complexity": "simple",
+      "tags": ["vo", "dto", "category", "swagger"],
+      "languageNotes": "Java VO值对象，通过 List<ThirdLevelCategoryVO> 实现三级分类树形结构的中间节点。"
+    },
+    {
+      "id": "class:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/SecondLevelCategoryVO.java:SecondLevelCategoryVO",
+      "type": "class",
+      "name": "SecondLevelCategoryVO",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/SecondLevelCategoryVO.java",
+      "summary": "首页二级分类VO类，包含parentId关联父级，聚合三级分类列表。",
+      "language": "java",
+      "complexity": "simple",
+      "tags": ["vo", "category", "serializable"],
+      "languageNotes": "Lombok @Data 类，使用 parentId 外键关联一级分类。"
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/ThirdLevelCategoryVO.java",
+      "type": "file",
+      "name": "ThirdLevelCategoryVO",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/ThirdLevelCategoryVO.java",
+      "summary": "首页三级分类数据VO，为分类层级的叶子节点，包含分类ID、分类级别和分类名称。不包含子分类列表。",
+      "language": "java",
+      "complexity": "simple",
+      "tags": ["vo", "dto", "category", "swagger"],
+      "languageNotes": "Java VO值对象，作为三级分类树形结构的叶子节点。"
+    },
+    {
+      "id": "class:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/ThirdLevelCategoryVO.java:ThirdLevelCategoryVO",
+      "type": "class",
+      "name": "ThirdLevelCategoryVO",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/ThirdLevelCategoryVO.java",
+      "summary": "首页三级分类VO类，为分类树的叶子节点，仅包含categoryId、categoryLevel、categoryName三个属性。",
+      "language": "java",
+      "complexity": "simple",
+      "tags": ["vo", "category", "serializable"],
+      "languageNotes": "最简单的分类VO，无子分类引用。"
+    },
+    {
+      "id": "file:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/OpenFeignConfiguration.java",
+      "type": "file",
+      "name": "OpenFeignConfiguration (shop-cart)",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/OpenFeignConfiguration.java",
+      "summary": "购物车服务的OpenFeign配置类，将Feign日志级别设置为FULL，用于开发调试时输出完整的请求和响应信息。与推荐服务的同名配置类功能完全相同。",
+      "language": "java",
+      "complexity": "simple",
+      "tags": ["config", "openfeign", "logging"],
+      "languageNotes": "Java @Configuration 类，与推荐服务的 OpenFeignConfiguration 代码相同。"
+    },
+    {
+      "id": "class:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/OpenFeignConfiguration.java:OpenFeignConfiguration",
+      "type": "class",
+      "name": "OpenFeignConfiguration (shop-cart)",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/OpenFeignConfiguration.java",
+      "summary": "购物车服务OpenFeign配置类，声明Feign日志级别为FULL的Bean。",
+      "language": "java",
+      "complexity": "simple",
+      "tags": ["configuration", "openfeign"],
+      "languageNotes": "与推荐服务的同名配置类实现一致。"
+    },
+    {
+      "id": "file:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/SeataProxyConfiguration.java",
+      "type": "file",
+      "name": "SeataProxyConfiguration (shop-cart)",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/SeataProxyConfiguration.java",
+      "summary": "购物车服务的Seata数据源代理配置类，通过@Configuration创建Druid数据源并用DataSourceProxy包装以支持Seata分布式事务。与订单服务的同名配置类功能完全相同。",
+      "language": "java",
+      "complexity": "simple",
+      "tags": ["config", "seata", "druid", "datasource", "distributed-transaction"],
+      "languageNotes": "Java @Configuration 配置类，代码与订单服务的 SeataProxyConfiguration 相同。"
+    },
+    {
+      "id": "class:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/SeataProxyConfiguration.java:SeataProxyConfiguration",
+      "type": "class",
+      "name": "SeataProxyConfiguration (shop-cart)",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/SeataProxyConfiguration.java",
+      "summary": "购物车服务Seata数据源代理配置类，注册DruidDataSource和DataSourceProxy两个Bean，支持分布式事务。",
+      "language": "java",
+      "complexity": "simple",
+      "tags": ["configuration", "seata", "druid"],
+      "languageNotes": "与订单服务的 SeataProxyConfiguration 实现一致。"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:newbee-mall-cloud-order-service/pom.xml",
+      "target": "config:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/pom.xml",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "聚合子模块order-web"
+    },
+    {
+      "source": "config:newbee-mall-cloud-order-service/pom.xml",
+      "target": "config:newbee-mall-cloud-order-service/newbee-mall-cloud-order-api/pom.xml",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "聚合子模块order-api"
+    },
+    {
+      "source": "config:newbee-mall-cloud-recommend-service/pom.xml",
+      "target": "config:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/pom.xml",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "聚合子模块recommend-web"
+    },
+    {
+      "source": "config:newbee-mall-cloud-recommend-service/pom.xml",
+      "target": "config:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-api/pom.xml",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "聚合子模块recommend-api"
+    },
+    {
+      "source": "config:newbee-mall-cloud-shop-cart-service/pom.xml",
+      "target": "config:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/pom.xml",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "聚合子模块shop-cart-web"
+    },
+    {
+      "source": "config:newbee-mall-cloud-shop-cart-service/pom.xml",
+      "target": "config:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/pom.xml",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "聚合子模块shop-cart-api"
+    },
+    {
+      "source": "config:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/pom.xml",
+      "target": "config:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-api/pom.xml",
+      "type": "depends_on",
+      "weight": 0.6,
+      "label": "Web模块依赖API模块的Feign接口定义"
+    },
+    {
+      "source": "config:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/pom.xml",
+      "target": "config:newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/pom.xml",
+      "type": "depends_on",
+      "weight": 0.6,
+      "label": "依赖用户服务API进行用户数据远程调用"
+    },
+    {
+      "source": "config:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-api/pom.xml",
+      "target": "config:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/pom.xml",
+      "type": "configures",
+      "weight": 0.6,
+      "label": "API模块被Web模块引用"
+    },
+    {
+      "source": "config:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/pom.xml",
+      "target": "config:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/pom.xml",
+      "type": "depends_on",
+      "weight": 0.6,
+      "label": "Web模块依赖API模块的Feign接口定义"
+    },
+    {
+      "source": "config:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/pom.xml",
+      "target": "config:newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/pom.xml",
+      "type": "depends_on",
+      "weight": 0.6,
+      "label": "依赖用户服务API进行用户数据远程调用"
+    },
+    {
+      "source": "config:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/pom.xml",
+      "target": "config:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/pom.xml",
+      "type": "configures",
+      "weight": 0.6,
+      "label": "API模块被Web模块引用"
+    },
+    {
+      "source": "config:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/resources/application.properties",
+      "target": "config:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/resources/mapper/CarouselMapper.xml",
+      "type": "configures",
+      "weight": 0.6,
+      "label": "mybatis.mapper-locations指向mapper目录"
+    },
+    {
+      "source": "config:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/resources/application.properties",
+      "target": "config:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/resources/mapper/IndexConfigMapper.xml",
+      "type": "configures",
+      "weight": 0.6,
+      "label": "mybatis.mapper-locations指向mapper目录"
+    },
+    {
+      "source": "config:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/resources/application.properties",
+      "target": "config:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/resources/mapper/NewBeeMallShoppingCartItemMapper.xml",
+      "type": "configures",
+      "weight": 0.6,
+      "label": "mybatis.mapper-locations指向mapper目录"
+    },
+    {
+      "source": "config:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/application.properties",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/SeataProxyConfiguration.java",
+      "type": "configures",
+      "weight": 0.6,
+      "label": "数据源和Seata事务配置供SeataProxyConfiguration使用"
+    },
+    {
+      "source": "config:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/resources/application.properties",
+      "target": "file:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/SeataProxyConfiguration.java",
+      "type": "configures",
+      "weight": 0.6,
+      "label": "数据源和Seata事务配置供SeataProxyConfiguration使用"
+    },
+    {
+      "source": "config:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/resources/logback.xml",
+      "target": "config:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/resources/application.properties",
+      "type": "configures",
+      "weight": 0.5,
+      "label": "日志配置补充应用运行时日志输出策略"
+    },
+    {
+      "source": "config:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/logback.xml",
+      "target": "config:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/application.properties",
+      "type": "configures",
+      "weight": 0.5,
+      "label": "日志配置补充应用运行时日志输出策略"
+    },
+    {
+      "source": "config:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/resources/logback.xml",
+      "target": "config:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/resources/application.properties",
+      "type": "configures",
+      "weight": 0.5,
+      "label": "日志配置补充应用运行时日志输出策略"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/SeataProxyConfiguration.java",
+      "target": "class:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/SeataProxyConfiguration.java:SeataProxyConfiguration",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "文件包含SeataProxyConfiguration类"
+    },
+    {
+      "source": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/OpenFeignConfiguration.java",
+      "target": "class:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/OpenFeignConfiguration.java:OpenFeignConfiguration",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "文件包含OpenFeignConfiguration类"
+    },
+    {
+      "source": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexCategoryVO.java",
+      "target": "class:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexCategoryVO.java:NewBeeMallIndexCategoryVO",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "文件包含NewBeeMallIndexCategoryVO类"
+    },
+    {
+      "source": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/SecondLevelCategoryVO.java",
+      "target": "class:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/SecondLevelCategoryVO.java:SecondLevelCategoryVO",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "文件包含SecondLevelCategoryVO类"
+    },
+    {
+      "source": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/ThirdLevelCategoryVO.java",
+      "target": "class:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/ThirdLevelCategoryVO.java:ThirdLevelCategoryVO",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "文件包含ThirdLevelCategoryVO类"
+    },
+    {
+      "source": "file:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/OpenFeignConfiguration.java",
+      "target": "class:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/OpenFeignConfiguration.java:OpenFeignConfiguration",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "文件包含OpenFeignConfiguration类"
+    },
+    {
+      "source": "file:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/SeataProxyConfiguration.java",
+      "target": "class:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/SeataProxyConfiguration.java:SeataProxyConfiguration",
+      "type": "contains",
+      "weight": 1.0,
+      "label": "文件包含SeataProxyConfiguration类"
+    },
+    {
+      "source": "class:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexCategoryVO.java:NewBeeMallIndexCategoryVO",
+      "target": "class:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/SecondLevelCategoryVO.java:SecondLevelCategoryVO",
+      "type": "imports",
+      "weight": 0.7,
+      "label": "聚合List<SecondLevelCategoryVO>二级分类列表"
+    },
+    {
+      "source": "class:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/SecondLevelCategoryVO.java:SecondLevelCategoryVO",
+      "target": "class:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/ThirdLevelCategoryVO.java:ThirdLevelCategoryVO",
+      "type": "imports",
+      "weight": 0.7,
+      "label": "聚合List<ThirdLevelCategoryVO>三级分类列表"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/SeataProxyConfiguration.java",
+      "target": "file:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/SeataProxyConfiguration.java",
+      "type": "similar_to",
+      "weight": 0.5,
+      "label": "两个服务的SeataProxyConfiguration代码完全相同，属于重复配置模式"
+    },
+    {
+      "source": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/OpenFeignConfiguration.java",
+      "target": "file:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/OpenFeignConfiguration.java",
+      "type": "similar_to",
+      "weight": 0.5,
+      "label": "两个服务的OpenFeignConfiguration代码完全相同，属于重复配置模式"
+    },
+    {
+      "source": "config:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/logback.xml",
+      "target": "config:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/resources/logback.xml",
+      "type": "similar_to",
+      "weight": 0.5,
+      "label": "日志配置结构一致，仅APP_NAME不同"
+    },
+    {
+      "source": "config:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/logback.xml",
+      "target": "config:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/resources/logback.xml",
+      "type": "similar_to",
+      "weight": 0.5,
+      "label": "日志配置结构一致，仅APP_NAME不同"
+    },
+    {
+      "source": "config:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/resources/mapper/CarouselMapper.xml",
+      "target": "config:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/resources/mapper/IndexConfigMapper.xml",
+      "type": "related",
+      "weight": 0.5,
+      "label": "同属推荐服务的数据访问层Mapper"
+    },
+    {
+      "source": "config:newbee-mall-cloud-order-service/pom.xml",
+      "target": "config:newbee-mall-cloud-recommend-service/pom.xml",
+      "type": "similar_to",
+      "weight": 0.5,
+      "label": "同为微服务模块的pom聚合父模块"
+    },
+    {
+      "source": "config:newbee-mall-cloud-order-service/pom.xml",
+      "target": "config:newbee-mall-cloud-shop-cart-service/pom.xml",
+      "type": "similar_to",
+      "weight": 0.5,
+      "label": "同为微服务模块的pom聚合父模块"
+    },
+    {
+      "source": "config:newbee-mall-cloud-recommend-service/pom.xml",
+      "target": "config:newbee-mall-cloud-shop-cart-service/pom.xml",
+      "type": "similar_to",
+      "weight": 0.5,
+      "label": "同为微服务模块的pom聚合父模块"
+    },
+    {
+      "source": "config:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-api/pom.xml",
+      "target": "config:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/pom.xml",
+      "type": "similar_to",
+      "weight": 0.5,
+      "label": "同为OpenFeign API模块POM，结构一致"
+    },
+    {
+      "source": "config:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-api/pom.xml",
+      "target": "config:newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/pom.xml",
+      "type": "similar_to",
+      "weight": 0.5,
+      "label": "同为OpenFeign API模块POM，结构一致"
+    },
+    {
+      "source": "config:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/pom.xml",
+      "target": "config:newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/pom.xml",
+      "type": "similar_to",
+      "weight": 0.5,
+      "label": "同为OpenFeign API模块POM，结构一致"
+    }
+  ]
+}

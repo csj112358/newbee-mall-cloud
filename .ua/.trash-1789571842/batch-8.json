@@ -1,0 +1,74 @@
+{
+  "nodes": [
+    {
+      "id": "config:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/mapper/MallUserAddressMapper.xml",
+      "type": "config",
+      "name": "MallUserAddressMapper.xml",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/mapper/MallUserAddressMapper.xml",
+      "summary": "MyBatis 映射配置文件，定义用户收货地址表(tb_newbee_mall_user_address)的 SQL 操作，包括主键查询、查询用户默认地址、查询用户地址列表、软删除、全字段插入、选择性插入及主键更新等方法，映射至 MallUserAddress 实体。",
+      "tags": ["configuration", "mybatis", "database", "mapper", "data-access"],
+      "complexity": "moderate",
+      "languageNotes": "MyBatis XML mapper 使用 resultMap 建立数据库列与 Java 实体属性的映射关系，支持动态 SQL 的 if/trim/set 标签实现选择性操作。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/mapper/NewBeeMallOrderAddressMapper.xml",
+      "type": "config",
+      "name": "NewBeeMallOrderAddressMapper.xml",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/mapper/NewBeeMallOrderAddressMapper.xml",
+      "summary": "MyBatis 映射配置文件，定义订单收货地址表(tb_newbee_mall_order_address)的 SQL 操作，包括主键查询、删除、全字段插入、选择性插入及主键更新，映射至 NewBeeMallOrderAddress 实体。用于记录订单快照时的收货地址信息。",
+      "tags": ["configuration", "mybatis", "database", "mapper", "data-access"],
+      "complexity": "simple",
+      "languageNotes": "订单地址采用快照方式存储，与用户地址表独立，确保订单历史数据不受用户地址修改影响。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/mapper/NewBeeMallOrderItemMapper.xml",
+      "type": "config",
+      "name": "NewBeeMallOrderItemMapper.xml",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/mapper/NewBeeMallOrderItemMapper.xml",
+      "summary": "MyBatis 映射配置文件，定义订单商品明细表(tb_newbee_mall_order_item)的 SQL 操作，包括主键查询、按订单ID查询、按订单ID批量查询、物理删除、批量插入、全字段插入、选择性插入及主键更新等方法，映射至 NewBeeMallOrderItem 实体。",
+      "tags": ["configuration", "mybatis", "database", "mapper", "data-access"],
+      "complexity": "moderate",
+      "languageNotes": "支持 foreach 标签实现批量查询(selectByOrderIds)和批量插入(insertBatch)，是订单项批量操作的核心映射。"
+    },
+    {
+      "id": "config:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/mapper/NewBeeMallOrderMapper.xml",
+      "type": "config",
+      "name": "NewBeeMallOrderMapper.xml",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/mapper/NewBeeMallOrderMapper.xml",
+      "summary": "MyBatis 映射配置文件，定义订单主表(tb_newbee_mall_order)的 SQL 操作，包括主键查询、按订单号查询、批量主键查询、条件分页列表查询、条件计数、软删除、插入、选择性插入(useGeneratedKeys)、批量确认收货(checkDone)、批量出库(checkOut)、批量关闭订单及主键更新等方法，映射至 NewBeeMallOrder 实体。",
+      "tags": ["configuration", "mybatis", "database", "mapper", "data-access"],
+      "complexity": "complex",
+      "languageNotes": "该 mapper 包含订单状态流转的批量更新操作(checkDone/checkOut/closeOrder)，以及基于动态 SQL 条件的分页查询(findNewBeeMallOrderList)和计数(getTotalNewBeeMallOrders)，是订单服务最核心的数据访问层配置。"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/mapper/MallUserAddressMapper.xml",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/MallUserAddressMapper.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/mapper/NewBeeMallOrderAddressMapper.xml",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderAddressMapper.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/mapper/NewBeeMallOrderItemMapper.xml",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderItemMapper.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/mapper/NewBeeMallOrderMapper.xml",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderMapper.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

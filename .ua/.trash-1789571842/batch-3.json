@@ -1,0 +1,1277 @@
+{
+  "batchIndex": 3,
+  "nodes": [
+    {
+      "id": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "kind": "file",
+      "language": "java",
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "title": "PageQueryUtil",
+      "summary": "分页查询参数工具类，继承自LinkedHashMap，用于封装前端传入的分页查询参数（page和limit），自动计算偏移量start。广泛被各服务的Mapper层和Controller层使用。",
+      "tags": ["java", "dto", "分页", "工具类", "common模块"],
+      "symbols": ["PageQueryUtil"],
+      "sizeLines": 55,
+      "nonEmptyLines": 45,
+      "languageNotes": "继承LinkedHashMap<String, Object>实现灵活的参数传递，构造函数中直接计算分页偏移量"
+    },
+    {
+      "id": "class:ltd.common.cloud.newbee.dto.PageQueryUtil",
+      "kind": "class",
+      "language": "java",
+      "name": "PageQueryUtil",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "startLine": 14,
+      "endLine": 55,
+      "title": "PageQueryUtil 分页查询参数",
+      "summary": "分页查询参数封装类，继承LinkedHashMap。构造时从params Map中提取page和limit参数，并计算start偏移量。提供getter/setter方法。被多个Mapper接口和Service实现类引用。",
+      "tags": ["java", "dto", "分页查询", "LinkedHashMap"],
+      "methods": [
+        {"name": "PageQueryUtil", "startLine": 20, "endLine": 29, "summary": "构造函数，解析Map中的page和limit参数并计算start偏移"},
+        {"name": "getPage", "startLine": 32, "endLine": 34, "summary": "获取当前页码"},
+        {"name": "setPage", "startLine": 36, "endLine": 38, "summary": "设置当前页码"},
+        {"name": "getLimit", "startLine": 40, "endLine": 42, "summary": "获取每页条数"},
+        {"name": "setLimit", "startLine": 44, "endLine": 46, "summary": "设置每页条数"},
+        {"name": "toString", "startLine": 48, "endLine": 54, "summary": "返回分页参数字符串表示"}
+      ],
+      "properties": [
+        {"name": "page", "type": "int", "summary": "当前页码"},
+        {"name": "limit", "type": "int", "summary": "每页条数"}
+      ],
+      "metrics": {"methodCount": 6, "propertyCount": 2}
+    },
+    {
+      "id": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/IndexConfigTypeEnum.java",
+      "kind": "file",
+      "language": "java",
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/IndexConfigTypeEnum.java",
+      "title": "IndexConfigTypeEnum",
+      "summary": "首页配置项类型枚举，定义了搜索框热搜、搜索下拉框热搜、热销商品、新品上线、为你推荐等5种首页配置类型。提供根据type值查找对应枚举的方法。",
+      "tags": ["java", "枚举", "首页配置", "common模块"],
+      "symbols": ["IndexConfigTypeEnum"],
+      "sizeLines": 60,
+      "nonEmptyLines": 50,
+      "languageNotes": "Java枚举类型，包含构造方法和静态查找方法getIndexConfigTypeEnumByType"
+    },
+    {
+      "id": "class:ltd.common.cloud.newbee.enums.IndexConfigTypeEnum",
+      "kind": "class",
+      "language": "java",
+      "name": "IndexConfigTypeEnum",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/IndexConfigTypeEnum.java",
+      "startLine": 18,
+      "endLine": 60,
+      "title": "IndexConfigTypeEnum 首页配置类型枚举",
+      "summary": "定义首页配置项类型：1-搜索框热搜、2-搜索下拉框热搜、3-热销商品、4-新品上线、5-为你推荐。提供根据整型值查找枚举的静态方法，找不到时返回DEFAULT。",
+      "tags": ["java", "enum", "首页配置", "类型常量"],
+      "methods": [
+        {"name": "getIndexConfigTypeEnumByType", "startLine": 36, "endLine": 43, "summary": "根据int类型值查找对应的枚举，未找到返回DEFAULT"},
+        {"name": "getType", "startLine": 45, "endLine": 47, "summary": "获取类型int值"},
+        {"name": "setType", "startLine": 49, "endLine": 51, "summary": "设置类型int值"},
+        {"name": "getName", "startLine": 53, "endLine": 55, "summary": "获取类型名称"},
+        {"name": "setName", "startLine": 57, "endLine": 59, "summary": "设置类型名称"}
+      ],
+      "properties": [
+        {"name": "type", "type": "int", "summary": "配置类型数值"},
+        {"name": "name", "type": "String", "summary": "配置类型名称"}
+      ],
+      "metrics": {"methodCount": 5, "propertyCount": 2}
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/RecommendServiceSwagger3Config.java",
+      "kind": "file",
+      "language": "java",
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/RecommendServiceSwagger3Config.java",
+      "title": "RecommendServiceSwagger3Config",
+      "summary": "推荐服务的Swagger3/OpenAPI配置类，配置API文档生成规则，设置全局token请求头参数，扫描recommend controller包下的接口。",
+      "tags": ["java", "配置", "Swagger", "OpenAPI", "Spring"],
+      "symbols": ["RecommendServiceSwagger3Config"],
+      "sizeLines": 65,
+      "nonEmptyLines": 60,
+      "languageNotes": "使用@EnableOpenApi注解启用OpenAPI 3.0，配置Docket Bean"
+    },
+    {
+      "id": "class:ltd.recommend.cloud.newbee.config.RecommendServiceSwagger3Config",
+      "kind": "class",
+      "language": "java",
+      "name": "RecommendServiceSwagger3Config",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/RecommendServiceSwagger3Config.java",
+      "startLine": 30,
+      "endLine": 66,
+      "title": "RecommendServiceSwagger3Config 推荐服务Swagger配置",
+      "summary": "Spring配置类，创建OpenAPI 3.0 Docket Bean。忽略AdminUserToken和LoginAdminUser参数类型，配置全局token请求头，扫描ltd.recommend.cloud.newbee.controller包。",
+      "tags": ["java", "config", "swagger", "spring", "bean"],
+      "methods": [
+        {"name": "api", "startLine": 34, "endLine": 44, "summary": "创建并配置Swagger Docket Bean"},
+        {"name": "getGlobalRequestParameters", "startLine": 47, "endLine": 57, "summary": "生成全局token请求头参数"},
+        {"name": "apiInfo", "startLine": 59, "endLine": 65, "summary": "构建API基本信息（标题、描述、版本）"}
+      ],
+      "properties": [],
+      "metrics": {"methodCount": 3, "propertyCount": 0}
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "kind": "file",
+      "language": "java",
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "title": "TokenToAdminUser",
+      "summary": "自定义方法参数注解，用于Controller方法参数上，通过TokenToAdminUserMethodArgumentResolver解析，将请求中的token自动转换为LoginAdminUser对象注入。",
+      "tags": ["java", "注解", "参数注入", "认证", "Spring"],
+      "symbols": ["TokenToAdminUser"],
+      "sizeLines": 25,
+      "nonEmptyLines": 21,
+      "languageNotes": "自定义Annotation，@Target(ElementType.PARAMETER)，@Retention(RUNTIME)，默认value为\"adminUser\""
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminCarouselController.java",
+      "kind": "file",
+      "language": "java",
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminCarouselController.java",
+      "title": "NewBeeAdminCarouselController",
+      "summary": "后台管理系统轮播图模块REST控制器，提供轮播图的列表查询、新增、修改、详情获取和批量删除接口。所有接口需要admin token认证。",
+      "tags": ["java", "controller", "REST", "轮播图", "后台管理", "Spring"],
+      "symbols": ["NewBeeAdminCarouselController"],
+      "sizeLines": 134,
+      "nonEmptyLines": 123,
+      "languageNotes": "使用@RestController、@Api、@RequestMapping注解，通过@TokenToAdminUser获取当前管理员用户"
+    },
+    {
+      "id": "class:ltd.recommend.cloud.newbee.controller.NewBeeAdminCarouselController",
+      "kind": "class",
+      "language": "java",
+      "name": "NewBeeAdminCarouselController",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminCarouselController.java",
+      "startLine": 41,
+      "endLine": 135,
+      "title": "NewBeeAdminCarouselController 后台轮播图管理控制器",
+      "summary": "映射路径/carousels/admin，提供5个REST接口：list(分页列表)、save(新增)、update(修改)、info(详情)、delete(批量删除)。使用NewBeeMallCarouselService处理业务逻辑。",
+      "tags": ["java", "controller", "REST", "CRUD"],
+      "methods": [
+        {"name": "list", "startLine": 54, "endLine": 67, "summary": "GET /list - 分页查询轮播图列表"},
+        {"name": "save", "startLine": 72, "endLine": 84, "summary": "POST /add - 新增轮播图"},
+        {"name": "update", "startLine": 90, "endLine": 102, "summary": "PUT /update - 修改轮播图信息"},
+        {"name": "info", "startLine": 107, "endLine": 116, "summary": "GET /detail/{id} - 获取单条轮播图信息"},
+        {"name": "delete", "startLine": 121, "endLine": 133, "summary": "DELETE /batchDelete - 批量删除轮播图"}
+      ],
+      "properties": [
+        {"name": "logger", "type": "Logger", "summary": "日志记录器"},
+        {"name": "newBeeMallCarouselService", "type": "NewBeeMallCarouselService", "summary": "轮播图业务服务"}
+      ],
+      "metrics": {"methodCount": 5, "propertyCount": 2}
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminIndexConfigController.java",
+      "kind": "file",
+      "language": "java",
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminIndexConfigController.java",
+      "title": "NewBeeAdminIndexConfigController",
+      "summary": "后台管理系统首页配置模块REST控制器，提供首页配置项的列表查询（按configType过滤）、新增、修改、详情获取和批量删除接口。所有接口需要admin token认证。",
+      "tags": ["java", "controller", "REST", "首页配置", "后台管理", "Spring"],
+      "symbols": ["NewBeeAdminIndexConfigController"],
+      "sizeLines": 141,
+      "nonEmptyLines": 130,
+      "languageNotes": "映射/indexConfigs/admin，使用IndexConfigTypeEnum校验configType参数"
+    },
+    {
+      "id": "class:ltd.recommend.cloud.newbee.controller.NewBeeAdminIndexConfigController",
+      "kind": "class",
+      "language": "java",
+      "name": "NewBeeAdminIndexConfigController",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminIndexConfigController.java",
+      "startLine": 42,
+      "endLine": 142,
+      "title": "NewBeeAdminIndexConfigController 后台首页配置管理控制器",
+      "summary": "映射路径/indexConfigs/admin，提供5个REST接口。list接口支持按configType过滤，使用IndexConfigTypeEnum校验参数合法性。通过NewBeeMallIndexConfigService处理业务。",
+      "tags": ["java", "controller", "REST", "CRUD", "配置管理"],
+      "methods": [
+        {"name": "list", "startLine": 55, "endLine": 74, "summary": "GET /list - 分页查询首页配置列表（按configType过滤）"},
+        {"name": "save", "startLine": 79, "endLine": 91, "summary": "POST /add - 新增首页配置项"},
+        {"name": "update", "startLine": 97, "endLine": 109, "summary": "PUT /update - 修改首页配置项"},
+        {"name": "info", "startLine": 114, "endLine": 123, "summary": "GET /detail/{id} - 获取单条配置项信息"},
+        {"name": "delete", "startLine": 128, "endLine": 140, "summary": "DELETE /batchDelete - 批量删除首页配置项"}
+      ],
+      "properties": [
+        {"name": "logger", "type": "Logger", "summary": "日志记录器"},
+        {"name": "newBeeMallIndexConfigService", "type": "NewBeeMallIndexConfigService", "summary": "首页配置业务服务"}
+      ],
+      "metrics": {"methodCount": 5, "propertyCount": 2}
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeMallIndexController.java",
+      "kind": "file",
+      "language": "java",
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeMallIndexController.java",
+      "title": "NewBeeMallIndexController",
+      "summary": "新蜂商城首页REST控制器，提供一个综合接口一次性返回首页所需的轮播图、热销商品、新品推荐和为你推荐数据。面向前台商城用户。",
+      "tags": ["java", "controller", "REST", "首页", "前台商城", "Spring"],
+      "symbols": ["NewBeeMallIndexController"],
+      "sizeLines": 53,
+      "nonEmptyLines": 47,
+      "languageNotes": "映射/mall/index，聚合Carousel和IndexConfig两个服务的数据"
+    },
+    {
+      "id": "class:ltd.recommend.cloud.newbee.controller.NewBeeMallIndexController",
+      "kind": "class",
+      "language": "java",
+      "name": "NewBeeMallIndexController",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeMallIndexController.java",
+      "startLine": 28,
+      "endLine": 53,
+      "title": "NewBeeMallIndexController 商城首页控制器",
+      "summary": "映射/mall/index，提供GET /recommondInfos接口。一次性获取5个轮播图、4个热销商品、6个新品、10个推荐商品，组装成IndexInfoVO返回。同时依赖CarouselService和IndexConfigService。",
+      "tags": ["java", "controller", "REST", "首页聚合"],
+      "methods": [
+        {"name": "indexInfo", "startLine": 39, "endLine": 52, "summary": "GET /recommondInfos - 获取首页所有推荐数据（轮播图+热销+新品+推荐）"}
+      ],
+      "properties": [
+        {"name": "newBeeMallCarouselService", "type": "NewBeeMallCarouselService", "summary": "轮播图服务"},
+        {"name": "newBeeMallIndexConfigService", "type": "NewBeeMallIndexConfigService", "summary": "首页配置服务"}
+      ],
+      "metrics": {"methodCount": 1, "propertyCount": 2}
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/BatchIdParam.java",
+      "kind": "file",
+      "language": "java",
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/BatchIdParam.java",
+      "title": "BatchIdParam",
+      "summary": "批量操作请求参数类，使用Lombok @Data自动生成getter/setter，封装Long型id数组。用于批量删除接口的请求体。",
+      "tags": ["java", "param", "请求参数", "Lombok", "批量操作"],
+      "symbols": ["BatchIdParam"],
+      "sizeLines": 19,
+      "nonEmptyLines": 16
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/CarouselAddParam.java",
+      "kind": "file",
+      "language": "java",
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/CarouselAddParam.java",
+      "title": "CarouselAddParam",
+      "summary": "新增轮播图请求参数类，包含轮播图URL、跳转地址和排序值三个字段，使用JSR-303注解进行参数校验。",
+      "tags": ["java", "param", "请求参数", "校验", "轮播图"],
+      "symbols": ["CarouselAddParam"],
+      "sizeLines": 35,
+      "nonEmptyLines": 29
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/CarouselEditParam.java",
+      "kind": "file",
+      "language": "java",
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/CarouselEditParam.java",
+      "title": "CarouselEditParam",
+      "summary": "修改轮播图请求参数类，比新增参数多了carouselId字段（用于标识待修改记录），同样使用JSR-303注解校验。",
+      "tags": ["java", "param", "请求参数", "校验", "轮播图"],
+      "symbols": ["CarouselEditParam"],
+      "sizeLines": 40,
+      "nonEmptyLines": 33
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/IndexConfigAddParam.java",
+      "kind": "file",
+      "language": "java",
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/IndexConfigAddParam.java",
+      "title": "IndexConfigAddParam",
+      "summary": "新增首页配置项请求参数类，包含配置名称、配置类别(configType 1-5)、商品id和排序值，使用JSR-303注解进行参数校验。",
+      "tags": ["java", "param", "请求参数", "校验", "首页配置"],
+      "symbols": ["IndexConfigAddParam"],
+      "sizeLines": 41,
+      "nonEmptyLines": 35
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/IndexConfigEditParam.java",
+      "kind": "file",
+      "language": "java",
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/IndexConfigEditParam.java",
+      "title": "IndexConfigEditParam",
+      "summary": "修改首页配置项请求参数类，比新增参数多了configId字段，用于标识待修改的配置记录。",
+      "tags": ["java", "param", "请求参数", "校验", "首页配置"],
+      "symbols": ["IndexConfigEditParam"],
+      "sizeLines": 46,
+      "nonEmptyLines": 39
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/IndexInfoVO.java",
+      "kind": "file",
+      "language": "java",
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/IndexInfoVO.java",
+      "title": "IndexInfoVO",
+      "summary": "首页信息视图对象，聚合了轮播图列表、热销商品列表、新品推荐列表和为你推荐列表四个维度的数据，供前端首页渲染使用。",
+      "tags": ["java", "vo", "视图对象", "首页", "聚合"],
+      "symbols": ["IndexInfoVO"],
+      "sizeLines": 31,
+      "nonEmptyLines": 24
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexCarouselVO.java",
+      "kind": "file",
+      "language": "java",
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexCarouselVO.java",
+      "title": "NewBeeMallIndexCarouselVO",
+      "summary": "首页轮播图视图对象，只包含图片URL和跳转地址两个字段，对前台用户屏蔽了排序值、创建时间等后台管理字段。",
+      "tags": ["java", "vo", "视图对象", "轮播图", "首页"],
+      "symbols": ["NewBeeMallIndexCarouselVO"],
+      "sizeLines": 27,
+      "nonEmptyLines": 22
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexConfigGoodsVO.java",
+      "kind": "file",
+      "language": "java",
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexConfigGoodsVO.java",
+      "title": "NewBeeMallIndexConfigGoodsVO",
+      "summary": "首页配置商品视图对象，包含商品id、名称、简介、封面图、售价和标签等信息，用于首页热销/新品/推荐商品的展示。",
+      "tags": ["java", "vo", "视图对象", "商品", "首页"],
+      "symbols": ["NewBeeMallIndexConfigGoodsVO"],
+      "sizeLines": 34,
+      "nonEmptyLines": 30
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/dao/CarouselMapper.java",
+      "kind": "file",
+      "language": "java",
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/dao/CarouselMapper.java",
+      "title": "CarouselMapper",
+      "summary": "轮播图MyBatis Mapper接口，定义了轮播图表的CRUD操作方法，包括按id查询、插入、更新、分页查询、批量删除和按数量查询首页轮播图。",
+      "tags": ["java", "mapper", "MyBatis", "DAO", "轮播图"],
+      "symbols": ["CarouselMapper"],
+      "sizeLines": 36,
+      "nonEmptyLines": 25,
+      "languageNotes": "MyBatis Mapper接口，方法对应XML中的SQL映射"
+    },
+    {
+      "id": "class:ltd.recommend.cloud.newbee.dao.CarouselMapper",
+      "kind": "class",
+      "language": "java",
+      "name": "CarouselMapper",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/dao/CarouselMapper.java",
+      "startLine": 17,
+      "endLine": 37,
+      "title": "CarouselMapper 轮播图Mapper接口",
+      "summary": "轮播图数据访问层接口，提供deleteByPrimaryKey、insert、insertSelective、selectByPrimaryKey、updateByPrimaryKeySelective、updateByPrimaryKey、findCarouselList、getTotalCarousels、deleteBatch、findCarouselsByNum共10个方法。",
+      "tags": ["java", "mapper", "interface", "DAO"],
+      "methods": [
+        {"name": "deleteByPrimaryKey", "startLine": 18, "endLine": 18, "summary": "根据主键删除轮播图"},
+        {"name": "insert", "startLine": 20, "endLine": 20, "summary": "插入完整轮播图记录"},
+        {"name": "insertSelective", "startLine": 22, "endLine": 22, "summary": "选择性插入非空字段"},
+        {"name": "selectByPrimaryKey", "startLine": 24, "endLine": 24, "summary": "根据主键查询轮播图"},
+        {"name": "updateByPrimaryKeySelective", "startLine": 26, "endLine": 26, "summary": "选择性更新非空字段"},
+        {"name": "updateByPrimaryKey", "startLine": 28, "endLine": 28, "summary": "完整更新轮播图记录"},
+        {"name": "findCarouselList", "startLine": 30, "endLine": 30, "summary": "分页查询轮播图列表"},
+        {"name": "getTotalCarousels", "startLine": 32, "endLine": 32, "summary": "查询轮播图总数"},
+        {"name": "deleteBatch", "startLine": 34, "endLine": 34, "summary": "批量删除轮播图"},
+        {"name": "findCarouselsByNum", "startLine": 36, "endLine": 36, "summary": "按数量查询轮播图（首页展示用）"}
+      ],
+      "properties": [],
+      "metrics": {"methodCount": 10, "propertyCount": 0}
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/dao/IndexConfigMapper.java",
+      "kind": "file",
+      "language": "java",
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/dao/IndexConfigMapper.java",
+      "title": "IndexConfigMapper",
+      "summary": "首页配置项MyBatis Mapper接口，定义了首页配置表的CRUD操作，以及按类型和数量查询配置项、按类型和商品id查询等特殊查询方法。",
+      "tags": ["java", "mapper", "MyBatis", "DAO", "首页配置"],
+      "symbols": ["IndexConfigMapper"],
+      "sizeLines": 38,
+      "nonEmptyLines": 26,
+      "languageNotes": "MyBatis Mapper接口，包含selectByTypeAndGoodsId用于唯一性校验"
+    },
+    {
+      "id": "class:ltd.recommend.cloud.newbee.dao.IndexConfigMapper",
+      "kind": "class",
+      "language": "java",
+      "name": "IndexConfigMapper",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/dao/IndexConfigMapper.java",
+      "startLine": 17,
+      "endLine": 39,
+      "title": "IndexConfigMapper 首页配置Mapper接口",
+      "summary": "首页配置数据访问层接口，提供11个方法：标准CRUD、按类型+商品id唯一性查询、分页查询、批量删除、按类型和数量查询配置项。",
+      "tags": ["java", "mapper", "interface", "DAO"],
+      "methods": [
+        {"name": "deleteByPrimaryKey", "startLine": 18, "endLine": 18, "summary": "根据主键删除配置项"},
+        {"name": "insert", "startLine": 20, "endLine": 20, "summary": "插入完整配置记录"},
+        {"name": "insertSelective", "startLine": 22, "endLine": 22, "summary": "选择性插入非空字段"},
+        {"name": "selectByPrimaryKey", "startLine": 24, "endLine": 24, "summary": "根据主键查询配置项"},
+        {"name": "selectByTypeAndGoodsId", "startLine": 26, "endLine": 26, "summary": "按类型和商品id查询（唯一性校验）"},
+        {"name": "updateByPrimaryKeySelective", "startLine": 28, "endLine": 28, "summary": "选择性更新非空字段"},
+        {"name": "updateByPrimaryKey", "startLine": 30, "endLine": 30, "summary": "完整更新配置记录"},
+        {"name": "findIndexConfigList", "startLine": 32, "endLine": 32, "summary": "分页查询配置列表"},
+        {"name": "getTotalIndexConfigs", "startLine": 34, "endLine": 34, "summary": "查询配置总数"},
+        {"name": "deleteBatch", "startLine": 36, "endLine": 36, "summary": "批量删除配置项"},
+        {"name": "findIndexConfigsByTypeAndNum", "startLine": 38, "endLine": 38, "summary": "按类型和数量查询配置项（首页展示用）"}
+      ],
+      "properties": [],
+      "metrics": {"methodCount": 11, "propertyCount": 0}
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/Carousel.java",
+      "kind": "file",
+      "language": "java",
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/Carousel.java",
+      "title": "Carousel",
+      "summary": "轮播图实体类，映射数据库轮播图表。包含轮播图id、URL、跳转地址、排序值、软删除标记和审计字段（创建/更新时间和用户）。使用@JsonFormat格式化日期。",
+      "tags": ["java", "entity", "实体类", "轮播图", "MyBatis"],
+      "symbols": ["Carousel"],
+      "sizeLines": 36,
+      "nonEmptyLines": 26,
+      "languageNotes": "Lombok @Data自动生成getter/setter，@JsonFormat处理日期序列化"
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/IndexConfig.java",
+      "kind": "file",
+      "language": "java",
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/IndexConfig.java",
+      "title": "IndexConfig",
+      "summary": "首页配置项实体类，映射数据库首页配置表。包含配置id、名称、类型、关联商品id、跳转URL、排序值和审计字段。用于管理首页的热销/新品/推荐等商品展示。",
+      "tags": ["java", "entity", "实体类", "首页配置", "MyBatis"],
+      "symbols": ["IndexConfig"],
+      "sizeLines": 40,
+      "nonEmptyLines": 28,
+      "languageNotes": "Lombok @Data自动生成getter/setter，@JsonFormat处理日期序列化"
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/LoginAdminUser.java",
+      "kind": "file",
+      "language": "java",
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/LoginAdminUser.java",
+      "title": "LoginAdminUser",
+      "summary": "登录管理员用户实体类，包含管理员id、登录用户名、登录密码、昵称和锁定状态。通过@TokenToAdminUser注解在Controller方法中自动注入。",
+      "tags": ["java", "entity", "实体类", "管理员", "认证"],
+      "symbols": ["LoginAdminUser"],
+      "sizeLines": 23,
+      "nonEmptyLines": 18,
+      "languageNotes": "Lombok @Data自动生成getter/setter，作为TokenToAdminUser注解的注入目标"
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallCarouselService.java",
+      "kind": "file",
+      "language": "java",
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallCarouselService.java",
+      "title": "NewBeeMallCarouselService",
+      "summary": "轮播图业务服务接口，定义了分页查询、新增、修改、根据id获取、批量删除和获取首页轮播图列表等6个方法。由NewBeeMallCarouselServiceImpl实现。",
+      "tags": ["java", "service", "接口", "轮播图"],
+      "symbols": ["NewBeeMallCarouselService"],
+      "sizeLines": 43,
+      "nonEmptyLines": 34,
+      "languageNotes": "Spring Service接口，定义业务层契约"
+    },
+    {
+      "id": "class:ltd.recommend.cloud.newbee.service.NewBeeMallCarouselService",
+      "kind": "class",
+      "language": "java",
+      "name": "NewBeeMallCarouselService",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallCarouselService.java",
+      "startLine": 18,
+      "endLine": 43,
+      "title": "NewBeeMallCarouselService 轮播图服务接口",
+      "summary": "定义轮播图业务层方法：getCarouselPage(后台分页)、saveCarousel(新增)、updateCarousel(修改)、getCarouselById(查询)、deleteBatch(批量删除)、getCarouselsForIndex(首页轮播图)。",
+      "tags": ["java", "service", "interface"],
+      "methods": [
+        {"name": "getCarouselPage", "startLine": 26, "endLine": 26, "summary": "后台分页查询轮播图"},
+        {"name": "saveCarousel", "startLine": 28, "endLine": 28, "summary": "新增轮播图"},
+        {"name": "updateCarousel", "startLine": 30, "endLine": 30, "summary": "修改轮播图"},
+        {"name": "getCarouselById", "startLine": 32, "endLine": 32, "summary": "根据id获取轮播图"},
+        {"name": "deleteBatch", "startLine": 34, "endLine": 34, "summary": "批量删除轮播图"},
+        {"name": "getCarouselsForIndex", "startLine": 42, "endLine": 42, "summary": "获取指定数量的首页轮播图"}
+      ],
+      "properties": [],
+      "metrics": {"methodCount": 6, "propertyCount": 0}
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallIndexConfigService.java",
+      "kind": "file",
+      "language": "java",
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallIndexConfigService.java",
+      "title": "NewBeeMallIndexConfigService",
+      "summary": "首页配置项业务服务接口，定义了分页查询、新增、修改、根据id获取、批量删除和获取首页配置商品列表等6个方法。由NewBeeMallIndexConfigServiceImpl实现。",
+      "tags": ["java", "service", "接口", "首页配置"],
+      "symbols": ["NewBeeMallIndexConfigService"],
+      "sizeLines": 42,
+      "nonEmptyLines": 34,
+      "languageNotes": "Spring Service接口，定义业务层契约"
+    },
+    {
+      "id": "class:ltd.recommend.cloud.newbee.service.NewBeeMallIndexConfigService",
+      "kind": "class",
+      "language": "java",
+      "name": "NewBeeMallIndexConfigService",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallIndexConfigService.java",
+      "startLine": 18,
+      "endLine": 42,
+      "title": "NewBeeMallIndexConfigService 首页配置服务接口",
+      "summary": "定义首页配置业务层方法：getConfigsPage(后台分页)、saveIndexConfig(新增)、updateIndexConfig(修改)、getIndexConfigById(查询)、deleteBatch(批量删除)、getConfigGoodsesForIndex(首页配置商品)。",
+      "tags": ["java", "service", "interface"],
+      "methods": [
+        {"name": "getConfigsPage", "startLine": 25, "endLine": 25, "summary": "后台分页查询首页配置"},
+        {"name": "saveIndexConfig", "startLine": 27, "endLine": 27, "summary": "新增首页配置项"},
+        {"name": "updateIndexConfig", "startLine": 29, "endLine": 29, "summary": "修改首页配置项"},
+        {"name": "getIndexConfigById", "startLine": 31, "endLine": 31, "summary": "根据id获取配置项"},
+        {"name": "deleteBatch", "startLine": 33, "endLine": 33, "summary": "批量删除配置项"},
+        {"name": "getConfigGoodsesForIndex", "startLine": 41, "endLine": 41, "summary": "获取指定类型和数量的首页配置商品"}
+      ],
+      "properties": [],
+      "metrics": {"methodCount": 6, "propertyCount": 0}
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallCarouselServiceImpl.java",
+      "kind": "file",
+      "language": "java",
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallCarouselServiceImpl.java",
+      "title": "NewBeeMallCarouselServiceImpl",
+      "summary": "轮播图业务服务实现类，实现NewBeeMallCarouselService接口。通过CarouselMapper操作数据库，提供轮播图的CRUD和首页轮播图数据获取（使用BeanUtil.copyList转换为VO）。",
+      "tags": ["java", "service", "实现类", "轮播图", "Spring"],
+      "symbols": ["NewBeeMallCarouselServiceImpl"],
+      "sizeLines": 90,
+      "nonEmptyLines": 78,
+      "languageNotes": "Spring @Service注解，依赖注入CarouselMapper"
+    },
+    {
+      "id": "class:ltd.recommend.cloud.newbee.service.impl.NewBeeMallCarouselServiceImpl",
+      "kind": "class",
+      "language": "java",
+      "name": "NewBeeMallCarouselServiceImpl",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallCarouselServiceImpl.java",
+      "startLine": 27,
+      "endLine": 90,
+      "title": "NewBeeMallCarouselServiceImpl 轮播图服务实现",
+      "summary": "实现轮播图全部业务逻辑。分页查询构造PageResult；新增/修改返回ServiceResultEnum结果字符串；更新时先查询原记录再更新字段；getCarouselsForIndex通过BeanUtil.copyList将Carousel转为NewBeeMallIndexCarouselVO。",
+      "tags": ["java", "service", "impl", "Spring"],
+      "methods": [
+        {"name": "getCarouselPage", "startLine": 34, "endLine": 40, "summary": "分页查询轮播图，构造PageResult返回"},
+        {"name": "saveCarousel", "startLine": 42, "endLine": 48, "summary": "新增轮播图，返回成功/数据库错误结果"},
+        {"name": "updateCarousel", "startLine": 50, "endLine": 64, "summary": "修改轮播图，先查询再更新字段，设置更新时间"},
+        {"name": "getCarouselById", "startLine": 66, "endLine": 69, "summary": "根据id查询轮播图"},
+        {"name": "deleteBatch", "startLine": 71, "endLine": 78, "summary": "批量删除轮播图"},
+        {"name": "getCarouselsForIndex", "startLine": 80, "endLine": 88, "summary": "获取首页轮播图，BeanUtil.copyList转为VO"}
+      ],
+      "properties": [
+        {"name": "carouselMapper", "type": "CarouselMapper", "summary": "轮播图数据访问层"}
+      ],
+      "metrics": {"methodCount": 6, "propertyCount": 1}
+    },
+    {
+      "id": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallIndexConfigServiceImpl.java",
+      "kind": "file",
+      "language": "java",
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallIndexConfigServiceImpl.java",
+      "title": "NewBeeMallIndexConfigServiceImpl",
+      "summary": "首页配置项业务服务实现类，实现NewBeeMallIndexConfigService接口。通过IndexConfigMapper操作本地数据库，通过NewBeeCloudGoodsServiceFeign远程调用商品服务验证商品存在性和获取商品详情。包含商品名称/简介超长截断逻辑。",
+      "tags": ["java", "service", "实现类", "首页配置", "OpenFeign", "Spring"],
+      "symbols": ["NewBeeMallIndexConfigServiceImpl"],
+      "sizeLines": 125,
+      "nonEmptyLines": 113,
+      "languageNotes": "Spring @Service注解，通过@Autowired注入IndexConfigMapper和OpenFeign客户端"
+    },
+    {
+      "id": "class:ltd.recommend.cloud.newbee.service.impl.NewBeeMallIndexConfigServiceImpl",
+      "kind": "class",
+      "language": "java",
+      "name": "NewBeeMallIndexConfigServiceImpl",
+      "filePath": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallIndexConfigServiceImpl.java",
+      "startLine": 31,
+      "endLine": 125,
+      "title": "NewBeeMallIndexConfigServiceImpl 首页配置服务实现",
+      "summary": "实现首页配置全部业务逻辑。保存/更新时通过OpenFeign远程校验商品存在性，检查同类型同商品id重复；getConfigGoodsesForIndex通过OpenFeign批量获取商品信息，转换为VO并对超长商品名称(>30)和简介(>22)截断。",
+      "tags": ["java", "service", "impl", "feign", "跨服务调用"],
+      "methods": [
+        {"name": "getConfigsPage", "startLine": 40, "endLine": 46, "summary": "分页查询首页配置，构造PageResult返回"},
+        {"name": "saveIndexConfig", "startLine": 48, "endLine": 61, "summary": "新增配置项，远程校验商品存在+本地唯一性校验"},
+        {"name": "updateIndexConfig", "startLine": 63, "endLine": 83, "summary": "修改配置项，远程校验商品+本地唯一性校验（排除自身）"},
+        {"name": "getIndexConfigById", "startLine": 85, "endLine": 88, "summary": "根据id查询配置项"},
+        {"name": "deleteBatch", "startLine": 90, "endLine": 97, "summary": "批量删除配置项"},
+        {"name": "getConfigGoodsesForIndex", "startLine": 100, "endLine": 124, "summary": "获取首页配置商品，远程批量获取商品详情并截断超长文本"}
+      ],
+      "properties": [
+        {"name": "indexConfigMapper", "type": "IndexConfigMapper", "summary": "首页配置数据访问层"},
+        {"name": "goodsService", "type": "NewBeeCloudGoodsServiceFeign", "summary": "商品服务Feign客户端"}
+      ],
+      "metrics": {"methodCount": 6, "propertyCount": 2}
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge:import:carousel-controller:pagequeryutil",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminCarouselController.java",
+      "to": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:carousel-controller:token-to-admin-user",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminCarouselController.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:carousel-controller:batch-id-param",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminCarouselController.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/BatchIdParam.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:carousel-controller:carousel-add-param",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminCarouselController.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/CarouselAddParam.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:carousel-controller:carousel-edit-param",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminCarouselController.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/CarouselEditParam.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:carousel-controller:carousel-entity",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminCarouselController.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/Carousel.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:carousel-controller:login-admin-user",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminCarouselController.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/LoginAdminUser.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:carousel-controller:carousel-service",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminCarouselController.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallCarouselService.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:index-config-controller:pagequeryutil",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminIndexConfigController.java",
+      "to": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:index-config-controller:index-config-type-enum",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminIndexConfigController.java",
+      "to": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/IndexConfigTypeEnum.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:index-config-controller:token-to-admin-user",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminIndexConfigController.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:index-config-controller:batch-id-param",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminIndexConfigController.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/BatchIdParam.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:index-config-controller:index-config-add-param",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminIndexConfigController.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/IndexConfigAddParam.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:index-config-controller:index-config-edit-param",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminIndexConfigController.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/param/IndexConfigEditParam.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:index-config-controller:index-config-entity",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminIndexConfigController.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/IndexConfig.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:index-config-controller:login-admin-user",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminIndexConfigController.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/LoginAdminUser.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:index-config-controller:index-config-service",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminIndexConfigController.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallIndexConfigService.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:mall-index-controller:index-config-type-enum",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeMallIndexController.java",
+      "to": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/IndexConfigTypeEnum.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:mall-index-controller:index-info-vo",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeMallIndexController.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/IndexInfoVO.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:mall-index-controller:carousel-vo",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeMallIndexController.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexCarouselVO.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:mall-index-controller:config-goods-vo",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeMallIndexController.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexConfigGoodsVO.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:mall-index-controller:carousel-service",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeMallIndexController.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallCarouselService.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:mall-index-controller:index-config-service",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeMallIndexController.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallIndexConfigService.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:carousel-mapper:pagequeryutil",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/dao/CarouselMapper.java",
+      "to": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:carousel-mapper:carousel-entity",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/dao/CarouselMapper.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/Carousel.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:index-config-mapper:pagequeryutil",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/dao/IndexConfigMapper.java",
+      "to": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:index-config-mapper:index-config-entity",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/dao/IndexConfigMapper.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/IndexConfig.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:carousel-service:pagequeryutil",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallCarouselService.java",
+      "to": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:carousel-service:carousel-vo",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallCarouselService.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexCarouselVO.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:carousel-service:carousel-entity",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallCarouselService.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/Carousel.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:index-config-service:pagequeryutil",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallIndexConfigService.java",
+      "to": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:index-config-service:config-goods-vo",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallIndexConfigService.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexConfigGoodsVO.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:index-config-service:index-config-entity",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallIndexConfigService.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/IndexConfig.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:carousel-service-impl:pagequeryutil",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallCarouselServiceImpl.java",
+      "to": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:carousel-service-impl:carousel-vo",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallCarouselServiceImpl.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexCarouselVO.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:carousel-service-impl:carousel-mapper",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallCarouselServiceImpl.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/dao/CarouselMapper.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:carousel-service-impl:carousel-entity",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallCarouselServiceImpl.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/Carousel.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:carousel-service-impl:carousel-service",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallCarouselServiceImpl.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallCarouselService.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:index-config-service-impl:pagequeryutil",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallIndexConfigServiceImpl.java",
+      "to": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:index-config-service-impl:config-goods-vo",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallIndexConfigServiceImpl.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexConfigGoodsVO.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:index-config-service-impl:index-config-mapper",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallIndexConfigServiceImpl.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/dao/IndexConfigMapper.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:index-config-service-impl:index-config-entity",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallIndexConfigServiceImpl.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/IndexConfig.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:index-config-service-impl:index-config-service",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallIndexConfigServiceImpl.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallIndexConfigService.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:swagger-config:login-admin-user",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/RecommendServiceSwagger3Config.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/LoginAdminUser.java",
+      "label": "imports"
+    },
+    {
+      "id": "edge:import:index-info-vo:carousel-vo",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/IndexInfoVO.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexCarouselVO.java",
+      "label": "imports (field type)"
+    },
+    {
+      "id": "edge:import:index-info-vo:config-goods-vo",
+      "kind": "import",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/IndexInfoVO.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexConfigGoodsVO.java",
+      "label": "imports (field type)"
+    },
+    {
+      "id": "edge:contains:common-dto:pagequeryutil",
+      "kind": "contains",
+      "from": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "to": "class:ltd.common.cloud.newbee.dto.PageQueryUtil",
+      "label": "contains"
+    },
+    {
+      "id": "edge:contains:common-enum:indexconfigtypeenum",
+      "kind": "contains",
+      "from": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/IndexConfigTypeEnum.java",
+      "to": "class:ltd.common.cloud.newbee.enums.IndexConfigTypeEnum",
+      "label": "contains"
+    },
+    {
+      "id": "edge:contains:swagger-config",
+      "kind": "contains",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/RecommendServiceSwagger3Config.java",
+      "to": "class:ltd.recommend.cloud.newbee.config.RecommendServiceSwagger3Config",
+      "label": "contains"
+    },
+    {
+      "id": "edge:contains:carousel-controller",
+      "kind": "contains",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminCarouselController.java",
+      "to": "class:ltd.recommend.cloud.newbee.controller.NewBeeAdminCarouselController",
+      "label": "contains"
+    },
+    {
+      "id": "edge:contains:index-config-controller",
+      "kind": "contains",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminIndexConfigController.java",
+      "to": "class:ltd.recommend.cloud.newbee.controller.NewBeeAdminIndexConfigController",
+      "label": "contains"
+    },
+    {
+      "id": "edge:contains:mall-index-controller",
+      "kind": "contains",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeMallIndexController.java",
+      "to": "class:ltd.recommend.cloud.newbee.controller.NewBeeMallIndexController",
+      "label": "contains"
+    },
+    {
+      "id": "edge:contains:carousel-mapper",
+      "kind": "contains",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/dao/CarouselMapper.java",
+      "to": "class:ltd.recommend.cloud.newbee.dao.CarouselMapper",
+      "label": "contains"
+    },
+    {
+      "id": "edge:contains:index-config-mapper",
+      "kind": "contains",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/dao/IndexConfigMapper.java",
+      "to": "class:ltd.recommend.cloud.newbee.dao.IndexConfigMapper",
+      "label": "contains"
+    },
+    {
+      "id": "edge:contains:carousel-service",
+      "kind": "contains",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallCarouselService.java",
+      "to": "class:ltd.recommend.cloud.newbee.service.NewBeeMallCarouselService",
+      "label": "contains"
+    },
+    {
+      "id": "edge:contains:index-config-service",
+      "kind": "contains",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/NewBeeMallIndexConfigService.java",
+      "to": "class:ltd.recommend.cloud.newbee.service.NewBeeMallIndexConfigService",
+      "label": "contains"
+    },
+    {
+      "id": "edge:contains:carousel-service-impl",
+      "kind": "contains",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallCarouselServiceImpl.java",
+      "to": "class:ltd.recommend.cloud.newbee.service.impl.NewBeeMallCarouselServiceImpl",
+      "label": "contains"
+    },
+    {
+      "id": "edge:contains:index-config-service-impl",
+      "kind": "contains",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallIndexConfigServiceImpl.java",
+      "to": "class:ltd.recommend.cloud.newbee.service.impl.NewBeeMallIndexConfigServiceImpl",
+      "label": "contains"
+    },
+    {
+      "id": "edge:implements:carousel-service-impl",
+      "kind": "implements",
+      "from": "class:ltd.recommend.cloud.newbee.service.impl.NewBeeMallCarouselServiceImpl",
+      "to": "class:ltd.recommend.cloud.newbee.service.NewBeeMallCarouselService",
+      "label": "implements"
+    },
+    {
+      "id": "edge:implements:index-config-service-impl",
+      "kind": "implements",
+      "from": "class:ltd.recommend.cloud.newbee.service.impl.NewBeeMallIndexConfigServiceImpl",
+      "to": "class:ltd.recommend.cloud.newbee.service.NewBeeMallIndexConfigService",
+      "label": "implements"
+    },
+    {
+      "id": "edge:call:carousel-controller-list:carousel-service-getcarouselpage",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.controller.NewBeeAdminCarouselController",
+      "to": "class:ltd.recommend.cloud.newbee.service.NewBeeMallCarouselService",
+      "label": "调用 getCarouselPage",
+      "meta": {"callerMethod": "list", "calleeMethod": "getCarouselPage"}
+    },
+    {
+      "id": "edge:call:carousel-controller-save:carousel-service-savecarousel",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.controller.NewBeeAdminCarouselController",
+      "to": "class:ltd.recommend.cloud.newbee.service.NewBeeMallCarouselService",
+      "label": "调用 saveCarousel",
+      "meta": {"callerMethod": "save", "calleeMethod": "saveCarousel"}
+    },
+    {
+      "id": "edge:call:carousel-controller-update:carousel-service-updatecarousel",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.controller.NewBeeAdminCarouselController",
+      "to": "class:ltd.recommend.cloud.newbee.service.NewBeeMallCarouselService",
+      "label": "调用 updateCarousel",
+      "meta": {"callerMethod": "update", "calleeMethod": "updateCarousel"}
+    },
+    {
+      "id": "edge:call:carousel-controller-info:carousel-service-getcarouselbyid",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.controller.NewBeeAdminCarouselController",
+      "to": "class:ltd.recommend.cloud.newbee.service.NewBeeMallCarouselService",
+      "label": "调用 getCarouselById",
+      "meta": {"callerMethod": "info", "calleeMethod": "getCarouselById"}
+    },
+    {
+      "id": "edge:call:carousel-controller-delete:carousel-service-deletebatch",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.controller.NewBeeAdminCarouselController",
+      "to": "class:ltd.recommend.cloud.newbee.service.NewBeeMallCarouselService",
+      "label": "调用 deleteBatch",
+      "meta": {"callerMethod": "delete", "calleeMethod": "deleteBatch"}
+    },
+    {
+      "id": "edge:call:index-config-controller-list:service-getconfigspage",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.controller.NewBeeAdminIndexConfigController",
+      "to": "class:ltd.recommend.cloud.newbee.service.NewBeeMallIndexConfigService",
+      "label": "调用 getConfigsPage",
+      "meta": {"callerMethod": "list", "calleeMethod": "getConfigsPage"}
+    },
+    {
+      "id": "edge:call:index-config-controller-save:service-saveindexconfig",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.controller.NewBeeAdminIndexConfigController",
+      "to": "class:ltd.recommend.cloud.newbee.service.NewBeeMallIndexConfigService",
+      "label": "调用 saveIndexConfig",
+      "meta": {"callerMethod": "save", "calleeMethod": "saveIndexConfig"}
+    },
+    {
+      "id": "edge:call:index-config-controller-update:service-updateindexconfig",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.controller.NewBeeAdminIndexConfigController",
+      "to": "class:ltd.recommend.cloud.newbee.service.NewBeeMallIndexConfigService",
+      "label": "调用 updateIndexConfig",
+      "meta": {"callerMethod": "update", "calleeMethod": "updateIndexConfig"}
+    },
+    {
+      "id": "edge:call:index-config-controller-info:service-getindexconfigbyid",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.controller.NewBeeAdminIndexConfigController",
+      "to": "class:ltd.recommend.cloud.newbee.service.NewBeeMallIndexConfigService",
+      "label": "调用 getIndexConfigById",
+      "meta": {"callerMethod": "info", "calleeMethod": "getIndexConfigById"}
+    },
+    {
+      "id": "edge:call:index-config-controller-delete:service-deletebatch",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.controller.NewBeeAdminIndexConfigController",
+      "to": "class:ltd.recommend.cloud.newbee.service.NewBeeMallIndexConfigService",
+      "label": "调用 deleteBatch",
+      "meta": {"callerMethod": "delete", "calleeMethod": "deleteBatch"}
+    },
+    {
+      "id": "edge:call:mall-index:carousel-service-getcarouselsforindex",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.controller.NewBeeMallIndexController",
+      "to": "class:ltd.recommend.cloud.newbee.service.NewBeeMallCarouselService",
+      "label": "调用 getCarouselsForIndex",
+      "meta": {"callerMethod": "indexInfo", "calleeMethod": "getCarouselsForIndex"}
+    },
+    {
+      "id": "edge:call:mall-index:config-service-getconfiggoodsesforindex",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.controller.NewBeeMallIndexController",
+      "to": "class:ltd.recommend.cloud.newbee.service.NewBeeMallIndexConfigService",
+      "label": "调用 getConfigGoodsesForIndex",
+      "meta": {"callerMethod": "indexInfo", "calleeMethod": "getConfigGoodsesForIndex"}
+    },
+    {
+      "id": "edge:call:carousel-service-impl:getcarouselpage:mapper",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.service.impl.NewBeeMallCarouselServiceImpl",
+      "to": "class:ltd.recommend.cloud.newbee.dao.CarouselMapper",
+      "label": "调用 findCarouselList/getTotalCarousels",
+      "meta": {"callerMethod": "getCarouselPage", "calleeMethods": ["findCarouselList", "getTotalCarousels"]}
+    },
+    {
+      "id": "edge:call:carousel-service-impl:savecarousel:mapper",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.service.impl.NewBeeMallCarouselServiceImpl",
+      "to": "class:ltd.recommend.cloud.newbee.dao.CarouselMapper",
+      "label": "调用 insertSelective",
+      "meta": {"callerMethod": "saveCarousel", "calleeMethod": "insertSelective"}
+    },
+    {
+      "id": "edge:call:carousel-service-impl:updatecarousel:mapper",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.service.impl.NewBeeMallCarouselServiceImpl",
+      "to": "class:ltd.recommend.cloud.newbee.dao.CarouselMapper",
+      "label": "调用 selectByPrimaryKey/updateByPrimaryKeySelective",
+      "meta": {"callerMethod": "updateCarousel", "calleeMethods": ["selectByPrimaryKey", "updateByPrimaryKeySelective"]}
+    },
+    {
+      "id": "edge:call:carousel-service-impl:getcarouselbyid:mapper",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.service.impl.NewBeeMallCarouselServiceImpl",
+      "to": "class:ltd.recommend.cloud.newbee.dao.CarouselMapper",
+      "label": "调用 selectByPrimaryKey",
+      "meta": {"callerMethod": "getCarouselById", "calleeMethod": "selectByPrimaryKey"}
+    },
+    {
+      "id": "edge:call:carousel-service-impl:deletebatch:mapper",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.service.impl.NewBeeMallCarouselServiceImpl",
+      "to": "class:ltd.recommend.cloud.newbee.dao.CarouselMapper",
+      "label": "调用 deleteBatch",
+      "meta": {"callerMethod": "deleteBatch", "calleeMethod": "deleteBatch"}
+    },
+    {
+      "id": "edge:call:carousel-service-impl:getcarouselsforindex:mapper",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.service.impl.NewBeeMallCarouselServiceImpl",
+      "to": "class:ltd.recommend.cloud.newbee.dao.CarouselMapper",
+      "label": "调用 findCarouselsByNum",
+      "meta": {"callerMethod": "getCarouselsForIndex", "calleeMethod": "findCarouselsByNum"}
+    },
+    {
+      "id": "edge:call:index-config-service-impl:getconfigspage:mapper",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.service.impl.NewBeeMallIndexConfigServiceImpl",
+      "to": "class:ltd.recommend.cloud.newbee.dao.IndexConfigMapper",
+      "label": "调用 findIndexConfigList/getTotalIndexConfigs",
+      "meta": {"callerMethod": "getConfigsPage", "calleeMethods": ["findIndexConfigList", "getTotalIndexConfigs"]}
+    },
+    {
+      "id": "edge:call:index-config-service-impl:saveindexconfig:mapper",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.service.impl.NewBeeMallIndexConfigServiceImpl",
+      "to": "class:ltd.recommend.cloud.newbee.dao.IndexConfigMapper",
+      "label": "调用 selectByTypeAndGoodsId/insertSelective",
+      "meta": {"callerMethod": "saveIndexConfig", "calleeMethods": ["selectByTypeAndGoodsId", "insertSelective"]}
+    },
+    {
+      "id": "edge:call:index-config-service-impl:updateindexconfig:mapper",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.service.impl.NewBeeMallIndexConfigServiceImpl",
+      "to": "class:ltd.recommend.cloud.newbee.dao.IndexConfigMapper",
+      "label": "调用 selectByPrimaryKey/selectByTypeAndGoodsId/updateByPrimaryKeySelective",
+      "meta": {"callerMethod": "updateIndexConfig", "calleeMethods": ["selectByPrimaryKey", "selectByTypeAndGoodsId", "updateByPrimaryKeySelective"]}
+    },
+    {
+      "id": "edge:call:index-config-service-impl:getindexconfigbyid:mapper",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.service.impl.NewBeeMallIndexConfigServiceImpl",
+      "to": "class:ltd.recommend.cloud.newbee.dao.IndexConfigMapper",
+      "label": "调用 selectByPrimaryKey",
+      "meta": {"callerMethod": "getIndexConfigById", "calleeMethod": "selectByPrimaryKey"}
+    },
+    {
+      "id": "edge:call:index-config-service-impl:deletebatch:mapper",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.service.impl.NewBeeMallIndexConfigServiceImpl",
+      "to": "class:ltd.recommend.cloud.newbee.dao.IndexConfigMapper",
+      "label": "调用 deleteBatch",
+      "meta": {"callerMethod": "deleteBatch", "calleeMethod": "deleteBatch"}
+    },
+    {
+      "id": "edge:call:index-config-service-impl:getconfiggoodsesforindex:mapper",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.service.impl.NewBeeMallIndexConfigServiceImpl",
+      "to": "class:ltd.recommend.cloud.newbee.dao.IndexConfigMapper",
+      "label": "调用 findIndexConfigsByTypeAndNum",
+      "meta": {"callerMethod": "getConfigGoodsesForIndex", "calleeMethod": "findIndexConfigsByTypeAndNum"}
+    },
+    {
+      "id": "edge:call:index-config-service-impl:saveindexconfig:feign",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.service.impl.NewBeeMallIndexConfigServiceImpl",
+      "to": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/openfeign/NewBeeCloudGoodsServiceFeign.java",
+      "label": "OpenFeign调用 getGoodsDetail (跨服务)",
+      "meta": {"callerMethod": "saveIndexConfig", "calleeMethod": "getGoodsDetail", "remoteService": "goods-service"}
+    },
+    {
+      "id": "edge:call:index-config-service-impl:updateindexconfig:feign",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.service.impl.NewBeeMallIndexConfigServiceImpl",
+      "to": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/openfeign/NewBeeCloudGoodsServiceFeign.java",
+      "label": "OpenFeign调用 getGoodsDetail (跨服务)",
+      "meta": {"callerMethod": "updateIndexConfig", "calleeMethod": "getGoodsDetail", "remoteService": "goods-service"}
+    },
+    {
+      "id": "edge:call:index-config-service-impl:getconfiggoodsesforindex:feign",
+      "kind": "calls",
+      "from": "class:ltd.recommend.cloud.newbee.service.impl.NewBeeMallIndexConfigServiceImpl",
+      "to": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/openfeign/NewBeeCloudGoodsServiceFeign.java",
+      "label": "OpenFeign调用 listByGoodsIds (跨服务)",
+      "meta": {"callerMethod": "getConfigGoodsesForIndex", "calleeMethod": "listByGoodsIds", "remoteService": "goods-service"}
+    },
+    {
+      "id": "edge:usedby:pagequeryutil:neighbor-batch2",
+      "kind": "used_by",
+      "from": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "to": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsCategoryController.java",
+      "label": "被batch2使用",
+      "meta": {"targetBatch": 2, "symbols": ["list", "listForSelect", "save", "update", "info", "delete"]}
+    },
+    {
+      "id": "edge:usedby:pagequeryutil:neighbor-batch4",
+      "kind": "used_by",
+      "from": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "to": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeAdminOrderController.java",
+      "label": "被batch4使用",
+      "meta": {"targetBatch": 4, "symbols": ["list", "orderDetailPage", "checkDone", "checkOut", "closeOrder"]}
+    },
+    {
+      "id": "edge:usedby:pagequeryutil:neighbor-batch6",
+      "kind": "used_by",
+      "from": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "to": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallOrderController.java",
+      "label": "被batch6使用",
+      "meta": {"targetBatch": 6, "symbols": ["saveOrder", "orderDetailPage", "orderList", "cancelOrder", "finishOrder", "paySuccess"]}
+    },
+    {
+      "id": "edge:usedby:pagequeryutil:neighbor-batch7",
+      "kind": "used_by",
+      "from": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+      "to": "file:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/NewBeeMallShoppingCartController.java",
+      "label": "被batch7使用",
+      "meta": {"targetBatch": 7, "symbols": ["cartItemPageList", "cartItemList", "saveNewBeeMallShoppingCartItem"]}
+    },
+    {
+      "id": "edge:usedby:token-to-admin-user:neighbor-batch5",
+      "kind": "used_by",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "label": "被batch5解析器使用",
+      "meta": {"targetBatch": 5, "symbols": ["TokenToAdminUserMethodArgumentResolver", "supportsParameter", "resolveArgument"]}
+    },
+    {
+      "id": "edge:usedby:login-admin-user:neighbor-batch5",
+      "kind": "used_by",
+      "from": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/LoginAdminUser.java",
+      "to": "file:newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "label": "被batch5解析器使用",
+      "meta": {"targetBatch": 5, "symbols": ["TokenToAdminUserMethodArgumentResolver", "supportsParameter", "resolveArgument"]}
+    }
+  ]
+}

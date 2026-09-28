@@ -1,0 +1,873 @@
+{
+  "batchIndex": 4,
+  "nodes": [
+    {
+      "id": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/NewBeeMallOrderStatusEnum.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/NewBeeMallOrderStatusEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 53,
+      "summary": "订单状态枚举类，定义了订单的完整生命周期状态，包括待支付、已支付、配货完成、出库成功、交易成功以及多种关闭状态(手动关闭、超时关闭、商家关闭)。",
+      "tags": ["enum", "order", "状态管理", "核心枚举"],
+      "symbols": ["NewBeeMallOrderStatusEnum"]
+    },
+    {
+      "id": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/PayStatusEnum.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/PayStatusEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 47,
+      "summary": "支付状态枚举类，定义了三种支付状态: 支付中(0)、支付成功(1)、支付失败(-1)，提供根据状态码查询枚举的静态方法。",
+      "tags": ["enum", "payment", "状态管理"],
+      "symbols": ["PayStatusEnum"]
+    },
+    {
+      "id": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/PayTypeEnum.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/PayTypeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 48,
+      "summary": "支付方式枚举类，定义了三种支付方式: 无(0)、支付宝(1)、微信支付(2)，提供根据类型码查询枚举的静态方法。",
+      "tags": ["enum", "payment", "支付方式"],
+      "symbols": ["PayTypeEnum"]
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/NewBeeMallGoodsDTO.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/NewBeeMallGoodsDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 121,
+      "nonEmptyLines": 88,
+      "summary": "商品数据传输对象(DTO)，封装了商品的核心属性，包括商品ID、名称、简介、分类ID、封面图、轮播图、原价、售价、库存数量、标签和上下架状态。用于微服务之间的商品数据传输。",
+      "tags": ["dto", "goods", "数据传输对象"],
+      "symbols": ["NewBeeMallGoodsDTO"]
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/StockNumDTO.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/StockNumDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 25,
+      "summary": "库存数量DTO，包含商品ID(goodsId)和商品数量(goodsCount)两个字段，用于库存更新操作中标识单个商品的扣减数量。",
+      "tags": ["dto", "stock", "库存管理"],
+      "symbols": ["StockNumDTO"]
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/UpdateStockNumDTO.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/UpdateStockNumDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 19,
+      "summary": "批量更新库存DTO，内含StockNumDTO列表，用于通过Feign接口批量更新商品库存。",
+      "tags": ["dto", "stock", "批量操作"],
+      "symbols": ["UpdateStockNumDTO"]
+    },
+    {
+      "id": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/openfeign/NewBeeCloudGoodsServiceFeign.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/openfeign/NewBeeCloudGoodsServiceFeign.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 27,
+      "summary": "商品服务的OpenFeign客户端接口，声明了三个远程调用方法: 获取商品详情(getGoodsDetail)、批量获取商品信息(listByGoodsIds)和更新商品库存(updateStock)。通过@FeignClient注解注册到名为newbee-mall-cloud-goods-service的服务。",
+      "tags": ["feign", "远程调用", "goods-service", "微服务通信"],
+      "symbols": ["NewBeeCloudGoodsServiceFeign"]
+    },
+    {
+      "id": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/NewBeeMallCloudOrderServiceApplication.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/NewBeeMallCloudOrderServiceApplication.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 33,
+      "summary": "订单服务的Spring Boot启动类，启用了服务发现(@EnableDiscoveryClient)、MyBatis Mapper扫描和Feign客户端(@EnableFeignClients)，集成了用户服务、商品服务和购物车服务三个Feign客户端。",
+      "tags": ["spring-boot", "启动类", "order-service", "微服务入口"],
+      "symbols": ["NewBeeMallCloudOrderServiceApplication"]
+    },
+    {
+      "id": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 21,
+      "summary": "自定义参数注解，用于Spring MVC控制器方法参数上，标记需要从请求中提取管理员用户信息注入的参数。通过MethodArgumentResolver解析。",
+      "tags": ["annotation", "config", "认证鉴权"],
+      "symbols": ["TokenToAdminUser"]
+    },
+    {
+      "id": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeAdminOrderController.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeAdminOrderController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 134,
+      "nonEmptyLines": 124,
+      "summary": "后台管理系统的订单控制器，提供订单列表查询(支持分页、按订单号和状态筛选)、订单详情查看、批量配货(checkDone)、批量出库(checkOut)和批量关闭订单(closeOrder)五个接口。所有接口均使用@TokenToAdminUser注解进行管理员身份校验。",
+      "tags": ["controller", "REST API", "订单管理", "后台管理"],
+      "symbols": ["NewBeeAdminOrderController"]
+    },
+    {
+      "id": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/BatchIdParam.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/BatchIdParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 16,
+      "summary": "批量操作的请求参数类，使用Lombok @Data注解，包含一个Long类型的ID数组(ids)，用于接收批量配货、出库、关闭等操作的订单ID列表。",
+      "tags": ["param", "request", "批量操作"],
+      "symbols": ["BatchIdParam"]
+    },
+    {
+      "id": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderDetailVO.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderDetailVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 43,
+      "summary": "订单详情页视图对象(VO)，包含订单号、总价、支付状态/方式(含中文描述)、支付时间、订单状态(含中文描述)、创建时间以及订单项列表。使用Swagger注解和JsonFormat格式化输出。",
+      "tags": ["vo", "view-object", "订单详情"],
+      "symbols": ["NewBeeMallOrderDetailVO"]
+    },
+    {
+      "id": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderItemVO.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderItemVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 28,
+      "summary": "订单项视图对象(VO)，展示订单中单个商品的信息: 商品ID、数量、名称、封面图和售价。配合NewBeeMallOrderDetailVO使用。",
+      "tags": ["vo", "view-object", "订单项"],
+      "symbols": ["NewBeeMallOrderItemVO"]
+    },
+    {
+      "id": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderAddressMapper.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderAddressMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 18,
+      "summary": "订单收货地址的MyBatis Mapper接口，提供标准CRUD操作: 按主键删除、插入、选择性插入、按订单ID查询、选择性更新和全量更新。",
+      "tags": ["dao", "mapper", "mybatis", "订单地址"],
+      "symbols": ["NewBeeMallOrderAddressMapper"]
+    },
+    {
+      "id": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderItemMapper.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderItemMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 41,
+      "summary": "订单项的MyBatis Mapper接口，除了标准CRUD操作外，还提供了按订单ID查询订单项(selectByOrderId)、按多个订单ID批量查询(selectByOrderIds)和批量插入(insertBatch)等扩展方法。",
+      "tags": ["dao", "mapper", "mybatis", "订单项"],
+      "symbols": ["NewBeeMallOrderItemMapper"]
+    },
+    {
+      "id": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderMapper.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 28,
+      "summary": "订单主表的MyBatis Mapper接口，提供标准CRUD以及业务扩展方法: 分页查询订单列表(findNewBeeMallOrderList)、统计订单总数(getTotalNewBeeMallOrders)、按订单号查询(selectByOrderNo)、批量配货(checkDone)、批量出库(checkOut)和批量关闭(closeOrder)。",
+      "tags": ["dao", "mapper", "mybatis", "订单"],
+      "symbols": ["NewBeeMallOrderMapper"]
+    },
+    {
+      "id": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrder.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrder.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 29,
+      "summary": "订单实体类，映射数据库订单主表，包含订单ID、订单号、用户ID、总价、支付状态/方式、支付时间、订单状态、备注信息、删除标记和创建/更新时间。使用Lombok @Data和Jackson @JsonFormat注解。",
+      "tags": ["entity", "model", "订单", "数据库映射"],
+      "symbols": ["NewBeeMallOrder"]
+    },
+    {
+      "id": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrderAddress.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrderAddress.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 20,
+      "summary": "订单收货地址实体类，映射订单地址快照表，包含订单ID、收货人姓名、手机号、省/市/区名称和详细地址。是下单时的地址快照而非用户地址的实时引用。",
+      "tags": ["entity", "model", "订单地址"],
+      "symbols": ["NewBeeMallOrderAddress"]
+    },
+    {
+      "id": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrderItem.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrderItem.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 22,
+      "summary": "订单项实体类，映射订单商品快照表，包含订单项ID、所属订单ID、商品ID、商品名称、封面图、售价、数量和创建时间。保存下单时刻的商品信息快照。",
+      "tags": ["entity", "model", "订单项"],
+      "symbols": ["NewBeeMallOrderItem"]
+    },
+    {
+      "id": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallOrderService.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallOrderService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 116,
+      "nonEmptyLines": 101,
+      "summary": "订单服务接口，定义了订单业务的完整API: 获取订单详情(按ID/订单号)、我的订单列表、手动取消订单、确认收货、支付成功处理、生成订单(saveOrder)、后台分页查询、订单信息更新、批量配货/出库/关闭和获取订单项列表。",
+      "tags": ["service", "interface", "订单服务", "业务接口"],
+      "symbols": ["NewBeeMallOrderService"]
+    },
+    {
+      "id": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 476,
+      "nonEmptyLines": 476,
+      "summary": "订单服务的核心实现类(476行)，实现了NewBeeMallOrderService接口。saveOrder方法使用@GlobalTransactional(Seata分布式事务)编排完整的下单流程: 调用购物车服务获取商品->调用商品服务校验商品状态和库存->删除购物车项->扣减商品库存->生成订单号->创建订单和订单项快照->保存收货地址快照。还实现了订单状态机(取消、确认收货、支付成功)和后台管理操作(配货、出库、关闭)，均包含完整的状态校验逻辑。",
+      "tags": ["service", "implementation", "订单核心逻辑", "分布式事务", "Seata"],
+      "symbols": ["NewBeeMallOrderServiceImpl"]
+    },
+    {
+      "id": "file:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/src/main/java/ltd/shopcart/cloud/newbee/dto/NewBeeMallShoppingCartItemDTO.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/src/main/java/ltd/shopcart/cloud/newbee/dto/NewBeeMallShoppingCartItemDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 54,
+      "summary": "购物车项DTO，封装了购物车商品的信息: 购物车项ID、用户ID、商品ID和商品数量。用于购物车服务与其他微服务之间的数据传输。",
+      "tags": ["dto", "shopping-cart", "数据传输对象"],
+      "symbols": ["NewBeeMallShoppingCartItemDTO"]
+    },
+    {
+      "id": "file:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/src/main/java/ltd/shopcart/cloud/newbee/openfeign/NewBeeCloudShopCartServiceFeign.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/src/main/java/ltd/shopcart/cloud/newbee/openfeign/NewBeeCloudShopCartServiceFeign.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 28,
+      "summary": "购物车服务的OpenFeign客户端接口，声明了两个远程调用方法: 根据购物车项ID列表查询购物车商品(listByCartItemIds)和批量删除购物车项(deleteByCartItemIds)。注册到名为newbee-mall-cloud-shop-cart-service的服务。",
+      "tags": ["feign", "远程调用", "shop-cart-service", "微服务通信"],
+      "symbols": ["NewBeeCloudShopCartServiceFeign"]
+    },
+    {
+      "id": "file:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/NewBeeMallCloudShopCartServiceApplication.java",
+      "type": "file",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/NewBeeMallCloudShopCartServiceApplication.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 36,
+      "summary": "购物车服务的Spring Boot启动类，启用了服务发现、MyBatis Mapper扫描和Feign客户端，集成了商品服务和用户服务两个Feign客户端。",
+      "tags": ["spring-boot", "启动类", "shop-cart-service", "微服务入口"],
+      "symbols": ["NewBeeMallCloudShopCartServiceApplication"]
+    },
+    {
+      "id": "class:ltd.common.cloud.newbee.enums.NewBeeMallOrderStatusEnum",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/NewBeeMallOrderStatusEnum.java",
+      "className": "NewBeeMallOrderStatusEnum",
+      "startLine": 18,
+      "endLine": 63,
+      "language": "java",
+      "summary": "订单状态枚举，定义9种状态(含默认错误值)，涵盖从待支付到交易成功的正向流程和三种关闭场景。提供静态查找方法getNewBeeMallOrderStatusEnumByStatus。",
+      "tags": ["enum", "order-status", "状态机"],
+      "methods": ["NewBeeMallOrderStatusEnum", "getNewBeeMallOrderStatusEnumByStatus", "getOrderStatus", "setOrderStatus", "getName", "setName"],
+      "properties": ["orderStatus", "name"]
+    },
+    {
+      "id": "class:ltd.common.cloud.newbee.enums.PayStatusEnum",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/PayStatusEnum.java",
+      "className": "PayStatusEnum",
+      "startLine": 18,
+      "endLine": 57,
+      "language": "java",
+      "summary": "支付状态枚举，定义支付中(0)、支付成功(1)和支付失败(-1)三种状态，提供静态查找方法。",
+      "tags": ["enum", "pay-status"],
+      "methods": ["PayStatusEnum", "getPayStatusEnumByStatus", "getPayStatus", "setPayStatus", "getName", "setName"],
+      "properties": ["payStatus", "name"]
+    },
+    {
+      "id": "class:ltd.common.cloud.newbee.enums.PayTypeEnum",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/PayTypeEnum.java",
+      "className": "PayTypeEnum",
+      "startLine": 18,
+      "endLine": 58,
+      "language": "java",
+      "summary": "支付方式枚举，定义未支付(0)、支付宝(1)和微信支付(2)三种方式，提供静态查找方法。",
+      "tags": ["enum", "pay-type"],
+      "methods": ["PayTypeEnum", "getPayTypeEnumByType", "getPayType", "setPayType", "getName", "setName"],
+      "properties": ["payType", "name"]
+    },
+    {
+      "id": "class:ltd.goods.cloud.newbee.dto.NewBeeMallGoodsDTO",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/NewBeeMallGoodsDTO.java",
+      "className": "NewBeeMallGoodsDTO",
+      "startLine": 11,
+      "endLine": 121,
+      "language": "java",
+      "summary": "商品DTO，包含11个属性覆盖商品的完整展示信息: ID、名称、简介、分类ID、封面图、轮播图、原价、售价、库存数、标签、上下架状态。",
+      "tags": ["dto", "goods"],
+      "methods": ["getGoodsId", "setGoodsId", "getGoodsName", "setGoodsName", "getGoodsIntro", "setGoodsIntro", "getGoodsCategoryId", "setGoodsCategoryId", "getGoodsCoverImg", "setGoodsCoverImg", "getGoodsCarousel", "setGoodsCarousel", "getOriginalPrice", "setOriginalPrice", "getSellingPrice", "setSellingPrice", "getStockNum", "setStockNum", "getTag", "setTag", "getGoodsSellStatus", "setGoodsSellStatus"],
+      "properties": ["goodsId", "goodsName", "goodsIntro", "goodsCategoryId", "goodsCoverImg", "goodsCarousel", "originalPrice", "sellingPrice", "stockNum", "tag", "goodsSellStatus"]
+    },
+    {
+      "id": "class:ltd.goods.cloud.newbee.dto.StockNumDTO",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/StockNumDTO.java",
+      "className": "StockNumDTO",
+      "startLine": 11,
+      "endLine": 31,
+      "language": "java",
+      "summary": "库存数量DTO，用于标识单个商品的扣减数量。",
+      "tags": ["dto", "stock"],
+      "methods": ["getGoodsId", "setGoodsId", "getGoodsCount", "setGoodsCount"],
+      "properties": ["goodsId", "goodsCount"]
+    },
+    {
+      "id": "class:ltd.goods.cloud.newbee.dto.UpdateStockNumDTO",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/UpdateStockNumDTO.java",
+      "className": "UpdateStockNumDTO",
+      "startLine": 13,
+      "endLine": 24,
+      "language": "java",
+      "summary": "批量更新库存的包装DTO，内含StockNumDTO列表。",
+      "tags": ["dto", "stock", "batch"],
+      "methods": ["getStockNumDTOS", "setStockNumDTOS"],
+      "properties": ["stockNumDTOS"]
+    },
+    {
+      "id": "class:ltd.goods.cloud.newbee.openfeign.NewBeeCloudGoodsServiceFeign",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/openfeign/NewBeeCloudGoodsServiceFeign.java",
+      "className": "NewBeeCloudGoodsServiceFeign",
+      "startLine": 22,
+      "endLine": 33,
+      "language": "java",
+      "summary": "商品服务Feign客户端接口，提供商品详情查询、批量查询和库存更新三个远程调用方法。",
+      "tags": ["feign-client", "remote-service", "goods"],
+      "methods": ["getGoodsDetail", "listByGoodsIds", "updateStock"],
+      "properties": []
+    },
+    {
+      "id": "class:ltd.order.cloud.newbee.NewBeeMallCloudOrderServiceApplication",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/NewBeeMallCloudOrderServiceApplication.java",
+      "className": "NewBeeMallCloudOrderServiceApplication",
+      "startLine": 26,
+      "endLine": 37,
+      "language": "java",
+      "summary": "订单服务启动类，配置Nacos日志、SpringApplication启动和三个Feign客户端集成。",
+      "tags": ["spring-boot-application", "order-service"],
+      "methods": ["main"],
+      "properties": []
+    },
+    {
+      "id": "class:ltd.order.cloud.newbee.controller.NewBeeAdminOrderController",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeAdminOrderController.java",
+      "className": "NewBeeAdminOrderController",
+      "startLine": 38,
+      "endLine": 134,
+      "language": "java",
+      "summary": "后台订单管理REST控制器，映射/orders/admin路径，提供列表查询、详情查看和批量状态变更(配货/出库/关闭)功能。",
+      "tags": ["rest-controller", "admin", "order-management"],
+      "methods": ["list", "orderDetailPage", "checkDone", "checkOut", "closeOrder"],
+      "properties": ["logger", "newBeeMallOrderService"]
+    },
+    {
+      "id": "class:ltd.order.cloud.newbee.controller.param.BatchIdParam",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/BatchIdParam.java",
+      "className": "BatchIdParam",
+      "startLine": 15,
+      "endLine": 19,
+      "language": "java",
+      "summary": "批量操作请求参数类，包含ID数组。",
+      "tags": ["param", "request"],
+      "methods": [],
+      "properties": ["ids"]
+    },
+    {
+      "id": "class:ltd.order.cloud.newbee.controller.vo.NewBeeMallOrderDetailVO",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderDetailVO.java",
+      "className": "NewBeeMallOrderDetailVO",
+      "startLine": 22,
+      "endLine": 56,
+      "language": "java",
+      "summary": "订单详情视图对象，包含订单完整信息和关联的订单项列表。",
+      "tags": ["vo", "order-detail"],
+      "methods": [],
+      "properties": ["orderNo", "totalPrice", "payStatus", "payType", "payTypeString", "payTime", "orderStatus", "orderStatusString", "createTime", "newBeeMallOrderItemVOS"]
+    },
+    {
+      "id": "class:ltd.order.cloud.newbee.controller.vo.NewBeeMallOrderItemVO",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderItemVO.java",
+      "className": "NewBeeMallOrderItemVO",
+      "startLine": 19,
+      "endLine": 36,
+      "language": "java",
+      "summary": "订单项视图对象，展示单个商品的摘要信息。",
+      "tags": ["vo", "order-item"],
+      "methods": [],
+      "properties": ["goodsId", "goodsCount", "goodsName", "goodsCoverImg", "sellingPrice"]
+    },
+    {
+      "id": "class:ltd.order.cloud.newbee.dao.NewBeeMallOrderAddressMapper",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderAddressMapper.java",
+      "className": "NewBeeMallOrderAddressMapper",
+      "startLine": 14,
+      "endLine": 26,
+      "language": "java",
+      "summary": "订单地址Mapper接口，提供标准CRUD操作。",
+      "tags": ["dao", "mapper"],
+      "methods": ["deleteByPrimaryKey", "insert", "insertSelective", "selectByPrimaryKey", "updateByPrimaryKeySelective", "updateByPrimaryKey"],
+      "properties": []
+    },
+    {
+      "id": "class:ltd.order.cloud.newbee.dao.NewBeeMallOrderItemMapper",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderItemMapper.java",
+      "className": "NewBeeMallOrderItemMapper",
+      "startLine": 16,
+      "endLine": 52,
+      "language": "java",
+      "summary": "订单项Mapper接口，支持按订单ID查询、按多个订单ID批量查询和批量插入。",
+      "tags": ["dao", "mapper"],
+      "methods": ["deleteByPrimaryKey", "insert", "insertSelective", "selectByPrimaryKey", "selectByOrderId", "selectByOrderIds", "insertBatch", "updateByPrimaryKeySelective", "updateByPrimaryKey"],
+      "properties": []
+    },
+    {
+      "id": "class:ltd.order.cloud.newbee.dao.NewBeeMallOrderMapper",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderMapper.java",
+      "className": "NewBeeMallOrderMapper",
+      "startLine": 17,
+      "endLine": 43,
+      "language": "java",
+      "summary": "订单主表Mapper接口，支持分页查询、按订单号查询和批量状态变更(配货/出库/关闭)。",
+      "tags": ["dao", "mapper"],
+      "methods": ["deleteByPrimaryKey", "insert", "insertSelective", "selectByPrimaryKey", "selectByOrderNo", "updateByPrimaryKeySelective", "updateByPrimaryKey", "findNewBeeMallOrderList", "getTotalNewBeeMallOrders", "selectByPrimaryKeys", "checkOut", "closeOrder", "checkDone"],
+      "properties": []
+    },
+    {
+      "id": "class:ltd.order.cloud.newbee.entity.NewBeeMallOrder",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrder.java",
+      "className": "NewBeeMallOrder",
+      "startLine": 16,
+      "endLine": 42,
+      "language": "java",
+      "summary": "订单实体类，12个属性对应数据库订单主表字段。",
+      "tags": ["entity", "order"],
+      "methods": [],
+      "properties": ["orderId", "orderNo", "userId", "totalPrice", "payStatus", "payType", "payTime", "orderStatus", "extraInfo", "isDeleted", "createTime", "updateTime"]
+    },
+    {
+      "id": "class:ltd.order.cloud.newbee.entity.NewBeeMallOrderAddress",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrderAddress.java",
+      "className": "NewBeeMallOrderAddress",
+      "startLine": 13,
+      "endLine": 28,
+      "language": "java",
+      "summary": "订单收货地址实体，保存下单时刻的地址快照。",
+      "tags": ["entity", "order-address"],
+      "methods": [],
+      "properties": ["orderId", "userName", "userPhone", "provinceName", "cityName", "regionName", "detailAddress"]
+    },
+    {
+      "id": "class:ltd.order.cloud.newbee.entity.NewBeeMallOrderItem",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrderItem.java",
+      "className": "NewBeeMallOrderItem",
+      "startLine": 15,
+      "endLine": 32,
+      "language": "java",
+      "summary": "订单项实体，保存下单时刻的商品信息快照。",
+      "tags": ["entity", "order-item"],
+      "methods": [],
+      "properties": ["orderItemId", "orderId", "goodsId", "goodsName", "goodsCoverImg", "sellingPrice", "goodsCount", "createTime"]
+    },
+    {
+      "id": "class:ltd.order.cloud.newbee.service.NewBeeMallOrderService",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallOrderService.java",
+      "className": "NewBeeMallOrderService",
+      "startLine": 20,
+      "endLine": 116,
+      "language": "java",
+      "summary": "订单服务接口，定义了前台和后台的全部订单操作API。",
+      "tags": ["service-interface", "order"],
+      "methods": ["getOrderDetailByOrderId", "getOrderDetailByOrderNo", "getMyOrders", "cancelOrder", "finishOrder", "paySuccess", "saveOrder", "getNewBeeMallOrdersPage", "updateOrderInfo", "checkDone", "checkOut", "closeOrder", "getOrderItems"],
+      "properties": []
+    },
+    {
+      "id": "class:ltd.order.cloud.newbee.service.impl.NewBeeMallOrderServiceImpl",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "className": "NewBeeMallOrderServiceImpl",
+      "startLine": 52,
+      "endLine": 476,
+      "language": "java",
+      "summary": "订单服务核心实现，使用Seata分布式事务编排下单流程，协调购物车服务和商品服务完成订单创建、库存扣减、状态流转等操作。",
+      "tags": ["service-impl", "order", "distributed-transaction", "seata"],
+      "methods": ["getOrderDetailByOrderId", "getOrderDetailByOrderNo", "getMyOrders", "cancelOrder", "finishOrder", "paySuccess", "saveOrder", "getNewBeeMallOrdersPage", "updateOrderInfo", "checkDone", "checkOut", "closeOrder", "getOrderItems"],
+      "properties": ["newBeeMallOrderMapper", "newBeeMallOrderItemMapper", "newBeeMallOrderAddressMapper", "goodsService", "shopCartService"]
+    },
+    {
+      "id": "class:ltd.shopcart.cloud.newbee.dto.NewBeeMallShoppingCartItemDTO",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/src/main/java/ltd/shopcart/cloud/newbee/dto/NewBeeMallShoppingCartItemDTO.java",
+      "className": "NewBeeMallShoppingCartItemDTO",
+      "startLine": 13,
+      "endLine": 54,
+      "language": "java",
+      "summary": "购物车项DTO，包含购物车项ID、用户ID、商品ID和商品数量。",
+      "tags": ["dto", "shopping-cart"],
+      "methods": ["getCartItemId", "setCartItemId", "getUserId", "setUserId", "getGoodsId", "setGoodsId", "getGoodsCount", "setGoodsCount"],
+      "properties": ["cartItemId", "userId", "goodsId", "goodsCount"]
+    },
+    {
+      "id": "class:ltd.shopcart.cloud.newbee.openfeign.NewBeeCloudShopCartServiceFeign",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/src/main/java/ltd/shopcart/cloud/newbee/openfeign/NewBeeCloudShopCartServiceFeign.java",
+      "className": "NewBeeCloudShopCartServiceFeign",
+      "startLine": 21,
+      "endLine": 28,
+      "language": "java",
+      "summary": "购物车服务Feign客户端接口，提供购物车项查询和批量删除两个远程调用方法。",
+      "tags": ["feign-client", "remote-service", "shopping-cart"],
+      "methods": ["listByCartItemIds", "deleteByCartItemIds"],
+      "properties": []
+    },
+    {
+      "id": "class:ltd.shopcart.cloud.newbee.NewBeeMallCloudShopCartServiceApplication",
+      "type": "class",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/NewBeeMallCloudShopCartServiceApplication.java",
+      "className": "NewBeeMallCloudShopCartServiceApplication",
+      "startLine": 29,
+      "endLine": 36,
+      "language": "java",
+      "summary": "购物车服务启动类，配置Nacos、Mapper扫描和两个Feign客户端(商品服务、用户服务)。",
+      "tags": ["spring-boot-application", "shop-cart-service"],
+      "methods": ["main"],
+      "properties": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/openfeign/NewBeeCloudGoodsServiceFeign.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/NewBeeMallGoodsDTO.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/openfeign/NewBeeCloudGoodsServiceFeign.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/UpdateStockNumDTO.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/NewBeeMallCloudOrderServiceApplication.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/openfeign/NewBeeCloudGoodsServiceFeign.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/NewBeeMallCloudOrderServiceApplication.java",
+      "target": "file:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/src/main/java/ltd/shopcart/cloud/newbee/openfeign/NewBeeCloudShopCartServiceFeign.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeAdminOrderController.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeAdminOrderController.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/BatchIdParam.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeAdminOrderController.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderDetailVO.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeAdminOrderController.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallOrderService.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderAddressMapper.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrderAddress.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderItemMapper.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrderItem.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderMapper.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrder.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallOrderService.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderDetailVO.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallOrderService.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderItemVO.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallOrderService.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrder.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/NewBeeMallOrderStatusEnum.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/PayStatusEnum.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/PayTypeEnum.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/NewBeeMallGoodsDTO.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/StockNumDTO.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/UpdateStockNumDTO.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/openfeign/NewBeeCloudGoodsServiceFeign.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderDetailVO.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderItemVO.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderAddressMapper.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderItemMapper.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderMapper.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrder.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrderAddress.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrderItem.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallOrderService.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/src/main/java/ltd/shopcart/cloud/newbee/dto/NewBeeMallShoppingCartItemDTO.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/src/main/java/ltd/shopcart/cloud/newbee/openfeign/NewBeeCloudShopCartServiceFeign.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/src/main/java/ltd/shopcart/cloud/newbee/openfeign/NewBeeCloudShopCartServiceFeign.java",
+      "target": "file:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/src/main/java/ltd/shopcart/cloud/newbee/dto/NewBeeMallShoppingCartItemDTO.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/NewBeeMallCloudShopCartServiceApplication.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/openfeign/NewBeeCloudGoodsServiceFeign.java",
+      "type": "imports"
+    },
+    {
+      "source": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/UpdateStockNumDTO.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/dto/StockNumDTO.java",
+      "type": "contains",
+      "label": "聚合StockNumDTO列表"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderMapper.java",
+      "type": "calls",
+      "label": "调用Mapper进行订单CRUD和状态变更"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderItemMapper.java",
+      "type": "calls",
+      "label": "调用Mapper进行订单项查询和批量插入"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderAddressMapper.java",
+      "type": "calls",
+      "label": "调用Mapper保存收货地址快照"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/openfeign/NewBeeCloudGoodsServiceFeign.java",
+      "type": "calls",
+      "label": "Feign远程调用商品服务查询商品和更新库存"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/src/main/java/ltd/shopcart/cloud/newbee/openfeign/NewBeeCloudShopCartServiceFeign.java",
+      "type": "calls",
+      "label": "Feign远程调用购物车服务查询和删除购物车项"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeAdminOrderController.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallOrderService.java",
+      "type": "calls",
+      "label": "注入并调用订单服务进行查询和状态变更"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/NewBeeMallOrderStatusEnum.java",
+      "type": "calls",
+      "label": "使用订单状态枚举进行状态判断和转换"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/PayStatusEnum.java",
+      "type": "calls",
+      "label": "使用支付状态枚举标记支付结果"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/PayTypeEnum.java",
+      "type": "calls",
+      "label": "使用支付方式枚举获取中文描述"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallOrderService.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "type": "implements",
+      "label": "接口实现"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrder.java",
+      "type": "uses",
+      "label": "操作订单实体进行CRUD和状态管理"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrderItem.java",
+      "type": "uses",
+      "label": "创建订单项快照"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrderAddress.java",
+      "type": "uses",
+      "label": "创建收货地址快照"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/NewBeeMallCloudOrderServiceApplication.java",
+      "target": "class:ltd.goods.cloud.newbee.openfeign.NewBeeCloudGoodsServiceFeign",
+      "type": "uses",
+      "label": "启用商品服务Feign客户端"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/NewBeeMallCloudOrderServiceApplication.java",
+      "target": "class:ltd.shopcart.cloud.newbee.openfeign.NewBeeCloudShopCartServiceFeign",
+      "type": "uses",
+      "label": "启用购物车服务Feign客户端"
+    },
+    {
+      "source": "file:newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/NewBeeMallCloudShopCartServiceApplication.java",
+      "target": "class:ltd.goods.cloud.newbee.openfeign.NewBeeCloudGoodsServiceFeign",
+      "type": "uses",
+      "label": "启用商品服务Feign客户端"
+    },
+    {
+      "source": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderDetailVO.java",
+      "target": "file:newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderItemVO.java",
+      "type": "contains",
+      "label": "聚合订单项VO列表"
+    }
+  ],
+  "languageNotes": "本批次涵盖新蜂商城微服务架构中的三个核心模块: (1) 公共枚举(common-enums)定义订单状态、支付状态和支付方式的状态机; (2) 商品服务API层(goods-api)提供DTO和Feign客户端定义; (3) 订单服务(order-service)实现完整的订单生命周期管理，使用Seata分布式事务协调购物车和商品服务; (4) 购物车服务API层(shop-cart-api)提供DTO和Feign客户端。微服务间通过OpenFeign进行声明式RPC调用。"
+}

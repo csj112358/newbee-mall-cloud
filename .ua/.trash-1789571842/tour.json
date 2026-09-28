@@ -1,0 +1,337 @@
+{
+  "title": "新蜂商城微服务版代码导览",
+  "description": "从架构全景到核心业务逻辑，逐步深入理解基于 Spring Cloud Alibaba 的新蜂商城微服务系统。本导览涵盖公共模块、API 网关鉴权、用户认证、商品管理、分布式事务下的订单处理、购物车跨服务调用以及首页推荐聚合等关键知识点。",
+  "language": "java",
+  "steps": [
+    {
+      "id": "step-01",
+      "title": "项目全景：微服务架构总览",
+      "summary": "从项目根配置和文档入手，了解新蜂商城微服务版的整体架构、技术选型和模块划分。",
+      "description": "新蜂商城微服务版基于 Spring Cloud Alibaba 技术栈构建，使用 Nacos 作为注册中心和配置中心，Sentinel 实现熔断限流，Seata 处理分布式事务，Spring Cloud Gateway 作为 API 网关，OpenFeign 实现服务间调用。项目采用多模块 Maven 结构，每个微服务分为 API 模块（定义 Feign 接口和 DTO）和 Web 模块（实现业务逻辑），实现服务间的松耦合。数据库按服务拆分，每个微服务拥有独立的数据库实例。",
+      "languageNotes": "Spring Boot 2.6.3 + Spring Cloud 2021.0.1 是本项目的技术基座。Maven 多模块结构通过 parent pom.xml 统一管理依赖版本，子模块通过 <parent> 继承。每个微服务的 API 模块供其他服务引用以实现 Feign 调用。",
+      "languageLesson": "在微服务项目中，API 模块（-api）和 Web 模块（-web）的分离是一种常见设计模式：API 模块只包含 Feign 接口和共享 DTO，编译为 jar 供其他服务依赖；Web 模块包含完整的业务实现。这样既避免了循环依赖，又保证了接口契约的一致性。",
+      "nodes": [
+        "document::README.md",
+        "config::pom.xml",
+        "config::newbee-mall-cloud-common/pom.xml"
+      ],
+      "tags": [
+        "架构",
+        "Spring Cloud Alibaba",
+        "Maven 多模块",
+        "微服务拆分"
+      ]
+    },
+    {
+      "id": "step-02",
+      "title": "公共模块：微服务的基础设施层",
+      "summary": "学习 newbee-mall-cloud-common 模块中的统一响应封装、分页工具、异常体系和业务枚举，这些是所有微服务共享的基石。",
+      "description": "公共模块（newbee-mall-cloud-common）是整个微服务系统的基础设施层，被所有业务服务依赖。它提供了：统一的 Result 响应封装和 ResultGenerator 快速构建器；PageQueryUtil 分页查询参数和 PageResult 分页结果；NewBeeMallException 自定义业务异常及 ServiceResultEnum 错误码枚举；MD5Util/NumberUtil/SystemUtil 等工具类；以及各类业务枚举（订单状态、支付类型、分类级别等）。所有微服务通过统一的响应结构和异常体系保持一致的 API 风格。",
+      "languageNotes": "Result<T> 泛型响应类通过 code/message/data 三元组统一了所有接口的返回格式。PageQueryUtil 继承 LinkedHashMap，巧妙地利用 Map 特性传递分页参数给 MyBatis。NewBeeMallException 是 RuntimeException 子类，配合全局异常处理器实现业务异常的统一捕获和响应。",
+      "languageLesson": "统一响应封装是微服务 API 设计的最佳实践。通过 Result + ResultGenerator 的组合，所有服务的接口返回格式保持一致，前端无需针对不同服务编写不同的响应解析逻辑。PageQueryUtil 的设计也很巧妙——继承 LinkedHashMap 使其可以直接作为 MyBatis 的参数传入 XML 映射文件。",
+      "nodes": [
+        "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/Result.java",
+        "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/ResultGenerator.java",
+        "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageQueryUtil.java",
+        "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageResult.java",
+        "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/exception/NewBeeMallException.java",
+        "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/ServiceResultEnum.java",
+        "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/MD5Util.java",
+        "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/SystemUtil.java",
+        "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/NumberUtil.java"
+      ],
+      "tags": [
+        "公共模块",
+        "统一响应",
+        "分页",
+        "异常处理",
+        "工具类"
+      ]
+    },
+    {
+      "id": "step-03",
+      "title": "API 网关：请求拦截与 Token 鉴权",
+      "summary": "了解管理端和商城端两个独立网关如何通过 GlobalFilter 实现统一的 Token 验证和请求路由。",
+      "description": "项目设计了两个独立的 Spring Cloud Gateway 实例：管理端网关（gateway-admin）和商城端网关（gateway-mall）。每个网关都通过自定义 GlobalFilter 拦截所有请求，从请求头中提取 token 并到 Redis 中验证其有效性。管理端网关验证管理员 token（AdminUserToken），无效返回 419 错误码；商城端网关验证普通用户 token（MallUserToken），支持白名单 URL 放行（如商品浏览、首页等无需登录的接口），无效返回 416 错误码。两个网关各自维护独立的 Redis 连接配置和路由规则。这种双网关设计实现了管理端和用户端流量的完全隔离。",
+      "languageNotes": "Spring Cloud Gateway 的 GlobalFilter 会拦截经过网关的所有请求，与 Gateway Filter（仅对特定路由生效）不同。ValidTokenGlobalFilter 通过 @Order 注解控制过滤器执行顺序，确保鉴权在路由之前完成。Redis 中存储的 Token 对象（AdminUserToken/MallUserToken）来自 common 模块，网关与用户服务通过 Redis 共享会话状态。",
+      "languageLesson": "双网关架构是微服务系统中常见的安全隔离模式。通过将管理端和用户端的入口完全分离，可以独立配置路由规则、限流策略和鉴权逻辑。Token 存储在 Redis 中实现了无状态网关——网关本身不维护会话，任何网关实例都能验证任何 token，天然支持水平扩展。",
+      "nodes": [
+        "file::newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/NewBeeMallCloudAdminGatewayApplication.java",
+        "file::newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/filter/ValidTokenGlobalFilter.java",
+        "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/AdminUserToken.java",
+        "file::newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/config/RedisConfig.java",
+        "config::newbee-mall-cloud-gateway-admin/src/main/resources/application.properties",
+        "file::newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/NewBeeMallCloudMallGatewayApplication.java",
+        "file::newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/filter/ValidMallUserTokenGlobalFilter.java",
+        "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/MallUserToken.java",
+        "file::newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/config/RedisConfig.java",
+        "config::newbee-mall-cloud-gateway-mall/src/main/resources/application.properties"
+      ],
+      "tags": [
+        "API 网关",
+        "Gateway Filter",
+        "Token 鉴权",
+        "Redis",
+        "安全隔离"
+      ]
+    },
+    {
+      "id": "step-04",
+      "title": "用户服务：认证体系与自定义参数注入",
+      "summary": "深入用户服务的核心认证流程，了解自定义注解 + HandlerMethodArgumentResolver 如何实现 Token 到用户对象的自动转换。",
+      "description": "用户服务（user-service）是整个系统的认证核心，提供管理员和商城用户两套完整的认证体系。登录流程：Controller 接收登录参数 -> Service 层校验密码（MD5 比对）-> 生成 Token（基于 MD5）-> 存入 Redis（管理员 48 小时过期）-> 返回 token 给客户端。最具特色的设计是 Token 自动注入机制：通过 @TokenToAdminUser 和 @TokenToMallUser 两个自定义注解标记 Controller 方法参数，配合 TokenToAdminUserMethodArgumentResolver 和 TokenToMallUserMethodArgumentResolver 两个参数解析器，从请求头提取 token 后自动查询 Redis 并注入完整的用户对象。商城用户解析器还会额外校验用户是否被锁定。WebMvcConfigurer 负责注册这些自定义解析器。",
+      "languageNotes": "HandlerMethodArgumentResolver 是 Spring MVC 的扩展点，通过 supportsParameter() 判断是否处理某个参数，通过 resolveArgument() 执行实际的参数解析逻辑。自定义注解 + Resolver 的组合是 Spring 中实现声明式编程的经典模式。@EnableFeignClients 启用 OpenFeign 支持跨服务调用。",
+      "languageLesson": "这种 Token 自动注入的设计极大简化了 Controller 代码——开发者只需在方法参数上加一个注解就能获得当前登录用户信息，无需在每个接口中重复编写 token 解析逻辑。这是 Spring 框架可扩展性的典型体现。注意商城用户解析器比管理员解析器多了用户锁定检查，体现了面向 C 端用户更严格的安全策略。",
+      "nodes": [
+        "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/NewBeeMallCloudUserServiceApplication.java",
+        "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudAdminUserController.java",
+        "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudPersonalController.java",
+        "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/AdminUserServiceImpl.java",
+        "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/NewBeeMallUserServiceImpl.java",
+        "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/annotation/TokenToAdminUser.java",
+        "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/annotation/TokenToMallUser.java",
+        "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+        "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+        "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/UserServiceWebMvcConfigurer.java",
+        "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/dao/AdminUserMapper.java",
+        "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/dao/MallUserMapper.java",
+        "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/entity/AdminUser.java",
+        "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/entity/MallUser.java"
+      ],
+      "tags": [
+        "用户服务",
+        "认证",
+        "自定义注解",
+        "参数解析器",
+        "Redis 会话",
+        "Spring MVC 扩展"
+      ]
+    },
+    {
+      "id": "step-05",
+      "title": "商品服务：业务分层与数据校验",
+      "summary": "通过商品服务理解 Controller -> Service -> Mapper 的标准分层架构，以及 JSR 303 参数校验和业务规则校验的协同工作。",
+      "description": "商品服务（goods-service）是项目中规模最大的微服务，包含商品管理和分类管理两大功能模块，共计 46 个文件。Controller 层分为管理端（NewBeeAdminGoodsInfoController、NewBeeAdminGoodsCategoryController）和用户端（NewBeeMallGoodsController），分别服务于后台管理系统和前台商城。Service 层（NewBeeMallGoodsServiceImpl、NewBeeMallCategoryServiceImpl）封装核心业务逻辑，包括：新增/修改商品时校验分类必须为三级分类且同名商品不重复；搜索结果中截断过长的商品名称和简介；使用流式处理构建三级分类树形结构。Mapper 层通过 MyBatis XML 映射文件实现数据库操作。数据传输通过 DTO/VO/Param 三层对象分离：Param 用于请求参数校验（JSR 303 注解），VO 用于视图展示，DTO 用于服务间传输。",
+      "languageNotes": "JSR 303（Bean Validation）通过 @NotEmpty、@NotNull、@Min、@Max、@Length 等注解声明式地定义校验规则，配合 @Valid 或 @Validated 触发校验。商品服务中的 SeataProxyConfiguration 配置了 Seata 代理，使 MyBatis 的 SQL 操作能够被 Seata 事务管理器拦截，实现分布式事务。",
+      "languageLesson": "三层数据对象的设计（Param/VO/DTO）是大型 Java 项目的常见实践：Param 对象只包含前端请求参数和校验规则；VO 对象控制返回给前端的数据结构（避免暴露内部字段）；DTO 用于微服务之间的数据传输。这种分离虽然增加了代码量，但提供了更好的安全性和可维护性。",
+      "nodes": [
+        "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/NewBeeMallCloudGoodsServiceApplication.java",
+        "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeAdminGoodsInfoController.java",
+        "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeMallGoodsController.java",
+        "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallGoodsServiceImpl.java",
+        "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallCategoryServiceImpl.java",
+        "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/NewBeeMallGoodsService.java",
+        "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/NewBeeMallCategoryService.java",
+        "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/dao/NewBeeMallGoodsMapper.java",
+        "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/dao/GoodsCategoryMapper.java",
+        "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/entity/NewBeeMallGoods.java",
+        "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/param/GoodsAddParam.java",
+        "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/NewBeeMallSearchGoodsVO.java",
+        "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/vo/NewBeeMallIndexCategoryVO.java",
+        "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/GoodsServiceExceptionHandler.java",
+        "config::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/application.properties"
+      ],
+      "tags": [
+        "商品服务",
+        "分层架构",
+        "JSR 303 校验",
+        "VO/DTO/Param",
+        "MyBatis"
+      ]
+    },
+    {
+      "id": "step-06",
+      "title": "订单服务：Seata 分布式事务实战",
+      "summary": "学习订单服务如何通过 Seata 实现跨服务的分布式事务，理解下单流程中扣减库存、创建订单、清空购物车的原子性保证。",
+      "description": "订单服务（order-service）是微服务架构中最具技术深度的服务，核心难点在于下单操作涉及多个微服务的数据一致性。NewBeeMallOrderServiceImpl 是整个项目中出度最高的节点（38条依赖边），它通过 OpenFeign 调用商品服务扣减库存、调用购物车服务清空购物车，同时在本地创建订单和订单项。这些操作通过 Seata 分布式事务框架保证原子性——要么全部成功，要么全部回滚。订单服务同时提供管理端（NewBeeAdminOrderController）和用户端（NewBeeMallOrderController）接口，管理端支持订单列表查询、发货和配货操作，用户端支持下单、订单列表和订单详情查询。数据层涉及四张核心表：订单主表、订单项表、订单地址表和用户地址表。",
+      "languageNotes": "Seata 是阿里巴巴开源的分布式事务解决方案，本项目使用 AT（Automatic Transaction）模式。SeataProxyConfiguration 类通过代理 DataSource 使 Seata 能够拦截 SQL 操作并记录 undo_log。@GlobalTransactional 注解标记在需要分布式事务的方法上，Seata 会自动协调参与方的本地事务。",
+      "languageLesson": "分布式事务是微服务架构的核心挑战之一。在单体应用中，一个数据库事务就能保证数据一致性；但在微服务中，一个业务操作可能涉及多个服务的数据库。Seata AT 模式通过在业务 SQL 前后记录数据快照（undo_log），在需要回滚时自动补偿，对业务代码的侵入性很小。但要注意 undo_log 表会占用额外的存储空间，且高并发场景下可能成为性能瓶颈。",
+      "nodes": [
+        "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/NewBeeMallCloudOrderServiceApplication.java",
+        "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+        "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallOrderService.java",
+        "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallOrderController.java",
+        "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeAdminOrderController.java",
+        "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderMapper.java",
+        "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderItemMapper.java",
+        "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/NewBeeMallOrderAddressMapper.java",
+        "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrder.java",
+        "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/NewBeeMallOrderItem.java",
+        "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/openfeign/NewBeeCloudGoodsServiceFeign.java",
+        "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/src/main/java/ltd/shopcart/cloud/newbee/openfeign/NewBeeCloudShopCartServiceFeign.java",
+        "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/SeataProxyConfiguration.java",
+        "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OrderServiceExceptionHandler.java",
+        "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/SeataProxyConfiguration.java"
+      ],
+      "tags": [
+        "订单服务",
+        "Seata 分布式事务",
+        "OpenFeign 跨服务调用",
+        "AT 模式",
+        "数据一致性"
+      ]
+    },
+    {
+      "id": "step-07",
+      "title": "购物车服务：跨服务通信的消费者角色",
+      "summary": "了解购物车服务如何被订单服务通过 Feign 调用，以及购物车服务自身的 CRUD 实现和 DTO 数据传输。",
+      "description": "购物车服务（shop-cart-service）在微服务体系中扮演着双重角色：它既是独立的购物车 CRUD 服务（通过 NewBeeMallShoppingCartController 提供增删改查接口），又是订单服务的下游依赖（被 Feign 调用以清空购物车和获取购物车商品列表）。NewBeeMallShoppingCartItemDTO 定义了跨服务传输的数据结构，NewBeeCloudShopCartServiceFeign 是暴露给其他服务的 Feign 接口。购物车服务同样配置了 Seata 代理，确保在分布式事务中能正确参与事务协调。服务内部通过 NewBeeMallShoppingCartServiceImpl 实现购物车商品的数量更新、商品查询和批量删除等业务逻辑。",
+      "languageNotes": "NewBeeCloudShopCartServiceFeign 接口定义在 shop-cart-api 模块中，其他服务（如订单服务）通过 Maven 依赖此 API 模块并使用 @FeignClient 注解调用购物车服务。Feign 的 URL 通过 Nacos 服务发现自动解析，无需硬编码服务地址。DTO（Data Transfer Object）在 API 模块中定义，保证调用方和提供方使用相同的数据契约。",
+      "languageLesson": "在微服务架构中，一个服务往往同时是服务提供者和消费者。购物车服务为用户端提供 CRUD 操作，同时通过 Feign 接口为订单服务提供数据。API 模块（-api）的设计正是为了这种场景：将 Feign 接口和 DTO 打包为独立 jar，任何需要调用该服务的其他服务只需引入这个 jar 即可。这种模式避免了接口定义的重复，也使得接口变更能够被编译器检查。",
+      "nodes": [
+        "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/NewBeeMallCloudShopCartServiceApplication.java",
+        "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/NewBeeMallShoppingCartController.java",
+        "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/impl/NewBeeMallShoppingCartServiceImpl.java",
+        "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/NewBeeMallShoppingCartService.java",
+        "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/dao/NewBeeMallShoppingCartItemMapper.java",
+        "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/entity/NewBeeMallShoppingCartItem.java",
+        "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/src/main/java/ltd/shopcart/cloud/newbee/openfeign/NewBeeCloudShopCartServiceFeign.java",
+        "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/src/main/java/ltd/shopcart/cloud/newbee/dto/NewBeeMallShoppingCartItemDTO.java",
+        "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/SeataProxyConfiguration.java",
+        "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/ShopCartServiceExceptionHandler.java"
+      ],
+      "tags": [
+        "购物车服务",
+        "OpenFeign",
+        "跨服务通信",
+        "API 模块",
+        "DTO"
+      ]
+    },
+    {
+      "id": "step-08",
+      "title": "推荐服务：首页数据聚合与后台管理",
+      "summary": "了解推荐服务如何通过一个聚合接口为首页提供轮播图、热销商品、新品推荐和为你推荐四维数据，以及后台管理的 CRUD 实现。",
+      "description": "推荐服务（recommend-service）负责商城首页的内容运营，管理轮播图（Carousel）和首页配置项（IndexConfig）两大资源。最具特色的接口是 NewBeeMallIndexController 的首页聚合接口——一个接口同时返回轮播图列表、热销商品列表、新品推荐列表和为你推荐列表，通过 IndexInfoVO 聚合四维数据，减少前端请求数。NewBeeMallIndexConfigServiceImpl 中通过 IndexConfigTypeEnum 区分不同类型的配置项（搜索框热搜、热销商品、新品上线等），按类型查询对应商品并通过 Feign 调用商品服务获取商品详情。后台管理接口（NewBeeAdminCarouselController、NewBeeAdminIndexConfigController）提供完整的 CRUD 操作，管理端配置了 TokenToAdminUser 参数解析器确保操作权限。",
+      "languageNotes": "IndexConfigTypeEnum 枚举定义了 5 种首页配置类型，通过 configType 字段区分。推荐服务需要通过 Feign 调用商品服务获取商品详情，因此也需要引入商品服务的 API 模块。NewBeeMallIndexCategoryVO、SecondLevelCategoryVO、ThirdLevelCategoryVO 形成三级分类树形结构的 VO 层级。",
+      "languageLesson": "首页聚合接口是性能优化的典型实践。如果前端分别调用 4 个接口获取首页数据，会产生 4 次网络往返；通过一个聚合接口，只需 1 次请求。这种 BFF（Backend for Frontend）模式在微服务架构中非常常见——由一个服务负责聚合多个下游服务的数据，为前端提供定制化的接口。",
+      "nodes": [
+        "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/NewBeeMallCloudRecommendServiceApplication.java",
+        "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeMallIndexController.java",
+        "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminCarouselController.java",
+        "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeAdminIndexConfigController.java",
+        "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallIndexConfigServiceImpl.java",
+        "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallCarouselServiceImpl.java",
+        "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/dao/CarouselMapper.java",
+        "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/dao/IndexConfigMapper.java",
+        "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/Carousel.java",
+        "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/entity/IndexConfig.java",
+        "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/IndexInfoVO.java",
+        "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/enums/IndexConfigTypeEnum.java"
+      ],
+      "tags": [
+        "推荐服务",
+        "首页聚合",
+        "BFF 模式",
+        "轮播图",
+        "首页配置"
+      ]
+    },
+    {
+      "id": "step-09",
+      "title": "用户服务 Feign 接口：跨服务用户信息查询",
+      "summary": "学习用户服务如何通过 Feign 接口向其他服务暴露用户信息查询能力，理解微服务间如何安全地共享用户数据。",
+      "description": "用户服务不仅服务于自身的 Controller 层，还通过 NewBeeCloudUserServiceFeign 接口向其他微服务提供用户信息查询能力。这个 Feign 接口定义在 user-api 模块中，被订单服务、商品服务等多个下游服务依赖。典型的调用场景包括：订单服务在处理订单时需要查询用户地址信息、商品服务在展示商品详情时需要获取用户信息等。MallUserDTO 作为跨服务传输对象，只包含必要的用户字段，避免暴露敏感信息。用户服务的 Mapper 层定义了丰富的查询方法，支持按用户名查询、分页查询、批量锁定等操作。",
+      "languageNotes": "NewBeeCloudUserServiceFeign 使用 @FeignClient 注解声明服务名称，Spring Cloud 会通过 Nacos 服务发现自动解析服务实例地址。MallUserDTO 定义在 user-api 模块中，与 Feign 接口放在一起，确保调用方使用正确的数据结构。Mapper XML 文件中的 SQL 通过 MyBatis 的动态 SQL 特性（<if>、<where>、<foreach>）实现灵活的条件查询。",
+      "languageLesson": "微服务间的用户数据共享需要谨慎设计。本项目通过 Feign 接口 + DTO 的方式实现了受控的数据暴露：只暴露必要的查询方法，返回的 DTO 只包含非敏感字段。这比直接共享数据库连接要安全得多——每个服务仍然拥有自己的数据库，通过 API 层面控制数据访问边界。",
+      "nodes": [
+        "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/src/main/java/ltd/user/cloud/newbee/openfeign/NewBeeCloudUserServiceFeign.java",
+        "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/AdminUserService.java",
+        "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/NewBeeMallUserService.java",
+        "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/AdminLoginParam.java",
+        "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/MallUserLoginParam.java",
+        "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/MallUserRegisterParam.java",
+        "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/vo/NewBeeMallUserVO.java",
+        "file::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/RedisConfig.java",
+        "config::newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/application.properties"
+      ],
+      "tags": [
+        "Feign 接口",
+        "用户服务",
+        "跨服务通信",
+        "数据共享",
+        "API 模块"
+      ]
+    },
+    {
+      "id": "step-10",
+      "title": "数据库设计：按服务拆分的数据架构",
+      "summary": "通过 SQL 初始化脚本了解项目的数据库拆分策略——每个微服务拥有独立的数据库实例，以及 Seata undo_log 表的作用。",
+      "description": "项目采用了数据库按服务拆分的策略，共有 5 个独立的数据库：用户库（user_db）、商品库（goods_db）、订单库（order_db）、购物车库（cart_db）和推荐库（recommend_db）。每个数据库的 SQL 初始化脚本包含业务表和 Seata 的 undo_log 表。用户库包含管理员表和商城用户表；商品库包含商品表和商品分类表；订单库最为复杂，包含订单主表、订单项表、订单地址表和用户地址表，同时包含多条表间外键关系；购物车库只有一张购物车项表；推荐库包含轮播图表和首页配置表。undo_log 表是 Seata AT 模式的核心——它记录事务执行前后的数据快照，用于异常时的自动回滚。",
+      "languageNotes": "每个数据库的 undo_log 表结构是 Seata 框架标准定义的，包含 branchId、xid、context、rollbackInfo 等字段。表名统一使用 tb_ 前缀。SQL 脚本中同时包含建表语句和初始数据插入，便于快速搭建开发环境。数据库拆分后，跨库查询不再可能，必须通过服务间调用实现数据关联。",
+      "languageLesson": "数据库按服务拆分是微服务架构的核心原则之一——每个服务拥有自己的数据库，禁止跨服务直接访问数据库。这种设计保证了服务的独立部署和独立扩展能力，但也带来了数据一致性的挑战（需要分布式事务）和数据关联查询的复杂性（需要通过 API 组合数据）。Seata 的 undo_log 表必须存在于每个参与分布式事务的数据库中。",
+      "nodes": [
+        "file::static-files/newbee_mall_cloud_user_db.sql",
+        "file::static-files/newbee_mall_cloud_goods_db.sql",
+        "file::static-files/newbee_mall_cloud_order_db.sql",
+        "file::static-files/newbee_mall_cloud_cart_db.sql",
+        "file::static-files/newbee_mall_cloud_recommend_db.sql"
+      ],
+      "tags": [
+        "数据库拆分",
+        "SQL 脚本",
+        "Seata undo_log",
+        "数据架构"
+      ]
+    },
+    {
+      "id": "step-11",
+      "title": "跨服务调用全链路：从浏览商品到完成下单",
+      "summary": "串联前序所有步骤，追踪一个完整的用户购物链路，理解各微服务如何协同工作。",
+      "description": "将前面学习的所有服务串联起来，追踪一个完整的用户购物链路：(1) 用户打开首页 -> 推荐服务聚合接口返回轮播图和推荐商品（NewBeeMallIndexController -> NewBeeMallIndexConfigServiceImpl 通过 Feign 调用商品服务获取商品详情）；(2) 用户搜索商品 -> 商品服务返回搜索结果（NewBeeMallGoodsController -> NewBeeMallGoodsServiceImpl）；(3) 用户将商品加入购物车 -> 购物车服务创建购物车项（NewBeeMallShoppingCartController -> NewBeeMallShoppingCartServiceImpl）；(4) 用户提交订单 -> 订单服务开启 Seata 全局事务（NewBeeMallOrderController -> NewBeeMallOrderServiceImpl），通过 Feign 调用商品服务扣减库存（NewBeeCloudGoodsServiceFeign -> Seata 参与方），通过 Feign 调用购物车服务清空购物车（NewBeeCloudShopCartServiceFeign -> Seata 参与方），同时在订单库创建订单记录。整个链路中，每个请求都经过 Gateway 的 GlobalFilter 进行 Token 验证，各服务的 Controller 参数通过自定义注解自动注入用户信息。",
+      "languageNotes": "这条链路涉及所有 6 个业务微服务（Gateway、User、Goods、Order、ShopCart、Recommend）的协同工作。Seata 的 @GlobalTransactional 注解在订单服务的下单方法上，而商品服务和购物车服务通过 SeataProxyConfiguration 配置为 Seata 参与方。Nacos 作为注册中心维护所有服务的实例列表，Sentinel 提供熔断保护防止级联故障。",
+      "languageLesson": "理解完整的业务链路是掌握微服务架构的关键。在单体应用中，所有调用都在同一个进程内完成；而在微服务中，一个用户操作可能触发多个服务间的远程调用。这种分布式特性带来了更高的系统复杂性，但也提供了更好的可扩展性和可维护性。每个服务可以独立开发、独立部署、独立扩缩容，这是微服务架构的核心价值。",
+      "nodes": [
+        "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/NewBeeMallIndexController.java",
+        "file::newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/service/impl/NewBeeMallIndexConfigServiceImpl.java",
+        "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/controller/NewBeeMallGoodsController.java",
+        "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/service/impl/NewBeeMallGoodsServiceImpl.java",
+        "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/NewBeeMallShoppingCartController.java",
+        "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/impl/NewBeeMallShoppingCartServiceImpl.java",
+        "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallOrderController.java",
+        "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallOrderServiceImpl.java",
+        "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/src/main/java/ltd/goods/cloud/newbee/openfeign/NewBeeCloudGoodsServiceFeign.java",
+        "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/src/main/java/ltd/shopcart/cloud/newbee/openfeign/NewBeeCloudShopCartServiceFeign.java",
+        "file::newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/filter/ValidTokenGlobalFilter.java",
+        "file::newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/filter/ValidMallUserTokenGlobalFilter.java",
+        "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/SeataProxyConfiguration.java",
+        "file::newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/SeataProxyConfiguration.java"
+      ],
+      "tags": [
+        "全链路",
+        "跨服务协作",
+        "分布式事务",
+        "OpenFeign",
+        "微服务协同"
+      ]
+    }
+  ],
+  "metadata": {
+    "projectName": "newbee-mall-cloud",
+    "projectDescription": "新蜂商城微服务版本(Spring Cloud Alibaba)",
+    "language": "java",
+    "totalNodes": 237,
+    "totalEdges": 731,
+    "totalSteps": 11,
+    "services": [
+      "newbee-mall-cloud-common",
+      "newbee-mall-cloud-gateway-admin",
+      "newbee-mall-cloud-gateway-mall",
+      "newbee-mall-cloud-user-service",
+      "newbee-mall-cloud-goods-service",
+      "newbee-mall-cloud-order-service",
+      "newbee-mall-cloud-shop-cart-service",
+      "newbee-mall-cloud-recommend-service"
+    ],
+    "keyTechnologies": [
+      "Spring Cloud Alibaba",
+      "Nacos",
+      "Sentinel",
+      "Seata",
+      "Spring Cloud Gateway",
+      "OpenFeign",
+      "MyBatis",
+      "Redis"
+    ]
+  }
+}

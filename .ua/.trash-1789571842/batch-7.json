@@ -1,0 +1,871 @@
+{
+  "batchIndex": 7,
+  "nodes": [
+    {
+      "id": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageResult.java",
+      "kind": "file",
+      "name": "PageResult.java",
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageResult.java",
+      "language": "java",
+      "summary": "通用分页结果封装类，提供泛型支持的分页数据结构，包含总记录数、每页记录数、总页数、当前页和列表数据等字段，被整个微服务系统广泛使用。",
+      "tags": ["dto", "分页", "泛型", "通用工具"],
+      "lines": 89
+    },
+    {
+      "id": "class::ltd.common.cloud.newbee.dto.PageResult",
+      "kind": "class",
+      "name": "PageResult",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageResult.java",
+      "language": "java",
+      "summary": "泛型分页结果DTO，封装分页查询的完整结果，包括列表数据和分页元信息（总数、页大小、总页数、当前页）。实现了Serializable接口，支持序列化传输。通过构造函数自动计算总页数。",
+      "tags": ["dto", "分页", "Serializable", "泛型"],
+      "startLine": 16,
+      "endLine": 89,
+      "members": ["totalCount", "pageSize", "totalPage", "currPage", "list"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "kind": "file",
+      "name": "TokenToMallUser.java",
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "language": "java",
+      "summary": "自定义参数级注解，用于Controller方法参数上，标识需要从请求中解析当前登录用户Token信息并自动注入。",
+      "tags": ["annotation", "参数解析", "认证", "自定义注解"],
+      "lines": 25
+    },
+    {
+      "id": "class::ltd.shopcart.cloud.newbee.config.annotation.TokenToMallUser",
+      "kind": "class",
+      "name": "TokenToMallUser",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "language": "java",
+      "summary": "自定义注解，作用于方法参数，配合TokenToMallUserMethodArgumentResolver实现从HTTP请求中自动解析并注入MallUserToken对象。value属性指定当前用户在request中的属性名，默认为\"user\"。",
+      "tags": ["annotation", "Spring", "参数注入", "认证"],
+      "startLine": 16,
+      "endLine": 25,
+      "members": ["value"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/NewBeeMallShoppingCartController.java",
+      "kind": "file",
+      "name": "NewBeeMallShoppingCartController.java",
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/NewBeeMallShoppingCartController.java",
+      "language": "java",
+      "summary": "购物车服务的REST控制器，提供购物车的增删改查、分页查询、结算确认、批量删除等完整API端点，使用@TokenToMallUser注解自动注入用户信息。",
+      "tags": ["controller", "REST API", "购物车", "Spring MVC"],
+      "lines": 150
+    },
+    {
+      "id": "class::ltd.shopcart.cloud.newbee.controller.NewBeeMallShoppingCartController",
+      "kind": "class",
+      "name": "NewBeeMallShoppingCartController",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/NewBeeMallShoppingCartController.java",
+      "language": "java",
+      "summary": "购物车REST控制器，提供8个API端点：分页/非分页查询购物车列表、添加购物项、修改购物项数量、删除购物项、结算确认查询、按ID列表查询和批量删除。集成Seata分布式事务支持，通过OpenFeign调用商品服务。",
+      "tags": ["RestController", "购物车", "API", "Seata"],
+      "startLine": 38,
+      "endLine": 150,
+      "members": ["newBeeMallShoppingCartService"]
+    },
+    {
+      "id": "method::NewBeeMallShoppingCartController.cartItemPageList",
+      "kind": "function",
+      "name": "cartItemPageList",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/NewBeeMallShoppingCartController.java",
+      "language": "java",
+      "summary": "购物车分页列表接口（GET /shop-cart/page），默认每页5条，通过PageQueryUtil封装分页参数后调用服务层获取分页结果。",
+      "tags": ["GET", "分页", "购物车列表"],
+      "startLine": 45,
+      "endLine": 58,
+      "params": ["pageNumber", "loginMallUserToken"]
+    },
+    {
+      "id": "method::NewBeeMallShoppingCartController.cartItemList",
+      "kind": "function",
+      "name": "cartItemList",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/NewBeeMallShoppingCartController.java",
+      "language": "java",
+      "summary": "购物车全量列表接口（GET /shop-cart），不分页，用于网页和移动端直接展示所有购物项。",
+      "tags": ["GET", "购物车列表", "全量查询"],
+      "startLine": 60,
+      "endLine": 64,
+      "params": ["loginMallUserToken"]
+    },
+    {
+      "id": "method::NewBeeMallShoppingCartController.saveNewBeeMallShoppingCartItem",
+      "kind": "function",
+      "name": "saveNewBeeMallShoppingCartItem",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/NewBeeMallShoppingCartController.java",
+      "language": "java",
+      "summary": "添加商品到购物车接口（POST /shop-cart），接收商品ID和数量参数，调用服务层保存后根据结果返回成功或失败。",
+      "tags": ["POST", "添加购物项"],
+      "startLine": 66,
+      "endLine": 77,
+      "params": ["saveCartItemParam", "loginMallUserToken"]
+    },
+    {
+      "id": "method::NewBeeMallShoppingCartController.updateNewBeeMallShoppingCartItem",
+      "kind": "function",
+      "name": "updateNewBeeMallShoppingCartItem",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/NewBeeMallShoppingCartController.java",
+      "language": "java",
+      "summary": "修改购物项数量接口（PUT /shop-cart），接收购物项ID和新数量，调用服务层更新后返回结果。",
+      "tags": ["PUT", "更新购物项"],
+      "startLine": 79,
+      "endLine": 90,
+      "params": ["updateCartItemParam", "loginMallUserToken"]
+    },
+    {
+      "id": "method::NewBeeMallShoppingCartController.deleteCartItem",
+      "kind": "function",
+      "name": "deleteCartItem",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/NewBeeMallShoppingCartController.java",
+      "language": "java",
+      "summary": "删除单个购物项接口（DELETE /shop-cart/{id}），先验证购物项归属当前用户再执行删除，防止越权操作。",
+      "tags": ["DELETE", "删除购物项", "权限校验"],
+      "startLine": 92,
+      "endLine": 107,
+      "params": ["newBeeMallShoppingCartItemId", "loginMallUserToken"]
+    },
+    {
+      "id": "method::NewBeeMallShoppingCartController.toSettle",
+      "kind": "function",
+      "name": "toSettle",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/NewBeeMallShoppingCartController.java",
+      "language": "java",
+      "summary": "结算确认查询接口（GET /shop-cart/settle），根据购物项ID数组查询明细并计算总价，用于订单确认页面。",
+      "tags": ["GET", "结算", "订单确认"],
+      "startLine": 109,
+      "endLine": 130,
+      "params": ["cartItemIds", "loginMallUserToken"]
+    },
+    {
+      "id": "method::NewBeeMallShoppingCartController.cartItemListByIds",
+      "kind": "function",
+      "name": "cartItemListByIds",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/NewBeeMallShoppingCartController.java",
+      "language": "java",
+      "summary": "按ID列表查询购物车项接口（GET /shop-cart/listByCartItemIds），接收购物项ID列表返回对应的购物项数据。",
+      "tags": ["GET", "批量查询"],
+      "startLine": 132,
+      "endLine": 139,
+      "params": ["cartItemIds"]
+    },
+    {
+      "id": "method::NewBeeMallShoppingCartController.deleteByCartItemIds",
+      "kind": "function",
+      "name": "deleteByCartItemIds",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/NewBeeMallShoppingCartController.java",
+      "language": "java",
+      "summary": "批量删除购物项接口（DELETE /shop-cart/deleteByCartItemIds），集成Seata分布式事务（打印XID用于调试），支持订单服务调用后清理已下单的购物项。",
+      "tags": ["DELETE", "批量删除", "Seata分布式事务"],
+      "startLine": 141,
+      "endLine": 149,
+      "params": ["cartItemIds", "request"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/param/SaveCartItemParam.java",
+      "kind": "file",
+      "name": "SaveCartItemParam.java",
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/param/SaveCartItemParam.java",
+      "language": "java",
+      "summary": "添加购物项的请求参数DTO，使用Lombok @Data自动生成getter/setter，包含商品数量和商品ID两个字段。",
+      "tags": ["dto", "请求参数", "购物车", "Lombok"],
+      "lines": 27
+    },
+    {
+      "id": "class::ltd.shopcart.cloud.newbee.controller.param.SaveCartItemParam",
+      "kind": "class",
+      "name": "SaveCartItemParam",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/param/SaveCartItemParam.java",
+      "language": "java",
+      "summary": "添加购物项请求参数类，使用@Data注解自动生成getter/setter，实现Serializable接口。包含goodsCount（商品数量）和goodsId（商品ID）两个字段，用于POST /shop-cart接口。",
+      "tags": ["dto", "Lombok", "Serializable"],
+      "startLine": 19,
+      "endLine": 27,
+      "members": ["goodsCount", "goodsId"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/param/UpdateCartItemParam.java",
+      "kind": "file",
+      "name": "UpdateCartItemParam.java",
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/param/UpdateCartItemParam.java",
+      "language": "java",
+      "summary": "修改购物项的请求参数DTO，使用Lombok @Data自动生成getter/setter，包含购物项ID和商品数量两个字段。",
+      "tags": ["dto", "请求参数", "购物车", "Lombok"],
+      "lines": 27
+    },
+    {
+      "id": "class::ltd.shopcart.cloud.newbee.controller.param.UpdateCartItemParam",
+      "kind": "class",
+      "name": "UpdateCartItemParam",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/param/UpdateCartItemParam.java",
+      "language": "java",
+      "summary": "修改购物项请求参数类，使用@Data注解自动生成getter/setter，实现Serializable接口。包含cartItemId（购物项ID）和goodsCount（商品数量）两个字段，用于PUT /shop-cart接口。",
+      "tags": ["dto", "Lombok", "Serializable"],
+      "startLine": 19,
+      "endLine": 27,
+      "members": ["cartItemId", "goodsCount"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/vo/NewBeeMallShoppingCartItemVO.java",
+      "kind": "file",
+      "name": "NewBeeMallShoppingCartItemVO.java",
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/vo/NewBeeMallShoppingCartItemVO.java",
+      "language": "java",
+      "summary": "购物车页面展示用视图对象，聚合了购物项基本信息和商品详情（名称、封面、价格），用于前端页面渲染。",
+      "tags": ["vo", "视图对象", "购物车", "前端展示"],
+      "lines": 39
+    },
+    {
+      "id": "class::ltd.shopcart.cloud.newbee.controller.vo.NewBeeMallShoppingCartItemVO",
+      "kind": "class",
+      "name": "NewBeeMallShoppingCartItemVO",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/vo/NewBeeMallShoppingCartItemVO.java",
+      "language": "java",
+      "summary": "购物车页面购物项视图对象，使用@Data注解，实现Serializable接口。聚合了cartItemId、goodsId、goodsCount、goodsName、goodsCoverImg、sellingPrice等字段，将购物项与商品信息合并展示。",
+      "tags": ["vo", "Lombok", "Serializable", "数据聚合"],
+      "startLine": 19,
+      "endLine": 39,
+      "members": ["cartItemId", "goodsId", "goodsCount", "goodsName", "goodsCoverImg", "sellingPrice"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/dao/NewBeeMallShoppingCartItemMapper.java",
+      "kind": "file",
+      "name": "NewBeeMallShoppingCartItemMapper.java",
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/dao/NewBeeMallShoppingCartItemMapper.java",
+      "language": "java",
+      "summary": "购物车项MyBatis数据访问接口，定义了购物车项的完整CRUD操作，包括按主键/用户ID/商品ID查询、分页查询、批量删除等方法。",
+      "tags": ["dao", "MyBatis", "Mapper", "数据访问"],
+      "lines": 44
+    },
+    {
+      "id": "class::ltd.shopcart.cloud.newbee.dao.NewBeeMallShoppingCartItemMapper",
+      "kind": "class",
+      "name": "NewBeeMallShoppingCartItemMapper",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/dao/NewBeeMallShoppingCartItemMapper.java",
+      "language": "java",
+      "summary": "MyBatis Mapper接口，定义14个数据访问方法：主键查询/删除、选择性插入/更新、按用户ID查询、按用户+商品ID查询、按用户+购物项IDs查询、按购物项IDs查询、用户购物项计数、批量删除、分页查询和分页计数。",
+      "tags": ["MyBatis Mapper", "数据访问层", "CRUD"],
+      "startLine": 17,
+      "endLine": 45,
+      "members": ["deleteByPrimaryKey", "insert", "insertSelective", "selectByPrimaryKey", "selectByUserIdAndGoodsId", "selectByUserId", "selectByUserIdAndCartItemIds", "selectByCartItemIds", "selectCountByUserId", "updateByPrimaryKeySelective", "updateByPrimaryKey", "deleteBatch", "findMyNewBeeMallCartItems", "getTotalMyNewBeeMallCartItems"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/entity/NewBeeMallShoppingCartItem.java",
+      "kind": "file",
+      "name": "NewBeeMallShoppingCartItem.java",
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/entity/NewBeeMallShoppingCartItem.java",
+      "language": "java",
+      "summary": "购物车项实体类，映射数据库表结构，包含购物项ID、用户ID、商品ID、数量、删除标记及创建/更新时间。",
+      "tags": ["entity", "实体类", "购物车", "数据库映射"],
+      "lines": 29
+    },
+    {
+      "id": "class::ltd.shopcart.cloud.newbee.entity.NewBeeMallShoppingCartItem",
+      "kind": "class",
+      "name": "NewBeeMallShoppingCartItem",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/entity/NewBeeMallShoppingCartItem.java",
+      "language": "java",
+      "summary": "购物车项JPA/MyBatis实体类，使用@Data注解。字段包括：cartItemId（主键）、userId（用户ID）、goodsId（商品ID）、goodsCount（数量）、isDeleted（软删除标记）、createTime和updateTime（时间戳）。",
+      "tags": ["entity", "Lombok", "数据库实体"],
+      "startLine": 15,
+      "endLine": 30,
+      "members": ["cartItemId", "userId", "goodsId", "goodsCount", "isDeleted", "createTime", "updateTime"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/NewBeeMallShoppingCartService.java",
+      "kind": "file",
+      "name": "NewBeeMallShoppingCartService.java",
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/NewBeeMallShoppingCartService.java",
+      "language": "java",
+      "summary": "购物车服务接口，定义购物车业务操作的完整契约，包括购物项的保存、更新、查询、删除及分页查询等方法。",
+      "tags": ["service", "接口", "购物车", "业务层"],
+      "lines": 98
+    },
+    {
+      "id": "class::ltd.shopcart.cloud.newbee.service.NewBeeMallShoppingCartService",
+      "kind": "class",
+      "name": "NewBeeMallShoppingCartService",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/NewBeeMallShoppingCartService.java",
+      "language": "java",
+      "summary": "购物车服务接口，定义9个方法：保存购物项、更新购物项、按ID获取购物项详情、删除购物项、获取用户购物车列表、按IDs查询结算项、按IDs获取购物项、批量删除和分页查询。为Controller和ServiceImpl之间的契约层。",
+      "tags": ["Service接口", "购物车", "业务契约"],
+      "startLine": 20,
+      "endLine": 98,
+      "members": ["saveNewBeeMallCartItem", "updateNewBeeMallCartItem", "getNewBeeMallCartItemById", "deleteById", "getMyShoppingCartItems", "getCartItemsForSettle", "getCartItemsByCartIds", "deleteCartItemsByCartIds", "getMyShoppingCartItems"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/impl/NewBeeMallShoppingCartServiceImpl.java",
+      "kind": "file",
+      "name": "NewBeeMallShoppingCartServiceImpl.java",
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/impl/NewBeeMallShoppingCartServiceImpl.java",
+      "language": "java",
+      "summary": "购物车服务实现类，实现完整的购物车业务逻辑，通过OpenFeign调用商品服务获取商品信息，实现购物项与商品数据的聚合转换。",
+      "tags": ["service", "实现类", "购物车", "OpenFeign"],
+      "lines": 211
+    },
+    {
+      "id": "class::ltd.shopcart.cloud.newbee.service.impl.NewBeeMallShoppingCartServiceImpl",
+      "kind": "class",
+      "name": "NewBeeMallShoppingCartServiceImpl",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/impl/NewBeeMallShoppingCartServiceImpl.java",
+      "language": "java",
+      "summary": "购物车服务实现类，注入NewBeeMallShoppingCartItemMapper和NewBeeCloudGoodsServiceFeign。实现购物项CRUD的完整业务逻辑，包含重复商品检查、数量限制（单商品最大5件、购物车最大20项）、用户权限校验。核心的getNewBeeMallShoppingCartItemVOS方法通过OpenFeign批量查询商品服务，将购物项实体与商品DTO聚合为VO返回。",
+      "tags": ["Service实现", "购物车", "OpenFeign", "业务逻辑"],
+      "startLine": 33,
+      "endLine": 211,
+      "members": ["newBeeMallShoppingCartItemMapper", "goodsService"]
+    },
+    {
+      "id": "method::NewBeeMallShoppingCartServiceImpl.saveNewBeeMallCartItem",
+      "kind": "function",
+      "name": "saveNewBeeMallCartItem",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/impl/NewBeeMallShoppingCartServiceImpl.java",
+      "language": "java",
+      "summary": "保存购物项业务方法，检查重复商品、通过Feign验证商品是否存在、校验数量限制（最少1件、最多5件、购物车最多20项），使用BeanUtil拷贝属性后保存到数据库。",
+      "tags": ["业务逻辑", "数据校验", "Feign调用"],
+      "startLine": 42,
+      "endLine": 75,
+      "params": ["saveCartItemParam", "userId"]
+    },
+    {
+      "id": "method::NewBeeMallShoppingCartServiceImpl.updateNewBeeMallCartItem",
+      "kind": "function",
+      "name": "updateNewBeeMallCartItem",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/impl/NewBeeMallShoppingCartServiceImpl.java",
+      "language": "java",
+      "summary": "更新购物项数量方法，校验购物项存在性、用户权限（userId匹配）、数量上限（最大5件），避免无变化更新，更新后记录修改时间。",
+      "tags": ["业务逻辑", "权限校验", "数据更新"],
+      "startLine": 77,
+      "endLine": 105,
+      "params": ["updateCartItemParam", "userId"]
+    },
+    {
+      "id": "method::NewBeeMallShoppingCartServiceImpl.getNewBeeMallCartItemById",
+      "kind": "function",
+      "name": "getNewBeeMallCartItemById",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/impl/NewBeeMallShoppingCartServiceImpl.java",
+      "language": "java",
+      "summary": "按ID获取购物项详情，若不存在则抛出异常。",
+      "tags": ["查询", "异常处理"],
+      "startLine": 107,
+      "endLine": 114,
+      "params": ["newBeeMallShoppingCartItemId"]
+    },
+    {
+      "id": "method::NewBeeMallShoppingCartServiceImpl.deleteById",
+      "kind": "function",
+      "name": "deleteById",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/impl/NewBeeMallShoppingCartServiceImpl.java",
+      "language": "java",
+      "summary": "删除购物项方法，先验证购物项存在且属于当前用户，再执行物理删除。",
+      "tags": ["删除", "权限校验"],
+      "startLine": 116,
+      "endLine": 127,
+      "params": ["shoppingCartItemId", "userId"]
+    },
+    {
+      "id": "method::NewBeeMallShoppingCartServiceImpl.getMyShoppingCartItems",
+      "kind": "function",
+      "name": "getMyShoppingCartItems",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/impl/NewBeeMallShoppingCartServiceImpl.java",
+      "language": "java",
+      "summary": "获取用户购物车列表（非分页），查询最多20条购物项并转换为包含商品信息的VO列表。",
+      "tags": ["查询", "数据聚合", "VO转换"],
+      "startLine": 129,
+      "endLine": 134,
+      "params": ["newBeeMallUserId"]
+    },
+    {
+      "id": "method::NewBeeMallShoppingCartServiceImpl.getCartItemsForSettle",
+      "kind": "function",
+      "name": "getCartItemsForSettle",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/impl/NewBeeMallShoppingCartServiceImpl.java",
+      "language": "java",
+      "summary": "获取结算购物项方法，根据用户ID和购物项IDs查询并验证数量一致性，用于订单确认页面。",
+      "tags": ["查询", "结算", "数据校验"],
+      "startLine": 136,
+      "endLine": 150,
+      "params": ["cartItemIds", "newBeeMallUserId"]
+    },
+    {
+      "id": "method::NewBeeMallShoppingCartServiceImpl.getNewBeeMallShoppingCartItemVOS",
+      "kind": "function",
+      "name": "getNewBeeMallShoppingCartItemVOS",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/impl/NewBeeMallShoppingCartServiceImpl.java",
+      "language": "java",
+      "summary": "核心数据转换方法，通过OpenFeign调用商品服务批量获取商品信息，将购物项实体与商品DTO聚合为视图对象VO。使用Stream API构建商品ID到DTO的映射，对商品名称超过28字符进行截断处理。",
+      "tags": ["数据转换", "OpenFeign", "Stream API", "VO聚合"],
+      "startLine": 169,
+      "endLine": 201,
+      "params": ["newBeeMallShoppingCartItemVOS", "newBeeMallShoppingCartItems"]
+    },
+    {
+      "id": "method::NewBeeMallShoppingCartServiceImpl.getMyShoppingCartItems_paged",
+      "kind": "function",
+      "name": "getMyShoppingCartItems (paged)",
+      "filePath": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/impl/NewBeeMallShoppingCartServiceImpl.java",
+      "language": "java",
+      "summary": "分页获取用户购物车列表，通过Mapper分页查询购物项并转换为VO，构建PageResult返回分页结果。",
+      "tags": ["分页查询", "数据聚合"],
+      "startLine": 203,
+      "endLine": 210,
+      "params": ["pageUtil"]
+    }
+  ],
+  "edges": [
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/NewBeeMallShoppingCartController.java",
+      "to": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "kind": "imports",
+      "label": "导入TokenToMallUser注解"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/NewBeeMallShoppingCartController.java",
+      "to": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/param/SaveCartItemParam.java",
+      "kind": "imports",
+      "label": "导入SaveCartItemParam参数类"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/NewBeeMallShoppingCartController.java",
+      "to": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/param/UpdateCartItemParam.java",
+      "kind": "imports",
+      "label": "导入UpdateCartItemParam参数类"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/NewBeeMallShoppingCartController.java",
+      "to": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/vo/NewBeeMallShoppingCartItemVO.java",
+      "kind": "imports",
+      "label": "导入购物项VO"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/NewBeeMallShoppingCartController.java",
+      "to": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/entity/NewBeeMallShoppingCartItem.java",
+      "kind": "imports",
+      "label": "导入购物项实体"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/NewBeeMallShoppingCartController.java",
+      "to": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/NewBeeMallShoppingCartService.java",
+      "kind": "imports",
+      "label": "导入购物车服务接口"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/NewBeeMallShoppingCartController.java",
+      "to": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageResult.java",
+      "kind": "imports",
+      "label": "导入分页结果DTO"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/dao/NewBeeMallShoppingCartItemMapper.java",
+      "to": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/entity/NewBeeMallShoppingCartItem.java",
+      "kind": "imports",
+      "label": "导入购物项实体用于Mapper方法返回类型"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/NewBeeMallShoppingCartService.java",
+      "to": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/param/SaveCartItemParam.java",
+      "kind": "imports",
+      "label": "导入SaveCartItemParam作为方法参数"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/NewBeeMallShoppingCartService.java",
+      "to": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/param/UpdateCartItemParam.java",
+      "kind": "imports",
+      "label": "导入UpdateCartItemParam作为方法参数"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/NewBeeMallShoppingCartService.java",
+      "to": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/vo/NewBeeMallShoppingCartItemVO.java",
+      "kind": "imports",
+      "label": "导入购物项VO作为返回类型"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/NewBeeMallShoppingCartService.java",
+      "to": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/entity/NewBeeMallShoppingCartItem.java",
+      "kind": "imports",
+      "label": "导入购物项实体作为返回类型"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/NewBeeMallShoppingCartService.java",
+      "to": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageResult.java",
+      "kind": "imports",
+      "label": "导入分页结果DTO作为返回类型"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/impl/NewBeeMallShoppingCartServiceImpl.java",
+      "to": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/dao/NewBeeMallShoppingCartItemMapper.java",
+      "kind": "imports",
+      "label": "导入Mapper数据访问接口"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/impl/NewBeeMallShoppingCartServiceImpl.java",
+      "to": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/NewBeeMallShoppingCartService.java",
+      "kind": "imports",
+      "label": "导入购物车服务接口（实现该接口）"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/impl/NewBeeMallShoppingCartServiceImpl.java",
+      "to": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/entity/NewBeeMallShoppingCartItem.java",
+      "kind": "imports",
+      "label": "导入购物项实体用于数据操作"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/impl/NewBeeMallShoppingCartServiceImpl.java",
+      "to": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/param/SaveCartItemParam.java",
+      "kind": "imports",
+      "label": "导入SaveCartItemParam作为方法参数"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/impl/NewBeeMallShoppingCartServiceImpl.java",
+      "to": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/param/UpdateCartItemParam.java",
+      "kind": "imports",
+      "label": "导入UpdateCartItemParam作为方法参数"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/impl/NewBeeMallShoppingCartServiceImpl.java",
+      "to": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/vo/NewBeeMallShoppingCartItemVO.java",
+      "kind": "imports",
+      "label": "导入购物项VO用于数据转换"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/impl/NewBeeMallShoppingCartServiceImpl.java",
+      "to": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageResult.java",
+      "kind": "imports",
+      "label": "导入分页结果DTO用于分页查询返回"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.service.impl.NewBeeMallShoppingCartServiceImpl",
+      "to": "class::ltd.shopcart.cloud.newbee.service.NewBeeMallShoppingCartService",
+      "kind": "implements",
+      "label": "实现购物车服务接口"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.controller.NewBeeMallShoppingCartController",
+      "to": "class::ltd.shopcart.cloud.newbee.service.NewBeeMallShoppingCartService",
+      "kind": "calls",
+      "label": "注入并调用购物车服务"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.service.impl.NewBeeMallShoppingCartServiceImpl",
+      "to": "class::ltd.shopcart.cloud.newbee.dao.NewBeeMallShoppingCartItemMapper",
+      "kind": "calls",
+      "label": "注入并调用Mapper数据访问层"
+    },
+    {
+      "from": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/PageResult.java",
+      "to": "class::ltd.common.cloud.newbee.dto.PageResult",
+      "kind": "contains",
+      "label": "文件包含PageResult类"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "to": "class::ltd.shopcart.cloud.newbee.config.annotation.TokenToMallUser",
+      "kind": "contains",
+      "label": "文件包含TokenToMallUser注解"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/NewBeeMallShoppingCartController.java",
+      "to": "class::ltd.shopcart.cloud.newbee.controller.NewBeeMallShoppingCartController",
+      "kind": "contains",
+      "label": "文件包含购物车控制器类"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.controller.NewBeeMallShoppingCartController",
+      "to": "method::NewBeeMallShoppingCartController.cartItemPageList",
+      "kind": "contains",
+      "label": "类包含分页列表方法"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.controller.NewBeeMallShoppingCartController",
+      "to": "method::NewBeeMallShoppingCartController.cartItemList",
+      "kind": "contains",
+      "label": "类包含全量列表方法"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.controller.NewBeeMallShoppingCartController",
+      "to": "method::NewBeeMallShoppingCartController.saveNewBeeMallShoppingCartItem",
+      "kind": "contains",
+      "label": "类包含添加购物项方法"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.controller.NewBeeMallShoppingCartController",
+      "to": "method::NewBeeMallShoppingCartController.updateNewBeeMallShoppingCartItem",
+      "kind": "contains",
+      "label": "类包含更新购物项方法"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.controller.NewBeeMallShoppingCartController",
+      "to": "method::NewBeeMallShoppingCartController.deleteCartItem",
+      "kind": "contains",
+      "label": "类包含删除购物项方法"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.controller.NewBeeMallShoppingCartController",
+      "to": "method::NewBeeMallShoppingCartController.toSettle",
+      "kind": "contains",
+      "label": "类包含结算确认方法"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.controller.NewBeeMallShoppingCartController",
+      "to": "method::NewBeeMallShoppingCartController.cartItemListByIds",
+      "kind": "contains",
+      "label": "类包含按ID查询方法"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.controller.NewBeeMallShoppingCartController",
+      "to": "method::NewBeeMallShoppingCartController.deleteByCartItemIds",
+      "kind": "contains",
+      "label": "类包含批量删除方法"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/param/SaveCartItemParam.java",
+      "to": "class::ltd.shopcart.cloud.newbee.controller.param.SaveCartItemParam",
+      "kind": "contains",
+      "label": "文件包含SaveCartItemParam类"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/param/UpdateCartItemParam.java",
+      "to": "class::ltd.shopcart.cloud.newbee.controller.param.UpdateCartItemParam",
+      "kind": "contains",
+      "label": "文件包含UpdateCartItemParam类"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/controller/vo/NewBeeMallShoppingCartItemVO.java",
+      "to": "class::ltd.shopcart.cloud.newbee.controller.vo.NewBeeMallShoppingCartItemVO",
+      "kind": "contains",
+      "label": "文件包含购物项VO类"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/dao/NewBeeMallShoppingCartItemMapper.java",
+      "to": "class::ltd.shopcart.cloud.newbee.dao.NewBeeMallShoppingCartItemMapper",
+      "kind": "contains",
+      "label": "文件包含Mapper接口"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/entity/NewBeeMallShoppingCartItem.java",
+      "to": "class::ltd.shopcart.cloud.newbee.entity.NewBeeMallShoppingCartItem",
+      "kind": "contains",
+      "label": "文件包含购物项实体类"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/NewBeeMallShoppingCartService.java",
+      "to": "class::ltd.shopcart.cloud.newbee.service.NewBeeMallShoppingCartService",
+      "kind": "contains",
+      "label": "文件包含购物车服务接口"
+    },
+    {
+      "from": "file::newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/service/impl/NewBeeMallShoppingCartServiceImpl.java",
+      "to": "class::ltd.shopcart.cloud.newbee.service.impl.NewBeeMallShoppingCartServiceImpl",
+      "kind": "contains",
+      "label": "文件包含购物车服务实现类"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.service.impl.NewBeeMallShoppingCartServiceImpl",
+      "to": "method::NewBeeMallShoppingCartServiceImpl.saveNewBeeMallCartItem",
+      "kind": "contains",
+      "label": "类包含保存购物项方法"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.service.impl.NewBeeMallShoppingCartServiceImpl",
+      "to": "method::NewBeeMallShoppingCartServiceImpl.updateNewBeeMallCartItem",
+      "kind": "contains",
+      "label": "类包含更新购物项方法"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.service.impl.NewBeeMallShoppingCartServiceImpl",
+      "to": "method::NewBeeMallShoppingCartServiceImpl.getNewBeeMallCartItemById",
+      "kind": "contains",
+      "label": "类包含按ID查询方法"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.service.impl.NewBeeMallShoppingCartServiceImpl",
+      "to": "method::NewBeeMallShoppingCartServiceImpl.deleteById",
+      "kind": "contains",
+      "label": "类包含删除方法"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.service.impl.NewBeeMallShoppingCartServiceImpl",
+      "to": "method::NewBeeMallShoppingCartServiceImpl.getMyShoppingCartItems",
+      "kind": "contains",
+      "label": "类包含获取购物车列表方法"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.service.impl.NewBeeMallShoppingCartServiceImpl",
+      "to": "method::NewBeeMallShoppingCartServiceImpl.getCartItemsForSettle",
+      "kind": "contains",
+      "label": "类包含结算查询方法"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.service.impl.NewBeeMallShoppingCartServiceImpl",
+      "to": "method::NewBeeMallShoppingCartServiceImpl.getNewBeeMallShoppingCartItemVOS",
+      "kind": "contains",
+      "label": "类包含核心数据转换方法"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.service.impl.NewBeeMallShoppingCartServiceImpl",
+      "to": "method::NewBeeMallShoppingCartServiceImpl.getMyShoppingCartItems_paged",
+      "kind": "contains",
+      "label": "类包含分页查询方法"
+    },
+    {
+      "from": "method::NewBeeMallShoppingCartController.cartItemPageList",
+      "to": "method::NewBeeMallShoppingCartServiceImpl.getMyShoppingCartItems_paged",
+      "kind": "calls",
+      "label": "调用分页获取购物车列表"
+    },
+    {
+      "from": "method::NewBeeMallShoppingCartController.cartItemList",
+      "to": "method::NewBeeMallShoppingCartServiceImpl.getMyShoppingCartItems",
+      "kind": "calls",
+      "label": "调用获取购物车列表"
+    },
+    {
+      "from": "method::NewBeeMallShoppingCartController.saveNewBeeMallShoppingCartItem",
+      "to": "method::NewBeeMallShoppingCartServiceImpl.saveNewBeeMallCartItem",
+      "kind": "calls",
+      "label": "调用保存购物项"
+    },
+    {
+      "from": "method::NewBeeMallShoppingCartController.updateNewBeeMallShoppingCartItem",
+      "to": "method::NewBeeMallShoppingCartServiceImpl.updateNewBeeMallCartItem",
+      "kind": "calls",
+      "label": "调用更新购物项"
+    },
+    {
+      "from": "method::NewBeeMallShoppingCartController.deleteCartItem",
+      "to": "method::NewBeeMallShoppingCartServiceImpl.getNewBeeMallCartItemById",
+      "kind": "calls",
+      "label": "调用获取购物项详情"
+    },
+    {
+      "from": "method::NewBeeMallShoppingCartController.deleteCartItem",
+      "to": "method::NewBeeMallShoppingCartServiceImpl.deleteById",
+      "kind": "calls",
+      "label": "调用删除购物项"
+    },
+    {
+      "from": "method::NewBeeMallShoppingCartController.toSettle",
+      "to": "method::NewBeeMallShoppingCartServiceImpl.getCartItemsForSettle",
+      "kind": "calls",
+      "label": "调用结算查询"
+    },
+    {
+      "from": "method::NewBeeMallShoppingCartController.deleteByCartItemIds",
+      "to": "method::NewBeeMallShoppingCartServiceImpl.deleteCartItemsByCartIds",
+      "kind": "calls",
+      "label": "调用批量删除购物项"
+    },
+    {
+      "from": "method::NewBeeMallShoppingCartServiceImpl.saveNewBeeMallCartItem",
+      "to": "class::ltd.shopcart.cloud.newbee.dao.NewBeeMallShoppingCartItemMapper",
+      "kind": "calls",
+      "label": "调用Mapper查询/插入购物项"
+    },
+    {
+      "from": "method::NewBeeMallShoppingCartServiceImpl.updateNewBeeMallCartItem",
+      "to": "class::ltd.shopcart.cloud.newbee.dao.NewBeeMallShoppingCartItemMapper",
+      "kind": "calls",
+      "label": "调用Mapper查询/更新购物项"
+    },
+    {
+      "from": "method::NewBeeMallShoppingCartServiceImpl.getNewBeeMallShoppingCartItemVOS",
+      "to": "class::ltd.shopcart.cloud.newbee.dao.NewBeeMallShoppingCartItemMapper",
+      "kind": "calls",
+      "label": "调用Mapper查询购物项列表"
+    },
+    {
+      "from": "method::NewBeeMallShoppingCartServiceImpl.getMyShoppingCartItems",
+      "to": "method::NewBeeMallShoppingCartServiceImpl.getNewBeeMallShoppingCartItemVOS",
+      "kind": "calls",
+      "label": "调用数据转换方法"
+    },
+    {
+      "from": "method::NewBeeMallShoppingCartServiceImpl.getCartItemsForSettle",
+      "to": "method::NewBeeMallShoppingCartServiceImpl.getNewBeeMallShoppingCartItemVOS",
+      "kind": "calls",
+      "label": "调用数据转换方法"
+    },
+    {
+      "from": "method::NewBeeMallShoppingCartServiceImpl.getMyShoppingCartItems_paged",
+      "to": "method::NewBeeMallShoppingCartServiceImpl.getNewBeeMallShoppingCartItemVOS",
+      "kind": "calls",
+      "label": "调用数据转换方法"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.controller.NewBeeMallShoppingCartController",
+      "to": "class::ltd.shopcart.cloud.newbee.config.annotation.TokenToMallUser",
+      "kind": "uses",
+      "label": "使用TokenToMallUser注解注入用户Token"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.controller.NewBeeMallShoppingCartController",
+      "to": "class::ltd.shopcart.cloud.newbee.controller.param.SaveCartItemParam",
+      "kind": "uses",
+      "label": "使用SaveCartItemParam接收请求参数"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.controller.NewBeeMallShoppingCartController",
+      "to": "class::ltd.shopcart.cloud.newbee.controller.param.UpdateCartItemParam",
+      "kind": "uses",
+      "label": "使用UpdateCartItemParam接收请求参数"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.controller.NewBeeMallShoppingCartController",
+      "to": "class::ltd.shopcart.cloud.newbee.controller.vo.NewBeeMallShoppingCartItemVO",
+      "kind": "uses",
+      "label": "使用购物项VO作为响应数据"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.service.NewBeeMallShoppingCartService",
+      "to": "class::ltd.shopcart.cloud.newbee.controller.param.SaveCartItemParam",
+      "kind": "uses",
+      "label": "方法参数使用SaveCartItemParam"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.service.NewBeeMallShoppingCartService",
+      "to": "class::ltd.shopcart.cloud.newbee.controller.param.UpdateCartItemParam",
+      "kind": "uses",
+      "label": "方法参数使用UpdateCartItemParam"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.service.NewBeeMallShoppingCartService",
+      "to": "class::ltd.shopcart.cloud.newbee.controller.vo.NewBeeMallShoppingCartItemVO",
+      "kind": "uses",
+      "label": "返回类型使用购物项VO"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.service.NewBeeMallShoppingCartService",
+      "to": "class::ltd.common.cloud.newbee.dto.PageResult",
+      "kind": "uses",
+      "label": "返回类型使用分页结果"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.dao.NewBeeMallShoppingCartItemMapper",
+      "to": "class::ltd.shopcart.cloud.newbee.entity.NewBeeMallShoppingCartItem",
+      "kind": "uses",
+      "label": "Mapper方法返回和接收购物项实体"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.service.impl.NewBeeMallShoppingCartServiceImpl",
+      "to": "class::ltd.shopcart.cloud.newbee.entity.NewBeeMallShoppingCartItem",
+      "kind": "uses",
+      "label": "服务层操作购物项实体"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.service.impl.NewBeeMallShoppingCartServiceImpl",
+      "to": "class::ltd.shopcart.cloud.newbee.controller.vo.NewBeeMallShoppingCartItemVO",
+      "kind": "uses",
+      "label": "服务层构建购物项VO"
+    },
+    {
+      "from": "class::ltd.shopcart.cloud.newbee.service.impl.NewBeeMallShoppingCartServiceImpl",
+      "to": "class::ltd.common.cloud.newbee.dto.PageResult",
+      "kind": "uses",
+      "label": "服务层构建分页结果"
+    }
+  ],
+  "languageNotes": "本批次文件全部为Java语言，属于购物车微服务模块（newbee-mall-cloud-shop-cart-service）。采用典型的Spring Cloud分层架构：Controller -> Service接口 -> ServiceImpl实现 -> Mapper数据访问。使用Lombok @Data简化POJO代码，MyBatis作为ORM框架，OpenFeign实现跨服务调用（调用商品服务获取商品详情），集成Seata分布式事务。自定义@TokenToMallUser注解配合MethodArgumentResolver实现用户Token自动注入。",
+  "languageLesson": "在Spring Cloud微服务架构中，购物车服务通过OpenFeign客户端远程调用商品服务获取商品信息，实现跨服务数据聚合。自定义注解+ArgumentResolver模式可以优雅地解决参数自动注入问题，避免在每个Controller方法中重复编写Token解析逻辑。Seata分布式事务集成确保跨服务操作的一致性。"
+}

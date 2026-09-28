@@ -1,0 +1,371 @@
+{
+  "batchIndex": 12,
+  "nodes": [
+    {
+      "id": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/NewBeeMallCloudUserServiceApplication.java",
+      "type": "file",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/NewBeeMallCloudUserServiceApplication.java",
+      "language": "java",
+      "title": "用户服务应用启动类",
+      "summary": "新蜂商城用户微服务的Spring Boot启动入口。使用@SpringBootApplication自动配置，@EnableDiscoveryClient启用Nacos服务发现，@MapperScan扫描DAO层Mapper接口。启动时禁用Nacos默认日志配置，启动SpringApplication。",
+      "tags": ["spring-boot", "nacos", "service-discovery", "entry-point", "mybatis"],
+      "exports": [
+        {
+          "name": "NewBeeMallCloudUserServiceApplication",
+          "kind": "class",
+          "line": 22
+        },
+        {
+          "name": "main",
+          "kind": "method",
+          "line": 27
+        }
+      ],
+      "languageNotes": "使用Spring Cloud的@EnableDiscoveryClient注解启用服务发现，@MapperScan指定MyBatis Mapper接口扫描路径为ltd.user.cloud.newbee.dao包",
+      "metrics": {
+        "totalLines": 32,
+        "nonEmptyLines": 28,
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      },
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 27,
+          "endLine": 30,
+          "params": ["args"]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeMallCloudUserServiceApplication",
+          "startLine": 22,
+          "endLine": 32,
+          "methods": ["main"],
+          "properties": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "System.setProperty",
+          "lineNumber": 28
+        },
+        {
+          "caller": "main",
+          "callee": "SpringApplication.run",
+          "lineNumber": 29
+        }
+      ]
+    },
+    {
+      "id": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/RedisConfig.java",
+      "type": "file",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/RedisConfig.java",
+      "language": "java",
+      "title": "Redis缓存配置类",
+      "summary": "用户服务的Redis缓存配置。继承CachingConfigurerSupport，配置RedisTemplate使用StringRedisSerializer序列化Key、GenericJackson2JsonRedisSerializer序列化Value。创建RedisCacheManager并预定义codeNameCache缓存空间，同时提供自定义KeyGenerator用于缓存键的生成策略。",
+      "tags": ["redis", "spring-cache", "cache-config", "lettuce", "configuration"],
+      "exports": [
+        {
+          "name": "RedisConfig",
+          "kind": "class",
+          "line": 23
+        },
+        {
+          "name": "redisCacheTemplate",
+          "kind": "method",
+          "line": 33
+        },
+        {
+          "name": "cacheManager",
+          "kind": "method",
+          "line": 44
+        },
+        {
+          "name": "keyGenerator",
+          "kind": "method",
+          "line": 58
+        }
+      ],
+      "languageNotes": "使用@AutoConfigureAfter注解确保在RedisAutoConfiguration之后加载，通过LettuceConnectionFactory注入Redis连接工厂，KeyGenerator基于类名+方法名+参数拼接生成缓存键",
+      "metrics": {
+        "totalLines": 74,
+        "nonEmptyLines": 65,
+        "importCount": 12,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      },
+      "functions": [
+        {
+          "name": "RedisConfig",
+          "startLine": 31,
+          "endLine": 31,
+          "params": []
+        },
+        {
+          "name": "redisCacheTemplate",
+          "startLine": 33,
+          "endLine": 42,
+          "params": ["redisConnectionFactory"]
+        },
+        {
+          "name": "cacheManager",
+          "startLine": 44,
+          "endLine": 56,
+          "params": []
+        },
+        {
+          "name": "keyGenerator",
+          "startLine": 58,
+          "endLine": 72,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "RedisConfig",
+          "startLine": 23,
+          "endLine": 73,
+          "methods": ["RedisConfig", "redisCacheTemplate", "cacheManager", "keyGenerator"],
+          "properties": ["lettuceConnectionFactory"]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "RedisTemplate.setKeySerializer",
+          "lineNumber": 36
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "RedisTemplate.setValueSerializer",
+          "lineNumber": 37
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "RedisTemplate.setHashKeySerializer",
+          "lineNumber": 38
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "RedisTemplate.setHashValueSerializer",
+          "lineNumber": 39
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "RedisTemplate.setConnectionFactory",
+          "lineNumber": 40
+        },
+        {
+          "caller": "cacheManager",
+          "callee": "RedisCacheManagerBuilder.fromConnectionFactory",
+          "lineNumber": 46
+        },
+        {
+          "caller": "cacheManager",
+          "callee": "builder.initialCacheNames",
+          "lineNumber": 54
+        },
+        {
+          "caller": "cacheManager",
+          "callee": "builder.build",
+          "lineNumber": 55
+        }
+      ]
+    },
+    {
+      "id": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/application.properties",
+      "type": "config",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/application.properties",
+      "language": "properties",
+      "title": "用户服务应用配置文件",
+      "summary": "用户微服务的核心配置文件。定义服务端口(29000)、服务名称(newbee-mall-cloud-user-service)、Nacos服务发现地址及认证、MySQL数据源(连接池HikariCP、数据库newbee_mall_cloud_user_db)、MyBatis Mapper扫描路径、Sentinel流控配置、Redis缓存配置(数据库索引13)、日志级别(debug)、Sleuth链路追踪(采样率1.0)及Zipkin上报地址。",
+      "tags": ["spring-boot-config", "nacos", "datasource", "redis", "sentinel", "zipkin", "sleuth", "mybatis"],
+      "exports": [],
+      "languageNotes": "使用Spring Boot properties格式配置，通过spring.datasource.hikari前缀配置HikariCP连接池参数，spring.cloud.sentinel配置Sentinel流量治理，spring.sleuth配置分布式链路追踪采样",
+      "metrics": {
+        "totalLines": 62,
+        "nonEmptyLines": 57
+      }
+    },
+    {
+      "id": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/logback.xml",
+      "type": "config",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/logback.xml",
+      "language": "xml",
+      "title": "用户服务日志配置",
+      "summary": "Logback日志框架配置文件。定义两个Appender：CONSOLE(控制台输出，阈值INFO级别)和LOGSTASH(通过TCP发送到192.168.110.57:4560的Logstash收集器)。应用日志名称为newbee-mall-cloud-user-service-log，根日志级别设为INFO，同时输出到控制台和Logstash。",
+      "tags": ["logback", "logging", "logstash", "elk"],
+      "exports": [],
+      "languageNotes": "使用LogstashTcpSocketAppender将日志发送到远程Logstash实例，配合LogstashEncoder实现JSON格式化，便于ELK日志收集和分析",
+      "metrics": {
+        "totalLines": 35,
+        "nonEmptyLines": 28
+      }
+    },
+    {
+      "id": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/mapper/AdminUserMapper.xml",
+      "type": "config",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/mapper/AdminUserMapper.xml",
+      "language": "xml",
+      "title": "管理员用户Mapper映射文件",
+      "summary": "MyBatis管理员用户数据访问映射文件。对应DAO接口ltd.user.cloud.newbee.dao.AdminUserMapper，实体类AdminUser，操作表tb_newbee_mall_admin_user。提供管理员登录验证(login)、主键查询(selectByPrimaryKey)、插入(insert/insertSelective)、选择性更新(updateByPrimaryKeySelective)和全量更新(updateByPrimaryKey)等SQL映射。",
+      "tags": ["mybatis", "mapper", "admin-user", "sql-mapping", "dao"],
+      "exports": [],
+      "languageNotes": "使用resultMap映射数据库列名到Java实体属性，Base_Column_List SQL片段复用列列表，insertSelective和updateByPrimaryKeySelective使用动态SQL(if标签)实现非空字段的选择性插入和更新",
+      "metrics": {
+        "totalLines": 104,
+        "nonEmptyLines": 90
+      }
+    },
+    {
+      "id": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/mapper/MallUserMapper.xml",
+      "type": "config",
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/mapper/MallUserMapper.xml",
+      "language": "xml",
+      "title": "商城用户Mapper映射文件",
+      "summary": "MyBatis商城用户数据访问映射文件。对应DAO接口ltd.user.cloud.newbee.dao.MallUserMapper，实体类MallUser，操作表tb_newbee_mall_user。提供用户列表查询(findMallUserList，支持登录名过滤和分页)、用户总数统计(getTotalMallUsers)、主键查询、登录名查询、登录验证、逻辑删除(deleteByPrimaryKey设is_deleted=1)、插入、选择性更新和批量锁定用户(lockUserBatch)等操作。",
+      "tags": ["mybatis", "mapper", "mall-user", "sql-mapping", "dao", "pagination"],
+      "exports": [],
+      "languageNotes": "findMallUserList使用动态SQL(if标签)实现可选条件查询和LIMIT分页，deleteByPrimaryKey采用逻辑删除策略(is_deleted置1)，lockUserBatch使用foreach标签实现批量IN操作",
+      "metrics": {
+        "totalLines": 180,
+        "nonEmptyLines": 160
+      }
+    },
+    {
+      "id": "newbee-mall-cloud-user-service/pom.xml",
+      "type": "config",
+      "path": "newbee-mall-cloud-user-service/pom.xml",
+      "language": "xml",
+      "title": "用户服务模块父POM",
+      "summary": "用户服务模块的Maven聚合POM。继承自根项目newbee-mall-cloud(parent)，打包类型为pom，聚合两个子模块：newbee-mall-cloud-user-web(Web层)和newbee-mall-cloud-user-api(API接口层)。Java版本配置为1.8，无额外依赖声明。",
+      "tags": ["maven", "pom", "parent-module", "aggregation"],
+      "exports": [],
+      "languageNotes": "作为Maven聚合POM，使用packaging=pom类型，通过modules标签聚合子模块，通过parent标签继承根项目的依赖管理和插件配置",
+      "metrics": {
+        "totalLines": 37,
+        "nonEmptyLines": 30
+      }
+    },
+    {
+      "id": "pom.xml",
+      "type": "config",
+      "path": "pom.xml",
+      "language": "xml",
+      "title": "项目根POM",
+      "summary": "新蜂商城微服务版本的Maven根POM。聚合8个子模块(订单、购物车、推荐、商品、用户、商城网关、管理后台网关、公共模块)。使用dependencyManagement统一管理Spring Boot 2.6.3、Spring Cloud 2021.0.1、Spring Cloud Alibaba 2021.0.1.0、MyBatis 2.2.2、Swagger 3.0.0、Lombok 1.18.16等核心依赖版本。配置Maven编译插件(Java 1.8)和Spring Boot打包插件，使用阿里云Maven镜像仓库。",
+      "tags": ["maven", "pom", "root", "dependency-management", "spring-cloud-alibaba", "multi-module"],
+      "exports": [],
+      "languageNotes": "使用dependencyManagement(BOM方式)统一管理所有子模块的依赖版本，避免版本冲突；引入spring-cloud-dependencies、spring-boot-dependencies、spring-cloud-alibaba-dependencies三个BOM POM作为import scope",
+      "metrics": {
+        "totalLines": 132,
+        "nonEmptyLines": 115
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/NewBeeMallCloudUserServiceApplication.java",
+      "to": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/application.properties",
+      "type": "configures",
+      "label": "应用启动时加载配置",
+      "evidence": "@SpringBootApplication注解触发自动配置加载application.properties"
+    },
+    {
+      "from": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/application.properties",
+      "to": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/logback.xml",
+      "type": "configures",
+      "label": "日志框架引用",
+      "evidence": "Spring Boot自动加载classpath下的logback.xml作为日志配置"
+    },
+    {
+      "from": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/application.properties",
+      "to": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/mapper/AdminUserMapper.xml",
+      "type": "configures",
+      "label": "MyBatis Mapper扫描",
+      "evidence": "mybatis.mapper-locations=classpath:mapper/*Mapper.xml"
+    },
+    {
+      "from": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/application.properties",
+      "to": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/mapper/MallUserMapper.xml",
+      "type": "configures",
+      "label": "MyBatis Mapper扫描",
+      "evidence": "mybatis.mapper-locations=classpath:mapper/*Mapper.xml"
+    },
+    {
+      "from": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/NewBeeMallCloudUserServiceApplication.java",
+      "to": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/RedisConfig.java",
+      "type": "imports",
+      "label": "组件扫描加载配置",
+      "evidence": "@SpringBootApplication扫描ltd.user.cloud.newbee包下的@Configuration类"
+    },
+    {
+      "from": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/application.properties",
+      "to": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/RedisConfig.java",
+      "type": "configures",
+      "label": "Redis连接参数",
+      "evidence": "spring.redis.*配置项为RedisConfig中LettuceConnectionFactory提供连接参数"
+    },
+    {
+      "from": "newbee-mall-cloud-user-service/pom.xml",
+      "to": "pom.xml",
+      "type": "inherits",
+      "label": "Maven父子继承",
+      "evidence": "parent groupId=ltd.newbee.cloud, artifactId=newbee-mall-cloud"
+    },
+    {
+      "from": "newbee-mall-cloud-user-service/pom.xml",
+      "to": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/NewBeeMallCloudUserServiceApplication.java",
+      "type": "contains",
+      "label": "模块聚合子项目",
+      "evidence": "modules包含newbee-mall-cloud-user-web子模块"
+    },
+    {
+      "from": "newbee-mall-cloud-user-service/pom.xml",
+      "to": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/RedisConfig.java",
+      "type": "contains",
+      "label": "模块聚合子项目",
+      "evidence": "modules包含newbee-mall-cloud-user-web子模块"
+    },
+    {
+      "from": "newbee-mall-cloud-user-service/pom.xml",
+      "to": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/application.properties",
+      "type": "contains",
+      "label": "模块聚合子项目",
+      "evidence": "modules包含newbee-mall-cloud-user-web子模块"
+    },
+    {
+      "from": "newbee-mall-cloud-user-service/pom.xml",
+      "to": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/logback.xml",
+      "type": "contains",
+      "label": "模块聚合子项目",
+      "evidence": "modules包含newbee-mall-cloud-user-web子模块"
+    },
+    {
+      "from": "newbee-mall-cloud-user-service/pom.xml",
+      "to": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/mapper/AdminUserMapper.xml",
+      "type": "contains",
+      "label": "模块聚合子项目",
+      "evidence": "modules包含newbee-mall-cloud-user-web子模块"
+    },
+    {
+      "from": "newbee-mall-cloud-user-service/pom.xml",
+      "to": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/mapper/MallUserMapper.xml",
+      "type": "contains",
+      "label": "模块聚合子项目",
+      "evidence": "modules包含newbee-mall-cloud-user-web子模块"
+    },
+    {
+      "from": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/mapper/AdminUserMapper.xml",
+      "to": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/mapper/MallUserMapper.xml",
+      "type": "associates",
+      "label": "同属用户数据访问层",
+      "evidence": "两个Mapper同属ltd.user.cloud.newbee.dao包，由同一@MapperScan扫描加载"
+    }
+  ]
+}

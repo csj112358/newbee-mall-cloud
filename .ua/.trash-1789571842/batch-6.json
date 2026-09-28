@@ -1,0 +1,1050 @@
+{
+  "batchIndex": 6,
+  "nodes": [
+    {
+      "id": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/BeanUtil.java",
+      "kind": "file",
+      "name": "BeanUtil.java",
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/BeanUtil.java",
+      "language": "java",
+      "summary": "Bean操作工具类，提供对象属性拷贝、列表批量拷贝、Bean与Map互转、POJO空字段检查等通用工具方法。",
+      "tags": ["utility", "bean", "reflection", "common"],
+      "lines": 93
+    },
+    {
+      "id": "class::BeanUtil",
+      "kind": "class",
+      "name": "BeanUtil",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/BeanUtil.java",
+      "language": "java",
+      "startLine": 12,
+      "endLine": 93,
+      "summary": "抽象工具类，封装Spring BeanUtils实现对象属性拷贝，支持列表批量转换、Bean与Map互转及POJO字段非空校验，通过回调接口支持自定义属性设置。",
+      "tags": ["utility", "bean-copy", "reflection"],
+      "methods": ["copyProperties", "copyList", "toMap", "toBean", "checkPojoNullField"],
+      "languageNotes": "使用泛型方法和回调接口实现灵活的类型安全转换，依赖Spring的BeanWrapper进行属性访问。"
+    },
+    {
+      "id": "func::BeanUtil.copyProperties",
+      "kind": "function",
+      "name": "copyProperties",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/BeanUtil.java",
+      "language": "java",
+      "startLine": 14,
+      "endLine": 20,
+      "summary": "将source对象的属性拷贝到target对象，支持忽略指定属性列表，source为null时直接返回target。",
+      "tags": ["utility", "bean-copy"],
+      "params": ["source", "target"]
+    },
+    {
+      "id": "func::BeanUtil.copyList",
+      "kind": "function",
+      "name": "copyList",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/BeanUtil.java",
+      "language": "java",
+      "startLine": 26,
+      "endLine": 45,
+      "summary": "将源列表中的对象批量拷贝为目标类型列表，支持通过回调接口自定义属性映射逻辑。",
+      "tags": ["utility", "batch-copy"],
+      "params": ["sources", "clazz", "callback"]
+    },
+    {
+      "id": "func::BeanUtil.toMap",
+      "kind": "function",
+      "name": "toMap",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/BeanUtil.java",
+      "language": "java",
+      "startLine": 47,
+      "endLine": 59,
+      "summary": "将Java Bean对象转换为LinkedHashMap，支持忽略指定属性，自动过滤class属性。",
+      "tags": ["utility", "conversion"],
+      "params": ["bean"]
+    },
+    {
+      "id": "func::BeanUtil.toBean",
+      "kind": "function",
+      "name": "toBean",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/BeanUtil.java",
+      "language": "java",
+      "startLine": 61,
+      "endLine": 69,
+      "summary": "将Map键值对映射到指定类型的Bean对象中，仅设置可写属性。",
+      "tags": ["utility", "conversion"],
+      "params": ["map", "beanType"]
+    },
+    {
+      "id": "func::BeanUtil.checkPojoNullField",
+      "kind": "function",
+      "name": "checkPojoNullField",
+      "filePath": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/BeanUtil.java",
+      "language": "java",
+      "startLine": 76,
+      "endLine": 92,
+      "summary": "通过反射递归检查POJO对象所有字段是否非null，遍历继承层次结构，全部非null返回true。",
+      "tags": ["utility", "validation", "reflection"],
+      "params": ["o", "clz"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "kind": "file",
+      "name": "TokenToMallUser.java",
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "language": "java",
+      "summary": "自定义参数注解，用于Controller方法参数上自动注入当前登录商城用户信息。",
+      "tags": ["annotation", "auth", "config"],
+      "lines": 25
+    },
+    {
+      "id": "class::TokenToMallUser",
+      "kind": "class",
+      "name": "TokenToMallUser",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "language": "java",
+      "startLine": 16,
+      "endLine": 25,
+      "summary": "运行时注解，标注在Controller方法参数上，配合TokenToMallUserMethodArgumentResolver实现从请求中自动解析MallUserToken对象。",
+      "tags": ["annotation", "spring-mvc"],
+      "methods": [],
+      "languageNotes": "使用@Target(ElementType.PARAMETER)限制只能用于方法参数，通过value属性指定在request中的属性名。"
+    },
+    {
+      "id": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallOrderController.java",
+      "kind": "file",
+      "name": "NewBeeMallOrderController.java",
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallOrderController.java",
+      "language": "java",
+      "summary": "商城订单REST控制器，提供下单、订单详情、订单列表、取消订单、确认收货和模拟支付回调等接口。",
+      "tags": ["controller", "order", "rest-api"],
+      "lines": 123
+    },
+    {
+      "id": "class::NewBeeMallOrderController",
+      "kind": "class",
+      "name": "NewBeeMallOrderController",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallOrderController.java",
+      "language": "java",
+      "startLine": 36,
+      "endLine": 123,
+      "summary": "新蜂商城订单控制器，通过Swagger注解暴露RESTful接口，注入NewBeeMallOrderService和NewBeeMallUserAddressService完成订单全流程操作，使用@TokenToMallUser自动获取当前用户身份。",
+      "tags": ["rest-controller", "spring-mvc", "swagger"],
+      "methods": ["saveOrder", "orderDetailPage", "orderList", "cancelOrder", "finishOrder", "paySuccess"],
+      "languageNotes": "使用@RestController和@RequestMapping定义REST端点，通过@TokenToMallUser自定义注解自动注入用户Token，配合Swagger注解提供API文档。"
+    },
+    {
+      "id": "func::NewBeeMallOrderController.saveOrder",
+      "kind": "function",
+      "name": "saveOrder",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallOrderController.java",
+      "language": "java",
+      "startLine": 46,
+      "endLine": 64,
+      "summary": "生成订单接口，接收地址id和待结算购物项id数组，校验参数和地址归属后调用订单服务保存订单并返回订单号。",
+      "tags": ["endpoint", "order"],
+      "params": ["saveOrderParam", "loginMallUserToken"]
+    },
+    {
+      "id": "func::NewBeeMallOrderController.orderDetailPage",
+      "kind": "function",
+      "name": "orderDetailPage",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallOrderController.java",
+      "language": "java",
+      "startLine": 66,
+      "endLine": 70,
+      "summary": "订单详情接口，根据订单号和当前用户ID查询订单详情。",
+      "tags": ["endpoint", "order"],
+      "params": ["orderNo", "loginMallUserToken"]
+    },
+    {
+      "id": "func::NewBeeMallOrderController.orderList",
+      "kind": "function",
+      "name": "orderList",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallOrderController.java",
+      "language": "java",
+      "startLine": 72,
+      "endLine": 88,
+      "summary": "订单列表接口，支持按页码和订单状态筛选，构建分页查询参数后调用服务获取订单列表。",
+      "tags": ["endpoint", "order", "pagination"],
+      "params": ["pageNumber", "status", "loginMallUserToken"]
+    },
+    {
+      "id": "func::NewBeeMallOrderController.cancelOrder",
+      "kind": "function",
+      "name": "cancelOrder",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallOrderController.java",
+      "language": "java",
+      "startLine": 90,
+      "endLine": 99,
+      "summary": "取消订单接口，根据订单号和用户ID调用服务取消订单，根据结果返回成功或失败。",
+      "tags": ["endpoint", "order"],
+      "params": ["orderNo", "loginMallUserToken"]
+    },
+    {
+      "id": "func::NewBeeMallOrderController.finishOrder",
+      "kind": "function",
+      "name": "finishOrder",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallOrderController.java",
+      "language": "java",
+      "startLine": 101,
+      "endLine": 110,
+      "summary": "确认收货接口，根据订单号和用户ID完成订单确认收货操作。",
+      "tags": ["endpoint", "order"],
+      "params": ["orderNo", "loginMallUserToken"]
+    },
+    {
+      "id": "func::NewBeeMallOrderController.paySuccess",
+      "kind": "function",
+      "name": "paySuccess",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallOrderController.java",
+      "language": "java",
+      "startLine": 112,
+      "endLine": 121,
+      "summary": "模拟支付成功回调接口，接收订单号和支付方式参数，调用服务处理支付成功逻辑。",
+      "tags": ["endpoint", "payment"],
+      "params": ["orderNo", "payType"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallUserAddressController.java",
+      "kind": "file",
+      "name": "NewBeeMallUserAddressController.java",
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallUserAddressController.java",
+      "language": "java",
+      "summary": "商城用户收货地址REST控制器，提供地址列表、添加、修改、获取详情、获取默认地址和删除地址等完整CRUD接口。",
+      "tags": ["controller", "address", "rest-api"],
+      "lines": 115
+    },
+    {
+      "id": "class::NewBeeMallUserAddressController",
+      "kind": "class",
+      "name": "NewBeeMallUserAddressController",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallUserAddressController.java",
+      "language": "java",
+      "startLine": 29,
+      "endLine": 115,
+      "summary": "用户收货地址控制器，使用BeanUtil进行参数到实体的属性拷贝，所有接口通过@TokenToMallUser获取当前用户身份进行权限校验。",
+      "tags": ["rest-controller", "spring-mvc", "crud"],
+      "methods": ["addressList", "saveUserAddress", "updateMallUserAddress", "getMallUserAddress", "getDefaultMallUserAddress", "deleteAddress"],
+      "languageNotes": "通过BeanUtil.copyProperties实现Param/VO到Entity的转换，每个写操作前校验地址归属权防止越权操作。"
+    },
+    {
+      "id": "func::NewBeeMallUserAddressController.addressList",
+      "kind": "function",
+      "name": "addressList",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallUserAddressController.java",
+      "language": "java",
+      "startLine": 37,
+      "endLine": 41,
+      "summary": "获取当前用户的收货地址列表。",
+      "tags": ["endpoint", "address"],
+      "params": ["loginMallUserToken"]
+    },
+    {
+      "id": "func::NewBeeMallUserAddressController.saveUserAddress",
+      "kind": "function",
+      "name": "saveUserAddress",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallUserAddressController.java",
+      "language": "java",
+      "startLine": 43,
+      "endLine": 57,
+      "summary": "添加收货地址，使用BeanUtil拷贝参数属性到实体后保存。",
+      "tags": ["endpoint", "address"],
+      "params": ["saveMallUserAddressParam", "loginMallUserToken"]
+    },
+    {
+      "id": "func::NewBeeMallUserAddressController.updateMallUserAddress",
+      "kind": "function",
+      "name": "updateMallUserAddress",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallUserAddressController.java",
+      "language": "java",
+      "startLine": 59,
+      "endLine": 77,
+      "summary": "修改收货地址，校验地址归属权后使用BeanUtil拷贝参数属性并更新。",
+      "tags": ["endpoint", "address"],
+      "params": ["updateMallUserAddressParam", "loginMallUserToken"]
+    },
+    {
+      "id": "func::NewBeeMallUserAddressController.getMallUserAddress",
+      "kind": "function",
+      "name": "getMallUserAddress",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallUserAddressController.java",
+      "language": "java",
+      "startLine": 79,
+      "endLine": 90,
+      "summary": "获取收货地址详情，校验归属权后将实体转为VO返回。",
+      "tags": ["endpoint", "address"],
+      "params": ["addressId", "loginMallUserToken"]
+    },
+    {
+      "id": "func::NewBeeMallUserAddressController.getDefaultMallUserAddress",
+      "kind": "function",
+      "name": "getDefaultMallUserAddress",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallUserAddressController.java",
+      "language": "java",
+      "startLine": 92,
+      "endLine": 97,
+      "summary": "获取当前用户的默认收货地址。",
+      "tags": ["endpoint", "address"],
+      "params": ["loginMallUserToken"]
+    },
+    {
+      "id": "func::NewBeeMallUserAddressController.deleteAddress",
+      "kind": "function",
+      "name": "deleteAddress",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallUserAddressController.java",
+      "language": "java",
+      "startLine": 99,
+      "endLine": 114,
+      "summary": "删除收货地址，校验归属权后执行删除操作。",
+      "tags": ["endpoint", "address"],
+      "params": ["addressId", "loginMallUserToken"]
+    },
+    {
+      "id": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/SaveMallUserAddressParam.java",
+      "kind": "file",
+      "name": "SaveMallUserAddressParam.java",
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/SaveMallUserAddressParam.java",
+      "language": "java",
+      "summary": "添加收货地址请求参数DTO，包含收件人名称、联系方式、默认标志及省市区详细地址字段。",
+      "tags": ["dto", "param", "address"],
+      "lines": 40
+    },
+    {
+      "id": "class::SaveMallUserAddressParam",
+      "kind": "class",
+      "name": "SaveMallUserAddressParam",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/SaveMallUserAddressParam.java",
+      "language": "java",
+      "startLine": 17,
+      "endLine": 40,
+      "summary": "添加收货地址的请求参数类，使用Lombok @Data自动生成getter/setter，通过@ApiModelProperty标注Swagger文档。",
+      "tags": ["dto", "lombok"],
+      "methods": [],
+      "languageNotes": "纯数据类，使用@Data注解消除样板代码，通过@ApiModelProperty为Swagger提供字段描述。"
+    },
+    {
+      "id": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/SaveOrderParam.java",
+      "kind": "file",
+      "name": "SaveOrderParam.java",
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/SaveOrderParam.java",
+      "language": "java",
+      "summary": "保存订单请求参数DTO，包含购物项id数组和收货地址id字段。",
+      "tags": ["dto", "param", "order"],
+      "lines": 27
+    },
+    {
+      "id": "class::SaveOrderParam",
+      "kind": "class",
+      "name": "SaveOrderParam",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/SaveOrderParam.java",
+      "language": "java",
+      "startLine": 19,
+      "endLine": 27,
+      "summary": "保存订单请求参数类，实现Serializable接口支持序列化，包含cartItemIds数组和addressId两个必填字段。",
+      "tags": ["dto", "lombok", "serializable"],
+      "methods": [],
+      "languageNotes": "实现Serializable接口确保请求参数可通过网络传输，适用于微服务间调用场景。"
+    },
+    {
+      "id": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/UpdateMallUserAddressParam.java",
+      "kind": "file",
+      "name": "UpdateMallUserAddressParam.java",
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/UpdateMallUserAddressParam.java",
+      "language": "java",
+      "summary": "修改收货地址请求参数DTO，在保存地址参数基础上增加了addressId和userId字段用于标识更新目标。",
+      "tags": ["dto", "param", "address"],
+      "lines": 46
+    },
+    {
+      "id": "class::UpdateMallUserAddressParam",
+      "kind": "class",
+      "name": "UpdateMallUserAddressParam",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/UpdateMallUserAddressParam.java",
+      "language": "java",
+      "startLine": 17,
+      "endLine": 46,
+      "summary": "修改收货地址请求参数类，比SaveMallUserAddressParam多出addressId和userId字段，用于指定待修改的地址记录。",
+      "tags": ["dto", "lombok"],
+      "methods": [],
+      "languageNotes": "与SaveMallUserAddressParam结构类似但多了标识字段，体现了创建和更新操作的参数差异。"
+    },
+    {
+      "id": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderListVO.java",
+      "kind": "file",
+      "name": "NewBeeMallOrderListVO.java",
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderListVO.java",
+      "language": "java",
+      "summary": "订单列表页面视图对象，包含订单基础信息和订单项列表，用于前端订单列表展示。",
+      "tags": ["vo", "order", "response"],
+      "lines": 48
+    },
+    {
+      "id": "class::NewBeeMallOrderListVO",
+      "kind": "class",
+      "name": "NewBeeMallOrderListVO",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderListVO.java",
+      "language": "java",
+      "startLine": 22,
+      "endLine": 48,
+      "summary": "订单列表VO，实现Serializable接口，包含订单号、价格、支付方式、状态及创建时间，嵌套订单项VO列表。",
+      "tags": ["vo", "serializable", "lombok"],
+      "methods": [],
+      "languageNotes": "使用@JsonFormat注解格式化日期输出为'yyyy-MM-dd HH:mm:ss'，时区设置为GMT+8。"
+    },
+    {
+      "id": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallUserAddressVO.java",
+      "kind": "file",
+      "name": "NewBeeMallUserAddressVO.java",
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallUserAddressVO.java",
+      "language": "java",
+      "summary": "收货地址视图对象，包含地址ID、用户ID及完整的收件人和地址信息字段。",
+      "tags": ["vo", "address", "response"],
+      "lines": 46
+    },
+    {
+      "id": "class::NewBeeMallUserAddressVO",
+      "kind": "class",
+      "name": "NewBeeMallUserAddressVO",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallUserAddressVO.java",
+      "language": "java",
+      "startLine": 17,
+      "endLine": 46,
+      "summary": "收货地址VO，使用@Data注解，通过@ApiModelProperty标注各字段含义，用于地址接口的响应数据。",
+      "tags": ["vo", "lombok"],
+      "methods": [],
+      "languageNotes": "纯数据展示类，与MallUserAddress实体结构相似但不含isDeleted等内部字段。"
+    },
+    {
+      "id": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/MallUserAddressMapper.java",
+      "kind": "file",
+      "name": "MallUserAddressMapper.java",
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/MallUserAddressMapper.java",
+      "language": "java",
+      "summary": "用户收货地址MyBatis Mapper接口，定义地址表的CRUD操作及按用户查询默认地址和地址列表的方法。",
+      "tags": ["mapper", "dao", "mybatis", "address"],
+      "lines": 30
+    },
+    {
+      "id": "class::MallUserAddressMapper",
+      "kind": "class",
+      "name": "MallUserAddressMapper",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/MallUserAddressMapper.java",
+      "language": "java",
+      "startLine": 15,
+      "endLine": 30,
+      "summary": "MyBatis数据访问接口，提供按主键增删改查、按用户查询默认地址和地址列表等方法，由XML映射文件提供SQL实现。",
+      "tags": ["mybatis", "dao"],
+      "methods": ["deleteByPrimaryKey", "insert", "insertSelective", "selectByPrimaryKey", "getMyDefaultAddress", "findMyAddressList", "updateByPrimaryKeySelective", "updateByPrimaryKey"],
+      "languageNotes": "接口方法由MyBatis框架通过XML映射文件或注解提供SQL实现，insertSelective和updateByPrimaryKeySelective仅更新非null字段。"
+    },
+    {
+      "id": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/MallUserAddress.java",
+      "kind": "file",
+      "name": "MallUserAddress.java",
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/MallUserAddress.java",
+      "language": "java",
+      "summary": "用户收货地址实体类，映射数据库地址表，包含地址详情、默认标志、软删除标记及时间戳字段。",
+      "tags": ["entity", "model", "address"],
+      "lines": 39
+    },
+    {
+      "id": "class::MallUserAddress",
+      "kind": "class",
+      "name": "MallUserAddress",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/MallUserAddress.java",
+      "language": "java",
+      "startLine": 15,
+      "endLine": 40,
+      "summary": "地址实体类，使用Lombok @Data注解，字段与数据库表一一映射，包含地址ID、用户ID、收件人信息、省市区详情、软删除标记和创建更新时间。",
+      "tags": ["entity", "lombok", "jpa"],
+      "methods": [],
+      "languageNotes": "使用Byte类型存储默认标志(0/1)和删除标记，Date类型存储时间戳。"
+    },
+    {
+      "id": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallUserAddressService.java",
+      "kind": "file",
+      "name": "NewBeeMallUserAddressService.java",
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallUserAddressService.java",
+      "language": "java",
+      "summary": "用户收货地址服务接口，定义地址列表查询、保存、修改、获取详情、获取默认地址和删除等业务方法。",
+      "tags": ["service", "interface", "address"],
+      "lines": 65
+    },
+    {
+      "id": "class::NewBeeMallUserAddressService",
+      "kind": "class",
+      "name": "NewBeeMallUserAddressService",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallUserAddressService.java",
+      "language": "java",
+      "startLine": 16,
+      "endLine": 65,
+      "summary": "收货地址服务接口，定义6个业务方法涵盖地址的完整CRUD操作，返回类型混合使用VO(列表查询)和Entity(单条查询)。",
+      "tags": ["service-interface"],
+      "methods": ["getMyAddresses", "saveUserAddress", "updateMallUserAddress", "getMallUserAddressById", "getMyDefaultAddressByUserId", "deleteById"],
+      "languageNotes": "接口设计遵循面向接口编程原则，返回类型根据使用场景选择VO或Entity。"
+    },
+    {
+      "id": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallUserAddressServiceImpl.java",
+      "kind": "file",
+      "name": "NewBeeMallUserAddressServiceImpl.java",
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallUserAddressServiceImpl.java",
+      "language": "java",
+      "summary": "用户收货地址服务实现类，实现地址CRUD业务逻辑，包含默认地址切换的事务处理和地址归属校验。",
+      "tags": ["service", "implementation", "address"],
+      "lines": 98
+    },
+    {
+      "id": "class::NewBeeMallUserAddressServiceImpl",
+      "kind": "class",
+      "name": "NewBeeMallUserAddressServiceImpl",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallUserAddressServiceImpl.java",
+      "language": "java",
+      "startLine": 25,
+      "endLine": 98,
+      "summary": "地址服务实现类，注入MallUserAddressMapper进行数据库操作，保存/修改地址时自动管理默认地址切换（先将旧默认地址取消再设置新默认地址），使用@Transactional保证默认地址切换的事务一致性。",
+      "tags": ["service-impl", "spring", "transactional"],
+      "methods": ["getMyAddresses", "saveUserAddress", "updateMallUserAddress", "getMallUserAddressById", "getMyDefaultAddressByUserId", "deleteById"],
+      "languageNotes": "saveUserAddress使用@Transactional注解保证默认地址切换的原子性；使用BeanUtil.copyList进行列表批量转换；地址不存在时抛出NewBeeMallException。"
+    },
+    {
+      "id": "func::NewBeeMallUserAddressServiceImpl.getMyAddresses",
+      "kind": "function",
+      "name": "getMyAddresses",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallUserAddressServiceImpl.java",
+      "language": "java",
+      "startLine": 31,
+      "endLine": 36,
+      "summary": "查询用户地址列表，通过Mapper查询后使用BeanUtil.copyList批量转换为VO列表返回。",
+      "tags": ["service", "query"],
+      "params": ["userId"]
+    },
+    {
+      "id": "func::NewBeeMallUserAddressServiceImpl.saveUserAddress",
+      "kind": "function",
+      "name": "saveUserAddress",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallUserAddressServiceImpl.java",
+      "language": "java",
+      "startLine": 38,
+      "endLine": 56,
+      "summary": "保存收货地址，事务方法。若新地址设为默认，先查询并取消原有默认地址的默认标志，再插入新地址。",
+      "tags": ["service", "transactional", "address"],
+      "params": ["mallUserAddress"]
+    },
+    {
+      "id": "func::NewBeeMallUserAddressServiceImpl.updateMallUserAddress",
+      "kind": "function",
+      "name": "updateMallUserAddress",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallUserAddressServiceImpl.java",
+      "language": "java",
+      "startLine": 58,
+      "endLine": 78,
+      "summary": "修改收货地址，若修改为默认地址则先取消原默认地址（排除当前修改的地址），设置更新时间后执行更新。",
+      "tags": ["service", "address"],
+      "params": ["mallUserAddress"]
+    },
+    {
+      "id": "func::NewBeeMallUserAddressServiceImpl.getMallUserAddressById",
+      "kind": "function",
+      "name": "getMallUserAddressById",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallUserAddressServiceImpl.java",
+      "language": "java",
+      "startLine": 80,
+      "endLine": 87,
+      "summary": "根据地址ID查询地址详情，地址不存在时抛出NewBeeMallException异常。",
+      "tags": ["service", "query"],
+      "params": ["addressId"]
+    },
+    {
+      "id": "func::NewBeeMallUserAddressServiceImpl.getMyDefaultAddressByUserId",
+      "kind": "function",
+      "name": "getMyDefaultAddressByUserId",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallUserAddressServiceImpl.java",
+      "language": "java",
+      "startLine": 89,
+      "endLine": 92,
+      "summary": "根据用户ID查询默认收货地址。",
+      "tags": ["service", "query"],
+      "params": ["userId"]
+    },
+    {
+      "id": "func::NewBeeMallUserAddressServiceImpl.deleteById",
+      "kind": "function",
+      "name": "deleteById",
+      "filePath": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallUserAddressServiceImpl.java",
+      "language": "java",
+      "startLine": 94,
+      "endLine": 97,
+      "summary": "根据地址ID删除收货地址。",
+      "tags": ["service", "delete"],
+      "params": ["addressId"]
+    }
+  ],
+  "edges": [
+    {
+      "source": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/BeanUtil.java",
+      "target": "class::BeanUtil",
+      "kind": "contains",
+      "label": "包含类"
+    },
+    {
+      "source": "class::BeanUtil",
+      "target": "func::BeanUtil.copyProperties",
+      "kind": "contains",
+      "label": "包含方法"
+    },
+    {
+      "source": "class::BeanUtil",
+      "target": "func::BeanUtil.copyList",
+      "kind": "contains",
+      "label": "包含方法"
+    },
+    {
+      "source": "class::BeanUtil",
+      "target": "func::BeanUtil.toMap",
+      "kind": "contains",
+      "label": "包含方法"
+    },
+    {
+      "source": "class::BeanUtil",
+      "target": "func::BeanUtil.toBean",
+      "kind": "contains",
+      "label": "包含方法"
+    },
+    {
+      "source": "class::BeanUtil",
+      "target": "func::BeanUtil.checkPojoNullField",
+      "kind": "contains",
+      "label": "包含方法"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "target": "class::TokenToMallUser",
+      "kind": "contains",
+      "label": "包含注解"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallOrderController.java",
+      "target": "class::NewBeeMallOrderController",
+      "kind": "contains",
+      "label": "包含类"
+    },
+    {
+      "source": "class::NewBeeMallOrderController",
+      "target": "func::NewBeeMallOrderController.saveOrder",
+      "kind": "contains",
+      "label": "包含方法"
+    },
+    {
+      "source": "class::NewBeeMallOrderController",
+      "target": "func::NewBeeMallOrderController.orderDetailPage",
+      "kind": "contains",
+      "label": "包含方法"
+    },
+    {
+      "source": "class::NewBeeMallOrderController",
+      "target": "func::NewBeeMallOrderController.orderList",
+      "kind": "contains",
+      "label": "包含方法"
+    },
+    {
+      "source": "class::NewBeeMallOrderController",
+      "target": "func::NewBeeMallOrderController.cancelOrder",
+      "kind": "contains",
+      "label": "包含方法"
+    },
+    {
+      "source": "class::NewBeeMallOrderController",
+      "target": "func::NewBeeMallOrderController.finishOrder",
+      "kind": "contains",
+      "label": "包含方法"
+    },
+    {
+      "source": "class::NewBeeMallOrderController",
+      "target": "func::NewBeeMallOrderController.paySuccess",
+      "kind": "contains",
+      "label": "包含方法"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallUserAddressController.java",
+      "target": "class::NewBeeMallUserAddressController",
+      "kind": "contains",
+      "label": "包含类"
+    },
+    {
+      "source": "class::NewBeeMallUserAddressController",
+      "target": "func::NewBeeMallUserAddressController.addressList",
+      "kind": "contains",
+      "label": "包含方法"
+    },
+    {
+      "source": "class::NewBeeMallUserAddressController",
+      "target": "func::NewBeeMallUserAddressController.saveUserAddress",
+      "kind": "contains",
+      "label": "包含方法"
+    },
+    {
+      "source": "class::NewBeeMallUserAddressController",
+      "target": "func::NewBeeMallUserAddressController.updateMallUserAddress",
+      "kind": "contains",
+      "label": "包含方法"
+    },
+    {
+      "source": "class::NewBeeMallUserAddressController",
+      "target": "func::NewBeeMallUserAddressController.getMallUserAddress",
+      "kind": "contains",
+      "label": "包含方法"
+    },
+    {
+      "source": "class::NewBeeMallUserAddressController",
+      "target": "func::NewBeeMallUserAddressController.getDefaultMallUserAddress",
+      "kind": "contains",
+      "label": "包含方法"
+    },
+    {
+      "source": "class::NewBeeMallUserAddressController",
+      "target": "func::NewBeeMallUserAddressController.deleteAddress",
+      "kind": "contains",
+      "label": "包含方法"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/SaveMallUserAddressParam.java",
+      "target": "class::SaveMallUserAddressParam",
+      "kind": "contains",
+      "label": "包含类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/SaveOrderParam.java",
+      "target": "class::SaveOrderParam",
+      "kind": "contains",
+      "label": "包含类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/UpdateMallUserAddressParam.java",
+      "target": "class::UpdateMallUserAddressParam",
+      "kind": "contains",
+      "label": "包含类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderListVO.java",
+      "target": "class::NewBeeMallOrderListVO",
+      "kind": "contains",
+      "label": "包含类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallUserAddressVO.java",
+      "target": "class::NewBeeMallUserAddressVO",
+      "kind": "contains",
+      "label": "包含类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/MallUserAddressMapper.java",
+      "target": "class::MallUserAddressMapper",
+      "kind": "contains",
+      "label": "包含接口"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/MallUserAddress.java",
+      "target": "class::MallUserAddress",
+      "kind": "contains",
+      "label": "包含类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallUserAddressService.java",
+      "target": "class::NewBeeMallUserAddressService",
+      "kind": "contains",
+      "label": "包含接口"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallUserAddressServiceImpl.java",
+      "target": "class::NewBeeMallUserAddressServiceImpl",
+      "kind": "contains",
+      "label": "包含类"
+    },
+    {
+      "source": "class::NewBeeMallUserAddressServiceImpl",
+      "target": "func::NewBeeMallUserAddressServiceImpl.getMyAddresses",
+      "kind": "contains",
+      "label": "包含方法"
+    },
+    {
+      "source": "class::NewBeeMallUserAddressServiceImpl",
+      "target": "func::NewBeeMallUserAddressServiceImpl.saveUserAddress",
+      "kind": "contains",
+      "label": "包含方法"
+    },
+    {
+      "source": "class::NewBeeMallUserAddressServiceImpl",
+      "target": "func::NewBeeMallUserAddressServiceImpl.updateMallUserAddress",
+      "kind": "contains",
+      "label": "包含方法"
+    },
+    {
+      "source": "class::NewBeeMallUserAddressServiceImpl",
+      "target": "func::NewBeeMallUserAddressServiceImpl.getMallUserAddressById",
+      "kind": "contains",
+      "label": "包含方法"
+    },
+    {
+      "source": "class::NewBeeMallUserAddressServiceImpl",
+      "target": "func::NewBeeMallUserAddressServiceImpl.getMyDefaultAddressByUserId",
+      "kind": "contains",
+      "label": "包含方法"
+    },
+    {
+      "source": "class::NewBeeMallUserAddressServiceImpl",
+      "target": "func::NewBeeMallUserAddressServiceImpl.deleteById",
+      "kind": "contains",
+      "label": "包含方法"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallOrderController.java",
+      "target": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "kind": "imports",
+      "label": "导入TokenToMallUser注解"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallOrderController.java",
+      "target": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/SaveOrderParam.java",
+      "kind": "imports",
+      "label": "导入SaveOrderParam"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallOrderController.java",
+      "target": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallOrderListVO.java",
+      "kind": "imports",
+      "label": "导入NewBeeMallOrderListVO"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallOrderController.java",
+      "target": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/MallUserAddress.java",
+      "kind": "imports",
+      "label": "导入MallUserAddress"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallUserAddressController.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/BeanUtil.java",
+      "kind": "imports",
+      "label": "导入BeanUtil工具类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallUserAddressController.java",
+      "target": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "kind": "imports",
+      "label": "导入TokenToMallUser注解"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallUserAddressController.java",
+      "target": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/SaveMallUserAddressParam.java",
+      "kind": "imports",
+      "label": "导入SaveMallUserAddressParam"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallUserAddressController.java",
+      "target": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/param/UpdateMallUserAddressParam.java",
+      "kind": "imports",
+      "label": "导入UpdateMallUserAddressParam"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallUserAddressController.java",
+      "target": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallUserAddressVO.java",
+      "kind": "imports",
+      "label": "导入NewBeeMallUserAddressVO"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallUserAddressController.java",
+      "target": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/MallUserAddress.java",
+      "kind": "imports",
+      "label": "导入MallUserAddress"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/NewBeeMallUserAddressController.java",
+      "target": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallUserAddressService.java",
+      "kind": "imports",
+      "label": "导入NewBeeMallUserAddressService"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/MallUserAddressMapper.java",
+      "target": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/MallUserAddress.java",
+      "kind": "imports",
+      "label": "导入MallUserAddress实体"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallUserAddressService.java",
+      "target": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallUserAddressVO.java",
+      "kind": "imports",
+      "label": "导入NewBeeMallUserAddressVO"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallUserAddressService.java",
+      "target": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/MallUserAddress.java",
+      "kind": "imports",
+      "label": "导入MallUserAddress实体"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallUserAddressServiceImpl.java",
+      "target": "file::newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/BeanUtil.java",
+      "kind": "imports",
+      "label": "导入BeanUtil工具类"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallUserAddressServiceImpl.java",
+      "target": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/controller/vo/NewBeeMallUserAddressVO.java",
+      "kind": "imports",
+      "label": "导入NewBeeMallUserAddressVO"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallUserAddressServiceImpl.java",
+      "target": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/dao/MallUserAddressMapper.java",
+      "kind": "imports",
+      "label": "导入MallUserAddressMapper"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallUserAddressServiceImpl.java",
+      "target": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/MallUserAddress.java",
+      "kind": "imports",
+      "label": "导入MallUserAddress实体"
+    },
+    {
+      "source": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/impl/NewBeeMallUserAddressServiceImpl.java",
+      "target": "file::newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/service/NewBeeMallUserAddressService.java",
+      "kind": "implements",
+      "label": "实现接口"
+    },
+    {
+      "source": "class::NewBeeMallUserAddressServiceImpl",
+      "target": "class::NewBeeMallUserAddressService",
+      "kind": "implements",
+      "label": "实现服务接口"
+    },
+    {
+      "source": "class::NewBeeMallUserAddressServiceImpl",
+      "target": "class::MallUserAddressMapper",
+      "kind": "uses",
+      "label": "注入Mapper进行数据访问"
+    },
+    {
+      "source": "class::NewBeeMallUserAddressController",
+      "target": "class::NewBeeMallUserAddressService",
+      "kind": "uses",
+      "label": "注入地址服务"
+    },
+    {
+      "source": "class::NewBeeMallOrderController",
+      "target": "class::TokenToMallUser",
+      "kind": "uses",
+      "label": "使用@TokenToMallUser注解注入用户Token"
+    },
+    {
+      "source": "class::NewBeeMallUserAddressController",
+      "target": "class::TokenToMallUser",
+      "kind": "uses",
+      "label": "使用@TokenToMallUser注解注入用户Token"
+    },
+    {
+      "source": "func::NewBeeMallUserAddressController.saveUserAddress",
+      "target": "func::BeanUtil.copyProperties",
+      "kind": "calls",
+      "label": "调用属性拷贝"
+    },
+    {
+      "source": "func::NewBeeMallUserAddressController.updateMallUserAddress",
+      "target": "func::BeanUtil.copyProperties",
+      "kind": "calls",
+      "label": "调用属性拷贝"
+    },
+    {
+      "source": "func::NewBeeMallUserAddressController.getMallUserAddress",
+      "target": "func::BeanUtil.copyProperties",
+      "kind": "calls",
+      "label": "调用属性拷贝"
+    },
+    {
+      "source": "func::NewBeeMallUserAddressServiceImpl.getMyAddresses",
+      "target": "func::BeanUtil.copyList",
+      "kind": "calls",
+      "label": "调用列表批量拷贝"
+    },
+    {
+      "source": "func::NewBeeMallUserAddressServiceImpl.saveUserAddress",
+      "target": "func::NewBeeMallUserAddressServiceImpl.getMallUserAddressById",
+      "kind": "calls",
+      "label": "间接通过Mapper查询默认地址"
+    },
+    {
+      "source": "func::NewBeeMallUserAddressServiceImpl.updateMallUserAddress",
+      "target": "func::NewBeeMallUserAddressServiceImpl.getMallUserAddressById",
+      "kind": "calls",
+      "label": "查询当前地址验证存在性"
+    },
+    {
+      "source": "class::NewBeeMallUserAddressServiceImpl",
+      "target": "class::NewBeeMallUserAddressVO",
+      "kind": "uses",
+      "label": "转换为VO返回"
+    },
+    {
+      "source": "class::NewBeeMallUserAddressServiceImpl",
+      "target": "class::MallUserAddress",
+      "kind": "uses",
+      "label": "操作地址实体"
+    },
+    {
+      "source": "class::MallUserAddressMapper",
+      "target": "class::MallUserAddress",
+      "kind": "uses",
+      "label": "操作地址实体"
+    },
+    {
+      "source": "class::NewBeeMallUserAddressService",
+      "target": "class::MallUserAddress",
+      "kind": "uses",
+      "label": "方法参数和返回类型"
+    },
+    {
+      "source": "class::NewBeeMallUserAddressService",
+      "target": "class::NewBeeMallUserAddressVO",
+      "kind": "uses",
+      "label": "方法返回类型"
+    },
+    {
+      "source": "class::NewBeeMallOrderController",
+      "target": "class::NewBeeMallUserAddressService",
+      "kind": "uses",
+      "label": "注入地址服务校验地址归属"
+    },
+    {
+      "source": "func::NewBeeMallOrderController.saveOrder",
+      "target": "class::SaveOrderParam",
+      "kind": "uses",
+      "label": "接收订单参数"
+    },
+    {
+      "source": "class::NewBeeMallUserAddressController",
+      "target": "class::SaveMallUserAddressParam",
+      "kind": "uses",
+      "label": "接收添加地址参数"
+    },
+    {
+      "source": "class::NewBeeMallUserAddressController",
+      "target": "class::UpdateMallUserAddressParam",
+      "kind": "uses",
+      "label": "接收修改地址参数"
+    },
+    {
+      "source": "class::NewBeeMallUserAddressController",
+      "target": "class::NewBeeMallUserAddressVO",
+      "kind": "uses",
+      "label": "返回地址视图对象"
+    },
+    {
+      "source": "class::NewBeeMallOrderController",
+      "target": "class::NewBeeMallOrderListVO",
+      "kind": "uses",
+      "label": "返回订单列表视图对象"
+    },
+    {
+      "source": "class::NewBeeMallOrderController",
+      "target": "class::MallUserAddress",
+      "kind": "uses",
+      "label": "查询地址校验归属权"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+# .understandignore — patterns for files/dirs to exclude from analysis
+# Syntax: same as .gitignore (globs, # comments, ! negation, trailing / for dirs)
+
+# --- Maven / build output ---
+/target/
+
+# --- IntelliJ IDEA ---
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# --- Binary assets (not analyzable) ---
+static-files/*.png
+static-files/*.jpg
+static-files/*.jpeg
+static-files/*.gif
+
+# --- Build tool wrappers ---
+!.mvn/wrapper/maven-wrapper.jar

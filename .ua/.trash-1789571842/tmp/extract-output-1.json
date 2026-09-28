@@ -1,0 +1,4162 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 34,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 34,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 34,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/dto/ResultGenerator.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 51,
+      "functions": [
+        {
+          "name": "genSuccessResult",
+          "startLine": 19,
+          "endLine": 24,
+          "params": []
+        },
+        {
+          "name": "genSuccessResult",
+          "startLine": 26,
+          "endLine": 31,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "genSuccessResult",
+          "startLine": 33,
+          "endLine": 39,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "genFailResult",
+          "startLine": 41,
+          "endLine": 50,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "genErrorResult",
+          "startLine": 52,
+          "endLine": 57,
+          "params": [
+            "code",
+            "message"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ResultGenerator",
+          "startLine": 13,
+          "endLine": 58,
+          "methods": [
+            "genSuccessResult",
+            "genSuccessResult",
+            "genSuccessResult",
+            "genFailResult",
+            "genErrorResult"
+          ],
+          "properties": [
+            "DEFAULT_SUCCESS_MESSAGE",
+            "DEFAULT_FAIL_MESSAGE",
+            "RESULT_CODE_SUCCESS",
+            "RESULT_CODE_SERVER_ERROR"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "genSuccessResult",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "genSuccessResult",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "genSuccessResult",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "genFailResult",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "genErrorResult",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "ResultGenerator",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "genSuccessResult",
+          "callee": "new Result",
+          "lineNumber": 20
+        },
+        {
+          "caller": "genSuccessResult",
+          "callee": "result.setResultCode",
+          "lineNumber": 21
+        },
+        {
+          "caller": "genSuccessResult",
+          "callee": "result.setMessage",
+          "lineNumber": 22
+        },
+        {
+          "caller": "genSuccessResult",
+          "callee": "new Result",
+          "lineNumber": 27
+        },
+        {
+          "caller": "genSuccessResult",
+          "callee": "result.setResultCode",
+          "lineNumber": 28
+        },
+        {
+          "caller": "genSuccessResult",
+          "callee": "result.setMessage",
+          "lineNumber": 29
+        },
+        {
+          "caller": "genSuccessResult",
+          "callee": "new Result",
+          "lineNumber": 34
+        },
+        {
+          "caller": "genSuccessResult",
+          "callee": "result.setResultCode",
+          "lineNumber": 35
+        },
+        {
+          "caller": "genSuccessResult",
+          "callee": "result.setMessage",
+          "lineNumber": 36
+        },
+        {
+          "caller": "genSuccessResult",
+          "callee": "result.setData",
+          "lineNumber": 37
+        },
+        {
+          "caller": "genFailResult",
+          "callee": "new Result",
+          "lineNumber": 42
+        },
+        {
+          "caller": "genFailResult",
+          "callee": "result.setResultCode",
+          "lineNumber": 43
+        },
+        {
+          "caller": "genFailResult",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 44
+        },
+        {
+          "caller": "genFailResult",
+          "callee": "result.setMessage",
+          "lineNumber": 45
+        },
+        {
+          "caller": "genFailResult",
+          "callee": "result.setMessage",
+          "lineNumber": 47
+        },
+        {
+          "caller": "genErrorResult",
+          "callee": "new Result",
+          "lineNumber": 53
+        },
+        {
+          "caller": "genErrorResult",
+          "callee": "result.setResultCode",
+          "lineNumber": 54
+        },
+        {
+          "caller": "genErrorResult",
+          "callee": "result.setMessage",
+          "lineNumber": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/AdminUserToken.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "AdminUserToken",
+          "startLine": 15,
+          "endLine": 20,
+          "methods": [],
+          "properties": [
+            "adminUserId",
+            "token"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AdminUserToken",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/pojo/MallUserToken.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "MallUserToken",
+          "startLine": 15,
+          "endLine": 21,
+          "methods": [],
+          "properties": [
+            "userId",
+            "token"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MallUserToken",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/MD5Util.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "byteArrayToHexString",
+          "startLine": 13,
+          "endLine": 19,
+          "params": [
+            "b"
+          ]
+        },
+        {
+          "name": "byteToHexString",
+          "startLine": 21,
+          "endLine": 28,
+          "params": [
+            "b"
+          ]
+        },
+        {
+          "name": "MD5Encode",
+          "startLine": 30,
+          "endLine": 44,
+          "params": [
+            "origin",
+            "charsetname"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MD5Util",
+          "startLine": 11,
+          "endLine": 48,
+          "methods": [
+            "byteArrayToHexString",
+            "byteToHexString",
+            "MD5Encode"
+          ],
+          "properties": [
+            "hexDigits"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MD5Encode",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "MD5Util",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "byteArrayToHexString",
+          "callee": "new StringBuffer",
+          "lineNumber": 14
+        },
+        {
+          "caller": "byteArrayToHexString",
+          "callee": "resultSb.append",
+          "lineNumber": 16
+        },
+        {
+          "caller": "byteArrayToHexString",
+          "callee": "byteToHexString",
+          "lineNumber": 16
+        },
+        {
+          "caller": "byteArrayToHexString",
+          "callee": "resultSb.toString",
+          "lineNumber": 18
+        },
+        {
+          "caller": "MD5Encode",
+          "callee": "new String",
+          "lineNumber": 33
+        },
+        {
+          "caller": "MD5Encode",
+          "callee": "MessageDigest.getInstance",
+          "lineNumber": 34
+        },
+        {
+          "caller": "MD5Encode",
+          "callee": "\"\".equals",
+          "lineNumber": 35
+        },
+        {
+          "caller": "MD5Encode",
+          "callee": "byteArrayToHexString",
+          "lineNumber": 36
+        },
+        {
+          "caller": "MD5Encode",
+          "callee": "md.digest",
+          "lineNumber": 36
+        },
+        {
+          "caller": "MD5Encode",
+          "callee": "resultString.getBytes",
+          "lineNumber": 36
+        },
+        {
+          "caller": "MD5Encode",
+          "callee": "byteArrayToHexString",
+          "lineNumber": 39
+        },
+        {
+          "caller": "MD5Encode",
+          "callee": "md.digest",
+          "lineNumber": 39
+        },
+        {
+          "caller": "MD5Encode",
+          "callee": "resultString.getBytes",
+          "lineNumber": 39
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/NumberUtil.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 52,
+      "functions": [
+        {
+          "name": "NumberUtil",
+          "startLine": 14,
+          "endLine": 15,
+          "params": []
+        },
+        {
+          "name": "isPhone",
+          "startLine": 24,
+          "endLine": 28,
+          "params": [
+            "phone"
+          ]
+        },
+        {
+          "name": "genRandomNum",
+          "startLine": 36,
+          "endLine": 46,
+          "params": [
+            "length"
+          ]
+        },
+        {
+          "name": "genOrderNo",
+          "startLine": 53,
+          "endLine": 58,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "NumberUtil",
+          "startLine": 12,
+          "endLine": 59,
+          "methods": [
+            "NumberUtil",
+            "isPhone",
+            "genRandomNum",
+            "genOrderNo"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "isPhone",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "genRandomNum",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "genOrderNo",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "NumberUtil",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isPhone",
+          "callee": "Pattern.compile",
+          "lineNumber": 25
+        },
+        {
+          "caller": "isPhone",
+          "callee": "pattern.matcher",
+          "lineNumber": 26
+        },
+        {
+          "caller": "isPhone",
+          "callee": "matcher.matches",
+          "lineNumber": 27
+        },
+        {
+          "caller": "genRandomNum",
+          "callee": "Math.random",
+          "lineNumber": 38
+        },
+        {
+          "caller": "genOrderNo",
+          "callee": "new StringBuffer",
+          "lineNumber": 54
+        },
+        {
+          "caller": "genOrderNo",
+          "callee": "String.valueOf",
+          "lineNumber": 54
+        },
+        {
+          "caller": "genOrderNo",
+          "callee": "System.currentTimeMillis",
+          "lineNumber": 54
+        },
+        {
+          "caller": "genOrderNo",
+          "callee": "genRandomNum",
+          "lineNumber": 55
+        },
+        {
+          "caller": "genOrderNo",
+          "callee": "buffer.append",
+          "lineNumber": 56
+        },
+        {
+          "caller": "genOrderNo",
+          "callee": "buffer.toString",
+          "lineNumber": 57
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/SystemUtil.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "SystemUtil",
+          "startLine": 14,
+          "endLine": 15,
+          "params": []
+        },
+        {
+          "name": "genToken",
+          "startLine": 24,
+          "endLine": 40,
+          "params": [
+            "src"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SystemUtil",
+          "startLine": 12,
+          "endLine": 42,
+          "methods": [
+            "SystemUtil",
+            "genToken"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "genToken",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "SystemUtil",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "genToken",
+          "callee": "\"\".equals",
+          "lineNumber": 25
+        },
+        {
+          "caller": "genToken",
+          "callee": "MessageDigest.getInstance",
+          "lineNumber": 29
+        },
+        {
+          "caller": "genToken",
+          "callee": "md.update",
+          "lineNumber": 30
+        },
+        {
+          "caller": "genToken",
+          "callee": "src.getBytes",
+          "lineNumber": 30
+        },
+        {
+          "caller": "genToken",
+          "callee": "new BigInteger(1, md.digest()).toString",
+          "lineNumber": 31
+        },
+        {
+          "caller": "genToken",
+          "callee": "new BigInteger",
+          "lineNumber": 31
+        },
+        {
+          "caller": "genToken",
+          "callee": "md.digest",
+          "lineNumber": 31
+        },
+        {
+          "caller": "genToken",
+          "callee": "result.length",
+          "lineNumber": 32
+        },
+        {
+          "caller": "genToken",
+          "callee": "System.out.println",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/filter/ValidTokenGlobalFilter.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 91,
+      "nonEmptyLines": 77,
+      "functions": [
+        {
+          "name": "filter",
+          "startLine": 45,
+          "endLine": 74,
+          "params": [
+            "exchange",
+            "chain"
+          ]
+        },
+        {
+          "name": "getOrder",
+          "startLine": 76,
+          "endLine": 79,
+          "params": []
+        },
+        {
+          "name": "wrapErrorResponse",
+          "startLine": 81,
+          "endLine": 89,
+          "params": [
+            "exchange",
+            "chain"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ValidTokenGlobalFilter",
+          "startLine": 39,
+          "endLine": 91,
+          "methods": [
+            "filter",
+            "getOrder",
+            "wrapErrorResponse"
+          ],
+          "properties": [
+            "redisTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "filter",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "getOrder",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "ValidTokenGlobalFilter",
+          "line": 39,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest().getURI().getPath().equals",
+          "lineNumber": 49
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest().getURI().getPath",
+          "lineNumber": 49
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest().getURI",
+          "lineNumber": 49
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest",
+          "lineNumber": 49
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest().getURI().getPath().contains",
+          "lineNumber": 49
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest().getURI().getPath",
+          "lineNumber": 49
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest().getURI",
+          "lineNumber": 49
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest",
+          "lineNumber": 49
+        },
+        {
+          "caller": "filter",
+          "callee": "chain.filter",
+          "lineNumber": 50
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest().getHeaders",
+          "lineNumber": 53
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest",
+          "lineNumber": 53
+        },
+        {
+          "caller": "filter",
+          "callee": "headers.isEmpty",
+          "lineNumber": 55
+        },
+        {
+          "caller": "filter",
+          "callee": "wrapErrorResponse",
+          "lineNumber": 57
+        },
+        {
+          "caller": "filter",
+          "callee": "headers.getFirst",
+          "lineNumber": 60
+        },
+        {
+          "caller": "filter",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 62
+        },
+        {
+          "caller": "filter",
+          "callee": "wrapErrorResponse",
+          "lineNumber": 64
+        },
+        {
+          "caller": "filter",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 66
+        },
+        {
+          "caller": "filter",
+          "callee": "opsForAdminUserToken.get",
+          "lineNumber": 67
+        },
+        {
+          "caller": "filter",
+          "callee": "wrapErrorResponse",
+          "lineNumber": 70
+        },
+        {
+          "caller": "filter",
+          "callee": "chain.filter",
+          "lineNumber": 73
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "ResultGenerator.genErrorResult",
+          "lineNumber": 82
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "new ObjectMapper",
+          "lineNumber": 83
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "mapper.valueToTree",
+          "lineNumber": 84
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "resultNode.toString().getBytes",
+          "lineNumber": 85
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "resultNode.toString",
+          "lineNumber": 85
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "exchange.getResponse().bufferFactory().wrap",
+          "lineNumber": 86
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "exchange.getResponse().bufferFactory",
+          "lineNumber": 86
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "exchange.getResponse",
+          "lineNumber": 86
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "exchange.getResponse().setStatusCode",
+          "lineNumber": 87
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "exchange.getResponse",
+          "lineNumber": 87
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "exchange.getResponse().writeWith",
+          "lineNumber": 88
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "exchange.getResponse",
+          "lineNumber": 88
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "Flux.just",
+          "lineNumber": 88
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/filter/ValidMallUserTokenGlobalFilter.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 104,
+      "nonEmptyLines": 89,
+      "functions": [
+        {
+          "name": "filter",
+          "startLine": 47,
+          "endLine": 87,
+          "params": [
+            "exchange",
+            "chain"
+          ]
+        },
+        {
+          "name": "getOrder",
+          "startLine": 89,
+          "endLine": 92,
+          "params": []
+        },
+        {
+          "name": "wrapErrorResponse",
+          "startLine": 94,
+          "endLine": 102,
+          "params": [
+            "exchange",
+            "chain"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ValidMallUserTokenGlobalFilter",
+          "startLine": 41,
+          "endLine": 104,
+          "methods": [
+            "filter",
+            "getOrder",
+            "wrapErrorResponse"
+          ],
+          "properties": [
+            "redisTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "filter",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "getOrder",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "ValidMallUserTokenGlobalFilter",
+          "line": 41,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "filter",
+          "callee": "new ArrayList<>",
+          "lineNumber": 50
+        },
+        {
+          "caller": "filter",
+          "callee": "ignoreURLs.add",
+          "lineNumber": 51
+        },
+        {
+          "caller": "filter",
+          "callee": "ignoreURLs.add",
+          "lineNumber": 52
+        },
+        {
+          "caller": "filter",
+          "callee": "ignoreURLs.add",
+          "lineNumber": 53
+        },
+        {
+          "caller": "filter",
+          "callee": "ignoreURLs.add",
+          "lineNumber": 54
+        },
+        {
+          "caller": "filter",
+          "callee": "ignoreURLs.add",
+          "lineNumber": 55
+        },
+        {
+          "caller": "filter",
+          "callee": "ignoreURLs.add",
+          "lineNumber": 56
+        },
+        {
+          "caller": "filter",
+          "callee": "ignoreURLs.add",
+          "lineNumber": 57
+        },
+        {
+          "caller": "filter",
+          "callee": "ignoreURLs.add",
+          "lineNumber": 58
+        },
+        {
+          "caller": "filter",
+          "callee": "ignoreURLs.add",
+          "lineNumber": 59
+        },
+        {
+          "caller": "filter",
+          "callee": "ignoreURLs.contains",
+          "lineNumber": 62
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest().getURI().getPath",
+          "lineNumber": 62
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest().getURI",
+          "lineNumber": 62
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest",
+          "lineNumber": 62
+        },
+        {
+          "caller": "filter",
+          "callee": "chain.filter",
+          "lineNumber": 63
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest().getHeaders",
+          "lineNumber": 66
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest",
+          "lineNumber": 66
+        },
+        {
+          "caller": "filter",
+          "callee": "headers.isEmpty",
+          "lineNumber": 68
+        },
+        {
+          "caller": "filter",
+          "callee": "wrapErrorResponse",
+          "lineNumber": 70
+        },
+        {
+          "caller": "filter",
+          "callee": "headers.getFirst",
+          "lineNumber": 73
+        },
+        {
+          "caller": "filter",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 75
+        },
+        {
+          "caller": "filter",
+          "callee": "wrapErrorResponse",
+          "lineNumber": 77
+        },
+        {
+          "caller": "filter",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 79
+        },
+        {
+          "caller": "filter",
+          "callee": "opsForMallUserToken.get",
+          "lineNumber": 80
+        },
+        {
+          "caller": "filter",
+          "callee": "wrapErrorResponse",
+          "lineNumber": 83
+        },
+        {
+          "caller": "filter",
+          "callee": "chain.filter",
+          "lineNumber": 86
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "ResultGenerator.genErrorResult",
+          "lineNumber": 95
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "new ObjectMapper",
+          "lineNumber": 96
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "mapper.valueToTree",
+          "lineNumber": 97
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "resultNode.toString().getBytes",
+          "lineNumber": 98
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "resultNode.toString",
+          "lineNumber": 98
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "exchange.getResponse().bufferFactory().wrap",
+          "lineNumber": 99
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "exchange.getResponse().bufferFactory",
+          "lineNumber": 99
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "exchange.getResponse",
+          "lineNumber": 99
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "exchange.getResponse().setStatusCode",
+          "lineNumber": 100
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "exchange.getResponse",
+          "lineNumber": 100
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "exchange.getResponse().writeWith",
+          "lineNumber": 101
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "exchange.getResponse",
+          "lineNumber": 101
+        },
+        {
+          "caller": "wrapErrorResponse",
+          "callee": "Flux.just",
+          "lineNumber": 101
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OrderServiceSwagger3Config.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 66,
+      "nonEmptyLines": 60,
+      "functions": [
+        {
+          "name": "api",
+          "startLine": 34,
+          "endLine": 44,
+          "params": []
+        },
+        {
+          "name": "getGlobalRequestParameters",
+          "startLine": 47,
+          "endLine": 57,
+          "params": []
+        },
+        {
+          "name": "apiInfo",
+          "startLine": 59,
+          "endLine": 65,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "OrderServiceSwagger3Config",
+          "startLine": 30,
+          "endLine": 66,
+          "methods": [
+            "api",
+            "getGlobalRequestParameters",
+            "apiInfo"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "api",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "OrderServiceSwagger3Config",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo())\r\n                .ignoredParameterTypes(LoginAdminUser.class, MallUserToken.class)\r\n                .select()\r\n                .apis(RequestHandlerSelectors.basePackage(\"ltd.order.cloud.newbee.controller\"))\r\n                .paths(PathSelectors.any())\r\n                .build().globalRequestParameters",
+          "lineNumber": 36
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo())\r\n                .ignoredParameterTypes(LoginAdminUser.class, MallUserToken.class)\r\n                .select()\r\n                .apis(RequestHandlerSelectors.basePackage(\"ltd.order.cloud.newbee.controller\"))\r\n                .paths(PathSelectors.any()).build",
+          "lineNumber": 36
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo())\r\n                .ignoredParameterTypes(LoginAdminUser.class, MallUserToken.class)\r\n                .select()\r\n                .apis(RequestHandlerSelectors.basePackage(\"ltd.order.cloud.newbee.controller\")).paths",
+          "lineNumber": 36
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo())\r\n                .ignoredParameterTypes(LoginAdminUser.class, MallUserToken.class)\r\n                .select().apis",
+          "lineNumber": 36
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo())\r\n                .ignoredParameterTypes(LoginAdminUser.class, MallUserToken.class).select",
+          "lineNumber": 36
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo()).ignoredParameterTypes",
+          "lineNumber": 36
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30).apiInfo",
+          "lineNumber": 36
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket",
+          "lineNumber": 36
+        },
+        {
+          "caller": "api",
+          "callee": "apiInfo",
+          "lineNumber": 37
+        },
+        {
+          "caller": "api",
+          "callee": "RequestHandlerSelectors.basePackage",
+          "lineNumber": 40
+        },
+        {
+          "caller": "api",
+          "callee": "PathSelectors.any",
+          "lineNumber": 41
+        },
+        {
+          "caller": "api",
+          "callee": "getGlobalRequestParameters",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new ArrayList<>",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "parameters.add",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder()\r\n                .name(\"token\")\r\n                .description(\"登录认证token\")\r\n                .required(false) // 非必传\r\n                .in(ParameterType.HEADER) //请求头中的参数，其它类型可以点进ParameterType类中查看\r\n                .query(q -> q.model(m -> m.scalarModel(ScalarType.STRING))).build",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder()\r\n                .name(\"token\")\r\n                .description(\"登录认证token\")\r\n                .required(false) // 非必传\r\n                .in(ParameterType.HEADER).query",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder()\r\n                .name(\"token\")\r\n                .description(\"登录认证token\")\r\n                .required(false).in",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder()\r\n                .name(\"token\")\r\n                .description(\"登录认证token\").required",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder()\r\n                .name(\"token\").description",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder().name",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "q.model",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "m.scalarModel",
+          "lineNumber": 54
+        },
+        {
+          "caller": "apiInfo",
+          "callee": "new ApiInfoBuilder()\r\n                .title(\"newbee-mall-cloud-order-service接口文档\")\r\n                .description(\"swagger接口文档\")\r\n                .version(\"2.0\").build",
+          "lineNumber": 60
+        },
+        {
+          "caller": "apiInfo",
+          "callee": "new ApiInfoBuilder()\r\n                .title(\"newbee-mall-cloud-order-service接口文档\")\r\n                .description(\"swagger接口文档\").version",
+          "lineNumber": 60
+        },
+        {
+          "caller": "apiInfo",
+          "callee": "new ApiInfoBuilder()\r\n                .title(\"newbee-mall-cloud-order-service接口文档\").description",
+          "lineNumber": 60
+        },
+        {
+          "caller": "apiInfo",
+          "callee": "new ApiInfoBuilder().title",
+          "lineNumber": 60
+        },
+        {
+          "caller": "apiInfo",
+          "callee": "new ApiInfoBuilder",
+          "lineNumber": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/entity/LoginAdminUser.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "LoginAdminUser",
+          "startLine": 13,
+          "endLine": 24,
+          "methods": [],
+          "properties": [
+            "adminUserId",
+            "loginUserName",
+            "loginPassword",
+            "nickName",
+            "locked"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LoginAdminUser",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/ShopCartServiceSwagger3Config.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 59,
+      "functions": [
+        {
+          "name": "api",
+          "startLine": 33,
+          "endLine": 43,
+          "params": []
+        },
+        {
+          "name": "getGlobalRequestParameters",
+          "startLine": 46,
+          "endLine": 56,
+          "params": []
+        },
+        {
+          "name": "apiInfo",
+          "startLine": 58,
+          "endLine": 64,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ShopCartServiceSwagger3Config",
+          "startLine": 29,
+          "endLine": 65,
+          "methods": [
+            "api",
+            "getGlobalRequestParameters",
+            "apiInfo"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "api",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "ShopCartServiceSwagger3Config",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo())\r\n                .ignoredParameterTypes(MallUserToken.class)\r\n                .select()\r\n                .apis(RequestHandlerSelectors.basePackage(\"ltd.shopcart.cloud.newbee.controller\"))\r\n                .paths(PathSelectors.any())\r\n                .build().globalRequestParameters",
+          "lineNumber": 35
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo())\r\n                .ignoredParameterTypes(MallUserToken.class)\r\n                .select()\r\n                .apis(RequestHandlerSelectors.basePackage(\"ltd.shopcart.cloud.newbee.controller\"))\r\n                .paths(PathSelectors.any()).build",
+          "lineNumber": 35
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo())\r\n                .ignoredParameterTypes(MallUserToken.class)\r\n                .select()\r\n                .apis(RequestHandlerSelectors.basePackage(\"ltd.shopcart.cloud.newbee.controller\")).paths",
+          "lineNumber": 35
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo())\r\n                .ignoredParameterTypes(MallUserToken.class)\r\n                .select().apis",
+          "lineNumber": 35
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo())\r\n                .ignoredParameterTypes(MallUserToken.class).select",
+          "lineNumber": 35
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo()).ignoredParameterTypes",
+          "lineNumber": 35
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30).apiInfo",
+          "lineNumber": 35
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket",
+          "lineNumber": 35
+        },
+        {
+          "caller": "api",
+          "callee": "apiInfo",
+          "lineNumber": 36
+        },
+        {
+          "caller": "api",
+          "callee": "RequestHandlerSelectors.basePackage",
+          "lineNumber": 39
+        },
+        {
+          "caller": "api",
+          "callee": "PathSelectors.any",
+          "lineNumber": 40
+        },
+        {
+          "caller": "api",
+          "callee": "getGlobalRequestParameters",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new ArrayList<>",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "parameters.add",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder()\r\n                .name(\"token\")\r\n                .description(\"登录认证token\")\r\n                .required(false) // 非必传\r\n                .in(ParameterType.HEADER) //请求头中的参数，其它类型可以点进ParameterType类中查看\r\n                .query(q -> q.model(m -> m.scalarModel(ScalarType.STRING))).build",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder()\r\n                .name(\"token\")\r\n                .description(\"登录认证token\")\r\n                .required(false) // 非必传\r\n                .in(ParameterType.HEADER).query",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder()\r\n                .name(\"token\")\r\n                .description(\"登录认证token\")\r\n                .required(false).in",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder()\r\n                .name(\"token\")\r\n                .description(\"登录认证token\").required",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder()\r\n                .name(\"token\").description",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder().name",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "q.model",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "m.scalarModel",
+          "lineNumber": 53
+        },
+        {
+          "caller": "apiInfo",
+          "callee": "new ApiInfoBuilder()\r\n                .title(\"newbee-mall-cloud-shop-cart-service接口文档\")\r\n                .description(\"swagger接口文档\")\r\n                .version(\"2.0\").build",
+          "lineNumber": 59
+        },
+        {
+          "caller": "apiInfo",
+          "callee": "new ApiInfoBuilder()\r\n                .title(\"newbee-mall-cloud-shop-cart-service接口文档\")\r\n                .description(\"swagger接口文档\").version",
+          "lineNumber": 59
+        },
+        {
+          "caller": "apiInfo",
+          "callee": "new ApiInfoBuilder()\r\n                .title(\"newbee-mall-cloud-shop-cart-service接口文档\").description",
+          "lineNumber": 59
+        },
+        {
+          "caller": "apiInfo",
+          "callee": "new ApiInfoBuilder().title",
+          "lineNumber": 59
+        },
+        {
+          "caller": "apiInfo",
+          "callee": "new ApiInfoBuilder",
+          "lineNumber": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/UserServiceWebMvcConfigurer.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 68,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "addArgumentResolvers",
+          "startLine": 48,
+          "endLine": 51,
+          "params": [
+            "argumentResolvers"
+          ]
+        },
+        {
+          "name": "addResourceHandlers",
+          "startLine": 53,
+          "endLine": 59,
+          "params": [
+            "registry"
+          ]
+        },
+        {
+          "name": "addInterceptors",
+          "startLine": 61,
+          "endLine": 67,
+          "params": [
+            "registry"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "UserServiceWebMvcConfigurer",
+          "startLine": 28,
+          "endLine": 68,
+          "methods": [
+            "addArgumentResolvers",
+            "addResourceHandlers",
+            "addInterceptors"
+          ],
+          "properties": [
+            "log",
+            "sentinelProperties",
+            "sentinelWebInterceptorOptional",
+            "tokenToAdminUserMethodArgumentResolver",
+            "tokenToMallUserMethodArgumentResolver"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "addArgumentResolvers",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "addResourceHandlers",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "addInterceptors",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "UserServiceWebMvcConfigurer",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "addArgumentResolvers",
+          "callee": "argumentResolvers.add",
+          "lineNumber": 49
+        },
+        {
+          "caller": "addArgumentResolvers",
+          "callee": "argumentResolvers.add",
+          "lineNumber": 50
+        },
+        {
+          "caller": "addResourceHandlers",
+          "callee": "registry.\r\n                addResourceHandler(\"/swagger-ui/**\")\r\n                .addResourceLocations(\"classpath:/META-INF/resources/webjars/springfox-swagger-ui/\").resourceChain",
+          "lineNumber": 55
+        },
+        {
+          "caller": "addResourceHandlers",
+          "callee": "registry.\r\n                addResourceHandler(\"/swagger-ui/**\").addResourceLocations",
+          "lineNumber": 55
+        },
+        {
+          "caller": "addResourceHandlers",
+          "callee": "registry.addResourceHandler",
+          "lineNumber": 55
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "this.sentinelWebInterceptorOptional.isPresent",
+          "lineNumber": 62
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "this.sentinelProperties.getFilter",
+          "lineNumber": 63
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "registry.addInterceptor((HandlerInterceptor) this.sentinelWebInterceptorOptional.get()).order(filterConfig.getOrder()).addPathPatterns",
+          "lineNumber": 64
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "registry.addInterceptor((HandlerInterceptor) this.sentinelWebInterceptorOptional.get()).order",
+          "lineNumber": 64
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "registry.addInterceptor",
+          "lineNumber": 64
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "this.sentinelWebInterceptorOptional.get",
+          "lineNumber": 64
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "filterConfig.getOrder",
+          "lineNumber": 64
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "filterConfig.getUrlPatterns",
+          "lineNumber": 64
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "log.info",
+          "lineNumber": 65
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "filterConfig.getUrlPatterns",
+          "lineNumber": 65
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/UserSwagger3Config.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 52,
+      "functions": [
+        {
+          "name": "api",
+          "startLine": 26,
+          "endLine": 36,
+          "params": []
+        },
+        {
+          "name": "getGlobalRequestParameters",
+          "startLine": 39,
+          "endLine": 49,
+          "params": []
+        },
+        {
+          "name": "apiInfo",
+          "startLine": 51,
+          "endLine": 57,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "UserSwagger3Config",
+          "startLine": 22,
+          "endLine": 58,
+          "methods": [
+            "api",
+            "getGlobalRequestParameters",
+            "apiInfo"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "api",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "UserSwagger3Config",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo())\r\n                .ignoredParameterTypes(AdminUserToken.class, MallUserToken.class)\r\n                .select()\r\n                .apis(RequestHandlerSelectors.basePackage(\"ltd.user.cloud.newbee.controller\"))\r\n                .paths(PathSelectors.any())\r\n                .build().globalRequestParameters",
+          "lineNumber": 28
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo())\r\n                .ignoredParameterTypes(AdminUserToken.class, MallUserToken.class)\r\n                .select()\r\n                .apis(RequestHandlerSelectors.basePackage(\"ltd.user.cloud.newbee.controller\"))\r\n                .paths(PathSelectors.any()).build",
+          "lineNumber": 28
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo())\r\n                .ignoredParameterTypes(AdminUserToken.class, MallUserToken.class)\r\n                .select()\r\n                .apis(RequestHandlerSelectors.basePackage(\"ltd.user.cloud.newbee.controller\")).paths",
+          "lineNumber": 28
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo())\r\n                .ignoredParameterTypes(AdminUserToken.class, MallUserToken.class)\r\n                .select().apis",
+          "lineNumber": 28
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo())\r\n                .ignoredParameterTypes(AdminUserToken.class, MallUserToken.class).select",
+          "lineNumber": 28
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30)\r\n                .apiInfo(apiInfo()).ignoredParameterTypes",
+          "lineNumber": 28
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket(DocumentationType.OAS_30).apiInfo",
+          "lineNumber": 28
+        },
+        {
+          "caller": "api",
+          "callee": "new Docket",
+          "lineNumber": 28
+        },
+        {
+          "caller": "api",
+          "callee": "apiInfo",
+          "lineNumber": 29
+        },
+        {
+          "caller": "api",
+          "callee": "RequestHandlerSelectors.basePackage",
+          "lineNumber": 32
+        },
+        {
+          "caller": "api",
+          "callee": "PathSelectors.any",
+          "lineNumber": 33
+        },
+        {
+          "caller": "api",
+          "callee": "getGlobalRequestParameters",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new ArrayList<>",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "parameters.add",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder()\r\n                .name(\"token\")\r\n                .description(\"登录认证token\")\r\n                .required(false) // 非必传\r\n                .in(ParameterType.HEADER) //请求头中的参数，其它类型可以点进ParameterType类中查看\r\n                .query(q -> q.model(m -> m.scalarModel(ScalarType.STRING))).build",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder()\r\n                .name(\"token\")\r\n                .description(\"登录认证token\")\r\n                .required(false) // 非必传\r\n                .in(ParameterType.HEADER).query",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder()\r\n                .name(\"token\")\r\n                .description(\"登录认证token\")\r\n                .required(false).in",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder()\r\n                .name(\"token\")\r\n                .description(\"登录认证token\").required",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder()\r\n                .name(\"token\").description",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder().name",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "new RequestParameterBuilder",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "q.model",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getGlobalRequestParameters",
+          "callee": "m.scalarModel",
+          "lineNumber": 46
+        },
+        {
+          "caller": "apiInfo",
+          "callee": "new ApiInfoBuilder()\r\n                .title(\"newbee-mall-cloud-user-service接口文档\")\r\n                .description(\"swagger接口文档\")\r\n                .version(\"2.0\").build",
+          "lineNumber": 52
+        },
+        {
+          "caller": "apiInfo",
+          "callee": "new ApiInfoBuilder()\r\n                .title(\"newbee-mall-cloud-user-service接口文档\")\r\n                .description(\"swagger接口文档\").version",
+          "lineNumber": 52
+        },
+        {
+          "caller": "apiInfo",
+          "callee": "new ApiInfoBuilder()\r\n                .title(\"newbee-mall-cloud-user-service接口文档\").description",
+          "lineNumber": 52
+        },
+        {
+          "caller": "apiInfo",
+          "callee": "new ApiInfoBuilder().title",
+          "lineNumber": 52
+        },
+        {
+          "caller": "apiInfo",
+          "callee": "new ApiInfoBuilder",
+          "lineNumber": 52
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/annotation/TokenToAdminUser.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 21,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/annotation/TokenToMallUser.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 21,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/handler/TokenToAdminUserMethodArgumentResolver.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 51,
+      "functions": [
+        {
+          "name": "TokenToAdminUserMethodArgumentResolver",
+          "startLine": 31,
+          "endLine": 32,
+          "params": []
+        },
+        {
+          "name": "supportsParameter",
+          "startLine": 34,
+          "endLine": 39,
+          "params": [
+            "parameter"
+          ]
+        },
+        {
+          "name": "resolveArgument",
+          "startLine": 41,
+          "endLine": 56,
+          "params": [
+            "parameter",
+            "mavContainer",
+            "webRequest",
+            "binderFactory"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TokenToAdminUserMethodArgumentResolver",
+          "startLine": 25,
+          "endLine": 58,
+          "methods": [
+            "TokenToAdminUserMethodArgumentResolver",
+            "supportsParameter",
+            "resolveArgument"
+          ],
+          "properties": [
+            "redisTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TokenToAdminUserMethodArgumentResolver",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "supportsParameter",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "resolveArgument",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "TokenToAdminUserMethodArgumentResolver",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "supportsParameter",
+          "callee": "parameter.hasParameterAnnotation",
+          "lineNumber": 35
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "parameter.getParameterAnnotation",
+          "lineNumber": 42
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "webRequest.getHeader",
+          "lineNumber": 43
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "\"\".equals",
+          "lineNumber": 44
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "token.length",
+          "lineNumber": 44
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 45
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "opsForAdminUserToken.get",
+          "lineNumber": 46
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 48
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "ServiceResultEnum.ADMIN_NOT_LOGIN_ERROR.getResult",
+          "lineNumber": 48
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 52
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "ServiceResultEnum.ADMIN_NOT_LOGIN_ERROR.getResult",
+          "lineNumber": 52
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/handler/TokenToMallUserMethodArgumentResolver.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 91,
+      "nonEmptyLines": 82,
+      "functions": [
+        {
+          "name": "TokenToMallUserMethodArgumentResolver",
+          "startLine": 39,
+          "endLine": 40,
+          "params": []
+        },
+        {
+          "name": "supportsParameter",
+          "startLine": 42,
+          "endLine": 47,
+          "params": [
+            "parameter"
+          ]
+        },
+        {
+          "name": "resolveArgument",
+          "startLine": 49,
+          "endLine": 71,
+          "params": [
+            "parameter",
+            "mavContainer",
+            "webRequest",
+            "binderFactory"
+          ]
+        },
+        {
+          "name": "getRequestPostBytes",
+          "startLine": 73,
+          "endLine": 89,
+          "params": [
+            "request"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TokenToMallUserMethodArgumentResolver",
+          "startLine": 31,
+          "endLine": 91,
+          "methods": [
+            "TokenToMallUserMethodArgumentResolver",
+            "supportsParameter",
+            "resolveArgument",
+            "getRequestPostBytes"
+          ],
+          "properties": [
+            "redisTemplate",
+            "mallUserMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TokenToMallUserMethodArgumentResolver",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "supportsParameter",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "resolveArgument",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "getRequestPostBytes",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "TokenToMallUserMethodArgumentResolver",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "supportsParameter",
+          "callee": "parameter.hasParameterAnnotation",
+          "lineNumber": 43
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "parameter.getParameterAnnotation",
+          "lineNumber": 50
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "webRequest.getHeader",
+          "lineNumber": 51
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "\"\".equals",
+          "lineNumber": 52
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "token.length",
+          "lineNumber": 52
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 53
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "opsForMallUserToken.get",
+          "lineNumber": 54
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 56
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "ServiceResultEnum.TOKEN_EXPIRE_ERROR.getResult",
+          "lineNumber": 56
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "mallUserMapper.selectByPrimaryKey",
+          "lineNumber": 58
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "mallUserToken.getUserId",
+          "lineNumber": 58
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 60
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "ServiceResultEnum.USER_NULL_ERROR.getResult",
+          "lineNumber": 60
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "mallUser.getLockedFlag().intValue",
+          "lineNumber": 62
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "mallUser.getLockedFlag",
+          "lineNumber": 62
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 63
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "ServiceResultEnum.LOGIN_USER_LOCKED_ERROR.getResult",
+          "lineNumber": 63
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 67
+        },
+        {
+          "caller": "resolveArgument",
+          "callee": "ServiceResultEnum.NOT_LOGIN_ERROR.getResult",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getRequestPostBytes",
+          "callee": "request.getContentLength",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getRequestPostBytes",
+          "callee": "request.getInputStream().read",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getRequestPostBytes",
+          "callee": "request.getInputStream",
+          "lineNumber": 81
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudAdminUserController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 114,
+      "nonEmptyLines": 99,
+      "functions": [
+        {
+          "name": "login",
+          "startLine": 40,
+          "endLine": 54,
+          "params": [
+            "adminLoginParam"
+          ]
+        },
+        {
+          "name": "profile",
+          "startLine": 56,
+          "endLine": 68,
+          "params": [
+            "adminUser"
+          ]
+        },
+        {
+          "name": "passwordUpdate",
+          "startLine": 70,
+          "endLine": 79,
+          "params": [
+            "adminPasswordParam",
+            "adminUser"
+          ]
+        },
+        {
+          "name": "nameUpdate",
+          "startLine": 81,
+          "endLine": 90,
+          "params": [
+            "adminNameParam",
+            "adminUser"
+          ]
+        },
+        {
+          "name": "logout",
+          "startLine": 92,
+          "endLine": 98,
+          "params": [
+            "adminUser"
+          ]
+        },
+        {
+          "name": "getAdminUserByToken",
+          "startLine": 100,
+          "endLine": 111,
+          "params": [
+            "token"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeMallCloudAdminUserController",
+          "startLine": 31,
+          "endLine": 114,
+          "methods": [
+            "login",
+            "profile",
+            "passwordUpdate",
+            "nameUpdate",
+            "logout",
+            "getAdminUserByToken"
+          ],
+          "properties": [
+            "logger",
+            "adminUserService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "login",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "profile",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "passwordUpdate",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "nameUpdate",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "logout",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "getAdminUserByToken",
+          "line": 100,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeMallCloudAdminUserController",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "login",
+          "callee": "adminUserService.login",
+          "lineNumber": 43
+        },
+        {
+          "caller": "login",
+          "callee": "adminLoginParam.getUserName",
+          "lineNumber": 43
+        },
+        {
+          "caller": "login",
+          "callee": "adminLoginParam.getPasswordMd5",
+          "lineNumber": 43
+        },
+        {
+          "caller": "login",
+          "callee": "logger.info",
+          "lineNumber": 44
+        },
+        {
+          "caller": "login",
+          "callee": "adminLoginParam.getUserName",
+          "lineNumber": 44
+        },
+        {
+          "caller": "login",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 47
+        },
+        {
+          "caller": "login",
+          "callee": "loginResult.length",
+          "lineNumber": 47
+        },
+        {
+          "caller": "login",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 48
+        },
+        {
+          "caller": "login",
+          "callee": "result.setData",
+          "lineNumber": 49
+        },
+        {
+          "caller": "login",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 53
+        },
+        {
+          "caller": "profile",
+          "callee": "logger.info",
+          "lineNumber": 59
+        },
+        {
+          "caller": "profile",
+          "callee": "adminUser.toString",
+          "lineNumber": 59
+        },
+        {
+          "caller": "profile",
+          "callee": "adminUserService.getUserDetailById",
+          "lineNumber": 60
+        },
+        {
+          "caller": "profile",
+          "callee": "adminUser.getAdminUserId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "profile",
+          "callee": "adminUserEntity.setLoginPassword",
+          "lineNumber": 62
+        },
+        {
+          "caller": "profile",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 63
+        },
+        {
+          "caller": "profile",
+          "callee": "result.setData",
+          "lineNumber": 64
+        },
+        {
+          "caller": "profile",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 67
+        },
+        {
+          "caller": "passwordUpdate",
+          "callee": "logger.info",
+          "lineNumber": 73
+        },
+        {
+          "caller": "passwordUpdate",
+          "callee": "adminUser.toString",
+          "lineNumber": 73
+        },
+        {
+          "caller": "passwordUpdate",
+          "callee": "adminUserService.updatePassword",
+          "lineNumber": 74
+        },
+        {
+          "caller": "passwordUpdate",
+          "callee": "adminUser.getAdminUserId",
+          "lineNumber": 74
+        },
+        {
+          "caller": "passwordUpdate",
+          "callee": "adminPasswordParam.getOriginalPassword",
+          "lineNumber": 74
+        },
+        {
+          "caller": "passwordUpdate",
+          "callee": "adminPasswordParam.getNewPassword",
+          "lineNumber": 74
+        },
+        {
+          "caller": "passwordUpdate",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 75
+        },
+        {
+          "caller": "passwordUpdate",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 77
+        },
+        {
+          "caller": "nameUpdate",
+          "callee": "logger.info",
+          "lineNumber": 84
+        },
+        {
+          "caller": "nameUpdate",
+          "callee": "adminUser.toString",
+          "lineNumber": 84
+        },
+        {
+          "caller": "nameUpdate",
+          "callee": "adminUserService.updateName",
+          "lineNumber": 85
+        },
+        {
+          "caller": "nameUpdate",
+          "callee": "adminUser.getAdminUserId",
+          "lineNumber": 85
+        },
+        {
+          "caller": "nameUpdate",
+          "callee": "adminNameParam.getLoginUserName",
+          "lineNumber": 85
+        },
+        {
+          "caller": "nameUpdate",
+          "callee": "adminNameParam.getNickName",
+          "lineNumber": 85
+        },
+        {
+          "caller": "nameUpdate",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 86
+        },
+        {
+          "caller": "nameUpdate",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 88
+        },
+        {
+          "caller": "logout",
+          "callee": "logger.info",
+          "lineNumber": 95
+        },
+        {
+          "caller": "logout",
+          "callee": "adminUser.toString",
+          "lineNumber": 95
+        },
+        {
+          "caller": "logout",
+          "callee": "adminUserService.logout",
+          "lineNumber": 96
+        },
+        {
+          "caller": "logout",
+          "callee": "adminUser.getToken",
+          "lineNumber": 96
+        },
+        {
+          "caller": "logout",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getAdminUserByToken",
+          "callee": "adminUserService.getUserDetailByToken",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getAdminUserByToken",
+          "callee": "adminUser.setLoginPassword",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getAdminUserByToken",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getAdminUserByToken",
+          "callee": "result.setData",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getAdminUserByToken",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 110
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/NewBeeMallCloudPersonalController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 134,
+      "nonEmptyLines": 115,
+      "functions": [
+        {
+          "name": "login",
+          "startLine": 45,
+          "endLine": 63,
+          "params": [
+            "mallUserLoginParam"
+          ]
+        },
+        {
+          "name": "logout",
+          "startLine": 66,
+          "endLine": 79,
+          "params": [
+            "loginMallUserToken"
+          ]
+        },
+        {
+          "name": "register",
+          "startLine": 82,
+          "endLine": 98,
+          "params": [
+            "mallUserRegisterParam"
+          ]
+        },
+        {
+          "name": "updateInfo",
+          "startLine": 100,
+          "endLine": 113,
+          "params": [
+            "mallUserUpdateParam",
+            "loginMallUserToken"
+          ]
+        },
+        {
+          "name": "getUserDetail",
+          "startLine": 115,
+          "endLine": 122,
+          "params": [
+            "loginMallUserToken"
+          ]
+        },
+        {
+          "name": "getMallUserByToken",
+          "startLine": 124,
+          "endLine": 133,
+          "params": [
+            "token"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeMallCloudPersonalController",
+          "startLine": 35,
+          "endLine": 134,
+          "methods": [
+            "login",
+            "logout",
+            "register",
+            "updateInfo",
+            "getUserDetail",
+            "getMallUserByToken"
+          ],
+          "properties": [
+            "newBeeMallUserService",
+            "logger"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "login",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "logout",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "register",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "updateInfo",
+          "line": 100,
+          "isDefault": false
+        },
+        {
+          "name": "getUserDetail",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "getMallUserByToken",
+          "line": 124,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeMallCloudPersonalController",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "login",
+          "callee": "NumberUtil.isPhone",
+          "lineNumber": 48
+        },
+        {
+          "caller": "login",
+          "callee": "mallUserLoginParam.getLoginName",
+          "lineNumber": 48
+        },
+        {
+          "caller": "login",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 49
+        },
+        {
+          "caller": "login",
+          "callee": "ServiceResultEnum.LOGIN_NAME_IS_NOT_PHONE.getResult",
+          "lineNumber": 49
+        },
+        {
+          "caller": "login",
+          "callee": "newBeeMallUserService.login",
+          "lineNumber": 51
+        },
+        {
+          "caller": "login",
+          "callee": "mallUserLoginParam.getLoginName",
+          "lineNumber": 51
+        },
+        {
+          "caller": "login",
+          "callee": "mallUserLoginParam.getPasswordMd5",
+          "lineNumber": 51
+        },
+        {
+          "caller": "login",
+          "callee": "logger.info",
+          "lineNumber": 53
+        },
+        {
+          "caller": "login",
+          "callee": "mallUserLoginParam.getLoginName",
+          "lineNumber": 53
+        },
+        {
+          "caller": "login",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 56
+        },
+        {
+          "caller": "login",
+          "callee": "loginResult.length",
+          "lineNumber": 56
+        },
+        {
+          "caller": "login",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 57
+        },
+        {
+          "caller": "login",
+          "callee": "result.setData",
+          "lineNumber": 58
+        },
+        {
+          "caller": "login",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 62
+        },
+        {
+          "caller": "logout",
+          "callee": "newBeeMallUserService.logout",
+          "lineNumber": 69
+        },
+        {
+          "caller": "logout",
+          "callee": "loginMallUserToken.getToken",
+          "lineNumber": 69
+        },
+        {
+          "caller": "logout",
+          "callee": "logger.info",
+          "lineNumber": 71
+        },
+        {
+          "caller": "logout",
+          "callee": "loginMallUserToken.getUserId",
+          "lineNumber": 71
+        },
+        {
+          "caller": "logout",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 75
+        },
+        {
+          "caller": "logout",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 78
+        },
+        {
+          "caller": "register",
+          "callee": "NumberUtil.isPhone",
+          "lineNumber": 85
+        },
+        {
+          "caller": "register",
+          "callee": "mallUserRegisterParam.getLoginName",
+          "lineNumber": 85
+        },
+        {
+          "caller": "register",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 86
+        },
+        {
+          "caller": "register",
+          "callee": "ServiceResultEnum.LOGIN_NAME_IS_NOT_PHONE.getResult",
+          "lineNumber": 86
+        },
+        {
+          "caller": "register",
+          "callee": "newBeeMallUserService.register",
+          "lineNumber": 88
+        },
+        {
+          "caller": "register",
+          "callee": "mallUserRegisterParam.getLoginName",
+          "lineNumber": 88
+        },
+        {
+          "caller": "register",
+          "callee": "mallUserRegisterParam.getPassword",
+          "lineNumber": 88
+        },
+        {
+          "caller": "register",
+          "callee": "logger.info",
+          "lineNumber": 90
+        },
+        {
+          "caller": "register",
+          "callee": "mallUserRegisterParam.getLoginName",
+          "lineNumber": 90
+        },
+        {
+          "caller": "register",
+          "callee": "ServiceResultEnum.SUCCESS.getResult().equals",
+          "lineNumber": 93
+        },
+        {
+          "caller": "register",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 93
+        },
+        {
+          "caller": "register",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 94
+        },
+        {
+          "caller": "register",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 97
+        },
+        {
+          "caller": "updateInfo",
+          "callee": "newBeeMallUserService.updateUserInfo",
+          "lineNumber": 103
+        },
+        {
+          "caller": "updateInfo",
+          "callee": "loginMallUserToken.getUserId",
+          "lineNumber": 103
+        },
+        {
+          "caller": "updateInfo",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 106
+        },
+        {
+          "caller": "updateInfo",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 110
+        },
+        {
+          "caller": "getUserDetail",
+          "callee": "new NewBeeMallUserVO",
+          "lineNumber": 118
+        },
+        {
+          "caller": "getUserDetail",
+          "callee": "newBeeMallUserService.getUserDetailByToken",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getUserDetail",
+          "callee": "loginMallUserToken.getToken",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getUserDetail",
+          "callee": "BeanUtil.copyProperties",
+          "lineNumber": 120
+        },
+        {
+          "caller": "getUserDetail",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getMallUserByToken",
+          "callee": "newBeeMallUserService.getUserDetailByToken",
+          "lineNumber": 126
+        },
+        {
+          "caller": "getMallUserByToken",
+          "callee": "ResultGenerator.genSuccessResult",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getMallUserByToken",
+          "callee": "result.setData",
+          "lineNumber": 129
+        },
+        {
+          "caller": "getMallUserByToken",
+          "callee": "ResultGenerator.genFailResult",
+          "lineNumber": 132
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/AdminLoginParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "AdminLoginParam",
+          "startLine": 17,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "userName",
+            "passwordMd5"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AdminLoginParam",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/MallUserLoginParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "MallUserLoginParam",
+          "startLine": 20,
+          "endLine": 30,
+          "methods": [],
+          "properties": [
+            "loginName",
+            "passwordMd5"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MallUserLoginParam",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/MallUserRegisterParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "MallUserRegisterParam",
+          "startLine": 20,
+          "endLine": 30,
+          "methods": [],
+          "properties": [
+            "loginName",
+            "password"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MallUserRegisterParam",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/MallUserUpdateParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "MallUserUpdateParam",
+          "startLine": 19,
+          "endLine": 31,
+          "methods": [],
+          "properties": [
+            "nickName",
+            "passwordMd5",
+            "introduceSign"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MallUserUpdateParam",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/UpdateAdminNameParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "UpdateAdminNameParam",
+          "startLine": 15,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "loginUserName",
+            "nickName"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "UpdateAdminNameParam",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/param/UpdateAdminPasswordParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "UpdateAdminPasswordParam",
+          "startLine": 15,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "originalPassword",
+            "newPassword"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "UpdateAdminPasswordParam",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/controller/vo/NewBeeMallUserVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "NewBeeMallUserVO",
+          "startLine": 16,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "nickName",
+            "loginName",
+            "introduceSign"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewBeeMallUserVO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/dao/AdminUserMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "AdminUserMapper",
+          "startLine": 14,
+          "endLine": 34,
+          "methods": [
+            "insert",
+            "insertSelective",
+            "login",
+            "selectByPrimaryKey",
+            "updateByPrimaryKeySelective",
+            "updateByPrimaryKey"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AdminUserMapper",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/dao/MallUserMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "MallUserMapper",
+          "startLine": 17,
+          "endLine": 39,
+          "methods": [
+            "deleteByPrimaryKey",
+            "insert",
+            "insertSelective",
+            "selectByPrimaryKey",
+            "selectByLoginName",
+            "selectByLoginNameAndPasswd",
+            "updateByPrimaryKeySelective",
+            "updateByPrimaryKey",
+            "findMallUserList",
+            "getTotalMallUsers",
+            "lockUserBatch"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MallUserMapper",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/entity/AdminUser.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "AdminUser",
+          "startLine": 13,
+          "endLine": 24,
+          "methods": [],
+          "properties": [
+            "adminUserId",
+            "loginUserName",
+            "loginPassword",
+            "nickName",
+            "locked"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AdminUser",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/entity/MallUser.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "MallUser",
+          "startLine": 16,
+          "endLine": 34,
+          "methods": [],
+          "properties": [
+            "userId",
+            "nickName",
+            "loginName",
+            "passwordMd5",
+            "introduceSign",
+            "isDeleted",
+            "lockedFlag",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MallUser",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/AdminUserService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 57,
+      "classes": [
+        {
+          "name": "AdminUserService",
+          "startLine": 13,
+          "endLine": 67,
+          "methods": [
+            "login",
+            "getUserDetailById",
+            "getUserDetailByToken",
+            "updatePassword",
+            "updateName",
+            "logout"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AdminUserService",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/NewBeeMallUserService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 67,
+      "classes": [
+        {
+          "name": "NewBeeMallUserService",
+          "startLine": 17,
+          "endLine": 77,
+          "methods": [
+            "register",
+            "login",
+            "updateUserInfo",
+            "getUserDetailByToken",
+            "logout",
+            "lockUsers",
+            "getNewBeeMallUsersPage"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewBeeMallUserService",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/AdminUserServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 118,
+      "nonEmptyLines": 104,
+      "functions": [
+        {
+          "name": "login",
+          "startLine": 34,
+          "endLine": 48,
+          "params": [
+            "userName",
+            "password"
+          ]
+        },
+        {
+          "name": "getNewToken",
+          "startLine": 58,
+          "endLine": 61,
+          "params": [
+            "timeStr",
+            "userId"
+          ]
+        },
+        {
+          "name": "getUserDetailById",
+          "startLine": 64,
+          "endLine": 67,
+          "params": [
+            "loginUserId"
+          ]
+        },
+        {
+          "name": "getUserDetailByToken",
+          "startLine": 69,
+          "endLine": 77,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "updatePassword",
+          "startLine": 79,
+          "endLine": 95,
+          "params": [
+            "loginUserId",
+            "originalPassword",
+            "newPassword"
+          ]
+        },
+        {
+          "name": "updateName",
+          "startLine": 97,
+          "endLine": 111,
+          "params": [
+            "loginUserId",
+            "loginUserName",
+            "nickName"
+          ]
+        },
+        {
+          "name": "logout",
+          "startLine": 113,
+          "endLine": 117,
+          "params": [
+            "token"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AdminUserServiceImpl",
+          "startLine": 25,
+          "endLine": 118,
+          "methods": [
+            "login",
+            "getNewToken",
+            "getUserDetailById",
+            "getUserDetailByToken",
+            "updatePassword",
+            "updateName",
+            "logout"
+          ],
+          "properties": [
+            "adminUserMapper",
+            "redisTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "login",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "getUserDetailById",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "getUserDetailByToken",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "updatePassword",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "updateName",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "logout",
+          "line": 113,
+          "isDefault": false
+        },
+        {
+          "name": "AdminUserServiceImpl",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "login",
+          "callee": "adminUserMapper.login",
+          "lineNumber": 36
+        },
+        {
+          "caller": "login",
+          "callee": "getNewToken",
+          "lineNumber": 39
+        },
+        {
+          "caller": "login",
+          "callee": "System.currentTimeMillis",
+          "lineNumber": 39
+        },
+        {
+          "caller": "login",
+          "callee": "loginAdminUser.getAdminUserId",
+          "lineNumber": 39
+        },
+        {
+          "caller": "login",
+          "callee": "new AdminUserToken",
+          "lineNumber": 40
+        },
+        {
+          "caller": "login",
+          "callee": "adminUserToken.setAdminUserId",
+          "lineNumber": 41
+        },
+        {
+          "caller": "login",
+          "callee": "loginAdminUser.getAdminUserId",
+          "lineNumber": 41
+        },
+        {
+          "caller": "login",
+          "callee": "adminUserToken.setToken",
+          "lineNumber": 42
+        },
+        {
+          "caller": "login",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 43
+        },
+        {
+          "caller": "login",
+          "callee": "setToken.set",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getNewToken",
+          "callee": "NumberUtil.genRandomNum",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getNewToken",
+          "callee": "SystemUtil.genToken",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getUserDetailById",
+          "callee": "adminUserMapper.selectByPrimaryKey",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getUserDetailByToken",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getUserDetailByToken",
+          "callee": "opsForAdminUserToken.get",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getUserDetailByToken",
+          "callee": "adminUserMapper.selectByPrimaryKey",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getUserDetailByToken",
+          "callee": "adminUserToken.getAdminUserId",
+          "lineNumber": 74
+        },
+        {
+          "caller": "updatePassword",
+          "callee": "adminUserMapper.selectByPrimaryKey",
+          "lineNumber": 81
+        },
+        {
+          "caller": "updatePassword",
+          "callee": "originalPassword.equals",
+          "lineNumber": 85
+        },
+        {
+          "caller": "updatePassword",
+          "callee": "adminUser.getLoginPassword",
+          "lineNumber": 85
+        },
+        {
+          "caller": "updatePassword",
+          "callee": "adminUser.setLoginPassword",
+          "lineNumber": 87
+        },
+        {
+          "caller": "updatePassword",
+          "callee": "adminUserMapper.updateByPrimaryKeySelective",
+          "lineNumber": 88
+        },
+        {
+          "caller": "updateName",
+          "callee": "adminUserMapper.selectByPrimaryKey",
+          "lineNumber": 99
+        },
+        {
+          "caller": "updateName",
+          "callee": "adminUser.setLoginUserName",
+          "lineNumber": 103
+        },
+        {
+          "caller": "updateName",
+          "callee": "adminUser.setNickName",
+          "lineNumber": 104
+        },
+        {
+          "caller": "updateName",
+          "callee": "adminUserMapper.updateByPrimaryKeySelective",
+          "lineNumber": 105
+        },
+        {
+          "caller": "logout",
+          "callee": "redisTemplate.delete",
+          "lineNumber": 115
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/service/impl/NewBeeMallUserServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 146,
+      "nonEmptyLines": 132,
+      "functions": [
+        {
+          "name": "register",
+          "startLine": 40,
+          "endLine": 55,
+          "params": [
+            "loginName",
+            "password"
+          ]
+        },
+        {
+          "name": "login",
+          "startLine": 57,
+          "endLine": 75,
+          "params": [
+            "loginName",
+            "passwordMD5"
+          ]
+        },
+        {
+          "name": "getNewToken",
+          "startLine": 84,
+          "endLine": 87,
+          "params": [
+            "timeStr",
+            "userId"
+          ]
+        },
+        {
+          "name": "updateUserInfo",
+          "startLine": 89,
+          "endLine": 105,
+          "params": [
+            "mallUser",
+            "userId"
+          ]
+        },
+        {
+          "name": "getUserDetailByToken",
+          "startLine": 107,
+          "endLine": 123,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "logout",
+          "startLine": 125,
+          "endLine": 129,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "getNewBeeMallUsersPage",
+          "startLine": 131,
+          "endLine": 137,
+          "params": [
+            "pageUtil"
+          ]
+        },
+        {
+          "name": "lockUsers",
+          "startLine": 139,
+          "endLine": 145,
+          "params": [
+            "ids",
+            "lockStatus"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeMallUserServiceImpl",
+          "startLine": 31,
+          "endLine": 146,
+          "methods": [
+            "register",
+            "login",
+            "getNewToken",
+            "updateUserInfo",
+            "getUserDetailByToken",
+            "logout",
+            "getNewBeeMallUsersPage",
+            "lockUsers"
+          ],
+          "properties": [
+            "mallUserMapper",
+            "redisTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "register",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "login",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "updateUserInfo",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "getUserDetailByToken",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "logout",
+          "line": 125,
+          "isDefault": false
+        },
+        {
+          "name": "getNewBeeMallUsersPage",
+          "line": 131,
+          "isDefault": false
+        },
+        {
+          "name": "lockUsers",
+          "line": 139,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeMallUserServiceImpl",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "register",
+          "callee": "mallUserMapper.selectByLoginName",
+          "lineNumber": 42
+        },
+        {
+          "caller": "register",
+          "callee": "ServiceResultEnum.SAME_LOGIN_NAME_EXIST.getResult",
+          "lineNumber": 43
+        },
+        {
+          "caller": "register",
+          "callee": "new MallUser",
+          "lineNumber": 45
+        },
+        {
+          "caller": "register",
+          "callee": "registerUser.setLoginName",
+          "lineNumber": 46
+        },
+        {
+          "caller": "register",
+          "callee": "registerUser.setNickName",
+          "lineNumber": 47
+        },
+        {
+          "caller": "register",
+          "callee": "registerUser.setIntroduceSign",
+          "lineNumber": 48
+        },
+        {
+          "caller": "register",
+          "callee": "MD5Util.MD5Encode",
+          "lineNumber": 49
+        },
+        {
+          "caller": "register",
+          "callee": "registerUser.setPasswordMd5",
+          "lineNumber": 50
+        },
+        {
+          "caller": "register",
+          "callee": "mallUserMapper.insertSelective",
+          "lineNumber": 51
+        },
+        {
+          "caller": "register",
+          "callee": "ServiceResultEnum.SUCCESS.getResult",
+          "lineNumber": 52
+        },
+        {
+          "caller": "register",
+          "callee": "ServiceResultEnum.DB_ERROR.getResult",
+          "lineNumber": 54
+        },
+        {
+          "caller": "login",
+          "callee": "mallUserMapper.selectByLoginNameAndPasswd",
+          "lineNumber": 59
+        },
+        {
+          "caller": "login",
+          "callee": "user.getLockedFlag",
+          "lineNumber": 61
+        },
+        {
+          "caller": "login",
+          "callee": "ServiceResultEnum.LOGIN_USER_LOCKED_ERROR.getResult",
+          "lineNumber": 62
+        },
+        {
+          "caller": "login",
+          "callee": "getNewToken",
+          "lineNumber": 65
+        },
+        {
+          "caller": "login",
+          "callee": "System.currentTimeMillis",
+          "lineNumber": 65
+        },
+        {
+          "caller": "login",
+          "callee": "user.getUserId",
+          "lineNumber": 65
+        },
+        {
+          "caller": "login",
+          "callee": "new MallUserToken",
+          "lineNumber": 66
+        },
+        {
+          "caller": "login",
+          "callee": "mallUserToken.setUserId",
+          "lineNumber": 67
+        },
+        {
+          "caller": "login",
+          "callee": "user.getUserId",
+          "lineNumber": 67
+        },
+        {
+          "caller": "login",
+          "callee": "mallUserToken.setToken",
+          "lineNumber": 68
+        },
+        {
+          "caller": "login",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 69
+        },
+        {
+          "caller": "login",
+          "callee": "setToken.set",
+          "lineNumber": 70
+        },
+        {
+          "caller": "login",
+          "callee": "ServiceResultEnum.LOGIN_ERROR.getResult",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getNewToken",
+          "callee": "NumberUtil.genRandomNum",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getNewToken",
+          "callee": "SystemUtil.genToken",
+          "lineNumber": 86
+        },
+        {
+          "caller": "updateUserInfo",
+          "callee": "mallUserMapper.selectByPrimaryKey",
+          "lineNumber": 91
+        },
+        {
+          "caller": "updateUserInfo",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 93
+        },
+        {
+          "caller": "updateUserInfo",
+          "callee": "ServiceResultEnum.DATA_NOT_EXIST.getResult",
+          "lineNumber": 93
+        },
+        {
+          "caller": "updateUserInfo",
+          "callee": "user.setNickName",
+          "lineNumber": 95
+        },
+        {
+          "caller": "updateUserInfo",
+          "callee": "mallUser.getNickName",
+          "lineNumber": 95
+        },
+        {
+          "caller": "updateUserInfo",
+          "callee": "MD5Util.MD5Encode(\"\", \"UTF-8\").equals",
+          "lineNumber": 97
+        },
+        {
+          "caller": "updateUserInfo",
+          "callee": "MD5Util.MD5Encode",
+          "lineNumber": 97
+        },
+        {
+          "caller": "updateUserInfo",
+          "callee": "mallUser.getPasswordMd5",
+          "lineNumber": 97
+        },
+        {
+          "caller": "updateUserInfo",
+          "callee": "user.setPasswordMd5",
+          "lineNumber": 98
+        },
+        {
+          "caller": "updateUserInfo",
+          "callee": "mallUser.getPasswordMd5",
+          "lineNumber": 98
+        },
+        {
+          "caller": "updateUserInfo",
+          "callee": "user.setIntroduceSign",
+          "lineNumber": 100
+        },
+        {
+          "caller": "updateUserInfo",
+          "callee": "mallUser.getIntroduceSign",
+          "lineNumber": 100
+        },
+        {
+          "caller": "updateUserInfo",
+          "callee": "mallUserMapper.updateByPrimaryKeySelective",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getUserDetailByToken",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 109
+        },
+        {
+          "caller": "getUserDetailByToken",
+          "callee": "opsForMallUserToken.get",
+          "lineNumber": 110
+        },
+        {
+          "caller": "getUserDetailByToken",
+          "callee": "mallUserMapper.selectByPrimaryKey",
+          "lineNumber": 112
+        },
+        {
+          "caller": "getUserDetailByToken",
+          "callee": "mallUserToken.getUserId",
+          "lineNumber": 112
+        },
+        {
+          "caller": "getUserDetailByToken",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 114
+        },
+        {
+          "caller": "getUserDetailByToken",
+          "callee": "ServiceResultEnum.DATA_NOT_EXIST.getResult",
+          "lineNumber": 114
+        },
+        {
+          "caller": "getUserDetailByToken",
+          "callee": "mallUser.getLockedFlag().intValue",
+          "lineNumber": 116
+        },
+        {
+          "caller": "getUserDetailByToken",
+          "callee": "mallUser.getLockedFlag",
+          "lineNumber": 116
+        },
+        {
+          "caller": "getUserDetailByToken",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getUserDetailByToken",
+          "callee": "ServiceResultEnum.LOGIN_USER_LOCKED_ERROR.getResult",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getUserDetailByToken",
+          "callee": "NewBeeMallException.fail",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getUserDetailByToken",
+          "callee": "ServiceResultEnum.DATA_NOT_EXIST.getResult",
+          "lineNumber": 121
+        },
+        {
+          "caller": "logout",
+          "callee": "redisTemplate.delete",
+          "lineNumber": 127
+        },
+        {
+          "caller": "getNewBeeMallUsersPage",
+          "callee": "mallUserMapper.findMallUserList",
+          "lineNumber": 133
+        },
+        {
+          "caller": "getNewBeeMallUsersPage",
+          "callee": "mallUserMapper.getTotalMallUsers",
+          "lineNumber": 134
+        },
+        {
+          "caller": "getNewBeeMallUsersPage",
+          "callee": "new PageResult",
+          "lineNumber": 135
+        },
+        {
+          "caller": "getNewBeeMallUsersPage",
+          "callee": "pageUtil.getLimit",
+          "lineNumber": 135
+        },
+        {
+          "caller": "getNewBeeMallUsersPage",
+          "callee": "pageUtil.getPage",
+          "lineNumber": 135
+        },
+        {
+          "caller": "lockUsers",
+          "callee": "mallUserMapper.lockUserBatch",
+          "lineNumber": 144
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,402 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 7,
+  "filesSkipped": [
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/application.properties",
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/resources/logback.xml",
+    "newbee-mall-cloud-order-service/pom.xml",
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-api/pom.xml",
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/pom.xml",
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/resources/application.properties",
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/resources/logback.xml",
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/resources/mapper/CarouselMapper.xml",
+    "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/resources/mapper/IndexConfigMapper.xml",
+    "newbee-mall-cloud-recommend-service/pom.xml",
+    "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-api/pom.xml",
+    "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/pom.xml",
+    "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/resources/application.properties",
+    "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/resources/logback.xml",
+    "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/resources/mapper/NewBeeMallShoppingCartItemMapper.xml",
+    "newbee-mall-cloud-shop-cart-service/pom.xml",
+    "newbee-mall-cloud-user-service/newbee-mall-cloud-user-api/pom.xml",
+    "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/pom.xml"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 7,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 7,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/SeataProxyConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "druidDataSource",
+          "startLine": 17,
+          "endLine": 21,
+          "params": []
+        },
+        {
+          "name": "dataSourceDelegation",
+          "startLine": 24,
+          "endLine": 28,
+          "params": [
+            "druidDataSource"
+          ]
+        },
+        {
+          "name": "setProperties",
+          "startLine": 33,
+          "endLine": 36,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SeataProxyConfiguration",
+          "startLine": 13,
+          "endLine": 38,
+          "methods": [
+            "druidDataSource",
+            "dataSourceDelegation",
+            "setProperties"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "druidDataSource",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "dataSourceDelegation",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "setProperties",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "SeataProxyConfiguration",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "druidDataSource",
+          "callee": "new DruidDataSource",
+          "lineNumber": 20
+        },
+        {
+          "caller": "dataSourceDelegation",
+          "callee": "new DataSourceProxy",
+          "lineNumber": 27
+        },
+        {
+          "caller": "setProperties",
+          "callee": "System.setProperty",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/config/OpenFeignConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 12,
+      "functions": [
+        {
+          "name": "openFeignLogLevel",
+          "startLine": 9,
+          "endLine": 13,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "OpenFeignConfiguration",
+          "startLine": 7,
+          "endLine": 14,
+          "methods": [
+            "openFeignLogLevel"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "openFeignLogLevel",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "OpenFeignConfiguration",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/NewBeeMallIndexCategoryVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "NewBeeMallIndexCategoryVO",
+          "startLine": 20,
+          "endLine": 34,
+          "methods": [],
+          "properties": [
+            "categoryId",
+            "categoryLevel",
+            "categoryName",
+            "secondLevelCategoryVOS"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewBeeMallIndexCategoryVO",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/SecondLevelCategoryVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "SecondLevelCategoryVO",
+          "startLine": 20,
+          "endLine": 37,
+          "methods": [],
+          "properties": [
+            "categoryId",
+            "parentId",
+            "categoryLevel",
+            "categoryName",
+            "thirdLevelCategoryVOS"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SecondLevelCategoryVO",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-recommend-service/newbee-mall-cloud-recommend-web/src/main/java/ltd/recommend/cloud/newbee/controller/vo/ThirdLevelCategoryVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "ThirdLevelCategoryVO",
+          "startLine": 19,
+          "endLine": 30,
+          "methods": [],
+          "properties": [
+            "categoryId",
+            "categoryLevel",
+            "categoryName"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ThirdLevelCategoryVO",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/OpenFeignConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 12,
+      "functions": [
+        {
+          "name": "openFeignLogLevel",
+          "startLine": 9,
+          "endLine": 13,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "OpenFeignConfiguration",
+          "startLine": 7,
+          "endLine": 14,
+          "methods": [
+            "openFeignLogLevel"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "openFeignLogLevel",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "OpenFeignConfiguration",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-shop-cart-service/newbee-mall-cloud-shop-cart-web/src/main/java/ltd/shopcart/cloud/newbee/config/SeataProxyConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "druidDataSource",
+          "startLine": 17,
+          "endLine": 21,
+          "params": []
+        },
+        {
+          "name": "dataSourceDelegation",
+          "startLine": 24,
+          "endLine": 28,
+          "params": [
+            "druidDataSource"
+          ]
+        },
+        {
+          "name": "setProperties",
+          "startLine": 33,
+          "endLine": 36,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SeataProxyConfiguration",
+          "startLine": 13,
+          "endLine": 38,
+          "methods": [
+            "druidDataSource",
+            "dataSourceDelegation",
+            "setProperties"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "druidDataSource",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "dataSourceDelegation",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "setProperties",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "SeataProxyConfiguration",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "druidDataSource",
+          "callee": "new DruidDataSource",
+          "lineNumber": 20
+        },
+        {
+          "caller": "dataSourceDelegation",
+          "callee": "new DataSourceProxy",
+          "lineNumber": 27
+        },
+        {
+          "caller": "setProperties",
+          "callee": "System.setProperty",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    }
+  ]
+}

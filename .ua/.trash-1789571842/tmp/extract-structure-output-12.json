@@ -1,0 +1,295 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 2,
+  "filesSkipped": [
+    "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/application.properties",
+    "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/logback.xml",
+    "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/mapper/AdminUserMapper.xml",
+    "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/resources/mapper/MallUserMapper.xml",
+    "newbee-mall-cloud-user-service/pom.xml",
+    "pom.xml"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 2,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 2,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/NewBeeMallCloudUserServiceApplication.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 28,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 27,
+          "endLine": 30,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeMallCloudUserServiceApplication",
+          "startLine": 22,
+          "endLine": 32,
+          "methods": [
+            "main"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeMallCloudUserServiceApplication",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "System.setProperty",
+          "lineNumber": 28
+        },
+        {
+          "caller": "main",
+          "callee": "SpringApplication.run",
+          "lineNumber": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-user-service/newbee-mall-cloud-user-web/src/main/java/ltd/user/cloud/newbee/config/RedisConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 65,
+      "functions": [
+        {
+          "name": "RedisConfig",
+          "startLine": 31,
+          "endLine": 31,
+          "params": []
+        },
+        {
+          "name": "redisCacheTemplate",
+          "startLine": 33,
+          "endLine": 42,
+          "params": [
+            "redisConnectionFactory"
+          ]
+        },
+        {
+          "name": "cacheManager",
+          "startLine": 44,
+          "endLine": 56,
+          "params": []
+        },
+        {
+          "name": "keyGenerator",
+          "startLine": 58,
+          "endLine": 72,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "RedisConfig",
+          "startLine": 23,
+          "endLine": 73,
+          "methods": [
+            "RedisConfig",
+            "redisCacheTemplate",
+            "cacheManager",
+            "keyGenerator"
+          ],
+          "properties": [
+            "lettuceConnectionFactory"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RedisConfig",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "redisCacheTemplate",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "cacheManager",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "keyGenerator",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "RedisConfig",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "new RedisTemplate<String,Serializable>",
+          "lineNumber": 35
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "template.setKeySerializer",
+          "lineNumber": 36
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "new StringRedisSerializer",
+          "lineNumber": 36
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "template.setValueSerializer",
+          "lineNumber": 37
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "new GenericJackson2JsonRedisSerializer",
+          "lineNumber": 37
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "template.setHashKeySerializer",
+          "lineNumber": 38
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "new StringRedisSerializer",
+          "lineNumber": 38
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "template.setHashValueSerializer",
+          "lineNumber": 39
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "new GenericJackson2JsonRedisSerializer",
+          "lineNumber": 39
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "template.setConnectionFactory",
+          "lineNumber": 40
+        },
+        {
+          "caller": "cacheManager",
+          "callee": "RedisCacheManager.RedisCacheManagerBuilder.fromConnectionFactory",
+          "lineNumber": 46
+        },
+        {
+          "caller": "cacheManager",
+          "callee": "new HashSet<String>",
+          "lineNumber": 49
+        },
+        {
+          "caller": "cacheManager",
+          "callee": "add",
+          "lineNumber": 51
+        },
+        {
+          "caller": "cacheManager",
+          "callee": "builder.initialCacheNames",
+          "lineNumber": 54
+        },
+        {
+          "caller": "cacheManager",
+          "callee": "builder.build",
+          "lineNumber": 55
+        },
+        {
+          "caller": "keyGenerator",
+          "callee": "new KeyGenerator",
+          "lineNumber": 60
+        },
+        {
+          "caller": "generate",
+          "callee": "new StringBuffer",
+          "lineNumber": 63
+        },
+        {
+          "caller": "generate",
+          "callee": "stringBuffer.append",
+          "lineNumber": 64
+        },
+        {
+          "caller": "generate",
+          "callee": "target.getClass().getName",
+          "lineNumber": 64
+        },
+        {
+          "caller": "generate",
+          "callee": "target.getClass",
+          "lineNumber": 64
+        },
+        {
+          "caller": "generate",
+          "callee": "stringBuffer.append",
+          "lineNumber": 65
+        },
+        {
+          "caller": "generate",
+          "callee": "method.getName",
+          "lineNumber": 65
+        },
+        {
+          "caller": "generate",
+          "callee": "stringBuffer.append",
+          "lineNumber": 67
+        },
+        {
+          "caller": "generate",
+          "callee": "obj.toString",
+          "lineNumber": 67
+        },
+        {
+          "caller": "generate",
+          "callee": "stringBuffer.toString",
+          "lineNumber": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    }
+  ]
+}

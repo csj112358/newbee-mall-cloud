@@ -1,0 +1,1438 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 11,
+  "filesSkipped": [
+    "newbee-mall-cloud-common/pom.xml",
+    "newbee-mall-cloud-gateway-admin/pom.xml",
+    "newbee-mall-cloud-gateway-admin/src/main/resources/application.properties",
+    "newbee-mall-cloud-gateway-mall/pom.xml",
+    "newbee-mall-cloud-gateway-mall/src/main/resources/application.properties",
+    "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-api/pom.xml",
+    "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/pom.xml",
+    "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/application.properties",
+    "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/logback.xml",
+    "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/mapper/GoodsCategoryMapper.xml",
+    "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/resources/mapper/NewBeeMallGoodsMapper.xml",
+    "newbee-mall-cloud-goods-service/pom.xml",
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-api/pom.xml",
+    "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/pom.xml"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 11,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 10,
+      "failed": 0,
+      "skipped": 1
+    }
+  },
+  "results": [
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 157,
+      "nonEmptyLines": 128,
+      "sections": [
+        {
+          "heading": "技术选型",
+          "level": 2,
+          "line": 33
+        },
+        {
+          "heading": "架构图简版",
+          "level": 2,
+          "line": 62
+        },
+        {
+          "heading": "开发及部署文档",
+          "level": 2,
+          "line": 66
+        },
+        {
+          "heading": "联系作者",
+          "level": 2,
+          "line": 127
+        },
+        {
+          "heading": "软件著作权",
+          "level": 2,
+          "line": 143
+        },
+        {
+          "heading": "感谢",
+          "level": 2,
+          "line": 147
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-common/src/main/java/ltd/common/cloud/newbee/util/NewBeeMallUtils.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 51,
+      "functions": [
+        {
+          "name": "getHost",
+          "startLine": 12,
+          "endLine": 20,
+          "params": [
+            "uri"
+          ]
+        },
+        {
+          "name": "cleanString",
+          "startLine": 22,
+          "endLine": 55,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeMallUtils",
+          "startLine": 10,
+          "endLine": 56,
+          "methods": [
+            "getHost",
+            "cleanString"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "getHost",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "cleanString",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeMallUtils",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getHost",
+          "callee": "new URI",
+          "lineNumber": 15
+        },
+        {
+          "caller": "getHost",
+          "callee": "uri.getScheme",
+          "lineNumber": 15
+        },
+        {
+          "caller": "getHost",
+          "callee": "uri.getUserInfo",
+          "lineNumber": 15
+        },
+        {
+          "caller": "getHost",
+          "callee": "uri.getHost",
+          "lineNumber": 15
+        },
+        {
+          "caller": "getHost",
+          "callee": "uri.getPort",
+          "lineNumber": 15
+        },
+        {
+          "caller": "cleanString",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 23
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.toLowerCase",
+          "lineNumber": 26
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll(\"<\", \"& lt;\").replaceAll",
+          "lineNumber": 27
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 27
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll(\"\\\\(\", \"& #40;\").replaceAll",
+          "lineNumber": 28
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 28
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 29
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 30
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 31
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 32
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 33
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 34
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 35
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 36
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 37
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 38
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 39
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 40
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 41
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 42
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 43
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 44
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 45
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 46
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 47
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 48
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 49
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 50
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 51
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 52
+        },
+        {
+          "caller": "cleanString",
+          "callee": "value.replaceAll",
+          "lineNumber": 53
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/NewBeeMallCloudAdminGatewayApplication.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 25,
+          "endLine": 27,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeMallCloudAdminGatewayApplication",
+          "startLine": 21,
+          "endLine": 29,
+          "methods": [
+            "main"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeMallCloudAdminGatewayApplication",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "SpringApplication.run",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/config/PolymerizeSwaggerProvider.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 60,
+      "functions": [
+        {
+          "name": "get",
+          "startLine": 42,
+          "endLine": 58,
+          "params": []
+        },
+        {
+          "name": "swaggerResource",
+          "startLine": 60,
+          "endLine": 66,
+          "params": [
+            "name",
+            "url"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PolymerizeSwaggerProvider",
+          "startLine": 30,
+          "endLine": 67,
+          "methods": [
+            "get",
+            "swaggerResource"
+          ],
+          "properties": [
+            "API_DOCS_URL",
+            "gatewayProperties"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "API_DOCS_URL",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "get",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "PolymerizeSwaggerProvider",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "get",
+          "callee": "new ArrayList<>",
+          "lineNumber": 44
+        },
+        {
+          "caller": "get",
+          "callee": "new ArrayList<>",
+          "lineNumber": 45
+        },
+        {
+          "caller": "get",
+          "callee": "routes.add",
+          "lineNumber": 47
+        },
+        {
+          "caller": "get",
+          "callee": "routes.add",
+          "lineNumber": 48
+        },
+        {
+          "caller": "get",
+          "callee": "routes.add",
+          "lineNumber": 49
+        },
+        {
+          "caller": "get",
+          "callee": "routes.add",
+          "lineNumber": 50
+        },
+        {
+          "caller": "get",
+          "callee": "gatewayProperties.getRoutes().stream().filter(routeDefinition -> routes.contains(routeDefinition.getId())).forEach",
+          "lineNumber": 51
+        },
+        {
+          "caller": "get",
+          "callee": "gatewayProperties.getRoutes().stream().filter",
+          "lineNumber": 51
+        },
+        {
+          "caller": "get",
+          "callee": "gatewayProperties.getRoutes().stream",
+          "lineNumber": 51
+        },
+        {
+          "caller": "get",
+          "callee": "gatewayProperties.getRoutes",
+          "lineNumber": 51
+        },
+        {
+          "caller": "get",
+          "callee": "routes.contains",
+          "lineNumber": 51
+        },
+        {
+          "caller": "get",
+          "callee": "routeDefinition.getId",
+          "lineNumber": 51
+        },
+        {
+          "caller": "get",
+          "callee": "routeDefinition.getPredicates().stream()\r\n                        .filter(predicateDefinition -> (\"Path\").equalsIgnoreCase(predicateDefinition.getName())).forEach",
+          "lineNumber": 52
+        },
+        {
+          "caller": "get",
+          "callee": "routeDefinition.getPredicates().stream().filter",
+          "lineNumber": 52
+        },
+        {
+          "caller": "get",
+          "callee": "routeDefinition.getPredicates().stream",
+          "lineNumber": 52
+        },
+        {
+          "caller": "get",
+          "callee": "routeDefinition.getPredicates",
+          "lineNumber": 52
+        },
+        {
+          "caller": "get",
+          "callee": "(\"Path\").equalsIgnoreCase",
+          "lineNumber": 53
+        },
+        {
+          "caller": "get",
+          "callee": "predicateDefinition.getName",
+          "lineNumber": 53
+        },
+        {
+          "caller": "get",
+          "callee": "resources.add",
+          "lineNumber": 54
+        },
+        {
+          "caller": "get",
+          "callee": "swaggerResource",
+          "lineNumber": 54
+        },
+        {
+          "caller": "get",
+          "callee": "routeDefinition.getId",
+          "lineNumber": 54
+        },
+        {
+          "caller": "get",
+          "callee": "predicateDefinition.getArgs().get(NameUtils.GENERATED_NAME_PREFIX + \"0\").replace",
+          "lineNumber": 55
+        },
+        {
+          "caller": "get",
+          "callee": "predicateDefinition.getArgs().get",
+          "lineNumber": 55
+        },
+        {
+          "caller": "get",
+          "callee": "predicateDefinition.getArgs",
+          "lineNumber": 55
+        },
+        {
+          "caller": "swaggerResource",
+          "callee": "new SwaggerResource",
+          "lineNumber": 61
+        },
+        {
+          "caller": "swaggerResource",
+          "callee": "swaggerResource.setName",
+          "lineNumber": 62
+        },
+        {
+          "caller": "swaggerResource",
+          "callee": "swaggerResource.setLocation",
+          "lineNumber": 63
+        },
+        {
+          "caller": "swaggerResource",
+          "callee": "swaggerResource.setSwaggerVersion",
+          "lineNumber": 64
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-gateway-admin/src/main/java/ltd/gateway/cloud/newbee/config/RedisConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 65,
+      "functions": [
+        {
+          "name": "RedisConfig",
+          "startLine": 31,
+          "endLine": 31,
+          "params": []
+        },
+        {
+          "name": "redisCacheTemplate",
+          "startLine": 33,
+          "endLine": 42,
+          "params": [
+            "redisConnectionFactory"
+          ]
+        },
+        {
+          "name": "cacheManager",
+          "startLine": 44,
+          "endLine": 56,
+          "params": []
+        },
+        {
+          "name": "keyGenerator",
+          "startLine": 58,
+          "endLine": 72,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "RedisConfig",
+          "startLine": 23,
+          "endLine": 73,
+          "methods": [
+            "RedisConfig",
+            "redisCacheTemplate",
+            "cacheManager",
+            "keyGenerator"
+          ],
+          "properties": [
+            "lettuceConnectionFactory"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RedisConfig",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "redisCacheTemplate",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "cacheManager",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "keyGenerator",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "RedisConfig",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "new RedisTemplate<String,Serializable>",
+          "lineNumber": 35
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "template.setKeySerializer",
+          "lineNumber": 36
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "new StringRedisSerializer",
+          "lineNumber": 36
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "template.setValueSerializer",
+          "lineNumber": 37
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "new GenericJackson2JsonRedisSerializer",
+          "lineNumber": 37
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "template.setHashKeySerializer",
+          "lineNumber": 38
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "new StringRedisSerializer",
+          "lineNumber": 38
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "template.setHashValueSerializer",
+          "lineNumber": 39
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "new GenericJackson2JsonRedisSerializer",
+          "lineNumber": 39
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "template.setConnectionFactory",
+          "lineNumber": 40
+        },
+        {
+          "caller": "cacheManager",
+          "callee": "RedisCacheManager.RedisCacheManagerBuilder.fromConnectionFactory",
+          "lineNumber": 46
+        },
+        {
+          "caller": "cacheManager",
+          "callee": "new HashSet<String>",
+          "lineNumber": 49
+        },
+        {
+          "caller": "cacheManager",
+          "callee": "add",
+          "lineNumber": 51
+        },
+        {
+          "caller": "cacheManager",
+          "callee": "builder.initialCacheNames",
+          "lineNumber": 54
+        },
+        {
+          "caller": "cacheManager",
+          "callee": "builder.build",
+          "lineNumber": 55
+        },
+        {
+          "caller": "keyGenerator",
+          "callee": "new KeyGenerator",
+          "lineNumber": 60
+        },
+        {
+          "caller": "generate",
+          "callee": "new StringBuffer",
+          "lineNumber": 63
+        },
+        {
+          "caller": "generate",
+          "callee": "stringBuffer.append",
+          "lineNumber": 64
+        },
+        {
+          "caller": "generate",
+          "callee": "target.getClass().getName",
+          "lineNumber": 64
+        },
+        {
+          "caller": "generate",
+          "callee": "target.getClass",
+          "lineNumber": 64
+        },
+        {
+          "caller": "generate",
+          "callee": "stringBuffer.append",
+          "lineNumber": 65
+        },
+        {
+          "caller": "generate",
+          "callee": "method.getName",
+          "lineNumber": 65
+        },
+        {
+          "caller": "generate",
+          "callee": "stringBuffer.append",
+          "lineNumber": 67
+        },
+        {
+          "caller": "generate",
+          "callee": "obj.toString",
+          "lineNumber": 67
+        },
+        {
+          "caller": "generate",
+          "callee": "stringBuffer.toString",
+          "lineNumber": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/NewBeeMallCloudMallGatewayApplication.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 25,
+          "endLine": 27,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewBeeMallCloudMallGatewayApplication",
+          "startLine": 21,
+          "endLine": 29,
+          "methods": [
+            "main"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "NewBeeMallCloudMallGatewayApplication",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "SpringApplication.run",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/config/PolymerizeSwaggerProvider.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 53,
+      "functions": [
+        {
+          "name": "get",
+          "startLine": 34,
+          "endLine": 51,
+          "params": []
+        },
+        {
+          "name": "swaggerResource",
+          "startLine": 53,
+          "endLine": 59,
+          "params": [
+            "name",
+            "url"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PolymerizeSwaggerProvider",
+          "startLine": 22,
+          "endLine": 60,
+          "methods": [
+            "get",
+            "swaggerResource"
+          ],
+          "properties": [
+            "API_DOCS_URL",
+            "gatewayProperties"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "API_DOCS_URL",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "get",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "PolymerizeSwaggerProvider",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "get",
+          "callee": "new ArrayList<>",
+          "lineNumber": 36
+        },
+        {
+          "caller": "get",
+          "callee": "new ArrayList<>",
+          "lineNumber": 37
+        },
+        {
+          "caller": "get",
+          "callee": "routes.add",
+          "lineNumber": 39
+        },
+        {
+          "caller": "get",
+          "callee": "routes.add",
+          "lineNumber": 40
+        },
+        {
+          "caller": "get",
+          "callee": "routes.add",
+          "lineNumber": 41
+        },
+        {
+          "caller": "get",
+          "callee": "routes.add",
+          "lineNumber": 42
+        },
+        {
+          "caller": "get",
+          "callee": "routes.add",
+          "lineNumber": 43
+        },
+        {
+          "caller": "get",
+          "callee": "gatewayProperties.getRoutes().stream().filter(routeDefinition -> routes.contains(routeDefinition.getId())).forEach",
+          "lineNumber": 44
+        },
+        {
+          "caller": "get",
+          "callee": "gatewayProperties.getRoutes().stream().filter",
+          "lineNumber": 44
+        },
+        {
+          "caller": "get",
+          "callee": "gatewayProperties.getRoutes().stream",
+          "lineNumber": 44
+        },
+        {
+          "caller": "get",
+          "callee": "gatewayProperties.getRoutes",
+          "lineNumber": 44
+        },
+        {
+          "caller": "get",
+          "callee": "routes.contains",
+          "lineNumber": 44
+        },
+        {
+          "caller": "get",
+          "callee": "routeDefinition.getId",
+          "lineNumber": 44
+        },
+        {
+          "caller": "get",
+          "callee": "routeDefinition.getPredicates().stream()\r\n                        .filter(predicateDefinition -> (\"Path\").equalsIgnoreCase(predicateDefinition.getName())).forEach",
+          "lineNumber": 45
+        },
+        {
+          "caller": "get",
+          "callee": "routeDefinition.getPredicates().stream().filter",
+          "lineNumber": 45
+        },
+        {
+          "caller": "get",
+          "callee": "routeDefinition.getPredicates().stream",
+          "lineNumber": 45
+        },
+        {
+          "caller": "get",
+          "callee": "routeDefinition.getPredicates",
+          "lineNumber": 45
+        },
+        {
+          "caller": "get",
+          "callee": "(\"Path\").equalsIgnoreCase",
+          "lineNumber": 46
+        },
+        {
+          "caller": "get",
+          "callee": "predicateDefinition.getName",
+          "lineNumber": 46
+        },
+        {
+          "caller": "get",
+          "callee": "resources.add",
+          "lineNumber": 47
+        },
+        {
+          "caller": "get",
+          "callee": "swaggerResource",
+          "lineNumber": 47
+        },
+        {
+          "caller": "get",
+          "callee": "routeDefinition.getId",
+          "lineNumber": 47
+        },
+        {
+          "caller": "get",
+          "callee": "predicateDefinition.getArgs().get(NameUtils.GENERATED_NAME_PREFIX + \"0\").replace",
+          "lineNumber": 48
+        },
+        {
+          "caller": "get",
+          "callee": "predicateDefinition.getArgs().get",
+          "lineNumber": 48
+        },
+        {
+          "caller": "get",
+          "callee": "predicateDefinition.getArgs",
+          "lineNumber": 48
+        },
+        {
+          "caller": "swaggerResource",
+          "callee": "new SwaggerResource",
+          "lineNumber": 54
+        },
+        {
+          "caller": "swaggerResource",
+          "callee": "swaggerResource.setName",
+          "lineNumber": 55
+        },
+        {
+          "caller": "swaggerResource",
+          "callee": "swaggerResource.setLocation",
+          "lineNumber": 56
+        },
+        {
+          "caller": "swaggerResource",
+          "callee": "swaggerResource.setSwaggerVersion",
+          "lineNumber": 57
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-gateway-mall/src/main/java/ltd/gateway/cloud/newbee/config/RedisConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 65,
+      "functions": [
+        {
+          "name": "RedisConfig",
+          "startLine": 31,
+          "endLine": 31,
+          "params": []
+        },
+        {
+          "name": "redisCacheTemplate",
+          "startLine": 33,
+          "endLine": 42,
+          "params": [
+            "redisConnectionFactory"
+          ]
+        },
+        {
+          "name": "cacheManager",
+          "startLine": 44,
+          "endLine": 56,
+          "params": []
+        },
+        {
+          "name": "keyGenerator",
+          "startLine": 58,
+          "endLine": 72,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "RedisConfig",
+          "startLine": 23,
+          "endLine": 73,
+          "methods": [
+            "RedisConfig",
+            "redisCacheTemplate",
+            "cacheManager",
+            "keyGenerator"
+          ],
+          "properties": [
+            "lettuceConnectionFactory"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RedisConfig",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "redisCacheTemplate",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "cacheManager",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "keyGenerator",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "RedisConfig",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "new RedisTemplate<String,Serializable>",
+          "lineNumber": 35
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "template.setKeySerializer",
+          "lineNumber": 36
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "new StringRedisSerializer",
+          "lineNumber": 36
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "template.setValueSerializer",
+          "lineNumber": 37
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "new GenericJackson2JsonRedisSerializer",
+          "lineNumber": 37
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "template.setHashKeySerializer",
+          "lineNumber": 38
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "new StringRedisSerializer",
+          "lineNumber": 38
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "template.setHashValueSerializer",
+          "lineNumber": 39
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "new GenericJackson2JsonRedisSerializer",
+          "lineNumber": 39
+        },
+        {
+          "caller": "redisCacheTemplate",
+          "callee": "template.setConnectionFactory",
+          "lineNumber": 40
+        },
+        {
+          "caller": "cacheManager",
+          "callee": "RedisCacheManager.RedisCacheManagerBuilder.fromConnectionFactory",
+          "lineNumber": 46
+        },
+        {
+          "caller": "cacheManager",
+          "callee": "new HashSet<String>",
+          "lineNumber": 49
+        },
+        {
+          "caller": "cacheManager",
+          "callee": "add",
+          "lineNumber": 51
+        },
+        {
+          "caller": "cacheManager",
+          "callee": "builder.initialCacheNames",
+          "lineNumber": 54
+        },
+        {
+          "caller": "cacheManager",
+          "callee": "builder.build",
+          "lineNumber": 55
+        },
+        {
+          "caller": "keyGenerator",
+          "callee": "new KeyGenerator",
+          "lineNumber": 60
+        },
+        {
+          "caller": "generate",
+          "callee": "new StringBuffer",
+          "lineNumber": 63
+        },
+        {
+          "caller": "generate",
+          "callee": "stringBuffer.append",
+          "lineNumber": 64
+        },
+        {
+          "caller": "generate",
+          "callee": "target.getClass().getName",
+          "lineNumber": 64
+        },
+        {
+          "caller": "generate",
+          "callee": "target.getClass",
+          "lineNumber": 64
+        },
+        {
+          "caller": "generate",
+          "callee": "stringBuffer.append",
+          "lineNumber": 65
+        },
+        {
+          "caller": "generate",
+          "callee": "method.getName",
+          "lineNumber": 65
+        },
+        {
+          "caller": "generate",
+          "callee": "stringBuffer.append",
+          "lineNumber": 67
+        },
+        {
+          "caller": "generate",
+          "callee": "obj.toString",
+          "lineNumber": 67
+        },
+        {
+          "caller": "generate",
+          "callee": "stringBuffer.toString",
+          "lineNumber": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/OpenFeignConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 12,
+      "functions": [
+        {
+          "name": "openFeignLogLevel",
+          "startLine": 9,
+          "endLine": 13,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "OpenFeignConfiguration",
+          "startLine": 7,
+          "endLine": 14,
+          "methods": [
+            "openFeignLogLevel"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "openFeignLogLevel",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "OpenFeignConfiguration",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-goods-service/newbee-mall-cloud-goods-web/src/main/java/ltd/goods/cloud/newbee/config/SeataProxyConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "druidDataSource",
+          "startLine": 17,
+          "endLine": 21,
+          "params": []
+        },
+        {
+          "name": "dataSourceDelegation",
+          "startLine": 24,
+          "endLine": 28,
+          "params": [
+            "druidDataSource"
+          ]
+        },
+        {
+          "name": "setProperties",
+          "startLine": 33,
+          "endLine": 36,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SeataProxyConfiguration",
+          "startLine": 13,
+          "endLine": 37,
+          "methods": [
+            "druidDataSource",
+            "dataSourceDelegation",
+            "setProperties"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "druidDataSource",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "dataSourceDelegation",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "setProperties",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "SeataProxyConfiguration",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "druidDataSource",
+          "callee": "new DruidDataSource",
+          "lineNumber": 20
+        },
+        {
+          "caller": "dataSourceDelegation",
+          "callee": "new DataSourceProxy",
+          "lineNumber": 27
+        },
+        {
+          "caller": "setProperties",
+          "callee": "System.setProperty",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "newbee-mall-cloud-order-service/newbee-mall-cloud-order-web/src/main/java/ltd/order/cloud/newbee/config/OpenFeignConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 12,
+      "functions": [
+        {
+          "name": "openFeignLogLevel",
+          "startLine": 9,
+          "endLine": 13,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "OpenFeignConfiguration",
+          "startLine": 7,
+          "endLine": 14,
+          "methods": [
+            "openFeignLogLevel"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "openFeignLogLevel",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "OpenFeignConfiguration",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    }
+  ]
+}
